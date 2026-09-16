@@ -322,11 +322,11 @@
       <div class="toc">
         <a href="#why"><b>Why this</b><span>Bit Foundry improves the product for every company that uses it. Each Truft process still needs its own fixes.</span></a>
         <a href="#chat"><b>Chat</b><span>The same assistant on the website, WhatsApp, email, and SMS.</span></a>
-        <a href="#checks"><b>Checks</b><span>Fact checks pass or fail. A judge model scores writing. Low scores wait for a person.</span></a>
+        <a href="#checks"><b>Checks</b><span>Quality checks (evals). Fact checks pass or fail. One judge scores writing.</span></a>
         <a href="#process"><b>Process</b><span>Truft’s way of working, written down so the assistant follows it.</span></a>
         <a href="#tools"><b>Tools</b><span>BuildPass and Xero stay the records. One job at a time.</span></a>
         <a href="#hosting"><b>Hosting</b><span>truft.com.au is Truft’s choice. Workweaver runs on Bit Foundry.</span></a>
-        <a href="#cost"><b>Cost</b><span>AUD 500 per month for six months. Then usage. Invoice in Australian dollars.</span></a>
+        <a href="#cost"><b>Cost</b><span>AUD 500 per month for six months. Then minutes and tokens.</span></a>
         <a href="#next"><b>Next steps</b><span>Non-disclosure agreement, contract, invoice, access.</span></a>
       </div>
     </nav>
@@ -336,10 +336,10 @@
         <p class="kicker">Why Workweaver</p>
         <h2>Truft sets the standard. The software has to meet it.</h2>
         <ul class="checklist" style="margin-top:22px">
-          <li><strong>Truft picks the model for each written process.</strong> Workhorse, frontier, or fast. A new model does not replace the one already assigned. When Truft changes that assignment, the process is run against its quality checks and edited until it meets the pass mark Truft set. It is not used live until then.</li>
+          <li><strong>Truft picks the model for each written process.</strong> Workhorse, frontier, or fast. A new model does not replace the one already assigned. When Truft changes that assignment, the process is run against its quality checks (evals) and edited until it meets the pass mark Truft set. It is not used live until then.</li>
           <li><strong>Workweaver connects the tools Truft already uses.</strong> BuildPass, Xero, WhatsApp, email, calendar, the website, and the office application. New tools can be added later without starting again.</li>
           <li><strong>Truft edits the map of how Truft works.</strong> Cost-plus, the 28 steps, what not to say, which spend waits for approval. The assistant cannot cross that map.</li>
-          <li><strong>Workweaver is a product, not one-off software.</strong> When Bit Foundry ships an improvement to Workweaver itself, every company using Workweaver gets that product improvement. That is not the same as improving one Truft process (for example, explaining a variation) automatically improving a different Truft process (for example, an Instagram reply). Each written process still has its own checks.</li>
+          <li><strong>Workweaver is a product, not one-off software.</strong> When Bit Foundry ships an improvement to Workweaver itself, every company using Workweaver gets that product improvement. That is not the same as improving one Truft process (for example, explaining a variation) automatically improving a different Truft process (for example, an Instagram reply). Each written process still has its own checks (evals).</li>
         </ul>
       </div>
     </section>
@@ -396,11 +396,11 @@
 
     <section class="wrap narrow prose" id="checks">
       <p class="kicker">Quality</p>
-      <h2>Quality checks.</h2>
-      <p>A written process is scored before a message, a comment, or a spend action goes out. Some people call this an eval. There are two kinds of check.</p>
+      <h2>Quality checks (evals).</h2>
+      <p>Before a message, a comment, or a spend action goes out, it is scored. These are quality checks (evals). There are two kinds.</p>
       <p><strong>Fact checks</strong> pass or fail. Waterproofing is booked Thursday 10:00, or it is not. The $4,200 stone repair is signed, or it is not. The brass taps match variation 12, or they do not.</p>
-      <p><strong>Rubric checks</strong> are scored by a separate judge model against a written rubric. The judge returns a number from 0 to 1, not a 1 to 10 report card. Several judges can vote. The usual combine is a median. Truft can also weight parts of the rubric so they add to 100, then become that 0 to 1 score. Truft sets the pass mark for each process. The sample office uses 0.90 as an example.</p>
-      <p>A result below the pass mark waits for a person at Truft. Nothing goes out until then. A held result is used to edit the written process. The process is run against the checks again until it meets the mark.</p>
+      <p><strong>Rubric checks</strong> are scored by one judge model against a written rubric. That judge returns a number from 0 to 1, not a 1 to 10 report card. Truft sets the pass mark for each process. The sample office uses 0.90 as an example.</p>
+      <p>A result below the pass mark waits for a person at Truft. Nothing goes out until then. A held result is used to edit the written process. The process is run against the checks (evals) again until it meets the mark.</p>
     </section>
 
     <section class="band grey" id="process">
@@ -508,7 +508,7 @@
     <section class="wrap" id="cost">
       <p class="kicker">Cost</p>
       <h2>Six months to design. Then usage.</h2>
-      <p>The first six months are design, refine, and scope. Bit Foundry and Truft write the first checks and the first written process, and prove them on a real job. Near the end of that period, the system is ready to roll out.</p>
+      <p>The first six months are design, refine, and scope. Bit Foundry and Truft write the first checks (evals) and the first written process, and prove them on a real job. Near the end of that period, the system is ready to roll out.</p>
       <div class="money" style="margin:22px 0">
         <div>
           <span>Design · first six months</span>
@@ -517,8 +517,8 @@
         </div>
         <div>
           <span>When it runs</span>
-          <b>Model cost + 10%</b>
-          <p>Model token cost plus a 10% orchestration fee. Idle software is not billed as work.</p>
+          <b>Minutes + tokens</b>
+          <p>Minutes the assistant actually worked (agentic minutes), plus model token cost, plus 10% of that token cost as an orchestration fee. Idle time is not billed.</p>
         </div>
         <div>
           <span>Truft’s own accounts</span>
@@ -526,7 +526,8 @@
           <p>WhatsApp, phone, and SMS stay on Truft’s accounts, at the supplier’s price.</p>
         </div>
       </div>
-      <p><strong>If Truft stops</strong>, at month six or later, Truft downloads the checks and the written process, and deletes the account. BuildPass and Xero remain the records.</p>
+      <p>As a written process is used more, the same kind of work takes fewer of those minutes. The first time the assistant explains a variation, it takes more steps. After many variations, the process already holds how Truft explains it. The same explanation takes fewer minutes.</p>
+      <p><strong>If Truft stops</strong>, at month six or later, Truft downloads the checks (evals) and the written process, and deletes the account. BuildPass and Xero remain the records.</p>
 
       <h3 style="margin-top:32px">Payment</h3>
       <p>Bit Foundry invoices Truft in Australian dollars. From BitFoundry Tech (OPC) Private Limited to SS Developers Pty Ltd trading as Truft, or the entity Truft names. Payment is by bank transfer. Account details are on each invoice, not on this page. Due in 14 days unless another date is written.</p>
