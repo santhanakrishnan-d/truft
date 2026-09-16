@@ -108,6 +108,31 @@
       letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft);
     }
     .present-link { border: 0; background: transparent; color: var(--ink-soft); letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; padding: 0; }
+    .present-link.office-btn {
+      border: var(--hairline) solid var(--navy); background: var(--navy); color: var(--on-dark);
+      padding: 8px 12px; letter-spacing: 0.1em;
+    }
+    .how-run {
+      display: inline-flex; align-items: center; gap: 8px;
+      text-decoration: none; color: inherit;
+    }
+    .how-run img {
+      width: 22px; height: 22px; object-fit: contain;
+      background: #fff; border-radius: 50%; padding: 1px; flex: 0 0 22px;
+    }
+    .public-nav a.how-run {
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 11px;
+    }
+    .foot .how-run { letter-spacing: 0.1em; text-transform: uppercase; }
+    .office-cta { display: grid; grid-template-columns: 1.2fr 1fr; gap: 22px; align-items: center; }
+    .office-cta .lede { color: var(--on-dark); }
+    .src-pill {
+      display: inline-block; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid var(--line); padding: 3px 8px; color: var(--muted); margin-bottom: 8px;
+    }
+    .feed-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .feed-photo { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+    .feed-photo img { width: 100%; height: 110px; object-fit: cover; }
 
     .preview-ribbon {
       margin: 0; padding: 7px 16px; text-align: center;
@@ -524,7 +549,7 @@
       }
       .menu-btn { display: grid; }
       .hero-copy { padding-bottom: 36px; }
-      .five, .flow, .strip, .principles, .lead, .stage-hot { grid-template-columns: 1fr; }
+      .five, .flow, .strip, .principles, .lead, .stage-hot, .office-cta, .feed-grid { grid-template-columns: 1fr; }
       .step-grid { grid-template-columns: 1fr 1fr; }
       .top { grid-template-columns: auto auto 1fr; }
       .wa-card { grid-template-columns: 1fr; }
@@ -540,7 +565,7 @@
   </style>
 </head>
 <body>
-  <p class="preview-ribbon">Preview of how Truft could run · photography from truft.com.au · not the live website · <a href="how.html">how this would run</a></p>
+  <p class="preview-ribbon">Preview of how Truft could run · photography from truft.com.au · not the live website · <a class="how-run" href="how.html"><img src="assets/bitfoundry-logo.png" alt="" width="16" height="16" />How this would run</a></p>
   <a class="skip" href="#main">Skip to content</a>
   <header class="top">
     <a class="brand" href="#home" data-go="home" data-public="1">
@@ -554,7 +579,7 @@
       <button type="button" data-go="work">Our Work</button>
       <button type="button" data-go="process">Process</button>
       <button type="button" data-go="contact">Contact</button>
-      <a href="how.html">How this would run</a>
+      <a class="how-run" href="how.html"><img src="assets/bitfoundry-logo.png" alt="" width="18" height="18" />How this would run</a>
     </nav>
     <div class="top-end">
       <button class="icon-btn hover-tip" type="button" id="topWa" data-hint="This will open our WhatsApp account." aria-label="WhatsApp">
@@ -580,7 +605,7 @@
           <div class="row-btns">
             <button class="btn light" type="button" data-go="work">See the houses</button>
             <button class="btn ghost on-dark" type="button" data-go="contact">Talk to Truft</button>
-            <button class="btn ghost on-dark" type="button" data-go="house">Walk a sample house</button>
+            <button class="btn ghost on-dark" type="button" data-go="house">Walk the sample</button>
           </div>
           <p class="meta">Norwest · 02 7235 0833 · WhatsApp Truft</p>
         </div>
@@ -642,27 +667,27 @@
           <article>
             <div class="n">01 · Enquire</div>
             <h3>Tonight</h3>
-            <p>Form, phone, WhatsApp, or Ask Truft. A follow-up can open within a minute.</p>
+            <p>Form, phone, WhatsApp, or Ask Truft. A follow-up can open within a minute. The same facts land in the portal.</p>
           </article>
           <article>
             <div class="n">02 · Visit</div>
             <h3>Norwest</h3>
-            <p>Friday at 303/4 Columbia Ct. Real numbers on the table.</p>
+            <p>A time at 303/4 Columbia Ct. Real numbers on the table.</p>
           </article>
           <article>
             <div class="n">03 · See</div>
-            <h3>A sample house</h3>
-            <p>Photos, spend, a pause in the open — before you sign anything.</p>
+            <h3>A sample</h3>
+            <p>Photos, spend, a pause in the open, before you sign anything.</p>
           </article>
           <article>
             <div class="n">04 · Build</div>
             <h3>You watch</h3>
-            <p>Photos the day they are taken. Extra spend waits for you.</p>
+            <p>You get a login. Photos the day they are taken. Extra spend waits for you. WhatsApp and email write here too.</p>
           </article>
           <article>
             <div class="n">05 · Live</div>
             <h3>The file stays</h3>
-            <p>Decisions, photos, the book. Yours.</p>
+            <p>Decisions, photos, the book. Recorded in the portal, not lost in a thread.</p>
           </article>
         </div>
       </div>
@@ -700,7 +725,7 @@
             <img src="assets/qr/whatsapp.png" alt="QR code for Truft WhatsApp" />
             <div>
               <h3>WhatsApp Truft</h3>
-              <p class="quiet">Scan on a phone, or tap the logo on this computer. When this is live, it opens Truft’s WhatsApp — the same house file as Ask Truft, not a second memory.</p>
+              <p class="quiet">Scan on a phone, or tap the logo on this computer. When this is live, it opens Truft’s WhatsApp. Same facts as Ask Truft, written into the same portal.</p>
               <div class="row-btns" style="margin-top:10px">
                 <button class="wa-btn hover-tip" type="button" data-open-wa="1" data-hint="This will open our WhatsApp account.">
                   <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#25D366" d="M12.04 2C6.58 2 2.15 6.43 2.15 11.89c0 1.95.51 3.86 1.48 5.54L2 22l4.71-1.55a9.86 9.86 0 0 0 5.33 1.44h.01c5.46 0 9.89-4.43 9.89-9.89C21.94 6.43 17.5 2 12.04 2zm5.72 14.01c-.24.67-1.4 1.24-1.94 1.32-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.82-4.2-4.97-4.39-.14-.2-1.18-1.57-1.18-3 0-1.42.74-2.12 1-2.41.24-.27.64-.39 1.02-.39.12 0 .23 0 .33.01.29.01.44.03.63.49.24.56.81 1.98.88 2.13.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.41.51-.14.14-.28.3-.12.58.16.29.7 1.15 1.5 1.86 1.03.91 1.9 1.19 2.18 1.33.28.13.44.11.6-.07.17-.18.7-.81.89-1.09.19-.27.37-.23.63-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.67-.17 1.34z"/></svg>
@@ -712,11 +737,34 @@
           </div>
         </div>
       </div>
+      <div class="band navy">
+        <div class="wrap office-cta" style="padding-top:8px;padding-bottom:8px">
+          <div>
+            <div class="kicker" style="color:var(--on-dark-dim)">For Truft</div>
+            <h2>See the Truft office</h2>
+            <p class="lede">This is where you run the day. Leads, customers, the website, the site file, and the books. BuildPass and Xero stay the records. You should not need to live in those tools for the daily view.</p>
+            <div class="row-btns">
+              <button class="btn light" type="button" data-go="office">Open the office</button>
+              <a class="btn ghost on-dark how-run" href="how.html">
+                <img src="assets/bitfoundry-logo.png" alt="" width="18" height="18" />
+                How this would run
+              </a>
+            </div>
+          </div>
+          <div>
+            <p class="quiet" style="color:var(--on-dark-dim);margin:0 0 10px">Today, as you would see it</p>
+            <ul class="list-wait" style="color:var(--on-dark-dim)">
+              <li>Unsigned $4,200 island stone, waiting on a yes</li>
+              <li>Waterproofing Thursday 10:00, from the site file</li>
+              <li>A new lead from Instagram last night</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <footer class="foot">
         <span>People | Process | Quality | Your home</span>
-        <a href="how.html">How this would run</a>
-        <button type="button" class="present-link" data-go="office">Truft office</button>
-        <span>Workweaver · Bit Foundry</span>
+        <a class="how-run" href="how.html"><img src="assets/bitfoundry-logo.png" alt="" width="18" height="18" />How this would run</a>
+        <button type="button" class="present-link office-btn" data-go="office">Truft office</button>
       </footer>
     </section>
 
@@ -741,7 +789,7 @@
           </div>
         </div>
       </div>
-      <footer class="foot"><span>SS Developers Pty Ltd t/as Truft</span><a href="how.html">How this would run</a><span>303/4 Columbia Ct, Norwest</span></footer>
+      <footer class="foot"><span>SS Developers Pty Ltd t/as Truft</span><a class="how-run" href="how.html"><img src="assets/bitfoundry-logo.png" alt="" width="18" height="18" />How this would run</a><button type="button" class="present-link office-btn" data-go="office">Truft office</button></footer>
     </section>
 
     <!-- SERVICES -->
@@ -773,7 +821,7 @@
           <article><div class="n">Walk it</div><h3>Sample house</h3><p>See this live on Henson Way before you sign.</p></article>
         </div>
         <div class="row-btns" style="margin-top:18px">
-          <button class="btn" type="button" data-go="house">Open the sample house</button>
+          <button class="btn" type="button" data-go="house">Open the sample</button>
           <button class="btn ghost" type="button" data-go="process">The 28 steps</button>
         </div>
       </div>
@@ -812,7 +860,7 @@
       <div class="wrap" style="padding-top:16px">
         <div class="strip" id="workStrip"></div>
         <div class="row-btns" style="margin-top:18px">
-          <button class="btn" type="button" data-go="house">Walk Henson Way as a sample house</button>
+          <button class="btn" type="button" data-go="house">Walk Henson Way</button>
         </div>
       </div>
       <footer class="foot"><span>Photography from truft.com.au</span><span>Illustrative of the live site</span></footer>
@@ -831,7 +879,7 @@
         <div class="step-grid" id="stepGrid"></div>
         <div class="drill" id="drill"></div>
         <div class="row-btns" style="margin-top:16px">
-          <button class="btn" type="button" id="seeOnHouse">See this on a sample house</button>
+          <button class="btn" type="button" id="seeOnHouse">See this on Henson Way</button>
           <span class="quiet" id="runNote"></span>
         </div>
       </div>
@@ -870,9 +918,9 @@
     <!-- HOUSE / PORTAL -->
     <section class="scene" id="house">
       <div class="wrap" id="housePitch">
-        <div class="kicker">A sample house · no account needed</div>
-        <h1>This is your house while we build it.</h1>
-        <p class="lede">Week 38 — illustrative. Photos the day they were taken. Extra spend waiting in the open. After you build with us, you sign in, and you can say yes.</p>
+        <div class="kicker">A sample project · no account needed</div>
+        <h1>This is your project while we build it.</h1>
+        <p class="lede">Week 38, illustrative. Each homeowner gets a login. Progress is tracked. Spend can be approved. WhatsApp and email work the same way. Anything you confirm or ask, in any of those places, is recorded here. If it is not in this portal, it did not happen.</p>
       </div>
       <div class="wrap" style="padding-top:0">
         <div id="housePreview">
@@ -886,7 +934,7 @@
           <div class="login-photo"><img src="assets/gallery/henson-04.jpg" alt="Henson Way kitchen" /></div>
           <div class="login">
             <div class="wordmark">TRUFT</div>
-            <p>Sign in to your house. One job. Your book. Your pause.</p>
+            <p>Sign in to your project. One job. Your book. Your pause.</p>
             <div class="sso">
               <button type="button" data-sso="google">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5c-.3 1.5-1.1 2.7-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.9-3c-1.1.7-2.5 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9H1.4v3.1C3.4 21.4 7.4 24 12 24z"/><path fill="#FBBC05" d="M5.4 14.4c-.2-.7-.4-1.4-.4-2.4s.1-1.7.4-2.4V6.5H1.4C.5 8.2 0 10.1 0 12s.5 3.8 1.4 5.5l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.7l3.4-3.4C17.9 1.1 15.2 0 12 0 7.4 0 3.4 2.6 1.4 6.5l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"/></svg>
@@ -1024,8 +1072,8 @@
             </div>
           </div>
           <div class="pane" id="h-ask">
-            <p class="bot-chip" id="askChip">Visitor conversation · cannot see a live job</p>
-            <div class="chat" id="houseChat"><div class="msg"><span class="who">Truft</span>This is a sample house — Henson Way, week 38. I will not invent a rate, and I will not spend.</div></div>
+            <p class="bot-chip" id="askChip">Anyone can ask. I will take a name, a visit, or a call back.</p>
+            <div class="chat" id="houseChat"><div class="msg"><span class="who">Truft</span>This is a sample of Henson Way, week 38. Ask about progress, spend, or the next booking. WhatsApp and email write to this same portal.</div></div>
             <div class="chat-in"><input id="houseQ" placeholder="Ask how this house would answer" /><button class="btn" type="button" id="houseSend">Send</button></div>
             <div class="row-btns" style="margin-top:8px">
               <button class="btn ghost" type="button" data-ask="taps">Why the brass taps?</button>
@@ -1075,8 +1123,8 @@
       </div>
       <footer class="foot" id="houseFoot">
         <span>People | Process | Quality | Your home</span>
-        <a href="how.html">How this would run</a>
-        <button type="button" class="present-link" data-go="office">Truft office</button>
+        <a class="how-run" href="how.html"><img src="assets/bitfoundry-logo.png" alt="" width="18" height="18" />How this would run</a>
+        <button type="button" class="present-link office-btn" data-go="office">Truft office</button>
       </footer>
     </section>
 
@@ -1085,16 +1133,18 @@
       <div class="wrap">
         <div class="office-top">
           <div>
-            <div class="kicker">Truft office · not on the public nav</div>
-            <h1>The house, running</h1>
-            <p class="lede">Leads, customers, the homepage, social, and the day. Homeowners never see this room. <button class="i" data-tip="ww" type="button">i</button></p>
+            <div class="kicker">Truft office</div>
+            <h1>Where you run the day</h1>
+            <p class="lede">Leads, customers, the website, the site file, and the books. Homeowners never see this. BuildPass and Xero stay the records. This screen reads them, so you do not have to live in those tools. <button class="i" data-tip="ww" type="button">i</button></p>
           </div>
-          <button class="btn ghost" type="button" data-go="home" data-public="1">Back to the street</button>
+          <button class="btn ghost" type="button" data-go="home" data-public="1">Back to the website</button>
         </div>
         <div class="tabs shop-tabs" role="tablist">
           <button type="button" data-shop="day" aria-selected="true">Today</button>
           <button type="button" data-shop="leads">Leads</button>
           <button type="button" data-shop="cust">Customers</button>
+          <button type="button" data-shop="site">Site file</button>
+          <button type="button" data-shop="books">Books</button>
           <button type="button" data-shop="home">Homepage</button>
           <button type="button" data-shop="social">Social</button>
           <button type="button" data-shop="usage">Usage</button>
@@ -1106,8 +1156,8 @@
               <div class="tm">09:00</div>
               <div>
                 <div class="wait">Running · waits on you</div>
-                <strong>Weekly letter · Henson Way</strong>
-                <p class="quiet" style="margin:4px 0 0">0.78 · held below send bar. Sibling of the 11:00 pause. <button class="i" data-tip="evals" type="button">i</button></p>
+                <strong>Owner update · Henson Way</strong>
+                <p class="quiet" style="margin:4px 0 0">0.78 · held below send bar. Same job as the 11:00 pause. <button class="i" data-tip="evals" type="button">i</button></p>
               </div>
             </div>
             <div class="row" id="gateStone">
@@ -1138,12 +1188,12 @@
           </div>
           <div class="grid-2" style="margin-top:16px">
             <div class="card">
-              <h3>Post to the house</h3>
+              <h3>Post to the portal</h3>
               <textarea id="adminPost">Waterproofing is booked Thursday 10:00 with Allied. Tiling waits for cure.</textarea>
               <div class="row-btns" style="margin-top:10px"><button class="btn" type="button" id="postUpdate">Post to Henson Way</button><span class="quiet" id="postNote"></span></div>
             </div>
             <div class="card">
-              <h3>Friday’s letter <button class="i" data-tip="models" type="button">i</button></h3>
+              <h3>Draft note to the owners <button class="i" data-tip="models" type="button">i</button></h3>
               <pre class="letter" id="letterDraft">Kitchen progress is on track. Variation 12 — brass tapware — signed 4 September. Quoted $2,180. Actual $2,640 because the finish changed on site.</pre>
               <div class="score held" id="letterScore"><div class="stat">0.78 · Held</div><p style="margin:6px 0 0;font-size:13px">Below send bar (0.90). Tone drifted. Switching the writer does not bypass this.</p></div>
               <button class="btn" type="button" id="explainVar" style="margin-top:10px">Explain variation 12</button>
@@ -1162,8 +1212,8 @@
             </div>
           </div>
           <div class="card" style="margin-top:12px">
-            <h3>Memory that behaves <button class="i" data-tip="memory" type="button">i</button></h3>
-            <p class="quiet">Remembers variation 12. Forgets “island stone is included” when you mark it false. Tonight’s Instagram rises above an old brochure. Overnight it pulls a date that is not in the programme. The score is the gate — not a second voice.</p>
+            <h3>How Truft works, not the books <button class="i" data-tip="memory" type="button">i</button></h3>
+            <p class="quiet">Voice, evals, and standing rules live here. Job cost and photos are looked up in BuildPass and Xero for that job. Mark “island stone is included” false and it stays gone. The score is the gate, not a second voice.</p>
             <div class="voices">
               <button class="btn ghost" type="button" data-job="henson" id="jobH" aria-pressed="true">Henson Way</button>
               <button class="btn ghost" type="button" data-job="mustang" id="jobM" aria-pressed="false">Mustang Ave</button>
@@ -1184,8 +1234,58 @@
           </table>
         </div>
 
+        <div class="shop-pane" id="shop-site">
+          <p class="quiet">Read from BuildPass. Photos, defects, and the programme. Open BuildPass only if you need to change the source. <button class="i" data-tip="buildpass" type="button">i</button></p>
+          <div class="feed-grid" style="margin-top:12px">
+            <div class="card">
+              <div class="src-pill">BuildPass · Henson Way</div>
+              <h3>Photos today</h3>
+              <div class="feed-photo">
+                <img src="assets/gallery/henson-04.jpg" alt="Kitchen" />
+                <img src="assets/gallery/henson-06.jpg" alt="Living" />
+              </div>
+              <p class="quiet" style="margin:10px 0 0">Landed on the portal the same day. Homeowners see them under This week.</p>
+            </div>
+            <div class="card">
+              <div class="src-pill">BuildPass · open items</div>
+              <h3>Defects and programme</h3>
+              <ul class="list-wait">
+                <li>Hairline on island stone · photo attached</li>
+                <li>Door hardware alignment · punch list</li>
+                <li>Sheet A-12 overhang · waiting on engineer</li>
+                <li>Waterproofing Thu 10:00 · Allied</li>
+              </ul>
+              <p class="quiet" style="margin:10px 0 0">Triage here. You should not need the BuildPass app for the daily list.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="shop-pane" id="shop-books">
+          <p class="quiet">Read from Xero. Invoices, margin, unsigned spend. Open Xero only to add a bill or change the books. Homeowners never get a Xero login. <button class="i" data-tip="xero" type="button">i</button></p>
+          <div class="feed-grid" style="margin-top:12px">
+            <div class="card">
+              <div class="src-pill">Xero · Henson Way</div>
+              <h3>Spend this month</h3>
+              <table class="office">
+                <thead><tr><th>Supplier</th><th>Line</th><th>Quoted</th><th>Actual</th></tr></thead>
+                <tbody>
+                  <tr><td>Norwest Stone</td><td>Island remainder</td><td class="num">18,400</td><td class="num">18,400</td></tr>
+                  <tr><td>Brodware</td><td>Variation 12</td><td class="num">2,180</td><td class="num">2,640</td></tr>
+                  <tr><td>Norwest Stone</td><td>Island repair</td><td class="num">4,200</td><td class="num">Unsigned</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card">
+              <div class="src-pill">Xero · controls</div>
+              <h3>What cannot move</h3>
+              <p>Island stone repair $4,200 is not signed. Cost-plus will not spend it until a named owner allows it, here or on WhatsApp.</p>
+              <p class="quiet">Builders margin is the agreed %. Contingency remaining $41,600. Same numbers the owner sees on Spend.</p>
+            </div>
+          </div>
+        </div>
+
         <div class="shop-pane" id="shop-cust">
-          <p class="quiet">People who are building. Each login is one house. <button class="i" data-tip="house" type="button">i</button></p>
+          <p class="quiet">People who are building. Each login is one job. <button class="i" data-tip="house" type="button">i</button></p>
           <table class="office">
             <thead><tr><th>House</th><th>Owners</th><th>Week</th><th>Reach</th><th>Portal</th></tr></thead>
             <tbody>
@@ -1194,7 +1294,7 @@
             </tbody>
           </table>
           <div class="card" style="margin-top:14px">
-            <h3>Invite to the house login</h3>
+            <h3>Invite to the portal</h3>
             <p class="quiet">Google and Microsoft first. Facebook and Apple are optional — drop them if the review is too much for a 10-job builder. Homeowners must not need Facebook to see their house.</p>
             <div class="row-btns" style="margin-top:10px">
               <button class="btn ghost" type="button" id="invitePortal">Invite Mustang Ave</button>
@@ -1231,7 +1331,7 @@
               <div class="ch">Instagram · Henson Way reel · 9:41pm</div>
               <p>How long was knockdown to handover?</p>
               <div class="steer-row">
-                <input value="Typical North West knockdown-rebuild is 14–22 months end to end. Happy to walk a sample house, or Friday 12:00 at Norwest." />
+                <input value="Typical North West knockdown-rebuild is 14–22 months end to end. Happy to walk a sample, or book a time at Norwest." />
                 <button class="btn" type="button" id="igSend">Send public reply</button>
               </div>
               <p class="quiet" id="igNote" hidden>Sent. Score 0.92. Friday 12:00 offered privately. Written to Usage.</p>
@@ -1239,7 +1339,7 @@
             <article>
               <div class="ch">Facebook · Mustang Ave post</div>
               <p>Is cost-plus actually open book?</p>
-              <button class="btn ghost" type="button" id="fbReply">Draft reply from the house file</button>
+              <button class="btn ghost" type="button" id="fbReply">Draft reply from this job</button>
               <p class="quiet" id="fbNote"></p>
             </article>
             <article>
@@ -1259,7 +1359,12 @@
             <div class="when">Fri 12:00</div><div class="what"><strong>Norwest visit · held</strong>303/4 Columbia Ct</div>
           </div>
         </div>
-        <p class="quiet" style="margin-top:22px">How this would run — Workweaver, a product of Bit Foundry. <a href="how.html">Open the note</a> · <a href="https://workweaver.ai" rel="noopener">workweaver.ai</a> · <a href="https://www.bitfoundry.ai" rel="noopener">bitfoundry.ai</a></p>
+        <p class="quiet" style="margin-top:22px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <a class="how-run" href="how.html"><img src="assets/bitfoundry-logo.png" alt="Bit Foundry" width="22" height="22" />How this would run</a>
+          <span>Workweaver, a product of Bit Foundry.</span>
+          <a href="https://workweaver.ai" rel="noopener">workweaver.ai</a>
+          <a href="https://www.bitfoundry.ai" rel="noopener">bitfoundry.ai</a>
+        </p>
       </div>
     </section>
   </main>
@@ -1267,11 +1372,11 @@
   <div class="ask-widget" id="askWidget">
     <div class="ask-panel" id="askPanel" role="dialog" aria-label="Ask Truft">
       <header>
-        <div><strong>ASK TRUFT</strong><small id="askCtxLabel">Visitors · projects, visits, cost-plus</small></div>
+        <div><strong>ASK TRUFT</strong><small id="askCtxLabel">Visitors · how Truft builds, visits, call back</small></div>
         <button type="button" id="askClose" aria-label="Close chat">×</button>
       </header>
       <div class="ask-body">
-        <div class="chat" id="dockAskChat"><div class="msg"><span class="who">Truft</span>This is Ask Truft on the website — for anyone. I can walk the 28 steps, hold Friday at Norwest, or open a sample house. I will not invent a rate, and I cannot open someone else’s job.</div></div>
+        <div class="chat" id="dockAskChat"><div class="msg"><span class="who">Truft</span>Hello. I am Ask Truft. I can tell you how Truft builds, book a time at Norwest, arrange a call back, or take your name and number.</div></div>
         <div class="chat-in"><input id="dockAskQ" placeholder="Ask Truft" /><button class="btn" type="button" id="dockAskSend">Send</button></div>
       </div>
     </div>
@@ -1289,7 +1394,7 @@
       <div class="wa-card" style="border:0;padding:0">
         <img src="assets/qr/whatsapp.png" alt="WhatsApp QR" />
         <div>
-          <p class="quiet">This will open our WhatsApp account — on a phone, or WhatsApp Desktop / Web on this computer. Same house file as Ask Truft. This mock is not wired to a live account, so it will not jump to a personal number.</p>
+          <p class="quiet">This will open our WhatsApp account on a phone, or WhatsApp Desktop / Web on this computer. Same portal as Ask Truft. This mock is not wired to a live account, so it will not jump to a personal number.</p>
           <div class="row-btns" style="margin-top:10px">
             <button class="wa-btn hover-tip" type="button" data-hint="This will open our WhatsApp account." id="waPreviewBtn">
               <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#25D366" d="M12.04 2C6.58 2 2.15 6.43 2.15 11.89c0 1.95.51 3.86 1.48 5.54L2 22l4.71-1.55a9.86 9.86 0 0 0 5.33 1.44h.01c5.46 0 9.89-4.43 9.89-9.89C21.94 6.43 17.5 2 12.04 2zm5.72 14.01c-.24.67-1.4 1.24-1.94 1.32-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.82-4.2-4.97-4.39-.14-.2-1.18-1.57-1.18-3 0-1.42.74-2.12 1-2.41.24-.27.64-.39 1.02-.39.12 0 .23 0 .33.01.29.01.44.03.63.49.24.56.81 1.98.88 2.13.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.41.51-.14.14-.28.3-.12.58.16.29.7 1.15 1.5 1.86 1.03.91 1.9 1.19 2.18 1.33.28.13.44.11.6-.07.17-.18.7-.81.89-1.09.19-.27.37-.23.63-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.67-.17 1.34z"/></svg>
@@ -1431,21 +1536,21 @@
     const TIPS = {
       buildpass: { title: "From the site file", body: "Photos, defects, programme, drawings and the site handset live in BuildPass. This page reads what the job already has. It does not clone a second site system." },
       xero: { title: "From the ledger", body: "Invoices, builders margin and contingency remain in Xero. Spend here is a view of those lines — not a second set of books. Unsigned spend cannot move until someone allows it. Homeowners never get a Xero login." },
-      house: { title: "This house only", body: "Homeowners see their project. Not the builder’s other jobs. Ask Truft and WhatsApp are the same rule." },
-      models: { title: "You pick the writer. The score stays.", body: "Everyday, careful, and fast writers can be swapped. A letter still has to clear the send bar. A cheaper writer that fails the score does not go live." },
-      evals: { title: "The score is how work is judged", body: "Before a letter, Instagram reply, or call goes out, it is scored against Truft’s own bar — voice, facts, no invented dates. Below the bar, it waits on you. The game is raising that bar, not paying for more words." },
-      chatbot: { title: "Two Truft bots. Different memory.", body: "Ask Truft on the website is for anyone — projects, visits, cost-plus. It cannot open a live job. Ask Truft inside a signed-in house knows that house only. WhatsApp is a door into the same house file, not a third bot." },
-      leads: { title: "A lead is a person", body: "Form, email, phone, WhatsApp, Instagram, Ask Truft — each writes one row. Follow-up is a held Friday, a call, or a WhatsApp. They can say stop." },
-      usage: { title: "Times are the work", body: "When a step runs, or someone talks on WhatsApp or the phone, a time is written on the job. Only the minutes that actually ran." },
-      whatsapp: { title: "WhatsApp, not a fake window", body: "This will open our WhatsApp account — on a phone, or WhatsApp Desktop / Web on a computer. Same house file, same pause rules, same send bar. This mock is not wired to a live account, so it will not jump to a personal number." },
+      house: { title: "This job only", body: "Homeowners see their project. Not the builder’s other jobs. Ask Truft, WhatsApp, and email write to the same portal." },
+      models: { title: "You pick the writer. The score stays.", body: "Everyday, careful, and fast writers can be swapped. A note still has to clear the send bar. A cheaper writer that fails the score does not go live." },
+      evals: { title: "Evals are tiny yes-or-no checks", body: "Before a note, Instagram reply, or call goes out, it is scored against Truft’s own checks: voice, facts, no invented dates, no unsigned spend. Below the bar, it waits on you. Better evals make a better agent." },
+      chatbot: { title: "One Truft bot. Many places.", body: "Ask Truft on the website is for anyone: how Truft builds, a visit, a call back, a name. After sign-in it knows that job only. WhatsApp and email are the same bot, writing to the same portal, not a third memory." },
+      leads: { title: "A lead is a person", body: "Form, email, phone, WhatsApp, Instagram, Ask Truft: each writes one row. Follow-up is a visit, a call, or a WhatsApp. They can say stop." },
+      usage: { title: "Times are the work", body: "When a step runs, or someone talks on WhatsApp or the phone, a time is written on the job. Only the minutes that actually ran. Idle software is not billed as work." },
+      whatsapp: { title: "WhatsApp, not a fake window", body: "This will open our WhatsApp account on a phone, or WhatsApp Desktop / Web on a computer. Same portal, same pause rules, same send bar. This mock is not wired to a live account, so it will not jump to a personal number." },
       instagram: { title: "Posted to Instagram", body: "Official Instagram comment webhooks. A public reply in Truft’s voice, a private path to book Norwest. Held if the score is low. Not DM scraping. The live site’s Instagram URL is unconfirmed — do not invent one." },
-      post: { title: "Posting an update is one box", body: "Truft types in the office. The owner sees it on their house. The same fact answers on WhatsApp if they ask tonight." },
-      ww: { title: "What is running here", body: "Workweaver — the product of Bit Foundry — runs the steps, the memory of this house, the bar before send, pauses before money, and the doors (site, WhatsApp, Instagram, phone, this house). BuildPass and Xero stay the records. Truft stays the builder. See workweaver.ai and bitfoundry.ai." },
-      memory: { title: "A memory that behaves", body: "Remembers owners and signed variations. Forgets a rumour when you mark it false. Re-ranks tonight’s question above an old brochure. Sleeps on a problem overnight. Refuses to invent a rate. Scores before anything leaves." },
+      post: { title: "Posting an update is one box", body: "Truft types in the office. The owner sees it on their portal. The same fact answers on WhatsApp or email if they ask tonight." },
+      ww: { title: "What is running here", body: "Workweaver, the product of Bit Foundry, runs the steps, the evals before send, pauses before money, and the same bot on the website, WhatsApp, email, and SMS. BuildPass and Xero stay the records. Truft stays the builder. See workweaver.ai and bitfoundry.ai." },
+      memory: { title: "How Truft works, not the books", body: "WorkMemory holds voice, evals, and standing rules. Job cost, photos, and progress are looked up in BuildPass and Xero for that job. It does not keep Priya’s invoice in a pile that can mix with Mustang Ave." },
       cms: { title: "The homepage is yours", body: "Upload a photograph, add a homeowner line. It appears on Home and Our Work. Progress photos that belong on a live job still come from the site file — they do not have to be re-typed." },
-      sixty: { title: "Warm within a minute", body: "If someone leaves a mobile or asks for a callback, Truft can open WhatsApp, SMS or a call within about 60 seconds and offer Friday at Norwest. A human still answers within a day if needed. This mock is not wired." },
-      "sso-google": { title: "Google first", body: "Most owners already have Google. This is the default door into their house after they are building with you." },
-      "sso-optional": { title: "Optional doors", body: "Apple Developer and Meta review can be more than a 10-job builder wants. Facebook and Apple can be dropped. Homeowners must not need Facebook to see their house." },
+      sixty: { title: "Warm within a minute", body: "If someone leaves a mobile or asks for a callback, Truft can open WhatsApp, SMS or a call within about 60 seconds and offer a time at Norwest. A human still answers within a day if needed. This mock is not wired." },
+      "sso-google": { title: "Google first", body: "Most owners already have Google. This is the default sign-in to their project after they are building with you." },
+      "sso-optional": { title: "Optional logins", body: "Apple Developer and Meta review can be more than a 10-job builder wants. Facebook and Apple can be dropped. Homeowners must not need Facebook to see their project." },
       "sso-tools": { title: "BuildPass and Xero logins", body: "Homeowners never unwrap Xero. BuildPass already holds photos and site notes — this portal is the face. Opening a BuildPass client share is only if needed and possible, not a second homework assignment." },
       benchtop: { title: "On quote", body: "Island benchtop remainder. Quoted $18,400. Actual $18,400. Nothing extra." },
       brodware: { title: "Variation 12 — explained", body: "Brass tapware, signed 4 September. Quoted $2,180. Actual $2,640 because the finish changed on site after the quote locked." },
@@ -1526,8 +1631,8 @@
       window.scrollTo(0, 0);
       history.replaceState(null, "", "#" + id);
       document.getElementById("askCtxLabel").textContent = signedIn
-        ? "Henson Way · this house only"
-        : "Visitors · projects, visits, cost-plus";
+        ? "Henson Way · this job only"
+        : "Visitors · how Truft builds, visits, call back";
       if (opts && opts.focus === "lead") {
         const band = document.getElementById("leadBand");
         if (band) band.scrollIntoView({ block: "center" });
@@ -1551,7 +1656,7 @@
         <div class="ph" style="background-image:url('${photo}')"></div>
         <article><h3>You see</h3><p>${s.you}</p></article>
         <article><h3>Truft does</h3><p>${s.truft}</p></article>
-        <article><h3>On the house file</h3><p>${s.file}</p></article>`;
+        <article><h3>On the project file</h3><p>${s.file}</p></article>`;
     }
     function selectStep(n, filter) {
       selectedN = n;
@@ -1605,9 +1710,15 @@
         : "Week 38 · lock-up done · a Truft house";
       document.getElementById("houseState").textContent = on ? "Signed in" : "You can look. Sign in to act.";
       document.getElementById("askChip").textContent = on
-        ? "This house only · different from the visitor conversation"
-        : "Visitor conversation · cannot see a live job";
-      document.getElementById("askCtxLabel").textContent = on ? "Henson Way · this house only" : "Visitors · projects, visits, cost-plus";
+        ? "Henson Way only. WhatsApp and email write here too."
+        : "Anyone can ask. I will take a name, a visit, or a call back.";
+      document.getElementById("askCtxLabel").textContent = on ? "Henson Way · this job only" : "Visitors · how Truft builds, visits, call back";
+      const dock = document.getElementById("dockAskChat");
+      if (dock && dock.querySelector(".msg") && !dock.querySelector(".msg.me")) {
+        dock.querySelector(".msg").innerHTML = on
+          ? "<span class=\"who\">Truft</span>You are signed in to Henson Way. I can talk about this job: spend, site, the pause, the next booking. WhatsApp and email land in the same portal."
+          : "<span class=\"who\">Truft</span>Hello. I am Ask Truft. I can tell you how Truft builds, book a time at Norwest, arrange a call back, or take your name and number.";
+      }
       document.getElementById("pauseBanner").innerHTML = on
         ? "<strong>Paused before money moves.</strong> Island stone repair quoted at $4,200. Cost-plus will not spend this until you approve."
         : "<strong>This waited.</strong> Island stone repair quoted at $4,200. It is not signed, so it has not spent.";
@@ -1616,16 +1727,16 @@
     }
 
     const REPLIES = {
-      taps: { house: "Variation 12 — brass tapware — signed 4 September. Quoted $2,180. Actual $2,640 because the finish changed on site.", visitor: "On a live job you would see the signed variation on Spend. I can walk a sample house, or hold Friday 12:00 at Norwest." },
-      rate: { house: "I won’t invent a rate. The open book shows actuals by trade, not a blended $/m².", visitor: "I won’t invent a $/m². Real numbers live on a job’s open book, trade by trade. Friday 12:00 is often free at Norwest." },
-      visit: { house: "Friday 12:00 held at 303/4 Columbia Ct, Norwest. Prefer WhatsApp in the evening, or 02 7235 0833.", visitor: "Friday 12:00 is free at 303/4 Columbia Ct, Norwest. I can hold it. Prefer WhatsApp? The logo will open our account when it is live. Prefer a voice? 02 7235 0833." },
-      timeline: { house: "From first note to now: Norwest visit, plan and approve, structure, enclose, then fitout. Variation 12 — brass tapware — signed 4 September. This week is week 38: waterproofing Thursday 10:00, island stone $4,200 waiting on a yes. I will not mix this with another job.", visitor: "A live house keeps a timeline from the first name to keys. Walk the sample on Henson Way to scroll it — or I can hold Friday at Norwest." },
-      costplus: { house: "Open book. Extra spend waits for you. Island stone $4,200 is paused until you allow it.", visitor: "Open book. Extra spend waits for you. Walk the sample house to see a pause in the open." },
-      water: { house: "Waterproofing is booked Thursday 10:00 with Allied. Tiling waits for cure. Photos land on This week after the flood test.", visitor: "On a live job the booking is a real time — Thursday 10:00, not ‘sometime next week’." },
-      drawing: { house: "Sheet A-12 — island overhang. Waiting on the engineer. Nothing spends until that is answered.", visitor: "On a live job, questions on the drawings sit on the house — not in a thread you have to chase." },
-      stone: { house: "Island stone repair is quoted at $4,200. It is not signed. Cost-plus will not spend it until you allow it.", visitor: "On a live job, unsigned spend waits in the open. Walk the sample — the $4,200 line is paused." },
-      photo: { house: "I can write a request for an extra photo of the island after Thursday’s flood test. I will not invent that the photo already exists.", visitor: "On a live job you would send that as a request on the house. Here I can hold Friday at Norwest." },
-      default: { house: "I only know Henson Way. Ask about spend, site, drawings, or the next booking. I will pause rather than invent a date.", visitor: "I can walk the 28 steps, hold Friday at Norwest, or open a sample house. I will not invent a rate." }
+      taps: { house: "Variation 12, brass tapware, signed 4 September. Quoted $2,180. Actual $2,640 because the finish changed on site.", visitor: "On a live job you would see the signed variation on Spend. I can walk the sample, or book a time at Norwest." },
+      rate: { house: "I will not invent a rate. The open book shows actuals by trade, not a blended $/m².", visitor: "I will not invent a price per square metre. Real numbers live on a job’s open book, trade by trade. I can book a time at Norwest, or take your number for a call back." },
+      visit: { house: "A time is held at 303/4 Columbia Ct, Norwest. Prefer WhatsApp in the evening, or 02 7235 0833.", visitor: "I can hold a time at 303/4 Columbia Ct, Norwest. Prefer WhatsApp? The logo will open our account when it is live. Prefer a voice? 02 7235 0833. Or leave a name and I will arrange a call back." },
+      timeline: { house: "From first note to now: Norwest visit, plan and approve, structure, enclose, then fitout. Variation 12, brass tapware, signed 4 September. This week is week 38: waterproofing Thursday 10:00, island stone $4,200 waiting on a yes. I will not mix this with another job.", visitor: "A live project keeps a timeline from the first name to keys. Walk the sample on Henson Way to scroll it, or I can book a time at Norwest." },
+      costplus: { house: "Open book. Extra spend waits for you. Island stone $4,200 is paused until you allow it.", visitor: "Open book. Extra spend waits for you. Walk the sample to see a pause in the open." },
+      water: { house: "Waterproofing is booked Thursday 10:00 with Allied. Tiling waits for cure. Photos land on This week after the flood test.", visitor: "On a live job the booking is a real time, Thursday 10:00, not ‘sometime next week’." },
+      drawing: { house: "Sheet A-12, island overhang. Waiting on the engineer. Nothing spends until that is answered.", visitor: "On a live job, questions on the drawings sit on the portal, not in a thread you have to chase." },
+      stone: { house: "Island stone repair is quoted at $4,200. It is not signed. Cost-plus will not spend it until you allow it.", visitor: "On a live job, unsigned spend waits in the open. Walk the sample. The $4,200 line is paused." },
+      photo: { house: "I can write a request for an extra photo of the island after Thursday’s flood test. I will not invent that the photo already exists.", visitor: "On a live job you would send that as a request on the portal. Here I can book a time at Norwest, or take your contact." },
+      default: { house: "I only know Henson Way. Ask about spend, site, drawings, or the next booking. I will pause rather than invent a date.", visitor: "I can tell you how Truft builds, book a time at Norwest, arrange a call back, or take your name and number. What would help?" }
     };
     function classify(q) {
       const t = (q || "").toLowerCase();
@@ -1753,8 +1864,8 @@
         document.getElementById("jobH").setAttribute("aria-pressed", h ? "true" : "false");
         document.getElementById("jobM").setAttribute("aria-pressed", h ? "false" : "true");
         document.getElementById("jobNote").textContent = h
-          ? "Henson Way · this house only. Pause rules and voice samples stay. Owners never see another job."
-          : "Mustang Ave · same pause rules, same voice. Different house file. The rumour marked false on Henson Way does not resurrect here.";
+          ? "Henson Way · this job only. Pause rules and voice samples stay. Owners never see another job."
+          : "Mustang Ave · same pause rules, same voice. Different job. The rumour marked false on Henson Way does not come back here.";
       }
     });
 
@@ -1826,7 +1937,7 @@
       const text = document.getElementById("adminPost").value.trim(); if (!text) return;
       document.getElementById("ownerNotes").insertAdjacentHTML("afterbegin", `<div class="msg"><span class="who">Truft · just now</span>${text.replace(/</g,"")}</div>`);
       document.getElementById("postNote").textContent = "Posted to Henson Way.";
-      toast("Posted to the house.");
+      toast("Posted to the portal.");
     });
     document.getElementById("adminDay").addEventListener("click", (e) => {
       const b = e.target.closest("[data-hil]"); if (!b) return;
