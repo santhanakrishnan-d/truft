@@ -846,7 +846,7 @@
         </a>
         <a class="tile" href="#work" data-open="henson" data-i="0" data-film="henson">
           <span class="cine-stage"><img class="kb d3 is-on" src="assets/gallery/henson-01.jpg" alt="Henson Way" /></span>
-          <span class="tile-cap">Henson Way<small>Walk this house</small></span>
+          <span class="tile-cap">Henson Way<small>Sample job</small></span>
         </a>
         <a class="tile" href="#work" data-open="newmarket" data-i="0" data-film="newmarket">
           <span class="cine-stage"><img class="kb d4 is-on" src="assets/gallery/newmarket-01.jpg" alt="Newmarket Pky" /></span>
@@ -993,7 +993,7 @@
               <img src="assets/gallery/henson-05.jpg" alt="Kitchen still" data-open="henson" data-i="4" />
             </div>
             <p class="quiet" style="margin:12px 0 0">Waterproofing booked <strong>Thursday 10:00</strong>. Tiling waits for cure. Photos land here after the flood test.</p>
-            <div class="house-tl" tabindex="0" aria-label="This house from first note to week 38">
+            <div class="house-tl" tabindex="0" aria-label="Henson Way from first enquiry to week 38">
               <article><div class="when">First note</div><h3>A name</h3><p>Enquiry. One row. They can say stop.</p></article>
               <article><div class="when">Friday</div><h3>Norwest</h3><p>303/4 Columbia Ct. Open book on the table.</p></article>
               <article><div class="when">Plan</div><h3>The file opens</h3><p>Permits, pour, first photos.</p></article>
@@ -1043,7 +1043,7 @@
             </ul>
           </div>
           <div class="pane" id="h-questions">
-            <p class="quiet" style="margin:0 0 12px">Questions on this house. Not a drawing dumped over the page.</p>
+            <p class="quiet" style="margin:0 0 12px">Questions on this job. Shown as a list, not over the drawing.</p>
             <div class="questions">
               <article class="q-card">
                 <div class="q-mark">A-12<small>Sheet</small></div>
@@ -1066,7 +1066,7 @@
                 <div class="q-body">
                   <h3>Fitout inspection</h3>
                   <p>Hold the inspection until evening — they prefer WhatsApp then, not during the workday.</p>
-                  <p class="q-meta">Standing preference on this house</p>
+                  <p class="q-meta">Standing preference on this job</p>
                 </div>
               </article>
             </div>
@@ -1074,7 +1074,7 @@
           <div class="pane" id="h-ask">
             <p class="bot-chip" id="askChip">Anyone can ask. I will take a name, a visit, or a call back.</p>
             <div class="chat" id="houseChat"><div class="msg"><span class="who">Truft</span>This is a sample of Henson Way, week 38. Ask about progress, spend, or the next booking. WhatsApp and email write to this same portal.</div></div>
-            <div class="chat-in"><input id="houseQ" placeholder="Ask how this house would answer" /><button class="btn" type="button" id="houseSend">Send</button></div>
+            <div class="chat-in"><input id="houseQ" placeholder="Ask about this job" /><button class="btn" type="button" id="houseSend">Send</button></div>
             <div class="row-btns" style="margin-top:8px">
               <button class="btn ghost" type="button" data-ask="taps">Why the brass taps?</button>
               <button class="btn ghost" type="button" data-ask="water">When is waterproofing?</button>
@@ -1100,7 +1100,7 @@
             </div>
           </div>
           <div class="pane" id="h-askus">
-            <p class="bot-chip">A request on this house · lands in the Truft office</p>
+            <p class="bot-chip">A request on this job · lands in the Truft office</p>
             <ul class="req-list" id="ownerReqs">
               <li>Extra photo of the island hairline<small>Asked Wed 10 Sep · photo attached to Spend</small></li>
               <li>Hold the fitout inspection until evening<small>Standing preference · they write on WhatsApp in the evening</small></li>
@@ -1110,7 +1110,7 @@
                 <option value="photo" selected>An extra photo from site</option>
                 <option value="visit">A time at Norwest</option>
                 <option value="inspect">Move an inspection</option>
-                <option value="other">Something else on this house</option>
+                <option value="other">Something else on this job</option>
               </select>
             </div>
             <div class="field" style="margin-top:8px"><label for="reqNote">Note</label><textarea id="reqNote" rows="3" placeholder="e.g. Can we see the island from the living side after Thursday’s flood test?"></textarea></div>
@@ -1761,7 +1761,7 @@
       box.appendChild(d); box.scrollTop = box.scrollHeight;
     }
     function ask(kind, box) {
-      const qmap = { taps:"Why did the brass taps come in over the quote?", rate:"Rough $/m² for a finish like this?", visit:"Can we meet Friday?", costplus:"Is cost-plus actually open book?", water:"When is waterproofing?", drawing:"What’s happening with the island overhang?", stone:"What’s the $4,200 pause?", photo:"Can we have an extra photo of the island?", timeline:"Can you walk this house from the start?" };
+      const qmap = { taps:"Why did the brass taps come in over the quote?", rate:"Rough $/m² for a finish like this?", visit:"Can we meet Friday?", costplus:"Is cost-plus actually open book?", water:"When is waterproofing?", drawing:"What’s happening with the island overhang?", stone:"What’s the $4,200 pause?", photo:"Can we have an extra photo of the island?", timeline:"Can you show this job from the start?" };
       addMsg(box, "You", qmap[kind] || "Can you help?", true);
       addMsg(box, "Truft", replyFor(kind), false);
       if (kind === "visit") { const cal = document.getElementById("calStrip"); if (cal) cal.hidden = false; }
@@ -1928,7 +1928,7 @@
       document.getElementById("ownerReqs").insertBefore(li, document.getElementById("ownerReqs").firstChild);
       document.getElementById("reqAck").textContent = "Written to Henson Way.";
       document.getElementById("reqNote").value = "";
-      logUsage("Just now", "Request · this house", "Owner request · waiting on Truft");
+      logUsage("Just now", "Request · this job", "Owner request · waiting on Truft");
       toast("Request sent.");
     });
     document.getElementById("postUpdate").addEventListener("click", () => {
