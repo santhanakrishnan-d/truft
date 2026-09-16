@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Truft · how this would run</title>
-  <meta name="description" content="My proposal for Truft: the sample is powered by workweaver.ai, built by bitfoundry.ai. How evals, skills, your tools, and your own hosting would run." />
+  <meta name="description" content="My proposal to Truft. What a homeowner would feel, what we would set up, what it costs, and the papers if you agree." />
   <link rel="icon" href="assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,10 +49,10 @@
     .brand { text-decoration: none; color: inherit; min-width: 96px; }
     .wordmark { font-family: var(--font-brand); font-weight: 700; letter-spacing: 0.16em; font-size: 22px; line-height: 1; }
     .brand small { display: block; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-dark-dim); margin-top: 3px; }
-    .top-nav { display: flex; justify-content: center; gap: 4px; flex-wrap: wrap; }
+    .top-nav { display: flex; justify-content: center; gap: 2px; flex-wrap: wrap; }
     .top-nav a {
-      color: var(--on-dark-dim); text-decoration: none; padding: 18px 11px 14px;
-      font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--on-dark-dim); text-decoration: none; padding: 18px 10px 14px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
       border-bottom: 2px solid transparent;
     }
     .top-nav a[aria-current="page"] { color: var(--on-dark); border-bottom-color: var(--on-dark); }
@@ -73,7 +73,7 @@
     }
 
     .hero {
-      min-height: min(72vh, 640px); position: relative; overflow: hidden; color: var(--on-dark);
+      min-height: min(64vh, 560px); position: relative; overflow: hidden; color: var(--on-dark);
       display: flex; align-items: flex-end;
     }
     .hero img.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; max-width: none; }
@@ -89,7 +89,7 @@
     h1 { font-family: var(--font-brand); font-weight: 600; letter-spacing: 0.02em; font-size: clamp(32px, 5vw, 56px); line-height: 1.05; text-transform: uppercase; }
     h2 { font-family: var(--font-brand); font-size: clamp(22px, 3vw, 32px); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
     h3 { font-size: 18px; font-weight: 600; }
-    .lede { font-size: 19px; color: var(--on-dark); max-width: 42ch; margin: 0; }
+    .lede { font-size: 19px; color: var(--on-dark); max-width: 44ch; margin: 0; }
     .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
     .wrap.narrow { width: min(760px, calc(100% - 40px)); }
     p { margin: 0 0 14px; color: var(--ink-soft); }
@@ -119,6 +119,7 @@
     .toc span { display: block; font-size: 13px; color: var(--ink-soft); }
 
     .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+    .trio { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; }
     .card { background: var(--white); border: var(--hairline) solid var(--line); padding: 22px 20px; }
     .band.navy .card { background: rgba(250,252,249,0.04); border-color: rgba(250,252,249,0.18); }
     .card .n { font-family: var(--font-brand); letter-spacing: 0.14em; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
@@ -163,6 +164,9 @@
     details summary::after { content: " +"; color: var(--muted); font-weight: 400; }
     details[open] summary::after { content: " −"; }
     details .why { padding: 0 16px 16px; color: var(--ink-soft); }
+    .band.navy details { background: rgba(250,252,249,0.04); border-color: rgba(250,252,249,0.18); }
+    .band.navy details summary { color: var(--on-dark); }
+    .band.navy details .why { color: var(--on-dark-dim); }
 
     .money {
       display: grid; grid-template-columns: 1.2fr 1fr 1.2fr; gap: 0;
@@ -186,6 +190,28 @@
       content: ""; position: absolute; left: 0; top: 16px; width: 12px; height: 12px;
       border: 1px solid var(--navy);
     }
+    .band.navy .checklist li { border-bottom-color: rgba(250,252,249,0.18); }
+    .band.navy .checklist li::before { border-color: var(--on-dark); }
+
+    .path { list-style: none; padding: 0; counter-reset: path; margin: 22px 0; }
+    .path li {
+      counter-increment: path; padding: 16px 16px 16px 56px; margin: 0 0 4px;
+      background: var(--white); border: var(--hairline) solid var(--line);
+      position: relative;
+    }
+    .path li::before {
+      content: counter(path, decimal-leading-zero);
+      position: absolute; left: 14px; top: 16px;
+      font-family: var(--font-brand); letter-spacing: 0.08em; color: var(--muted);
+    }
+    .band.navy .path li { background: rgba(250,252,249,0.04); border-color: rgba(250,252,249,0.18); color: var(--on-dark-dim); }
+    .band.navy .path li strong { color: var(--on-dark); }
+
+    .note {
+      border: var(--hairline) solid var(--line); background: var(--white);
+      padding: 14px 16px; font-size: 14px; color: var(--ink-soft); margin: 18px 0 0;
+    }
+    .band.navy .note { background: rgba(250,252,249,0.04); border-color: rgba(250,252,249,0.18); color: var(--on-dark-dim); }
 
     .who-marks {
       display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
@@ -218,7 +244,7 @@
     .row-btns { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 18px; }
 
     @media (max-width: 900px) {
-      .toc, .pair, .compare, .five, .money, .iso { grid-template-columns: 1fr; }
+      .toc, .pair, .compare, .five, .money, .iso, .trio { grid-template-columns: 1fr; }
       .iso .vs { display: none; }
       .money div { border-right: 0; border-bottom: var(--hairline) solid rgba(250,252,249,0.18); }
       .top { grid-template-columns: 1fr auto; height: auto; padding: 10px 14px; }
@@ -243,13 +269,13 @@
     </a>
     <nav class="top-nav" aria-label="On this page">
       <a href="#who">Who</a>
-      <a href="#bots">Same bot</a>
-      <a href="#bar">Evals</a>
-      <a href="#skills">Skills</a>
-      <a href="#why">Why this</a>
-      <a href="#jobs">Your tools</a>
-      <a href="#keys">Hosting</a>
-      <a href="#costs">Cost</a>
+      <a href="#chat">Chat</a>
+      <a href="#checks">Checks</a>
+      <a href="#process">Process</a>
+      <a href="#tools">Your tools</a>
+      <a href="#where">Where it lives</a>
+      <a href="#money">Money</a>
+      <a href="#agree">If you agree</a>
     </nav>
     <div class="top-end">
       <a class="how-run" href="https://www.bitfoundry.ai" rel="noopener">
@@ -265,15 +291,15 @@
     <section class="hero">
       <img class="hero-photo" src="assets/gallery/henson-04.jpg" alt="Henson Way kitchen, illustrative of a Truft project" />
       <div class="hero-copy">
-        <p class="kicker">A proposal to Truft · Norwest</p>
-        <h1>Built on Transparency.<br>Engineered for Value.</h1>
-        <p class="lede">This page is my note after the walkthrough. How I would run this for you. What a homeowner would feel. What we would set up. What it costs.</p>
+        <p class="kicker">A proposal to Truft</p>
+        <h1>How I would run this for you.</h1>
+        <p class="lede">What a homeowner would feel. What we would set up. What it costs. The papers if you agree.</p>
       </div>
     </section>
 
     <section class="wrap narrow prose" id="who">
       <p class="kicker">Start here</p>
-      <h2>Workweaver is the product.<br>Bit Foundry is the company.</h2>
+      <h2>I built Workweaver. Bit Foundry is my company.</h2>
       <div class="who-marks">
         <a href="https://www.bitfoundry.ai" rel="noopener">
           <img class="seal" src="assets/bitfoundry-logo.png" alt="Bit Foundry" width="72" height="72" />
@@ -284,7 +310,7 @@
           <span>workweaver.ai</span>
         </a>
       </div>
-      <p>The sample at <a href="index.html">truft.bitfoundry.ai</a> is powered by <a href="https://workweaver.ai"><strong>workweaver.ai</strong></a>, built by <a href="https://www.bitfoundry.ai"><strong>bitfoundry.ai</strong></a>. I built Workweaver. Bit Foundry is my company. This page is my proposal to you, after you have walked the sample.</p>
+      <p>The sample at <a href="index.html">truft.bitfoundry.ai</a> is powered by <a href="https://workweaver.ai"><strong>workweaver.ai</strong></a>, built by <a href="https://www.bitfoundry.ai"><strong>bitfoundry.ai</strong></a>. This page is my proposal to you, after you have walked the sample.</p>
       <p>You would not be buying a chatbot bolted onto WordPress. You would be a customer of Workweaver. I would customise it and connect it to the tools you already use. Truft stays the builder. Homeowners still talk to Truft: a person, or Truft technology speaking as Truft. Never another company’s name on the thread.</p>
       <p>The public website can stay <a href="https://truft.com.au">truft.com.au</a>. That site would also host the customer portal and the office application, on infrastructure you control: your own machines, or a cloud you choose. I do the custom work and the integrations. I do not take your customer files into a Bit Foundry account.</p>
       <div class="row-btns">
@@ -299,22 +325,22 @@
 
     <nav class="wrap" aria-label="Contents" style="padding-top:0">
       <div class="toc">
-        <a href="#bots"><b>01 · Same bot</b><span>Website, WhatsApp, email, SMS. Who they are decides what they see.</span></a>
-        <a href="#bar"><b>02 · Evals</b><span>Tiny yes-or-no checks. That is how the work gets better.</span></a>
-        <a href="#skills"><b>03 · Skills</b><span>Your process, written once. It improves the more it is used.</span></a>
-        <a href="#why"><b>04 · Why this</b><span>Pick the model. Connect your tools. Fixes help every customer.</span></a>
-        <a href="#jobs"><b>05 · Your tools</b><span>BuildPass and Xero stay the record. The bot looks them up per job.</span></a>
-        <a href="#keys"><b>06 · Hosting</b><span>On your infrastructure. I do not hold a standing key.</span></a>
-        <a href="#costs"><b>07 · Six months</b><span>Design and scope first. Build when the picture is clear.</span></a>
-        <a href="#walk"><b>08 · If this is it</b><span>Walk the sample. Open the office. Then we talk.</span></a>
+        <a href="#chat"><b>Chat</b><span>Website, WhatsApp, email, SMS. Same bot. Who they are decides what they see.</span></a>
+        <a href="#checks"><b>Checks</b><span>Tiny yes-or-no tests. That is how the work gets better.</span></a>
+        <a href="#process"><b>Process</b><span>How Truft already works, written once. It improves the more it is used.</span></a>
+        <a href="#why"><b>Why this</b><span>Pick the model. Connect your tools. Fixes help every customer.</span></a>
+        <a href="#tools"><b>Your tools</b><span>BuildPass and Xero stay the record. The bot looks them up per job.</span></a>
+        <a href="#where"><b>Where it lives</b><span>On your infrastructure. I do not hold a standing key.</span></a>
+        <a href="#money"><b>Money</b><span>Design first. Then build. Invoice in Australian dollars.</span></a>
+        <a href="#agree"><b>If you agree</b><span>NDA, contract, access, and who sits in the middle.</span></a>
       </div>
     </nav>
 
-    <section class="band navy" id="bots">
+    <section class="band navy" id="chat">
       <div class="wrap">
         <p class="kicker">Reach people where they already are</p>
-        <h2>One Truft bot. Many places.</h2>
-        <p>The same bot powers the website chat, WhatsApp, email, and SMS. It is not two companies, and it is not three different memories. Who is writing decides what they can see.</p>
+        <h2>The same chat on the website, WhatsApp, email, and SMS.</h2>
+        <p>One bot. Not two companies, and not three different memories. Who is writing decides what they can see.</p>
         <div class="pair" style="margin-top:22px">
           <article class="card">
             <div class="n">Before they are a customer</div>
@@ -334,7 +360,7 @@
     <section class="band">
       <div class="wrap" style="padding-bottom:16px">
         <p class="kicker">What a homeowner feels</p>
-        <h2>From a name to keys</h2>
+        <h2>From the first name to the keys.</h2>
       </div>
       <div class="five">
         <article style="background-image:url('assets/gallery/mustang-01.jpg')">
@@ -360,11 +386,11 @@
       </div>
     </section>
 
-    <section class="band grey" id="bar">
+    <section class="band grey" id="checks">
       <div class="wrap">
-        <p class="kicker">How to think in work you can check</p>
-        <h2>Evals are tiny yes-or-no checks.</h2>
-        <p>An eval is a micro success test. A micro definition of done. A checkable yes or no. That is the engine. Not more words. Better checks.</p>
+        <p class="kicker">How the work gets better</p>
+        <h2>Tiny yes-or-no checks.</h2>
+        <p>A check is a small success test. Yes or no. That is the engine. Not more words. Better checks. (If you hear me say “eval”, I mean this.)</p>
         <p>You already think this way on site. Waterproofing is booked Thursday 10:00, or it is not. The $4,200 stone repair is signed, or it is not. The brass taps match variation 12, or they do not. Write those checks down. The bot has to pass them before anything leaves.</p>
         <div class="compare" style="margin:22px 0">
           <article class="card wrong">
@@ -376,22 +402,22 @@
             <p>Before a note, a comment, or a WhatsApp leaves, it is scored against Truft’s own checks: sounds like you, sticks to facts, does not invent a date, does not spend. Below the mark, it waits on you. A held note teaches the next one.</p>
           </article>
         </div>
-        <p>Turn your constraints into evals. “Never invent a price per square metre.” “Unsigned spend does not move.” “Henson Way cannot see Mustang Ave.” “A public Instagram reply may offer a visit. It may not open a live job.” Better evals make a better agent. Skills then improve until they beat that bar.</p>
+        <p>Turn your rules into checks. “Never invent a price per square metre.” “Unsigned spend does not move.” “Henson Way cannot see Mustang Ave.” “A public Instagram reply may offer a visit. It may not open a live job.” Better checks make a better agent. The written process then improves until it beats that mark.</p>
         <p>Idle software is not billed as work. When a step runs, a WhatsApp is answered, or a follow-up is drafted, those minutes are written on a calendar you can see. That is the timesheet.</p>
       </div>
     </section>
 
-    <section class="wrap" id="skills">
+    <section class="wrap" id="process">
       <p class="kicker">How you train it</p>
-      <h2>A skill is your process, written down.</h2>
+      <h2>Your process, written down.</h2>
       <p>You would not hire a junior and say “be helpful.” You would walk them through a variation: quoted this, actual that, because the finish changed on site, and never invent a date that is not in the programme. You would tell them what not to say on Instagram. You would tell them that unsigned spend waits.</p>
-      <p>That packet is a <strong>skill</strong>. It is an SOP. A process you already have, turned into something the bot can run. It improves the more it is used. A held note teaches the next one. A rumour you mark false stays gone.</p>
-      <p>Skills run in named time blocks. You see them on a calendar. That is accountability, not a black box.</p>
-      <p>The first two skills that must sound like you are usually these: explain a variation, and reply on Instagram. Everything else waits until those two would make you proud.</p>
+      <p>That packet is your process. An SOP. Turned into something the bot can run. It improves the more it is used. A held note teaches the next one. A rumour you mark false stays gone. (If you hear me say “skill”, I mean this.)</p>
+      <p>These run in named time blocks. You see them on a calendar. That is accountability, not a black box.</p>
+      <p>The first two that must sound like you are usually these: explain a variation, and reply on Instagram. Everything else waits until those two would make you proud.</p>
       <details>
         <summary>Why write it down instead of just chatting with a model?</summary>
         <div class="why">
-          <p>A chat is a conversation. It forgets. A skill is a job with a name, a pass mark, and a record. When the junior is good, you keep the training. When a note fails, that failure teaches the next one. When a cheaper, faster writer appears next year, you can move the same skill onto it, if it still passes the bar. Chat does not give you that. Training does.</p>
+          <p>A chat is a conversation. It forgets. A written process is a job with a name, a pass mark, and a record. When the junior is good, you keep the training. When a note fails, that failure teaches the next one. When a cheaper, faster writer appears next year, you can move the same process onto it, if it still passes the checks. Chat does not give you that. Training does.</p>
         </div>
       </details>
     </section>
@@ -399,8 +425,8 @@
     <section class="band navy" id="why">
       <div class="wrap">
         <p class="kicker">Why Workweaver</p>
-        <h2>The agent should get more valuable the more it works.</h2>
-        <p>You pick the writer. Everyday, careful, or fast. A cheaper writer that fails the eval does not go live. You are not locked to one vendor’s meter. You are locked to Truft’s standard.</p>
+        <h2>It should get better the more you use it.</h2>
+        <p>You pick the writer. Everyday, careful, or fast. A cheaper writer that fails the checks does not go live. You are not locked to one vendor’s meter. You are locked to Truft’s standard.</p>
         <p>Workweaver connects the tools you already have. BuildPass. Xero. WhatsApp. Email. Calendar. The website. The office application. New tools later, without starting again.</p>
         <p>The map of how Truft works is the grammar of the business: cost-plus, the 28 steps, what you will never say, which spend waits. Feed that in. Edit every line. The bots cannot cross it. The richer the map, the less you repeat yourself.</p>
         <p>When a problem is fixed for one customer, that fix helps every customer. Workweaver stays on the front of the AI wave so you do not have to chase tools yourself.</p>
@@ -411,11 +437,11 @@
       </div>
     </section>
 
-    <section class="wrap" id="jobs">
+    <section class="wrap" id="tools">
       <p class="kicker">Henson Way is not Mustang Ave</p>
       <h2>Job facts stay in your tools.</h2>
-      <p>BuildPass stays the record for photos, defects, drawings, and the programme. Xero stays the record for invoices, margin, and contingency. The bot looks those up for <em>that</em> job. It does not keep Priya’s invoice in a search pile that can mix with another customer.</p>
-      <p>WorkMemory is not the system of record. It holds how Truft works: voice, evals, skills, standing rules. Pointers, not the books. If job cost and progress lived in a mixed search pile, Henson Way could bleed into Mustang Ave. That is not good enough for a builder. So the bot asks your tools, per job, and stops if the lookup is not clean.</p>
+      <p>BuildPass stays the record for photos, defects, drawings, and the programme. Xero stays the record for invoices, margin, and contingency. The bot looks those up for <em>that</em> job. It does not keep one customer’s invoice in a search pile that can mix with another customer.</p>
+      <p>WorkMemory is not the system of record. It holds how Truft works: voice, checks, process, standing rules. Pointers, not the books. If job cost and progress lived in a mixed search pile, Henson Way could bleed into Mustang Ave. That is not good enough for a builder. So the bot asks your tools, per job, and stops if the lookup is not clean.</p>
       <div class="iso" style="margin:22px 0">
         <article class="card">
           <h3>Henson Way · week 38</h3>
@@ -433,7 +459,7 @@
     <section class="band photo" id="progress" style="background-image:linear-gradient(rgba(25,34,49,.55), rgba(25,34,49,.55)), url('assets/gallery/henson-06.jpg')">
       <div class="wrap">
         <p class="kicker">From nothing to now</p>
-        <h2>A project has a timeline. The bot can walk it.</h2>
+        <h2>The job has a timeline. The bot can walk it.</h2>
         <p>Not a status emoji. A scroll from first note to this week, sitting on the portal and inside the signed-in chat.</p>
       </div>
     </section>
@@ -450,9 +476,9 @@
           <p>303/4 Columbia Ct. The open book on the table.</p>
         </article>
         <article>
-          <div class="when">Plan &amp; approve</div>
+          <div class="when">Plan and approve</div>
           <h3>The file opens</h3>
-          <p>Permits, pour, the first photos. Structure is not a finish you value-engineer later.</p>
+          <p>Permits, pour, the first photos. Structure is not a finish you cheapen later.</p>
         </article>
         <article>
           <div class="when">Structure</div>
@@ -471,7 +497,7 @@
         </article>
         <article class="now">
           <div class="when">Week 38 · now</div>
-          <h3>A pause in the open</h3>
+          <h3>Spend waiting on a yes</h3>
           <p>Island stone $4,200 unsigned. Waterproofing Thursday 10:00. Tiling waits for cure.</p>
         </article>
         <article>
@@ -482,7 +508,7 @@
       </div>
     </div>
 
-    <section class="wrap" id="keys">
+    <section class="wrap" id="where">
       <p class="kicker">Where it lives, and who can look</p>
       <h2>On your infrastructure. Not in my account.</h2>
       <p>The customer portal and the office application sit with <strong>truft.com.au</strong>, on machines you control. Your own data centre, or any cloud you choose. I customise and integrate. Names, photos, invoices, and WhatsApp stay yours.</p>
@@ -497,11 +523,11 @@
       </details>
     </section>
 
-    <section class="band grey" id="costs">
+    <section class="band grey" id="money">
       <div class="wrap">
-        <p class="kicker">Spoken plainly</p>
+        <p class="kicker">What it costs</p>
         <h2>Six months to design. Then we build.</h2>
-        <p>The first six months are not “switch it on tomorrow.” They are design, refine, and scope. We sit with how Truft already works. We write the first evals and skills. We prove them on a real job. Closer to the end of that window, we are ready to roll out.</p>
+        <p>The first six months are not “switch it on tomorrow.” They are design, refine, and scope. We sit with how Truft already works. We write the first checks and the first written process. We prove them on a real job. Closer to the end of that window, we are ready to roll out.</p>
         <div class="money" style="margin:22px 0">
           <div>
             <span>Design · 6 months</span>
@@ -519,7 +545,8 @@
             <p>WhatsApp, phone, and SMS stay on your accounts, at the supplier’s price. You see those bills.</p>
           </div>
         </div>
-        <p>If you stop, at month six or later, you can <strong>download the evals and skills</strong> and <strong>delete the account</strong>. BuildPass remains the record for defects, photos, and site notes. Xero remains the record for money. You are not stranded in a vendor you did not choose.</p>
+        <p>If you stop, at month six or later, you can <strong>download the checks and the written process</strong> and <strong>delete the account</strong>. BuildPass remains the record for defects, photos, and site notes. Xero remains the record for money. You are not stranded in a vendor you did not choose.</p>
+        <p>I invoice in Australian dollars. How that payment lands in India is in <a href="#pay">How you pay me</a>.</p>
       </div>
     </section>
 
@@ -536,7 +563,7 @@
       <details>
         <summary>The site file stays in BuildPass</summary>
         <div class="why">
-          <p>Photos, defects, the programme, and the handset on site already live there. Copying them into a second system is how facts drift. On a Pro plan you switch on a machine door (Oceania). Published today: projects, photos, defects, meetings, timesheets. If a drawing field is not on that list yet, we use what is published and ask them. We do not invent it.</p>
+          <p>Photos, defects, the programme, and the handset on site already live there. Copying them into a second system is how facts drift. On a Pro plan you switch on a published connection (Oceania). Published today: projects, photos, defects, meetings, timesheets. If a drawing field is not on that list yet, we use what is published and ask them. We do not invent it.</p>
         </div>
       </details>
       <details>
@@ -553,18 +580,35 @@
       </details>
     </section>
 
-    <section class="band navy" id="walk">
+    <section class="band navy" id="agree">
       <div class="wrap">
-        <p class="kicker">If this is what you want</p>
-        <h2>Walk the sample. Open the office. Then we talk.</h2>
-        <ol class="checklist">
-          <li>Walk the sample at <a href="index.html">truft.bitfoundry.ai</a>. Leave a name. Ask Truft. Sign in to Henson Way. Approve the pause.</li>
-          <li>Open the Truft office on that same sample. See Today, Leads, the site file, and the books. You should not need to guess how admin would look.</li>
-          <li>Confirm the BuildPass plan so the machine connection is real.</li>
-          <li>Click Allow on Xero for the organisation. Say whether jobs are costed there as projects.</li>
-          <li>Start the WhatsApp Business account in the company name. Keep 02 7235 0833 on the card.</li>
-          <li>Name the first two skills that must sound like you. Likely: explain a variation, and reply on Instagram.</li>
+        <p class="kicker">If you agree</p>
+        <h2>Papers first. Then access. Then I invoice.</h2>
+        <p>Walk the sample. Open the office. If this is what you want, we do not start on a handshake. We sign, then I bill, then you open the doors I need.</p>
+        <ol class="path">
+          <li><strong>Walk the sample</strong> at <a href="index.html">truft.bitfoundry.ai</a>. Leave a name. Ask Truft. Sign in to Henson Way. Open the Truft office. See Today, Leads, the site file, and the books.</li>
+          <li><strong>We both sign an NDA.</strong> Talks, prices, and customer facts stay private. Mutual. Indian law. Courts at Coimbatore, India.</li>
+          <li><strong>We both sign a services contract</strong> that a court in Coimbatore, India can hear. Same law. Same city. That paper names the work, the money, the access, and who sits in the middle if we disagree. I send a draft. Your lawyer reads it. Mine does too.</li>
+          <li><strong>I send the first invoice</strong> in Australian dollars, from BitFoundry Tech (OPC) Private Limited to SS Developers Pty Ltd trading as Truft (or the entity you name). You pay by bank transfer. Details are on the invoice, not on this public page. See <a href="#pay">How you pay me</a>.</li>
+          <li><strong>You give access, and you keep the domain.</strong> You name a person I can call for machines, cloud, BuildPass, and Xero. For truft.com.au you keep ownership. You either paste the DNS records I send, name the person who can, or point nameservers while the domain stays yours. I do not need you to transfer the domain to me.</li>
         </ol>
+        <div class="trio" style="margin-top:22px">
+          <article class="card">
+            <div class="n">Who sits in the middle</div>
+            <h3>Sakthi Narayanan</h3>
+            <p>Australian. A person, not a registered company. Day to day he is the liaison between Bit Foundry and Truft. If we both name him in the contract, he can also decide a dispute, and that decision binds both of us. See the note below on how that can be legal.</p>
+          </article>
+          <article class="card">
+            <div class="n">Where a fight is heard</div>
+            <h3>Coimbatore, India</h3>
+            <p>The contract is under Indian law. Courts at Coimbatore for the papers, for urgent orders, and to help the process. Money disputes go to a named decision-maker first, so the result can actually be used in Australia. Plain version below.</p>
+          </article>
+          <article class="card">
+            <div class="n">How money moves</div>
+            <h3>Invoice in AUD. HDFC in India.</h3>
+            <p>You pay Australian dollars from your bank to my company’s HDFC current account in India. SWIFT. Two to five working days. I do not put the account number on this page.</p>
+          </article>
+        </div>
         <div class="row-btns">
           <a class="btn light" href="index.html">Open the walkthrough</a>
           <a class="btn ghost on-dark how-run" href="https://www.bitfoundry.ai" rel="noopener" style="color:var(--on-dark);border-color:var(--on-dark)">
@@ -573,6 +617,113 @@
           </a>
           <a class="btn ghost" href="https://workweaver.ai" rel="noopener" style="color:var(--on-dark);border-color:var(--on-dark)">Workweaver</a>
         </div>
+        <p class="note">This page is my proposal. It is not legal advice and it is not tax advice. Each company should have its own lawyer and accountant read the NDA, the contract, and the invoice before anyone signs or pays.</p>
+      </div>
+    </section>
+
+    <section class="wrap" id="sakthi">
+      <p class="kicker">Liaison and, if we both say so, the decision-maker</p>
+      <h2>Sakthi Narayanan can sit in the middle.</h2>
+      <p>Sakthi is Australian. He is not a registered company. I still want him in two jobs, if you agree in writing:</p>
+      <ol>
+        <li><strong>Liaison.</strong> He helps Bit Foundry and Truft talk. Day to day. This is not a court. Emails, calls, “what did we mean.” Either company can still talk to me direct.</li>
+        <li><strong>Decision-maker on a dispute.</strong> If we both name him in the contract, he can hear a commercial fight and write a decision that binds both companies. That is the arbiter.</li>
+      </ol>
+      <p>Those are two hats. They must stay written as two hats. A liaison who hides that he is also the judge is how a decision gets thrown out.</p>
+      <details open>
+        <summary>Is this allowed if he is not a company?</summary>
+        <div class="why">
+          <p>Yes, a person can do this. He does not need to be a company, a lawyer, or Indian. Indian arbitration law says a person of any nationality may be an arbitrator unless we agree otherwise. He does not need a registered ADR firm.</p>
+          <p>What is not allowed: I name him on my own. After the CORE II / Perkins line of cases, a sole arbitrator picked by only one side does not stand. <strong>Both companies must name him in the signed contract.</strong></p>
+          <p>He must write, in that same paper, that he introduced us and that he is also the liaison. If he is too close to one side and that is hidden, a court can set the decision aside. If a dispute is about him, or either company later says he cannot be fair, he steps aside.</p>
+          <p><strong>Fallback:</strong> we jointly pick another person within 21 days. If we cannot, Indian law appoints one. That is the safety net so the work is not stuck on one name.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Why Coimbatore courts, and also a named decision?</summary>
+        <div class="why">
+          <p>You asked for a contract a court in Coimbatore can hear. That is in the paper: Indian law, courts at Coimbatore for the NDA, the contract, urgent orders, and help with the process.</p>
+          <p>A Coimbatore court money judgment is slower to collect against an Australian company. India is not on Australia’s short list of countries whose court judgments are registered quickly.</p>
+          <p>A written arbitration decision seated in India is the usual path Australia recognises for a commercial award (New York Convention). So the contract does both: Coimbatore courts as you asked, and a named person (Sakthi, if we both agree) so a money decision can actually travel. English language. Seat in India.</p>
+        </div>
+      </details>
+      <details>
+        <summary>What you keep, and what you open</summary>
+        <div class="why">
+          <p>You keep <strong>truft.com.au</strong>. I do not need the domain transferred to Bit Foundry. You name a point of contact who can change DNS, or you paste the records I send, or you point nameservers while the registration stays in your name.</p>
+          <p>You give access to the infrastructure you choose: your machines or your cloud, plus BuildPass and Xero with your say-so. I do not take a standing key. If I need to look, you open a ticket, we name who looks, and you can sit on the call.</p>
+          <p>WhatsApp Business, the 02 number, and SMS stay in Truft’s name, on your accounts.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="band grey" id="pay">
+      <div class="wrap">
+        <p class="kicker">Billing a customer in Australia</p>
+        <h2>How you pay me in Australian dollars.</h2>
+        <p>Bit Foundry is an Indian company. You are an Australian customer. The invoice is still in AUD. You do not need an Indian bank account. I do not need an Australian bank account for this path.</p>
+        <div class="trio" style="margin-bottom:22px">
+          <article class="card">
+            <div class="n">On the invoice</div>
+            <h3>From me, to you, in AUD</h3>
+            <p>From: BitFoundry Tech (OPC) Private Limited. To: SS Developers Pty Ltd trading as Truft, or the entity you name. Amount in AUD. Description of the work. My GST treatment. SWIFT details for HDFC Bank. Invoice number and due date.</p>
+          </article>
+          <article class="card">
+            <div class="n">How it travels</div>
+            <h3>SWIFT from your bank</h3>
+            <p>Your Australian bank sends Australian dollars to HDFC Bank in India. Bank name HDFC Bank Ltd. SWIFT HDFCINBB or HDFCINBBXXX (I confirm the branch code on the invoice). Two to five working days. Correspondent bank is usually ANZ for AUD. Your bank may charge a wire fee.</p>
+          </article>
+          <article class="card">
+            <div class="n">What I do not do</div>
+            <h3>No public account number</h3>
+            <p>Account number, IFSC, and customer ID go on the invoice and in a mail to the person who pays. Not on this website. Not a personal account. Not PayPal as the main path.</p>
+          </article>
+        </div>
+        <details open>
+          <summary>GST, in plain words</summary>
+          <div class="why">
+            <p>I do not add Indian GST on the invoice if this is an export of services and you pay in foreign currency. My accountant files the LUT (Letter of Undertaking) so the export can go out at nil Indian tax. If that filing is not in place, I would have to add Indian IGST. I will not invoice until that is confirmed with my CA.</p>
+            <p>I do not add Australian GST. I am not registered for GST in Australia. Your accountant may have a reverse-charge on imported services. That is your side. I put a line on the invoice: supply of services from India; recipient to consider Australian GST.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Does the money stay in dollars, or turn into rupees?</summary>
+          <div class="why">
+            <p>If it lands in my ordinary HDFC current account, HDFC converts AUD to INR at their rate that day. That is the default.</p>
+            <p>HDFC also offers an EEFC account (Exchange Earners’ Foreign Currency). AUD is one of the currencies they list. That account can hold the dollars for a time, with no interest. Unused amounts received in a calendar month have to be converted to rupees by the last day of the next month, unless they are used for allowed purposes. I will confirm with HDFC’s trade desk whether to open that, so a 500 dollar invoice is not forced through a bad conversion the same afternoon.</p>
+            <p>When the money lands, the bank issues FIRC / e-FIRA. That is the proof the export was paid in foreign currency. I keep it with the invoice.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What you write on the transfer</summary>
+          <div class="why">
+            <p>Beneficiary: BitFoundry Tech (OPC) Private Limited. Invoice number in the reference. Purpose: export of IT / software services. I will put the bank’s purpose code on the invoice after I confirm it with HDFC and my CA (IEC and AD code sit with the bank). If the purpose code is wrong, the credit can sit or bounce. We get that line right once, then reuse it.</p>
+            <p>You pay the AUD amount on the invoice. Any SWIFT fee your bank takes is yours unless we write otherwise. I will not ask you to pay in rupees.</p>
+          </div>
+        </details>
+        <p>I will confirm the exact SWIFT, purpose code, and LUT status with HDFC and my chartered accountant before the first invoice goes out. The contract will say: invoice in AUD, pay by SWIFT to the Indian company account named on the invoice, due in 14 days unless we write another date.</p>
+      </div>
+    </section>
+
+    <section class="wrap" id="walk">
+      <p class="kicker">Before the papers</p>
+      <h2>Walk the sample. Then we talk.</h2>
+      <ol class="checklist">
+        <li>Walk the sample at <a href="index.html">truft.bitfoundry.ai</a>. Leave a name. Ask Truft. Sign in to Henson Way. Approve the pause.</li>
+        <li>Open the Truft office on that same sample. See Today, Leads, the site file, and the books. You should not need to guess how admin would look.</li>
+        <li>Confirm the BuildPass plan so the machine connection is real.</li>
+        <li>Click Allow on Xero for the organisation. Say whether jobs are costed there as projects.</li>
+        <li>Start the WhatsApp Business account in the company name. Keep 02 7235 0833 on the card.</li>
+        <li>Name the first two pieces of process that must sound like you. Likely: explain a variation, and reply on Instagram.</li>
+        <li>If that still feels right: NDA, then the Coimbatore contract, then the invoice, then access. <a href="#agree">If you agree</a>.</li>
+      </ol>
+      <div class="row-btns">
+        <a class="btn" href="index.html">Open the walkthrough</a>
+        <a class="btn ghost how-run" href="https://www.bitfoundry.ai" rel="noopener">
+          <img src="assets/bitfoundry-logo.png" alt="" width="22" height="22" />
+          bitfoundry.ai
+        </a>
+        <a class="btn ghost" href="https://workweaver.ai" rel="noopener">Workweaver</a>
       </div>
     </section>
   </main>
