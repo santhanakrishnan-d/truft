@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Truft | Open-Book Cost-Plus Home Builders | Northwest Sydney</title>
+  <meta name="description" content="Built on transparency, engineered for value. Truft is a cost-plus custom builder for North West Sydney’s knockdown-rebuild and premium land estates — every dollar visible, every decision proactive." />
+  <link rel="icon" href="assets/favicon.png" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Truft","legalName":"SS Developers Pty Ltd","url":"https://truft.com.au","telephone":"+61272350833","email":"sharang@truft.com.au","address":{"@type":"PostalAddress","streetAddress":"303/4 Columbia Ct","addressLocality":"Norwest","addressRegion":"NSW","postalCode":"2153","addressCountry":"AU"},"areaServed":"North West Sydney","slogan":"Built on Transparency. Engineered for Value."}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #192231; --panel: #172935; --stage-rail: #394b57;
+      --paper: #fafcf9; --footer-grey: #e3e4e8; --white: #ffffff;
+      --photo-sand: #ecd5b5; --ink: #192231; --ink-soft: #3a4a56;
+      --muted: #6b7780; --line: #c8ced4; --line-strong: #394b57;
+      --on-dark: #fafcf9; --on-dark-dim: #b8c0c8;
+      --good: #2f5d46; --good-wash: #e6efea;
+      --warn: #7a4a28; --warn-wash: #f0e8e0;
+      --pause: #6e3a3a; --pause-wash: #f0e4e2;
+      --font-brand: "Oswald", "Arial Narrow", "Helvetica Neue Condensed", sans-serif;
+      --font-ui: "Source Sans 3", "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+      --radius: 0; --hairline: 1px; --rule: 2px; --max: 1280px;
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html, body { margin: 0; padding: 0; }
+    body { font-family: var(--font-ui); color: var(--ink); background: var(--paper); line-height: 1.45; }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
+    img { max-width: 100%; display: block; }
+    .cine-stage img, .split-photo img, .lb-stage img, .five article > img.kb { max-width: none; }
+    a { color: inherit; }
+    .skip { position: absolute; left: -999px; }
+    .skip:focus { left: 12px; top: 12px; background: #fff; padding: 8px 12px; z-index: 80; }
+    html { scroll-padding-top: 56px; }
+
+    .top {
+      position: sticky; top: 0; z-index: 50;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center;
+      padding: 0 22px; height: 56px; background: var(--navy); color: var(--on-dark);
+      border-bottom: var(--rule) solid var(--line-strong);
+    }
+    .brand { text-decoration: none; color: inherit; min-width: 96px; }
+    .wordmark { font-family: var(--font-brand); font-weight: 700; letter-spacing: 0.16em; font-size: 22px; line-height: 1; }
+    .brand small { display: block; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-dark-dim); margin-top: 3px; }
+    .public-nav { display: flex; justify-content: center; gap: 0; }
+    .public-nav button, .top .ghost-link {
+      border: 0; background: transparent; color: var(--on-dark-dim);
+      padding: 18px 11px 14px; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; border-bottom: 2px solid transparent;
+    }
+    .public-nav button[aria-current="page"] { color: var(--on-dark); border-bottom-color: var(--on-dark); }
+    .top-end { display: flex; align-items: center; gap: 8px; justify-self: end; }
+    .top .already {
+      border: var(--hairline) solid rgba(250,252,249,0.35); background: transparent; color: var(--on-dark);
+      padding: 7px 10px; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .icon-btn {
+      width: 34px; height: 34px; border: var(--hairline) solid rgba(250,252,249,0.28);
+      background: transparent; color: var(--on-dark); display: grid; place-items: center; padding: 0;
+    }
+    .menu-btn { display: none; }
+    .scene { display: none; min-height: calc(100vh - 56px); }
+    .scene.is-on { display: flex; flex-direction: column; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; padding: 36px 0 80px; }
+    .kicker { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+    h1, h2, h3 { margin: 0 0 10px; }
+    h1 { font-family: var(--font-brand); font-weight: 600; letter-spacing: 0.02em; font-size: clamp(30px, 4.6vw, 56px); line-height: 1.05; text-transform: uppercase; }
+    h2 { font-family: var(--font-brand); font-size: 22px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    h3 { font-size: 16px; font-weight: 600; }
+    .lede { font-size: 16px; color: var(--ink-soft); max-width: 48ch; margin: 0 0 18px; }
+    .btn {
+      display: inline-block; text-decoration: none; border: var(--hairline) solid var(--navy);
+      background: var(--navy); color: var(--on-dark); padding: 11px 16px;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px;
+    }
+    .btn.ghost { background: transparent; color: var(--navy); }
+    .btn.on-dark { color: var(--on-dark); border-color: var(--on-dark); }
+    .btn.light { background: var(--on-dark); color: var(--navy); border-color: var(--on-dark); }
+    .btn.good { background: var(--good); border-color: var(--good); color: #fff; }
+    .row-btns { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .quiet { color: var(--muted); font-size: 13px; }
+    .hint { font-size: 12px; color: var(--muted); }
+    .i {
+      width: 16px; height: 16px; border: 1px solid var(--line-strong); background: transparent;
+      color: var(--ink); font-size: 10px; font-weight: 700; line-height: 1; padding: 0; vertical-align: middle;
+    }
+    body:not(.owner-in) .after-in { display: none !important; }
+    .foot {
+      display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      padding: 16px 22px; background: var(--footer-grey); font-size: 11px;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft);
+    }
+    .present-link { border: 0; background: transparent; color: var(--ink-soft); letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; padding: 0; }
+
+    .preview-ribbon {
+      margin: 0; padding: 7px 16px; text-align: center;
+      background: #111820; color: var(--on-dark-dim);
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      border-bottom: var(--hairline) solid var(--line-strong);
+    }
+    .preview-ribbon a { color: var(--on-dark); text-underline-offset: 2px; }
+
+    /* Ken Burns — stills that feel like a moving camera */
+    @keyframes kb1 {
+      0%   { transform: scale(1.06) translate(0%, 0%); }
+      100% { transform: scale(1.22) translate(-5%, -4%); }
+    }
+    @keyframes kb2 {
+      0%   { transform: scale(1.20) translate(-4%, 3%); }
+      100% { transform: scale(1.08) translate(5%, -3%); }
+    }
+    @keyframes kb3 {
+      0%   { transform: scale(1.10) translate(4%, -2%); }
+      100% { transform: scale(1.24) translate(-3%, 5%); }
+    }
+    @keyframes kb4 {
+      0%   { transform: scale(1.18) translate(2%, 4%); }
+      100% { transform: scale(1.07) translate(-5%, -2%); }
+    }
+    @keyframes kb-bg {
+      0%   { background-position: 28% 38%; background-size: 118%; }
+      100% { background-position: 72% 58%; background-size: 134%; }
+    }
+    .kb { will-change: transform; animation: kb1 22s ease-in-out infinite alternate; }
+    .kb.d2 { animation-name: kb2; animation-duration: 26s; }
+    .kb.d3 { animation-name: kb3; animation-duration: 24s; }
+    .kb.d4 { animation-name: kb4; animation-duration: 28s; }
+
+    .cine { position: relative; overflow: hidden; background: #111; }
+    .cine-stage { position: absolute; inset: 0; }
+    .cine-stage img {
+      position: absolute; inset: -12%;
+      width: 124%; height: 124%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.7s ease;
+    }
+    .cine-stage img.is-on { opacity: 1; }
+    .cine-credit {
+      position: absolute; right: 18px; bottom: 14px; z-index: 2;
+      margin: 0; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--on-dark-dim);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: calc(100vh - 56px);
+      background: #111 center/cover no-repeat;
+      display: flex; align-items: flex-end; color: var(--on-dark); position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(90deg, rgba(25,34,49,0.78) 0%, rgba(25,34,49,0.28) 48%, rgba(25,34,49,0.08) 100%),
+                  linear-gradient(0deg, rgba(25,34,49,0.55) 0%, transparent 42%);
+    }
+    .hero-copy { position: relative; z-index: 2; width: min(var(--max), calc(100% - 40px)); margin: 0 auto; padding: 0 0 56px; }
+    .hero .kicker { color: var(--on-dark-dim); }
+    .hero h1 { max-width: 11em; }
+    .hero .lede { color: var(--on-dark); max-width: 36ch; }
+    .hero .meta { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-dark-dim); margin-top: 14px; }
+    .hero.cine { background: #111; }
+
+    /* Galleries */
+    .mosaic {
+      display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: minmax(280px, 46vh) minmax(280px, 46vh); gap: 4px;
+    }
+    .mosaic a {
+      position: relative; overflow: hidden; color: #fff; text-decoration: none; background: #111; display: block;
+    }
+    .mosaic .cine-stage { z-index: 0; }
+    .mosaic .tile-cap { z-index: 1; }
+    .mosaic a:hover .kb { animation-play-state: paused; }
+    .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 16px 14px;
+      background: linear-gradient(transparent, rgba(25,34,49,.78));
+      font-family: var(--font-brand); letter-spacing: 0.12em; text-transform: uppercase; font-size: 14px;
+    }
+    .tile-cap small { display: block; font-family: var(--font-ui); letter-spacing: 0.08em; font-size: 10px; opacity: .8; margin-top: 4px; }
+    .strip { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+    .strip button { border: 0; padding: 0; background: #111; overflow: hidden; height: 110px; position: relative; }
+    .strip img { width: 124%; height: 124%; margin: -12%; object-fit: cover; max-width: none; }
+
+    .work-cine { min-height: min(78vh, 760px); display: flex; align-items: flex-end; color: var(--on-dark); }
+    .work-cine::after {
+      content: ""; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(0deg, rgba(25,34,49,.88) 0%, rgba(25,34,49,.28) 42%, transparent 100%);
+    }
+    .work-cine .hero-copy { padding-bottom: 40px; }
+    .work-cine h1 { max-width: 12em; }
+
+    .split-photo { position: relative; overflow: hidden; min-height: 420px; background: #111; }
+    .split-photo img {
+      position: absolute; inset: -12%; width: 124%; height: 124%; object-fit: cover;
+    }
+
+    .band { padding: 48px 0; }
+    .band.navy { background: var(--navy); color: var(--on-dark); }
+    .band.navy .kicker, .band.navy .lede { color: var(--on-dark-dim); }
+    .band.navy h2 { color: var(--on-dark); }
+
+    .five {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px;
+    }
+    .five article {
+      min-height: 220px; background: #111 center/cover no-repeat; color: #fff;
+      padding: 18px 16px; display: flex; flex-direction: column; justify-content: flex-end;
+      position: relative; overflow: hidden;
+      animation: kb-bg 28s ease-in-out infinite alternate;
+    }
+    .five article:nth-child(2) { animation-duration: 32s; animation-direction: alternate-reverse; }
+    .five article:nth-child(3) { animation-duration: 24s; }
+    .five article:nth-child(4) { animation-duration: 30s; animation-direction: alternate-reverse; }
+    .five article:nth-child(5) { animation-duration: 26s; }
+    .five article::before { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent, rgba(25,34,49,.82)); }
+    .five article > * { position: relative; }
+    .five h3 { font-family: var(--font-brand); letter-spacing: 0.08em; text-transform: uppercase; font-size: 15px; }
+    .five p { margin: 0; font-size: 13px; color: var(--on-dark-dim); max-width: 28ch; }
+
+    .flow {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+      border-top: var(--hairline) solid var(--line); border-bottom: var(--hairline) solid var(--line);
+    }
+    .flow article {
+      padding: 22px 18px; border-right: var(--hairline) solid var(--line);
+    }
+    .flow article:last-child { border-right: 0; }
+    .flow .n { font-family: var(--font-brand); letter-spacing: 0.14em; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .flow h3 { font-size: 15px; margin-bottom: 6px; }
+    .flow p { margin: 0; font-size: 13px; color: var(--ink-soft); }
+
+    .split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 0; align-items: stretch; flex: 1; min-height: calc(100vh - 56px - 48px); }
+    .split > img { width: 100%; height: 100%; object-fit: cover; min-height: 420px; }
+    .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 18px; }
+    .principle {
+      text-align: left; border: var(--hairline) solid var(--line); background: var(--white); padding: 14px 14px 12px;
+    }
+    .principle strong { display: block; font-family: var(--font-brand); letter-spacing: 0.08em; text-transform: uppercase; font-size: 13px; margin-bottom: 4px; }
+    .principle span { display: none; font-size: 13px; color: var(--ink-soft); }
+    .principle.is-open span, .principle:hover span { display: block; }
+
+    .contact-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: start; }
+    .lead { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .lead .full { grid-column: 1 / -1; }
+    .field label, .lead label { display: block; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--muted); margin-bottom: 4px; }
+    input, select, textarea {
+      width: 100%; border: var(--hairline) solid var(--line); background: var(--white); color: var(--ink);
+      padding: 10px 10px; color-scheme: light;
+    }
+    .reach { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 13px; }
+    .wa-card {
+      border: var(--hairline) solid var(--line); background: var(--white); padding: 18px;
+      display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center;
+    }
+    .wa-card img { width: 120px; height: 120px; image-rendering: pixelated; }
+    .doors { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; font-size: 13px; margin-top: 14px; }
+    .doors a, .doors button { background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 3px; color: var(--ink); font-size: 13px; }
+
+    /* Process */
+    .poster-wrap { position: relative; background: #111; }
+    .poster-wrap img { width: 100%; height: auto; }
+    .stage-hot {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin-top: 8px;
+    }
+    .stage-hot button {
+      border: var(--hairline) solid var(--line); background: var(--white); padding: 12px 10px; text-align: left;
+    }
+    .stage-hot button[aria-pressed="true"] { background: var(--navy); color: var(--on-dark); }
+    .stage-hot b { display: block; font-family: var(--font-brand); letter-spacing: 0.1em; font-size: 12px; text-transform: uppercase; }
+    .stage-hot span { font-size: 12px; color: var(--muted); }
+    .stage-hot button[aria-pressed="true"] span { color: var(--on-dark-dim); }
+    .step-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-top: 16px; }
+    .step-cell {
+      border: var(--hairline) solid var(--line); background: var(--white); min-height: 92px;
+      padding: 8px; text-align: left; position: relative;
+    }
+    .step-cell .num { font-family: var(--font-brand); font-size: 11px; letter-spacing: 0.08em; color: var(--muted); }
+    .step-cell .nm { display: block; font-size: 12px; font-weight: 600; margin-top: 4px; line-height: 1.25; }
+    .step-cell.is-on { background: var(--navy); color: var(--on-dark); }
+    .step-cell.is-on .num { color: var(--on-dark-dim); }
+    .step-cell.wait::after {
+      content: "Waits"; position: absolute; top: 6px; right: 6px;
+      font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--warn);
+    }
+    .step-cell.is-on.wait::after { color: var(--photo-sand); }
+    .drill {
+      display: grid; grid-template-columns: 180px 1fr 1fr 1fr; gap: 0;
+      margin-top: 16px; border: var(--hairline) solid var(--line); background: var(--white);
+    }
+    .drill .ph { min-height: 180px; background: #111 center/cover; }
+    .drill article { padding: 16px 16px 18px; border-left: var(--hairline) solid var(--line); }
+    .drill h3 { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .drill p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+
+    /* House */
+    .house { border: var(--hairline) solid var(--line); background: var(--white); }
+    .house-bar {
+      display: flex; justify-content: space-between; gap: 12px; align-items: center;
+      padding: 14px 16px; background: var(--navy); color: var(--on-dark);
+    }
+    .house-bar small { display: block; color: var(--on-dark-dim); letter-spacing: 0.08em; text-transform: uppercase; font-size: 10px; margin-top: 3px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat { padding: 14px 16px; border-bottom: var(--hairline) solid var(--line); border-right: var(--hairline) solid var(--line); }
+    .stat:last-child { border-right: 0; }
+    .stat b { display: block; font-family: var(--font-brand); font-size: 22px; }
+    .stat span { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .tabs { display: flex; flex-wrap: wrap; border-bottom: var(--hairline) solid var(--line); }
+    .tabs button {
+      border: 0; background: transparent; padding: 12px 14px; font-size: 11px; letter-spacing: 0.1em;
+      text-transform: uppercase; font-weight: 600; color: var(--muted);
+    }
+    .tabs button[aria-selected="true"] { color: var(--navy); box-shadow: inset 0 -2px 0 var(--navy); }
+    .pane { display: none; padding: 16px; }
+    .pane.is-on { display: block; }
+    .gallery { display: grid; grid-template-columns: 1.6fr 1fr; grid-template-rows: 220px 220px; gap: 4px; }
+    .gallery img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; }
+    .gallery img:first-child { grid-row: span 2; }
+    .prog { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 12px; }
+    .prog div { background: var(--footer-grey); padding: 10px; font-size: 13px; }
+    .prog .now { background: var(--navy); color: var(--on-dark); }
+    .prog b { display: block; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
+    .diary article { padding: 10px 0; border-bottom: var(--hairline) solid var(--line); font-size: 14px; }
+    .diary time { display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .pause-banner { background: var(--pause-wash); border-left: 3px solid var(--pause); padding: 12px 14px; margin-bottom: 12px; font-size: 14px; }
+    .book { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .book th { text-align: left; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 8px 6px; border-bottom: var(--rule) solid var(--line-strong); }
+    .book td { padding: 8px 6px; border-bottom: var(--hairline) solid var(--line); }
+    .book .num { font-variant-numeric: tabular-nums; text-align: right; }
+    .book tr { cursor: pointer; }
+    .book tr:hover { background: rgba(57,75,87,0.06); }
+    .preview-banner {
+      display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap;
+      padding: 10px 0 14px; font-size: 13px; color: var(--ink-soft);
+    }
+    .chat { max-height: 280px; overflow: auto; display: flex; flex-direction: column; gap: 8px; }
+    .msg { background: var(--footer-grey); padding: 10px 12px; font-size: 14px; }
+    .msg.me { background: var(--good-wash); }
+    .msg .who { display: block; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .chat-in { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin-top: 10px; }
+    .bot-chip { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+    .login-stage { display: grid; grid-template-columns: 1fr 1fr; min-height: 70vh; }
+    .login-photo img { width: 100%; height: 100%; object-fit: cover; min-height: 420px; }
+    .login { padding: 36px 32px; display: flex; flex-direction: column; justify-content: center; }
+    .sso { display: grid; gap: 8px; margin: 16px 0; }
+    .sso button { border: var(--hairline) solid var(--line); background: var(--white); padding: 10px 12px; text-align: left; font-weight: 600; font-size: 14px; }
+    .or { text-align: center; color: var(--muted); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; margin: 8px 0; }
+    .site-list { list-style: none; padding: 0; margin: 0; }
+    .site-list li { padding: 10px 0; border-bottom: var(--hairline) solid var(--line); font-weight: 600; }
+    .site-list small { display: block; font-weight: 400; color: var(--ink-soft); margin-top: 4px; }
+    .req-list { list-style: none; padding: 0; }
+    .req-list li { padding: 8px 0; border-bottom: var(--hairline) solid var(--line); }
+    .req-list small { display: block; color: var(--muted); font-size: 12px; }
+    .drawing { display: grid; grid-template-columns: 88px 1fr; gap: 12px; align-items: center; border: var(--hairline) solid var(--line); }
+    .sheet { background: var(--navy); color: var(--on-dark); height: 100%; min-height: 88px; display: grid; place-items: center; font-family: var(--font-brand); letter-spacing: 0.12em; }
+    .money-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-bottom: 12px; }
+    .money-strip div { background: var(--footer-grey); padding: 12px; }
+    .money-strip span { display: block; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .money-strip b { font-family: var(--font-brand); font-size: 18px; }
+
+    /* Office */
+    .office-top { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 16px; }
+    .shop-pane { display: none; }
+    .shop-pane.is-on { display: block; }
+    .admin-day .row { display: grid; grid-template-columns: 72px 1fr; gap: 12px; padding: 12px 0; border-bottom: var(--hairline) solid var(--line); }
+    .admin-day .tm { font-family: var(--font-brand); letter-spacing: 0.08em; color: var(--muted); }
+    .wait { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warn); font-weight: 700; }
+    .office { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .office th { text-align: left; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 6px; border-bottom: var(--rule) solid var(--navy); }
+    .office td { padding: 9px 6px; border-bottom: var(--hairline) solid var(--line); vertical-align: top; }
+    .office tr.is-new { background: var(--good-wash); }
+    .cms-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+    .cms-grid figure { margin: 0; position: relative; background: #111; }
+    .cms-grid img { width: 100%; height: 140px; object-fit: cover; }
+    .cms-grid figcaption { position: absolute; left: 8px; bottom: 8px; color: #fff; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .social { display: grid; gap: 8px; }
+    .social article { border: var(--hairline) solid var(--line); padding: 12px 14px; background: var(--white); }
+    .social .ch { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .usage-cal { display: grid; grid-template-columns: 110px 1fr; gap: 8px 16px; }
+    .usage-cal .when { font-family: var(--font-brand); font-size: 12px; letter-spacing: 0.08em; color: var(--muted); }
+    .card { border: var(--hairline) solid var(--line); padding: 14px; background: var(--white); }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .letter { background: var(--footer-grey); padding: 12px; font-size: 13px; white-space: pre-wrap; }
+    .score { padding: 12px; border-left: 3px solid var(--line-strong); background: var(--white); }
+    .score.held { border-color: var(--warn); background: var(--warn-wash); }
+    .score.send { border-color: var(--good); background: var(--good-wash); }
+    .acts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    .hold.arm { outline: 2px solid var(--warn); }
+    .steer-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin-top: 8px; }
+    .scope-lab { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
+    .list-wait { margin: 0; padding-left: 16px; color: var(--ink-soft); }
+    .cal { margin-top: 8px; padding: 8px 10px; background: var(--good-wash); font-size: 13px; }
+    .voices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+    .voices button[aria-pressed="true"] { background: var(--navy); color: var(--on-dark); border-color: var(--navy); }
+
+    /* Docks / overlay */
+    .fab {
+      position: fixed; right: 16px; bottom: 16px; z-index: 45;
+      border: var(--hairline) solid var(--navy); background: var(--navy); color: var(--on-dark);
+      padding: 12px 14px; letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; font-weight: 600;
+    }
+    .dock-panel {
+      position: fixed; right: 16px; bottom: 64px; z-index: 46; width: min(380px, calc(100vw - 24px));
+      max-height: min(52vh, 440px); background: var(--paper); border: var(--hairline) solid var(--navy);
+      display: flex; flex-direction: column;
+    }
+    .dock-panel header { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: var(--navy); color: var(--on-dark); }
+    .dock-panel header small { display: block; color: var(--on-dark-dim); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .dock-panel header button { border: 0; background: transparent; color: var(--on-dark); font-size: 18px; }
+    .dock-body { padding: 12px; overflow: auto; }
+    .sheet {
+      position: fixed; inset: 0; z-index: 60; background: rgba(25,34,49,.55);
+      display: grid; place-items: center; padding: 20px;
+    }
+    .sheet .card { width: min(440px, 100%); }
+    .lb { position: fixed; inset: 0; z-index: 70; background: #0c1016; display: grid; grid-template-rows: auto 1fr auto; color: #fff; }
+    .lb header, .lb footer {
+      display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; position: relative; z-index: 2;
+    }
+    .lb header { background: linear-gradient(#0c1016, transparent); }
+    .lb footer { background: linear-gradient(transparent, #0c1016); }
+    .lb-stage { position: relative; overflow: hidden; min-height: 0; }
+    .lb-stage img {
+      width: 124%; height: 124%; max-width: none; margin: -12%;
+      object-fit: cover; display: block;
+    }
+    .lb button { border: 0; background: transparent; color: #fff; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .toast {
+      position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%) translateY(20px);
+      background: var(--navy); color: var(--on-dark); padding: 10px 14px; font-size: 13px;
+      opacity: 0; pointer-events: none; z-index: 80; transition: .2s ease;
+    }
+    .toast.is-on { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .drawer {
+      position: fixed; top: 56px; right: 0; bottom: 0; width: min(360px, 100%);
+      background: var(--paper); border-left: var(--hairline) solid var(--navy);
+      transform: translateX(100%); transition: .2s ease; z-index: 55; overflow: auto;
+    }
+    .drawer.is-on { transform: none; }
+    .drawer header { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border-bottom: var(--hairline) solid var(--line); }
+    .drawer .body { padding: 16px; font-size: 14px; color: var(--ink-soft); white-space: pre-wrap; }
+    .drawer header button { border: 0; background: transparent; font-size: 18px; }
+    .hover-tip { position: relative; }
+    .hover-tip[data-hint]:hover::after, .hover-tip[data-hint]:focus::after {
+      content: attr(data-hint); position: absolute; left: 0; bottom: calc(100% + 8px);
+      width: min(280px, 70vw); background: var(--navy); color: var(--on-dark);
+      padding: 8px 10px; font-size: 12px; letter-spacing: 0; text-transform: none; font-weight: 400;
+      z-index: 8; white-space: normal; line-height: 1.35;
+    }
+
+    @media (max-width: 960px) {
+      .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 28vh 28vh; }
+      .five, .flow, .strip { grid-template-columns: 1fr 1fr; }
+      .split, .contact-grid, .login-stage, .drill, .gallery, .stats, .grid-2, .money-strip { grid-template-columns: 1fr; }
+      .step-grid { grid-template-columns: repeat(4, 1fr); }
+      .drill .ph { min-height: 160px; }
+    }
+    @media (max-width: 720px) {
+      .public-nav { display: none; }
+      body.nav-open .public-nav {
+        display: flex; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0;
+        background: var(--navy); padding: 8px 12px 16px;
+      }
+      .menu-btn { display: grid; }
+      .hero-copy { padding-bottom: 36px; }
+      .five, .flow, .strip, .principles, .lead, .stage-hot { grid-template-columns: 1fr; }
+      .step-grid { grid-template-columns: 1fr 1fr; }
+      .top { grid-template-columns: auto auto 1fr; }
+      .wa-card { grid-template-columns: 1fr; }
+      .work-cine { min-height: 62vh; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .kb, .cine-stage img, .five article { animation: none !important; transform: none !important; }
+      .five article { background-size: cover; background-position: center; }
+    }
+  </style>
+</head>
+<body>
+  <p class="preview-ribbon">Preview of how Truft could run · photography from truft.com.au · not the live website</p>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top">
+    <a class="brand" href="#home" data-go="home" data-public="1">
+      <span class="wordmark">TRUFT</span>
+      <small>Custom homes. Built on trust.</small>
+    </a>
+    <nav class="public-nav" aria-label="Primary">
+      <button type="button" data-go="home" aria-current="page">Home</button>
+      <button type="button" data-go="about">About</button>
+      <button type="button" data-go="services">Services</button>
+      <button type="button" data-go="work">Our Work</button>
+      <button type="button" data-go="process">Process</button>
+      <button type="button" data-go="contact">Contact</button>
+    </nav>
+    <div class="top-end">
+      <button class="icon-btn hover-tip" type="button" id="topWa" data-hint="Opens WhatsApp on your phone, or WhatsApp Desktop / Web on this computer. Same house file as Ask Truft. This mock is not wired." aria-label="WhatsApp">WA</button>
+      <button class="already" type="button" data-go="house" data-signin="1">Already building?</button>
+      <button class="icon-btn menu-btn" type="button" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+  <main id="main">
+
+    <!-- HOME -->
+    <section class="scene is-on" id="home">
+      <div class="hero cine" id="homeCine">
+        <div class="cine-stage" id="homeCineStage">
+          <img class="kb d1 is-on" src="assets/hero-dusk.jpg" alt="" />
+        </div>
+        <p class="cine-credit" id="homeCineCredit">North West Sydney</p>
+        <div class="hero-copy">
+          <div class="kicker">North West Sydney · Custom homes</div>
+          <h1>Built on Transparency.<br>Engineered for Value.</h1>
+          <p class="lede">A cost-plus custom builder for knockdown-rebuilds and premium land estates. Every dollar visible. Every decision before it spends.</p>
+          <div class="row-btns">
+            <button class="btn light" type="button" data-go="work">See the houses</button>
+            <button class="btn ghost on-dark" type="button" data-go="contact">Talk to Truft</button>
+            <button class="btn ghost on-dark" type="button" data-go="house">Walk a sample house</button>
+          </div>
+          <p class="meta">Norwest · 02 7235 0833 · WhatsApp Sharang</p>
+        </div>
+      </div>
+
+      <div class="mosaic" id="homeMosaic">
+        <a class="tile" href="#work" data-open="mustang" data-i="0" data-film="mustang">
+          <span class="cine-stage"><img class="kb d1 is-on" src="assets/gallery/mustang-01.jpg" alt="Mustang Ave street elevation" /></span>
+          <span class="tile-cap">Mustang Ave<small>Knockdown-rebuild</small></span>
+        </a>
+        <a class="tile" href="#work" data-open="henson" data-i="3" data-film="henson">
+          <span class="cine-stage"><img class="kb d2 is-on" src="assets/gallery/henson-04.jpg" alt="Henson Way kitchen" /></span>
+          <span class="tile-cap">Henson Way<small>Open-book sample</small></span>
+        </a>
+        <a class="tile" href="#work" data-open="newmarket" data-i="5" data-film="newmarket">
+          <span class="cine-stage"><img class="kb d3 is-on" src="assets/gallery/newmarket-06.jpg" alt="Newmarket Pky living" /></span>
+          <span class="tile-cap">Newmarket Pky<small>Premium land estate</small></span>
+        </a>
+        <a class="tile" href="#work" data-open="shetland" data-i="6" data-film="shetland">
+          <span class="cine-stage"><img class="kb d4 is-on" src="assets/gallery/shetland-07.jpg" alt="Shetland Street living" /></span>
+          <span class="tile-cap">Shetland Street<small>Custom interiors</small></span>
+        </a>
+      </div>
+
+      <div class="band">
+        <div class="wrap" style="padding-top:28px;padding-bottom:8px">
+          <div class="kicker">The address of true value</div>
+          <h2>Where transparency builds trust</h2>
+          <p class="lede">Craftsmanship with an open book. You see every invoice and every decision — before it is spent, not after.</p>
+        </div>
+        <div class="five">
+          <article style="background-image:url('assets/gallery/henson-06.jpg')">
+            <h3>Open-book cost-plus</h3>
+            <p>Every dollar, every invoice, every decision — before it is spent.</p>
+          </article>
+          <article style="background-image:url('assets/gallery/mustang-08.jpg')">
+            <h3>Proactive, not reactive</h3>
+            <p>The budget is managed decision by decision, not padded as a lump sum.</p>
+          </article>
+          <article style="background-image:url('assets/gallery/henson-05.jpg')">
+            <h3>Direct overseas sourcing</h3>
+            <p>Stone, tiles, joinery, fixtures — better quality, without a distributor’s markup.</p>
+          </article>
+          <article style="background-image:url('assets/gallery/shetland-02.jpg')">
+            <h3>Work ethic you can see</h3>
+            <p>On site, on schedule, on the phone. Not a revolving cast.</p>
+          </article>
+          <article style="background-image:url('assets/gallery/newmarket-03.jpg')">
+            <h3>Financial engineering</h3>
+            <p>Budget, finance and cash flow moving in sync.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="wrap" style="padding-top:8px">
+        <div class="kicker">From first note to keys</div>
+        <h2>How a Truft house feels</h2>
+        <div class="flow">
+          <article>
+            <div class="n">01 · Enquire</div>
+            <h3>Tonight</h3>
+            <p>Form, phone, WhatsApp, or Ask Truft. A follow-up can open within a minute.</p>
+          </article>
+          <article>
+            <div class="n">02 · Visit</div>
+            <h3>Norwest</h3>
+            <p>Friday at 303/4 Columbia Ct. Real numbers on the table.</p>
+          </article>
+          <article>
+            <div class="n">03 · See</div>
+            <h3>A sample house</h3>
+            <p>Photos, spend, a pause in the open — before you sign anything.</p>
+          </article>
+          <article>
+            <div class="n">04 · Build</div>
+            <h3>You watch</h3>
+            <p>Photos the day they are taken. Extra spend waits for you.</p>
+          </article>
+          <article>
+            <div class="n">05 · Live</div>
+            <h3>The file stays</h3>
+            <p>Decisions, photos, the book. Yours.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="band navy" id="leadBand">
+        <div class="wrap contact-grid" style="padding-top:8px;padding-bottom:8px">
+          <div>
+            <div class="kicker" style="color:var(--on-dark-dim)">Start here</div>
+            <h2>Leave a name. We’ll follow up as Truft.</h2>
+            <p class="lede">Email, mobile, or WhatsApp. If you leave a number, Truft can open a thread within a minute. This mock is not wired. <button type="button" class="i" data-tip="sixty" aria-label="How follow-up would work" style="border-color:#b8c0c8;color:#fafcf9">i</button></p>
+            <form class="lead" id="leadForm">
+              <div class="field"><label for="leadName">Name</label><input id="leadName" name="name" autocomplete="name" required placeholder="Your name" /></div>
+              <div class="field"><label for="leadEmail">Email</label><input id="leadEmail" name="email" type="email" autocomplete="email" placeholder="you@email" /></div>
+              <div class="field"><label for="leadMobile">Mobile</label><input id="leadMobile" name="mobile" autocomplete="tel" inputmode="tel" placeholder="04xx" /></div>
+              <div class="field">
+                <label for="leadIntent">Thinking of</label>
+                <select id="leadIntent">
+                  <option value="kdr" selected>Knockdown rebuild</option>
+                  <option value="land">New home on land</option>
+                  <option value="estate">Land estate</option>
+                  <option value="unsure">Not sure yet</option>
+                </select>
+              </div>
+              <div class="reach full" style="color:var(--on-dark)">
+                <span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600">Reach me on</span>
+                <label><input type="checkbox" name="reach" value="whatsapp" checked /> WhatsApp</label>
+                <label><input type="checkbox" name="reach" value="call" /> Call</label>
+                <label><input type="checkbox" name="reach" value="email" /> Email</label>
+              </div>
+              <label class="full" style="color:var(--on-dark-dim);font-size:12px;letter-spacing:0;text-transform:none;font-weight:400"><input type="checkbox" id="leadConsent" required checked /> Truft may contact me about this enquiry. Nothing is shared with another job.</label>
+              <div class="full"><button class="btn light" type="submit">Send</button></div>
+            </form>
+          </div>
+          <div class="wa-card">
+            <img src="assets/qr/whatsapp.png" alt="QR code for WhatsApp to Sharang" />
+            <div>
+              <h3>WhatsApp Sharang</h3>
+              <p class="quiet">Scan on a phone, or open on this computer. Same conversation as Ask Truft — not a second brain.</p>
+              <div class="row-btns" style="margin-top:10px">
+                <a class="btn" href="https://wa.me/61413760111" target="_blank" rel="noopener" id="waLink">Open WhatsApp</a>
+                <button class="btn ghost" type="button" data-tip="whatsapp">How it would work</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="foot">
+        <span>People | Process | Quality | Your home</span>
+        <button type="button" class="present-link" data-go="office">Truft office</button>
+        <span>truft.com.au</span>
+      </footer>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="scene" id="about">
+      <div class="split">
+        <div class="split-photo"><img class="kb d2" src="assets/gallery/mustang-03.jpg" alt="Mustang Ave interior" /></div>
+        <div class="wrap" style="padding:36px 28px">
+          <div class="kicker">About Truft</div>
+          <h1>The home of open-book building</h1>
+          <p class="lede">We redefine homebuilding around one principle: transparency. Cost-plus custom, knockdown-rebuilds and premium land estates across North West Sydney.</p>
+          <p class="quiet">Partnering with architects and interior designers. Value engineering at design stage. Payments structured to your finance. Direct with overseas manufacturers for stone, tiles, joinery and fixtures.</p>
+          <div class="principles">
+            <button type="button" class="principle" data-principle><strong>No compromise on structure</strong><span>Quality, safety and longevity. Structure is not a finish you can value-engineer later.</span></button>
+            <button type="button" class="principle" data-principle><strong>Complete transparency</strong><span>Every invoice, every trade quote, every decision — before it is spent, not after.</span></button>
+            <button type="button" class="principle" data-principle><strong>Your vision, our expertise</strong><span>You choose the bespoke elements. Truft holds the means and methods.</span></button>
+            <button type="button" class="principle" data-principle><strong>Built to last</strong><span>For your family’s future. The file of the house should last as long as the house.</span></button>
+          </div>
+          <div class="row-btns" style="margin-top:18px">
+            <button class="btn" type="button" data-go="work">Our work</button>
+            <button class="btn ghost" type="button" data-go="contact">Contact</button>
+          </div>
+        </div>
+      </div>
+      <footer class="foot"><span>SS Developers Pty Ltd t/as Truft</span><span>303/4 Columbia Ct, Norwest</span></footer>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="scene" id="services">
+      <div class="hero cine" id="servicesCine" style="min-height:46vh">
+        <div class="cine-stage" id="servicesCineStage">
+          <img class="kb d3 is-on" src="assets/gallery/henson-06.jpg" alt="" />
+        </div>
+        <div class="hero-copy">
+          <div class="kicker">Services</div>
+          <h1>Where craftsmanship and trust shape the house</h1>
+        </div>
+      </div>
+      <div class="five">
+        <article style="background-image:url('assets/gallery/henson-04.jpg')"><h3>Open-book cost-plus</h3><p>You see every dollar — before it is spent, not after.</p></article>
+        <article style="background-image:url('assets/gallery/mustang-08.jpg')"><h3>Proactive, not reactive</h3><p>We manage the budget decision by decision.</p></article>
+        <article style="background-image:url('assets/gallery/henson-05.jpg')"><h3>Direct overseas sourcing</h3><p>Better quality, without a distributor’s markup.</p></article>
+        <article style="background-image:url('assets/gallery/shetland-02.jpg')"><h3>Work ethic you can see</h3><p>On site, on schedule, on the phone when you need us.</p></article>
+        <article style="background-image:url('assets/gallery/newmarket-03.jpg')"><h3>Financial engineering</h3><p>Your budget, finance and cash flow, moving in sync.</p></article>
+      </div>
+      <div class="wrap">
+        <div class="kicker">Open book, as a picture</div>
+        <h2>Quoted. Actual. Pause.</h2>
+        <div class="flow">
+          <article><div class="n">Quoted</div><h3>$2,180</h3><p>Brass tapware, as selected.</p></article>
+          <article><div class="n">Actual</div><h3>$2,640</h3><p>Finish changed on site. Signed as variation 12.</p></article>
+          <article><div class="n">Pause</div><h3>$4,200</h3><p>Island stone repair. Unsigned, so it has not spent.</p></article>
+          <article><div class="n">You</div><h3>Allow or hold</h3><p>On the house, or on WhatsApp after six.</p></article>
+          <article><div class="n">Walk it</div><h3>Sample house</h3><p>See this live on Henson Way before you sign.</p></article>
+        </div>
+        <div class="row-btns" style="margin-top:18px">
+          <button class="btn" type="button" data-go="house">Open the sample house</button>
+          <button class="btn ghost" type="button" data-go="process">The 28 steps</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR WORK -->
+    <section class="scene" id="work">
+      <div class="cine work-cine" id="workCine">
+        <div class="cine-stage" id="workCineStage">
+          <img class="kb d1 is-on" src="assets/gallery/mustang-01.jpg" alt="" />
+        </div>
+        <div class="hero-copy">
+          <div class="kicker">Our projects</div>
+          <h1 id="workCineTitle">Mustang Ave</h1>
+          <p class="lede" id="workCineLede">Knockdown-rebuild. Street elevation. Tap a photograph to step inside.</p>
+        </div>
+      </div>
+      <div class="mosaic" id="workMosaic">
+        <a class="tile" href="#work" data-open="mustang" data-i="0" data-film="mustang">
+          <span class="cine-stage"><img class="kb d2 is-on" src="assets/gallery/mustang-01.jpg" alt="Mustang Ave" /></span>
+          <span class="tile-cap">Mustang Ave<small>10 photographs</small></span>
+        </a>
+        <a class="tile" href="#work" data-open="henson" data-i="0" data-film="henson">
+          <span class="cine-stage"><img class="kb d3 is-on" src="assets/gallery/henson-01.jpg" alt="Henson Way" /></span>
+          <span class="tile-cap">Henson Way<small>Walk this house</small></span>
+        </a>
+        <a class="tile" href="#work" data-open="newmarket" data-i="0" data-film="newmarket">
+          <span class="cine-stage"><img class="kb d4 is-on" src="assets/gallery/newmarket-01.jpg" alt="Newmarket Pky" /></span>
+          <span class="tile-cap">Newmarket Pky<small>10 photographs</small></span>
+        </a>
+        <a class="tile" href="#work" data-open="shetland" data-i="0" data-film="shetland">
+          <span class="cine-stage"><img class="kb d1 is-on" src="assets/gallery/shetland-01.jpg" alt="Shetland Street" /></span>
+          <span class="tile-cap">Shetland Street<small>10 photographs</small></span>
+        </a>
+      </div>
+      <div class="wrap" style="padding-top:16px">
+        <div class="strip" id="workStrip"></div>
+        <div class="row-btns" style="margin-top:18px">
+          <button class="btn" type="button" data-go="house">Walk Henson Way as a sample house</button>
+        </div>
+      </div>
+      <footer class="foot"><span>Photography from truft.com.au</span><span>Illustrative of the live site</span></footer>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="scene" id="process">
+      <div class="wrap" style="padding-bottom:12px">
+        <div class="kicker">From vision to home. Together.</div>
+        <h1>Twenty-eight steps. You can see every one.</h1>
+        <p class="lede">The wall poster, standing up. Tap a stage, then a step. Extra spend waits for you.</p>
+      </div>
+      <div class="poster-wrap"><img src="assets/truft-28-step.jpg" alt="The Truft 28-step home building process poster" /></div>
+      <div class="wrap">
+        <div class="stage-hot" id="stageRail"></div>
+        <div class="step-grid" id="stepGrid"></div>
+        <div class="drill" id="drill"></div>
+        <div class="row-btns" style="margin-top:16px">
+          <button class="btn" type="button" id="seeOnHouse">See this on a sample house</button>
+          <span class="quiet" id="runNote"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="scene" id="contact">
+      <div class="split">
+        <div class="split-photo"><img class="kb d4" src="assets/gallery/mustang-01.jpg" alt="Mustang Ave" /></div>
+        <div class="wrap" style="padding:36px 28px">
+          <div class="kicker">Contact</div>
+          <h1>Ready to build on transparency?</h1>
+          <p class="lede">Knockdown-rebuild or a premium land estate — talk through how the open book works for you.</p>
+          <p><strong>303/4 Columbia Ct, Norwest NSW 2153</strong><br>
+            <a href="tel:+61272350833">02 7235 0833</a> · <a href="mailto:sharang@truft.com.au">sharang@truft.com.au</a><br>
+            Sharang Sareen · <a href="tel:+61413760111">+61 413 760 111</a></p>
+          <div class="wa-card" style="margin-top:16px">
+            <img src="assets/qr/whatsapp.png" alt="WhatsApp QR" />
+            <div>
+              <h3>WhatsApp</h3>
+              <p class="quiet">Phone, Mac, or PC. Ask Truft stays on this site. <button class="i" data-tip="whatsapp" type="button">i</button></p>
+              <a class="btn" href="https://wa.me/61413760111" target="_blank" rel="noopener">Open WhatsApp</a>
+            </div>
+          </div>
+          <div class="doors">
+            <button type="button" id="contactAsk">Ask Truft</button>
+            <button type="button" data-go="home" data-focus="lead">Leave a note</button>
+            <button type="button" class="hover-tip" data-hint="Instagram handle is not confirmed on the live site. Do not invent a URL. Official comment replies only — no private-message scraping.">Instagram</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOUSE / PORTAL -->
+    <section class="scene" id="house">
+      <div class="wrap" id="housePitch">
+        <div class="kicker">A sample house · no account needed</div>
+        <h1>This is your house while we build it.</h1>
+        <p class="lede">Week 38 — illustrative. Photos the day they were taken. Extra spend waiting in the open. After you build with us, you sign in, and you can say yes.</p>
+      </div>
+      <div class="wrap" style="padding-top:0">
+        <div id="housePreview">
+          <div class="preview-banner">
+            <span><strong>Sample</strong> · Henson Way · week 38 · not a live client claim</span>
+            <button class="btn ghost" type="button" id="gotoSignin">Already building? Sign in</button>
+          </div>
+        </div>
+
+        <div id="ownerGate" class="login-stage" hidden>
+          <div class="login-photo"><img src="assets/gallery/henson-04.jpg" alt="Henson Way kitchen" /></div>
+          <div class="login">
+            <div class="wordmark">TRUFT</div>
+            <p>Sign in to your house. One job. Your book. Your pause.</p>
+            <div class="sso">
+              <button type="button" data-sso="google">Continue with Google</button>
+              <button type="button" data-sso="microsoft">Continue with Microsoft</button>
+              <button type="button" data-sso="apple">Continue with Apple</button>
+              <button type="button" data-sso="facebook">Continue with Facebook</button>
+            </div>
+            <p class="hint">Google and Microsoft first. Apple and Facebook are optional — drop them if the review is too much. <button class="i" data-tip="sso-optional" type="button">i</button> <button class="i" data-tip="sso-google" type="button">i</button></p>
+            <div class="or">or email</div>
+            <div class="field"><label for="ownerEmail">Email</label><input id="ownerEmail" type="email" value="priya@hensonway.example" autocomplete="username" /></div>
+            <div class="field" style="margin-top:8px"><label for="ownerPass">Password</label><input id="ownerPass" type="password" value="••••••••" autocomplete="current-password" /></div>
+            <div class="row-btns" style="margin-top:12px">
+              <button class="btn" type="button" id="ownerSignin">Sign in to Henson Way</button>
+              <button class="btn ghost" type="button" id="cancelSignin">Keep walking the sample</button>
+            </div>
+            <p class="hint">Illustrative. This file does not talk to a server. Homeowners never need Facebook to see their house. <button class="i" data-tip="sso-tools" type="button">i</button></p>
+          </div>
+        </div>
+
+        <div class="house" id="houseRoot">
+          <div class="house-bar">
+            <div>
+              <strong>HENSON WAY</strong>
+              <small id="houseWho">Week 38 · lock-up done · a Truft house</small>
+            </div>
+            <div>
+              <small id="houseState">You can look. Sign in to act.</small>
+              <button class="btn ghost after-in" type="button" id="ownerSignout" style="margin-top:8px;color:var(--on-dark);border-color:rgba(250,252,249,.35)">Sign out</button>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>38</b><span>Week on site <button class="i after-in" data-tip="buildpass" type="button">i</button></span></div>
+            <div class="stat"><b>1</b><span>Pause · $4,200 <button class="i after-in" data-tip="xero" type="button">i</button></span></div>
+            <div class="stat"><b>2</b><span>Being fixed</span></div>
+            <div class="stat"><b>Thu 10:00</b><span>Waterproofing</span></div>
+          </div>
+          <div class="tabs" role="tablist">
+            <button type="button" data-htab="week" aria-selected="true">This week</button>
+            <button type="button" data-htab="spend">Spend</button>
+            <button type="button" data-htab="site">On site</button>
+            <button type="button" data-htab="questions">Questions</button>
+            <button type="button" data-htab="ask">Ask Truft</button>
+            <button type="button" data-htab="wa">WhatsApp</button>
+            <button type="button" class="after-in" data-htab="askus">Ask us</button>
+            <button type="button" class="after-in" data-htab="notes">From Sharang</button>
+          </div>
+          <div class="pane is-on" id="h-week">
+            <div class="gallery">
+              <img src="assets/gallery/henson-04.jpg" alt="Kitchen" data-open="henson" data-i="3" />
+              <img src="assets/gallery/henson-06.jpg" alt="Living" data-open="henson" data-i="5" />
+              <img src="assets/gallery/henson-05.jpg" alt="Kitchen still" data-open="henson" data-i="4" />
+            </div>
+            <p class="quiet" style="margin:12px 0 0">Waterproofing booked <strong>Thursday 10:00</strong>. Tiling waits for cure. Photos land here after the flood test.</p>
+            <div class="prog">
+              <div><b>Mon</b>Allied materials on site</div>
+              <div class="now"><b>Thu 10:00</b>Waterproofing</div>
+              <div><b>Fri</b>Flood-test photos</div>
+              <div><b>Next</b>Tiling after cure</div>
+            </div>
+            <div class="diary">
+              <article><time>Mon 8 Sep · 14:22</time><p>Allied materials on site. Wet-area set-out confirmed.</p></article>
+              <article><time>Wed 10 Sep · 09:40</time><p>Hairline noted on the island. Repair quoted — waiting on a yes.</p></article>
+              <article><time>Thu 11 Sep · booked</time><p>Waterproofing 10:00. Flood-test photos Friday.</p></article>
+            </div>
+          </div>
+          <div class="pane" id="h-spend">
+            <div class="pause-banner" id="pauseBanner"><strong>This waited.</strong> Island stone repair quoted at $4,200. It is not signed, so it has not spent.</div>
+            <div class="money-strip">
+              <div><span>Quoted vs actual</span><b>On the table</b></div>
+              <div><span>Builders margin</span><b>Agreed %</b></div>
+              <div><span>Contingency</span><b>$41,600</b></div>
+            </div>
+            <table class="book">
+              <thead><tr><th>Date</th><th>Supplier</th><th>Line</th><th>Quoted</th><th>Actual</th><th>State</th></tr></thead>
+              <tbody>
+                <tr data-line="benchtop"><td>2 Sep</td><td>Norwest Stone</td><td>Island benchtop remainder</td><td class="num">18,400</td><td class="num">18,400</td><td>On quote</td></tr>
+                <tr data-line="brodware"><td>4 Sep</td><td>Brodware</td><td>Tapware upgrade · variation 12</td><td class="num">2,180</td><td class="num">2,640</td><td>Explained — finish they signed</td></tr>
+                <tr data-line="stone" id="stoneRow"><td>11 Sep</td><td>Norwest Stone</td><td>Island hairline repair</td><td class="num">4,200</td><td class="num">—</td><td id="stoneState">Paused — needs a yes</td></tr>
+              </tbody>
+            </table>
+            <div class="row-btns" style="margin-top:12px">
+              <button class="btn" type="button" id="previewLock">Sign in to allow spend</button>
+              <button class="btn good after-in" type="button" id="approveStone">Allow $4,200</button>
+              <button class="btn ghost after-in" type="button" id="holdStone">Hold</button>
+            </div>
+          </div>
+          <div class="pane" id="h-site">
+            <ul class="site-list">
+              <li>Hairline on the island stone · photo attached<small>Being fixed — that is the unsigned $4,200 on Spend.</small></li>
+              <li>Door hardware alignment · joinery<small>On the punch list. No extra spend.</small></li>
+            </ul>
+          </div>
+          <div class="pane" id="h-questions">
+            <div class="drawing"><div class="sheet">A-12</div><div class="pad" style="padding:12px"><h3>Island overhang</h3><p class="quiet">Trade asked: can the stone move 40mm without a steel change? Waiting on the engineer.</p></div></div>
+          </div>
+          <div class="pane" id="h-ask">
+            <p class="bot-chip" id="askChip">Visitor conversation · cannot see a live job</p>
+            <div class="chat" id="houseChat"><div class="msg"><span class="who">Truft</span>This is a sample house — Henson Way, week 38. I will not invent a rate, and I will not spend.</div></div>
+            <div class="chat-in"><input id="houseQ" placeholder="Ask how this house would answer" /><button class="btn" type="button" id="houseSend">Send</button></div>
+            <div class="row-btns" style="margin-top:8px">
+              <button class="btn ghost" type="button" data-ask="taps">Why the brass taps?</button>
+              <button class="btn ghost" type="button" data-ask="water">When is waterproofing?</button>
+              <button class="btn ghost" type="button" data-ask="rate">Rough $/m²?</button>
+              <button class="i after-in" data-tip="chatbot" type="button">i</button>
+            </div>
+          </div>
+          <div class="pane" id="h-wa">
+            <div class="wa-card">
+              <img src="assets/qr/whatsapp.png" alt="WhatsApp QR" />
+              <div>
+                <h3>Same house, on WhatsApp</h3>
+                <p class="quiet">Not a fake chat in the browser. Opens the real app on a phone, or WhatsApp Desktop / Web on a Mac or PC. After sign-in you could allow the $4,200 here too. <button class="i" data-tip="whatsapp" type="button">i</button></p>
+                <div class="row-btns" style="margin-top:10px">
+                  <a class="btn" href="https://wa.me/61413760111" target="_blank" rel="noopener">Open WhatsApp</a>
+                  <button class="btn good after-in" type="button" id="waAllow">Pretend: allow $4,200 on WhatsApp</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pane" id="h-askus">
+            <p class="bot-chip">A request on this house · lands in the Truft office</p>
+            <ul class="req-list" id="ownerReqs">
+              <li>Extra photo of the island hairline<small>Asked Wed 10 Sep · photo attached to Spend</small></li>
+              <li>Hold the fitout inspection after 6pm<small>Standing preference · WhatsApp after six</small></li>
+            </ul>
+            <div class="field"><label for="reqKind">What do you need</label>
+              <select id="reqKind">
+                <option value="photo" selected>An extra photo from site</option>
+                <option value="visit">A time with Sharang</option>
+                <option value="inspect">Move an inspection</option>
+                <option value="other">Something else on this house</option>
+              </select>
+            </div>
+            <div class="field" style="margin-top:8px"><label for="reqNote">Note</label><textarea id="reqNote" rows="3" placeholder="e.g. Can we see the island from the living side after Thursday’s flood test?"></textarea></div>
+            <div class="row-btns" style="margin-top:10px"><button class="btn" type="button" id="reqSend">Send to Truft</button><span class="quiet" id="reqAck"></span></div>
+          </div>
+          <div class="pane" id="h-notes">
+            <div id="ownerNotes"><div class="msg"><span class="who">Sharang · this morning</span>Waterproofing is booked Thursday 10:00 with Allied. Tiling waits for cure.</div></div>
+          </div>
+        </div>
+      </div>
+      <footer class="foot" id="houseFoot">
+        <span>People | Process | Quality | Your home</span>
+        <button type="button" class="present-link" data-go="office">Truft office</button>
+        <span>truft.com.au</span>
+      </footer>
+    </section>
+
+    <!-- OFFICE -->
+    <section class="scene" id="office">
+      <div class="wrap">
+        <div class="office-top">
+          <div>
+            <div class="kicker">Truft office · not on the public nav</div>
+            <h1>The house, running</h1>
+            <p class="lede">Leads, customers, the homepage, social, and the day. Homeowners never see this room. <button class="i" data-tip="ww" type="button">i</button></p>
+          </div>
+          <button class="btn ghost" type="button" data-go="home" data-public="1">Back to the street</button>
+        </div>
+        <div class="tabs shop-tabs" role="tablist">
+          <button type="button" data-shop="day" aria-selected="true">Today</button>
+          <button type="button" data-shop="leads">Leads</button>
+          <button type="button" data-shop="cust">Customers</button>
+          <button type="button" data-shop="home">Homepage</button>
+          <button type="button" data-shop="social">Social</button>
+          <button type="button" data-shop="usage">Usage</button>
+        </div>
+
+        <div class="shop-pane is-on" id="shop-day">
+          <div class="admin-day" id="adminDay">
+            <div class="row">
+              <div class="tm">09:00</div>
+              <div>
+                <div class="wait">Running · waits on you</div>
+                <strong>Weekly letter · Henson Way</strong>
+                <p class="quiet" style="margin:4px 0 0">0.78 · held below send bar. Sibling of the 11:00 pause. <button class="i" data-tip="evals" type="button">i</button></p>
+              </div>
+            </div>
+            <div class="row" id="gateStone">
+              <div class="tm">11:00</div>
+              <div>
+                <div class="wait">Needs you</div>
+                <strong>Allow $4,200 island stone repair?</strong>
+                <p class="quiet" style="margin:4px 0 0">Unsigned. Spend cannot be recalled. <button class="i" data-tip="xero" type="button">i</button></p>
+                <div class="scope-lab">Just this time</div>
+                <div class="acts">
+                  <button class="btn good hold" type="button" data-hil="allow" data-hold="1">Hold to allow</button>
+                  <button class="btn ghost" type="button" data-hil="reject">Reject</button>
+                </div>
+                <div class="steer-row">
+                  <input id="hilSteer" placeholder="Change the instruction — this run only" />
+                  <button class="btn ghost" type="button" data-hil="steer">Send</button>
+                </div>
+                <div class="scope-lab">From now on</div>
+                <div class="acts">
+                  <button class="btn ghost hold" type="button" data-hil="always-allow" data-hold="1">Always allow</button>
+                  <button class="btn ghost" type="button" data-hil="always-reject">Always reject</button>
+                </div>
+                <p class="quiet" id="hilNote"></p>
+              </div>
+            </div>
+            <div class="row"><div class="tm">13:20</div><div><strong>Sheet A-12 · island overhang</strong><p class="quiet" style="margin:4px 0 0">Engineer note waiting. Owners see this under Questions. <button class="i" data-tip="buildpass" type="button">i</button></p></div></div>
+            <div class="row"><div class="tm">16:00</div><div><strong>Instagram reply · Henson Way reel</strong><p class="quiet" style="margin:4px 0 0">Score 0.92 · may send. <button class="i" data-tip="instagram" type="button">i</button></p></div></div>
+          </div>
+          <div class="grid-2" style="margin-top:16px">
+            <div class="card">
+              <h3>Post to the house</h3>
+              <textarea id="adminPost">Waterproofing is booked Thursday 10:00 with Allied. Tiling waits for cure.</textarea>
+              <div class="row-btns" style="margin-top:10px"><button class="btn" type="button" id="postUpdate">Post to Henson Way</button><span class="quiet" id="postNote"></span></div>
+            </div>
+            <div class="card">
+              <h3>Friday’s letter <button class="i" data-tip="models" type="button">i</button></h3>
+              <pre class="letter" id="letterDraft">Kitchen progress is on track. Variation 12 — brass tapware — signed 4 September. Quoted $2,180. Actual $2,640 because the finish changed on site.</pre>
+              <div class="score held" id="letterScore"><div class="stat">0.78 · Held</div><p style="margin:6px 0 0;font-size:13px">Below send bar (0.90). Tone drifted. Switching the writer does not bypass this.</p></div>
+              <button class="btn" type="button" id="explainVar" style="margin-top:10px">Explain variation 12</button>
+            </div>
+            <div class="card">
+              <h3>On site today</h3>
+              <ul class="list-wait"><li>Wet-area seal · photo attached</li><li>Door hardware alignment</li><li>Sheet A-12 overhang</li></ul>
+              <button class="btn ghost" type="button" id="triage">Triage wet-area to Allied</button>
+              <p class="quiet" id="triageNote"></p>
+            </div>
+            <div class="card">
+              <h3>Next inspection</h3>
+              <p>Henson Way · week 38 · internal fitout review. Owners prefer WhatsApp after 6pm.</p>
+              <button class="btn" type="button" id="holdFri">Hold Friday 12:00 · Norwest</button>
+              <div class="cal" id="calStrip" hidden>Fri 12:00 · held · 303/4 Columbia Ct</div>
+            </div>
+          </div>
+          <div class="card" style="margin-top:12px">
+            <h3>Memory that behaves <button class="i" data-tip="memory" type="button">i</button></h3>
+            <p class="quiet">Remembers variation 12. Forgets “island stone is included” when you mark it false. Tonight’s Instagram rises above an old brochure. Overnight it pulls a date that is not in the programme. The score is the gate — not a second voice.</p>
+            <div class="voices">
+              <button class="btn ghost" type="button" data-job="henson" id="jobH" aria-pressed="true">Henson Way</button>
+              <button class="btn ghost" type="button" data-job="mustang" id="jobM" aria-pressed="false">Mustang Ave</button>
+            </div>
+            <p class="quiet" id="jobNote" style="margin-top:8px">Henson Way · this house only. Pause rules stay. Owners never see another job.</p>
+          </div>
+        </div>
+
+        <div class="shop-pane" id="shop-leads">
+          <p class="quiet">Every door writes here. Follow-up is offered, not invented. <button class="i" data-tip="leads" type="button">i</button></p>
+          <table class="office" id="leadTable">
+            <thead><tr><th>When</th><th>Door</th><th>Who</th><th>Thinking of</th><th>Next</th></tr></thead>
+            <tbody>
+              <tr><td>9:41pm</td><td>Instagram</td><td>@homeinbaulkhamhills</td><td>Knockdown-rebuild</td><td>Public reply sent · Friday 12:00 offered privately</td></tr>
+              <tr><td>6:14pm</td><td>WhatsApp</td><td>New mobile</td><td>Cost-plus?</td><td>Answered · variation 12 as the example</td></tr>
+              <tr><td>Yesterday</td><td>Phone</td><td>0412 ··· ···</td><td>Land estate</td><td>Call logged · 4m · prefers a Norwest Friday</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="shop-pane" id="shop-cust">
+          <p class="quiet">People who are building. Each login is one house. <button class="i" data-tip="house" type="button">i</button></p>
+          <table class="office">
+            <thead><tr><th>House</th><th>Owners</th><th>Week</th><th>Reach</th><th>Portal</th></tr></thead>
+            <tbody>
+              <tr><td>Henson Way</td><td>Priya &amp; Amit</td><td>38 · lock-up done</td><td>WhatsApp after 6</td><td>Signed in today</td></tr>
+              <tr><td>Mustang Ave</td><td>Owners on file</td><td>12 · structure</td><td>Phone first</td><td>Invited · not yet signed in</td></tr>
+            </tbody>
+          </table>
+          <div class="card" style="margin-top:14px">
+            <h3>Invite to the house login</h3>
+            <p class="quiet">Google and Microsoft first. Facebook and Apple are optional — drop them if the review is too much for a 10-job builder. Homeowners must not need Facebook to see their house.</p>
+            <div class="row-btns" style="margin-top:10px">
+              <button class="btn ghost" type="button" id="invitePortal">Invite Mustang Ave</button>
+              <span class="quiet" id="inviteNote"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="shop-pane" id="shop-home">
+          <p class="quiet">What the street sees. Replace a photograph or add a line from a homeowner — it lands on Home and Our Work. <button class="i" data-tip="cms" type="button">i</button></p>
+          <div class="cms-grid" id="cmsGrid">
+            <figure><img src="assets/gallery/mustang-01.jpg" alt="" /><figcaption>Mustang Ave · hero</figcaption></figure>
+            <figure><img src="assets/gallery/henson-04.jpg" alt="" /><figcaption>Henson Way</figcaption></figure>
+            <figure><img src="assets/gallery/newmarket-06.jpg" alt="" /><figcaption>Newmarket Pky</figcaption></figure>
+            <figure><img src="assets/gallery/shetland-07.jpg" alt="" /><figcaption>Shetland Street</figcaption></figure>
+          </div>
+          <div class="row-btns" style="margin-top:12px">
+            <label class="btn ghost">Add a photograph<input type="file" accept="image/*" id="cmsFile" hidden /></label>
+          </div>
+          <h3 style="margin-top:22px">Lines on the homepage</h3>
+          <ul class="req-list" id="testiList">
+            <li>“Every invoice before it spent — not after.”<small>Illustrative · add a real line when a homeowner offers one</small></li>
+          </ul>
+          <div class="steer-row">
+            <input id="testiIn" placeholder="A short line from a homeowner" />
+            <button class="btn" type="button" id="testiAdd">Add</button>
+          </div>
+        </div>
+
+        <div class="shop-pane" id="shop-social">
+          <p class="quiet">A comment on a house post can get a reply without living in your face. Official comment doors only — not private-message scraping. Instagram handle is unconfirmed. <button class="i" data-tip="instagram" type="button">i</button></p>
+          <div class="social">
+            <article>
+              <div class="ch">Instagram · Henson Way reel · 9:41pm</div>
+              <p>How long was knockdown to handover?</p>
+              <div class="steer-row">
+                <input value="Typical North West knockdown-rebuild is 14–22 months end to end. Happy to walk a sample house, or Friday 12:00 at Norwest." />
+                <button class="btn" type="button" id="igSend">Send public reply</button>
+              </div>
+              <p class="quiet" id="igNote" hidden>Sent. Score 0.92. Friday 12:00 offered privately. Written to Usage.</p>
+            </article>
+            <article>
+              <div class="ch">Facebook · Mustang Ave post</div>
+              <p>Is cost-plus actually open book?</p>
+              <button class="btn ghost" type="button" id="fbReply">Draft reply from the house file</button>
+              <p class="quiet" id="fbNote"></p>
+            </article>
+            <article>
+              <div class="ch">LinkedIn · company page</div>
+              <p>Do you build on premium land estates?</p>
+              <p class="quiet">Yes — and knockdown-rebuilds on established Hills lots. Same 28 steps.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="shop-pane" id="shop-usage">
+          <p class="quiet">Whenever a step runs, or someone talks on WhatsApp or the phone, a time is written. That is the timesheet. <button class="i" data-tip="usage" type="button">i</button></p>
+          <div class="usage-cal" id="usageCal">
+            <div class="when">Thu 10:00</div><div class="what"><strong>Waterproofing · Allied</strong>Skill ran · 4 min · Henson Way</div>
+            <div class="when">Thu 11:02</div><div class="what"><strong>Score the weekly letter</strong>Skill ran · 3 min · held at 0.78</div>
+            <div class="when">Thu 18:14</div><div class="what"><strong>WhatsApp · brass taps</strong>6 min · variation 12 answered</div>
+            <div class="when">Fri 12:00</div><div class="what"><strong>Norwest visit · held</strong>303/4 Columbia Ct</div>
+          </div>
+        </div>
+        <p class="quiet" style="margin-top:22px">How this would be built — two pages, after the product. <a href="truft-how-this-works.html">Open the note</a></p>
+      </div>
+    </section>
+  </main>
+
+  <div class="dock-panel" id="askPanel" hidden>
+    <header>
+      <div><strong>ASK TRUFT</strong><small id="askCtxLabel">Visitors · projects, visits, cost-plus</small></div>
+      <button type="button" data-close-dock="askPanel" aria-label="Close">×</button>
+    </header>
+    <div class="dock-body">
+      <div class="chat" id="dockAskChat"><div class="msg"><span class="who">Truft</span>Visitor conversation. I can walk the 28 steps, hold Friday at Norwest, or open a sample house. I will not invent a rate, and I cannot open someone else’s job.</div></div>
+      <div class="chat-in"><input id="dockAskQ" placeholder="Ask Truft" /><button class="btn" type="button" id="dockAskSend">Send</button></div>
+    </div>
+  </div>
+  <button class="fab" type="button" id="askFab">Ask Truft</button>
+
+  <div class="sheet" id="waSheet" hidden>
+    <div class="card">
+      <h3>WhatsApp Sharang</h3>
+      <div class="wa-card" style="border:0;padding:0">
+        <img src="assets/qr/whatsapp.png" alt="WhatsApp QR" />
+        <div>
+          <p class="quiet">Scan on a phone. On a Mac or PC this opens WhatsApp Desktop or WhatsApp Web. Same house file as Ask Truft. This mock is not wired.</p>
+          <div class="row-btns" style="margin-top:10px">
+            <a class="btn" href="https://wa.me/61413760111" target="_blank" rel="noopener">Open WhatsApp</a>
+            <button class="btn ghost" type="button" id="waSheetClose">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lb" id="lb" hidden>
+    <header><strong id="lbTitle">Gallery</strong><button type="button" id="lbClose">Close</button></header>
+    <div class="lb-stage"><img id="lbImg" class="kb d1" alt="" /></div>
+    <footer>
+      <button type="button" id="lbPrev">Prev</button>
+      <span id="lbCap"></span>
+      <button type="button" id="lbNext">Next</button>
+    </footer>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <header><strong id="drawerTitle">Note</strong><button type="button" id="drawerClose" aria-label="Close">×</button></header>
+    <div class="body" id="drawerBody"></div>
+  </aside>
+
+  <script>
+    const GALLERIES = {
+      mustang: [...Array(10)].map((_,i)=>`assets/gallery/mustang-${String(i+1).padStart(2,"0")}.jpg`),
+      henson: [...Array(10)].map((_,i)=>`assets/gallery/henson-${String(i+1).padStart(2,"0")}.jpg`),
+      newmarket: [...Array(10)].map((_,i)=>`assets/gallery/newmarket-${String(i+1).padStart(2,"0")}.jpg`),
+      shetland: [...Array(10)].map((_,i)=>`assets/gallery/shetland-${String(i+1).padStart(2,"0")}.jpg`)
+    };
+    const HOUSE_LABEL = { mustang:"Mustang Ave", henson:"Henson Way", newmarket:"Newmarket Pky", shetland:"Shetland Street" };
+    const CINE_HOME = [
+      { src:"assets/hero-dusk.jpg", credit:"North West Sydney" },
+      { src:"assets/gallery/mustang-01.jpg", credit:"Mustang Ave" },
+      { src:"assets/gallery/henson-04.jpg", credit:"Henson Way · kitchen" },
+      { src:"assets/gallery/newmarket-06.jpg", credit:"Newmarket Pky" },
+      { src:"assets/gallery/shetland-07.jpg", credit:"Shetland Street" },
+      { src:"assets/gallery/mustang-03.jpg", credit:"Mustang Ave · inside" },
+      { src:"assets/gallery/henson-06.jpg", credit:"Henson Way · living" },
+      { src:"assets/gallery/shetland-02.jpg", credit:"Shetland Street · joinery" }
+    ];
+    const CINE_WORK = [
+      { src:"assets/gallery/mustang-01.jpg", title:"Mustang Ave", lede:"Knockdown-rebuild. Street elevation." },
+      { src:"assets/gallery/mustang-03.jpg", title:"Mustang Ave", lede:"Inside the knockdown-rebuild." },
+      { src:"assets/gallery/mustang-08.jpg", title:"Mustang Ave", lede:"Evenings on the street." },
+      { src:"assets/gallery/henson-01.jpg", title:"Henson Way", lede:"The open-book sample house." },
+      { src:"assets/gallery/henson-04.jpg", title:"Henson Way", lede:"Kitchen. Photos the day they were taken." },
+      { src:"assets/gallery/henson-06.jpg", title:"Henson Way", lede:"Living, still unfinished in the right places." },
+      { src:"assets/gallery/newmarket-01.jpg", title:"Newmarket Pky", lede:"Premium land estate." },
+      { src:"assets/gallery/newmarket-06.jpg", title:"Newmarket Pky", lede:"The living room, as built." },
+      { src:"assets/gallery/shetland-01.jpg", title:"Shetland Street", lede:"Custom interiors." },
+      { src:"assets/gallery/shetland-07.jpg", title:"Shetland Street", lede:"Where the joinery meets the light." }
+    ];
+    const CINE_SERVICES = [
+      { src:"assets/gallery/henson-06.jpg" },
+      { src:"assets/gallery/henson-04.jpg" },
+      { src:"assets/gallery/mustang-08.jpg" },
+      { src:"assets/gallery/shetland-02.jpg" }
+    ];
+    const TILE_FILM = {
+      mustang: ["assets/gallery/mustang-01.jpg","assets/gallery/mustang-03.jpg","assets/gallery/mustang-08.jpg"],
+      henson: ["assets/gallery/henson-04.jpg","assets/gallery/henson-06.jpg","assets/gallery/henson-01.jpg"],
+      newmarket: ["assets/gallery/newmarket-06.jpg","assets/gallery/newmarket-03.jpg","assets/gallery/newmarket-01.jpg"],
+      shetland: ["assets/gallery/shetland-07.jpg","assets/gallery/shetland-02.jpg","assets/gallery/shetland-01.jpg"]
+    };
+    function reducedMotion() {
+      return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    }
+    function restartKb(img) {
+      if (!img || reducedMotion()) return;
+      const cls = img.className;
+      img.style.animation = "none";
+      void img.offsetWidth;
+      img.style.animation = "";
+      img.className = cls;
+    }
+    function cycleCine(stage, slides, onChange, ms) {
+      if (!stage || !slides || !slides.length) return;
+      const have = stage.querySelectorAll("img");
+      slides.forEach((s, i) => {
+        if (have[i]) return;
+        const img = document.createElement("img");
+        img.src = s.src || s;
+        img.alt = "";
+        img.className = "kb d" + ((i % 4) + 1);
+        if (i === 0) img.classList.add("is-on");
+        stage.appendChild(img);
+      });
+      if (onChange) onChange(slides[0], 0);
+      if (reducedMotion() || slides.length < 2) return;
+      let i = 0;
+      setInterval(() => {
+        const list = stage.querySelectorAll("img");
+        if (!list.length) return;
+        list[i].classList.remove("is-on");
+        i = (i + 1) % list.length;
+        list[i].classList.add("is-on");
+        restartKb(list[i]);
+        if (onChange) onChange(slides[i], i);
+      }, ms || 8000);
+    }
+    function fillTileFilms() {
+      document.querySelectorAll("[data-film]").forEach((tile, tIndex) => {
+        const files = TILE_FILM[tile.dataset.film];
+        const stage = tile.querySelector(".cine-stage");
+        if (!files || !stage) return;
+        const haveSrc = new Set([...stage.querySelectorAll("img")].map(im => im.getAttribute("src")));
+        files.forEach((src, i) => {
+          if (haveSrc.has(src)) return;
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = "";
+          img.className = "kb d" + (((i + tIndex) % 4) + 1);
+          stage.appendChild(img);
+        });
+        const imgs = [...stage.querySelectorAll("img")];
+        imgs.forEach((im, i) => im.classList.toggle("is-on", i === 0));
+        if (reducedMotion() || imgs.length < 2) return;
+        let i = 0;
+        setInterval(() => {
+          imgs[i].classList.remove("is-on");
+          i = (i + 1) % imgs.length;
+          imgs[i].classList.add("is-on");
+          restartKb(imgs[i]);
+        }, 7200 + tIndex * 850);
+      });
+    }
+    const STAGE_PHOTO = {
+      "PLAN & APPROVE": "assets/gallery/henson-01.jpg",
+      "STRUCTURE": "assets/gallery/mustang-01.jpg",
+      "ENCLOSE & INTERNALS": "assets/gallery/henson-06.jpg",
+      "FITOUT & STYLE": "assets/gallery/henson-04.jpg",
+      "COMPLETE": "assets/gallery/mustang-07.jpg"
+    };
+    const TIPS = {
+      buildpass: { title: "From the site file", body: "Photos, defects, programme, drawings and the site handset live in BuildPass. This page reads what the job already has. It does not clone a second site system." },
+      xero: { title: "From the ledger", body: "Invoices, builders margin and contingency remain in Xero. Spend here is a view of those lines — not a second set of books. Unsigned spend cannot move until someone allows it. Homeowners never get a Xero login." },
+      house: { title: "This house only", body: "Homeowners see their project. Not the builder’s other jobs. Ask Truft and WhatsApp are the same rule." },
+      models: { title: "You pick the writer. The score stays.", body: "Everyday, careful, and fast writers can be swapped. A letter still has to clear the send bar. A cheaper writer that fails the score does not go live." },
+      evals: { title: "The score is how work is judged", body: "Before a letter, Instagram reply, or call goes out, it is scored against Truft’s own bar — voice, facts, no invented dates. Below the bar, it waits on Sharang." },
+      chatbot: { title: "Two conversations. Different memory.", body: "Public Ask Truft knows projects, visits, and cost-plus. It cannot open a live job. Inside a signed-in house, the conversation knows that house only. WhatsApp is the same file as the house conversation, not a third brain." },
+      leads: { title: "A lead is a person", body: "Form, email, phone, WhatsApp, Instagram, Ask Truft — each writes one row. Follow-up is a held Friday, a call, or a WhatsApp. They can say stop." },
+      usage: { title: "Times are the work", body: "When a step runs, or someone talks on WhatsApp or the phone, a time is written on the job. Only the minutes that actually ran." },
+      whatsapp: { title: "WhatsApp, not a fake window", body: "Official WhatsApp Business. Scan the QR on a phone, or open WhatsApp Desktop / Web on a Mac or PC. Same house file, same pause rules, same send bar. A 24-hour service window still applies. This mock is not wired." },
+      instagram: { title: "Posted to Instagram", body: "Official Instagram comment webhooks. A public reply in Truft’s voice, a private path to book Norwest. Held if the score is low. Not DM scraping. The live site’s Instagram URL is unconfirmed — do not invent one." },
+      post: { title: "Posting an update is one box", body: "Sharang types in the office. The owner sees it on their house. The same fact answers on WhatsApp if they ask tonight." },
+      ww: { title: "What is running here", body: "Runnable steps, memory of this house, scores before send, pauses before money, and doors (site, WhatsApp, Instagram, phone, this house). BuildPass and Xero stay the records. Truft stays the builder." },
+      memory: { title: "A memory that behaves", body: "Remembers owners and signed variations. Forgets a rumour when you mark it false. Re-ranks tonight’s question above an old brochure. Sleeps on a problem overnight. Refuses to invent a rate. Scores before anything leaves." },
+      cms: { title: "The homepage is yours", body: "Upload a photograph, add a homeowner line. It appears on Home and Our Work. Progress photos that belong on a live job still come from the site file — they do not have to be re-typed." },
+      sixty: { title: "Warm within a minute", body: "If someone leaves a mobile or asks for a callback, Truft can open WhatsApp, SMS or a call within about 60 seconds and offer Friday at Norwest. A human still answers within a day if needed. This mock is not wired." },
+      "sso-google": { title: "Google first", body: "Most owners already have Google. This is the default door into their house after they are building with you." },
+      "sso-optional": { title: "Optional doors", body: "Apple Developer and Meta review can be more than a 10-job builder wants. Facebook and Apple can be dropped. Homeowners must not need Facebook to see their house." },
+      "sso-tools": { title: "BuildPass and Xero logins", body: "Homeowners never unwrap Xero. BuildPass already holds photos and site notes — this portal is the face. Opening a BuildPass client share is only if needed and possible, not a second homework assignment." },
+      benchtop: { title: "On quote", body: "Island benchtop remainder. Quoted $18,400. Actual $18,400. Nothing extra." },
+      brodware: { title: "Variation 12 — explained", body: "Brass tapware, signed 4 September. Quoted $2,180. Actual $2,640 because the finish changed on site after the quote locked." },
+      stone: { title: "Waiting on a yes", body: "Island stone repair. Quoted $4,200. It is not signed. Cost-plus will not spend this until the people who live here allow it." }
+    };
+
+    const STEPS = [
+      { n:1, stage:"PLAN & APPROVE", name:"Preliminaries", happens:"Site setup, surveys, permits, temporary services", you:"Approvals status and the first open book — from day one.", truft:"DA/CDC chase list, insurer, consultants.", file:"The house file opens with the contract frame.", pause:false },
+      { n:2, stage:"PLAN & APPROVE", name:"Site Preparation & Earthworks", happens:"Clearing, excavation, levelling", you:"Cleared-site photos. If the dig changes cost, you see it first.", truft:"Machine bookings, spoil, survey set-out.", file:"Photos and the programme, the same day.", pause:false },
+      { n:3, stage:"PLAN & APPROVE", name:"Foundations & Concrete", happens:"Footings, slabs, concrete structures", you:"Pour window, photos after pour. A footing change that moves money waits.", truft:"Pour day crew, pump, engineer hold-points.", file:"Pour photos and the concrete invoice against quote.", pause:true },
+      { n:4, stage:"PLAN & APPROVE", name:"Reinforcement & Formwork", happens:"Steel reinforcement and formwork", you:"Steel and form photos before pour.", truft:"Cage inspection, form hire, cover checks.", file:"Inspection photos on the house file.", pause:false },
+      { n:5, stage:"STRUCTURE", name:"Structural Works", happens:"Frames and load-bearing elements", you:"Frame-up photos. A structural variation if the design shifts.", truft:"Framers programme, engineer inspections.", file:"Frame photos. Design shifts that cost extra wait.", pause:true },
+      { n:6, stage:"STRUCTURE", name:"Masonry", happens:"Brickwork and blockwork walls", you:"Brick / block sample lock-in.", truft:"Mason days, scaffold, mortar notes.", file:"Sample lock-in and progress photos.", pause:false },
+      { n:7, stage:"STRUCTURE", name:"Metalwork", happens:"Structural and architectural metalwork", you:"Balustrade or steel finish when it is visible.", truft:"Fabricator lead times, install sequence.", file:"Finish choice and any upgrade against quote.", pause:false },
+      { n:8, stage:"STRUCTURE", name:"Roofing & Roof Plumbing", happens:"Roof structure, roofing, gutters, downpipes", you:"Dry-in date, profile and colour.", truft:"Roofing crew, plumbing penetrations.", file:"Dry-in on the programme. Colour on the house file.", pause:false },
+      { n:9, stage:"STRUCTURE", name:"External Windows & Doors", happens:"Aluminium windows and doors", you:"Full frame schedule and finish sign-off before the order locks.", truft:"Supplier order, delivery, install after dry-in.", file:"Signed selection before order. Lead-time blows wait for notice.", pause:true },
+      { n:10, stage:"ENCLOSE & INTERNALS", name:"Doors & Door Hardware", happens:"Internal and external doors, hardware", you:"Leaf style and hardware pack.", truft:"Hang schedule, locksmith, snags.", file:"Selections and any snag photos.", pause:false },
+      { n:11, stage:"ENCLOSE & INTERNALS", name:"Carpentry", happens:"Frames, trusses, internal framing", you:"Joinery interfaces, niche and bulkhead confirms.", truft:"Carpenters programme, set-out.", file:"Programme and set-out photos.", pause:false },
+      { n:12, stage:"ENCLOSE & INTERNALS", name:"Plasterboard", happens:"Internal walls and ceilings", you:"Level of finish, ceiling height confirms.", truft:"Hang / stop schedule, wet-area board type.", file:"Progress photos on the house.", pause:false },
+      { n:13, stage:"ENCLOSE & INTERNALS", name:"Hydraulic Services", happens:"Water, drainage, gas", you:"Fixture rough-in positions. Relocation costs wait.", truft:"Plumber rough-in, stack tests.", file:"Rough-in photos. Relocation is a signed extra or it does not spend.", pause:true },
+      { n:14, stage:"ENCLOSE & INTERNALS", name:"Electrical Services", happens:"Wiring, lighting, power, data", you:"Point plan, switch finishes, smart upgrades.", truft:"First and second fix, energisation.", file:"Point plan on the house. Upgrades wait for sign-off.", pause:true },
+      { n:15, stage:"ENCLOSE & INTERNALS", name:"Mechanical Services", happens:"Heating, cooling, ventilation", you:"AC zones, grille locations, outdoor unit.", truft:"Mechanical install, commissioning.", file:"System choice and install photos.", pause:false },
+      { n:16, stage:"ENCLOSE & INTERNALS", name:"Waterproofing", happens:"Wet-area waterproofing", you:"Scope and product class. Booked Thursday 10:00 — not ‘sometime next week’.", truft:"Allied booking, weather abort, flood-test photos.", file:"Thursday 10:00 on your timeline.", pause:false },
+      { n:17, stage:"ENCLOSE & INTERNALS", name:"Tiling", happens:"Wall and floor tiles", you:"Tile and layout choice; grout colour.", truft:"Tile delivery, falls to waste, cure after membrane.", file:"Your selection. Tiling chained after waterproofing cure.", pause:false },
+      { n:18, stage:"ENCLOSE & INTERNALS", name:"Floor Finishes", happens:"Timber, vinyl, carpet", you:"Timber / stone / carpet selection.", truft:"Acclimation, install sequence, protection.", file:"Selection and install photos.", pause:false },
+      { n:19, stage:"FITOUT & STYLE", name:"Sanitary Fixtures & Tapware", happens:"Toilets, basins, sinks, taps", you:"Variation 12 — brass tapware — signed 4 September. Quoted $2,180. Actual $2,640 because the finish changed. Unsigned island stone $4,200 stays paused.", truft:"Brodware line tied to variation 12. Unsigned spend stays paused.", file:"Signed variation on the books. Unsigned repair cannot move.", pause:true },
+      { n:20, stage:"FITOUT & STYLE", name:"Bathroom Accessories", happens:"Towel rails, shower screens", you:"Accessory pack matching the tapware finish already remembered.", truft:"Install after tiling cure.", file:"Finish remembered from step 19 so accessories match.", pause:false },
+      { n:21, stage:"FITOUT & STYLE", name:"Electrical Appliances", happens:"Oven, cooktop, rangehood, dishwasher", you:"Appliance schedule. Upgrades wait for you.", truft:"Delivery windows, joinery cut-outs.", file:"Schedule on the house. Upgrades pause until signed.", pause:true },
+      { n:22, stage:"FITOUT & STYLE", name:"Joinery", happens:"Kitchen, bathroom, laundry, storage", you:"Cabinet finishes, handles, island stone — approve before fab lock.", truft:"Shop drawings, factory slot, install.", file:"Your say, locked before the factory.", pause:true },
+      { n:23, stage:"FITOUT & STYLE", name:"Internal Painting", happens:"Walls, ceilings, doors", you:"Colour schedule lock.", truft:"Prep, coats, touch-up before handover.", file:"Colour schedule on the house.", pause:false },
+      { n:24, stage:"FITOUT & STYLE", name:"Cladding & External Rendering", happens:"External cladding and render", you:"External finish sample; street elevation.", truft:"Scaffold, render cures, flashings.", file:"Sample and elevation on the house file.", pause:false },
+      { n:25, stage:"COMPLETE", name:"Landscaping", happens:"Gardens, lawns, planting", you:"Softscape / hardscape package.", truft:"Landscape programme after external works clear.", file:"Package and photos as planting goes in.", pause:false },
+      { n:26, stage:"COMPLETE", name:"External Works", happens:"Driveways, pathways, fencing, retaining", you:"Driveway, fencing, drainage — extras wait.", truft:"Civil finish, council conditions.", file:"Design lock. Extras pause.", pause:false },
+      { n:27, stage:"COMPLETE", name:"Builders Margin", happens:"Project management, overheads, profit", you:"Agreed margin — visible on spend, never padded into Brodware or Allied.", truft:"Margin posted per contract.", file:"The margin line is the agreed % — you can see it.", pause:false },
+      { n:28, stage:"COMPLETE", name:"Contingency", happens:"Allowance for unforeseen items", you:"Agreed allowance, drawn vs remaining, every draw explained.", truft:"A draw pauses if it would overdraw without your OK.", file:"Balance under review. Overdraw cannot happen quietly.", pause:true }
+    ];
+    const STAGES = [
+      { id:"PLAN & APPROVE", label:"Plan & approve", blurb:"Get everything ready." },
+      { id:"STRUCTURE", label:"Structure", blurb:"Strength that lasts." },
+      { id:"ENCLOSE & INTERNALS", label:"Enclose & internals", blurb:"Make it liveable." },
+      { id:"FITOUT & STYLE", label:"Fitout & style", blurb:"Bring the vision." },
+      { id:"COMPLETE", label:"Complete", blurb:"The last touches." }
+    ];
+    const PUBLIC = new Set(["home","about","services","work","process","contact","house"]);
+    const SCENES = [...PUBLIC, "office"];
+    let stageFilter = "ALL";
+    let selectedN = 19;
+    let signedIn = false;
+    let lb = { key:"henson", i:0 };
+
+    function toast(msg) {
+      const el = document.getElementById("toast");
+      el.textContent = msg; el.classList.add("is-on");
+      clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.remove("is-on"), 1800);
+    }
+    function openTip(key) {
+      const t = TIPS[key]; if (!t) return;
+      document.getElementById("drawerTitle").textContent = t.title;
+      const extra = (signedIn && t.source) ? "\n\n" + t.source : "";
+      document.getElementById("drawerBody").textContent = t.body + extra;
+      document.getElementById("drawer").classList.add("is-on");
+      document.getElementById("drawer").setAttribute("aria-hidden","false");
+    }
+    function closeTip() {
+      document.getElementById("drawer").classList.remove("is-on");
+      document.getElementById("drawer").setAttribute("aria-hidden","true");
+    }
+    function showScene(id, opts) {
+      document.getElementById("toast").classList.remove("is-on");
+      document.getElementById("askPanel").hidden = true;
+      document.getElementById("waSheet").hidden = true;
+      document.body.classList.remove("nav-open");
+      if (opts && opts.publicOnly && id === "office") id = "home";
+      document.querySelectorAll(".scene").forEach(s => s.classList.toggle("is-on", s.id === id));
+      document.querySelectorAll(".public-nav button").forEach(b => {
+        b.setAttribute("aria-current", b.dataset.go === id ? "page" : null);
+      });
+      window.scrollTo(0, 0);
+      history.replaceState(null, "", "#" + id);
+      document.getElementById("askCtxLabel").textContent = signedIn
+        ? "Henson Way · this house only"
+        : "Visitors · projects, visits, cost-plus";
+      if (opts && opts.focus === "lead") {
+        const band = document.getElementById("leadBand");
+        if (band) band.scrollIntoView({ block: "center" });
+      }
+    }
+    function renderRail() {
+      document.getElementById("stageRail").innerHTML = STAGES.map(s =>
+        `<button type="button" data-stage="${s.id}" aria-pressed="${stageFilter===s.id}"><b>${s.label}</b><span>${s.blurb}</span></button>`
+      ).join("");
+    }
+    function renderSteps() {
+      const rows = STEPS.filter(s => stageFilter === "ALL" || s.stage === stageFilter);
+      document.getElementById("stepGrid").innerHTML = rows.map(s =>
+        `<button type="button" class="step-cell ${s.n===selectedN?"is-on":""} ${s.pause?"wait":""}" data-n="${s.n}"><span class="num">${String(s.n).padStart(2,"0")}</span><span class="nm">${s.name}</span></button>`
+      ).join("");
+    }
+    function renderDrill() {
+      const s = STEPS.find(x => x.n === selectedN) || STEPS[18];
+      const photo = STAGE_PHOTO[s.stage];
+      document.getElementById("drill").innerHTML = `
+        <div class="ph" style="background-image:url('${photo}')"></div>
+        <article><h3>You see</h3><p>${s.you}</p></article>
+        <article><h3>Truft does</h3><p>${s.truft}</p></article>
+        <article><h3>On the house file</h3><p>${s.file}</p></article>`;
+    }
+    function selectStep(n, filter) {
+      selectedN = n;
+      const s = STEPS.find(x => x.n === n);
+      if (filter && s) stageFilter = s.stage;
+      renderRail(); renderSteps(); renderDrill();
+    }
+    function showLbFrame() {
+      const list = GALLERIES[lb.key]; if (!list) return;
+      const img = document.getElementById("lbImg");
+      img.src = list[lb.i];
+      img.className = "kb d" + ((lb.i % 4) + 1);
+      restartKb(img);
+      document.getElementById("lbTitle").textContent = HOUSE_LABEL[lb.key] || lb.key;
+      document.getElementById("lbCap").textContent = `${lb.i+1} / ${list.length}`;
+    }
+    function openGallery(key, i) {
+      lb = { key, i: i || 0 };
+      const list = GALLERIES[key]; if (!list) return;
+      document.getElementById("lb").hidden = false;
+      showLbFrame();
+    }
+    function shiftLb(d) {
+      const list = GALLERIES[lb.key]; if (!list) return;
+      lb.i = (lb.i + d + list.length) % list.length;
+      showLbFrame();
+    }
+    function renderWorkStrip() {
+      const keys = ["mustang","henson","newmarket","shetland"];
+      const cells = [];
+      keys.forEach(k => { for (let i=1;i<=3;i++) cells.push({k,i}); });
+      document.getElementById("workStrip").innerHTML = cells.map(({k,i}) =>
+        `<button type="button" data-open="${k}" data-i="${i}"><img class="kb d${(i%4)+1}" src="assets/gallery/${k}-${String(i+1).padStart(2,"0")}.jpg" alt="" /></button>`
+      ).join("");
+    }
+    function setHouseTab(tab) {
+      document.querySelectorAll("#houseRoot .tabs button").forEach(b => {
+        b.setAttribute("aria-selected", b.dataset.htab === tab ? "true" : "false");
+      });
+      document.querySelectorAll("#houseRoot .pane").forEach(p => p.classList.toggle("is-on", p.id === "h-" + tab));
+    }
+    function setOwnerSignedIn(on) {
+      signedIn = on;
+      document.body.classList.toggle("owner-in", on);
+      document.getElementById("housePreview").hidden = on;
+      document.getElementById("ownerGate").hidden = true;
+      document.getElementById("housePitch").hidden = on;
+      const foot = document.getElementById("houseFoot"); if (foot) foot.hidden = on;
+      document.getElementById("houseWho").textContent = on
+        ? "Week 38 · lock-up done · Priya & Amit · this house only"
+        : "Week 38 · lock-up done · a Truft house";
+      document.getElementById("houseState").textContent = on ? "Signed in" : "You can look. Sign in to act.";
+      document.getElementById("askChip").textContent = on
+        ? "This house only · different from the visitor conversation"
+        : "Visitor conversation · cannot see a live job";
+      document.getElementById("askCtxLabel").textContent = on ? "Henson Way · this house only" : "Visitors · projects, visits, cost-plus";
+      document.getElementById("pauseBanner").innerHTML = on
+        ? "<strong>Paused before money moves.</strong> Island stone repair quoted at $4,200. Cost-plus will not spend this until you approve."
+        : "<strong>This waited.</strong> Island stone repair quoted at $4,200. It is not signed, so it has not spent.";
+      window.scrollTo(0,0);
+      if (on) { setHouseTab("spend"); toast("Signed in · Henson Way · this house only."); }
+    }
+
+    const REPLIES = {
+      taps: { house: "Variation 12 — brass tapware — signed 4 September. Quoted $2,180. Actual $2,640 because the finish changed on site.", visitor: "On a live job you would see the signed variation on Spend. I can walk a sample house, or hold Friday 12:00 at Norwest." },
+      rate: { house: "I won’t invent a rate. The open book shows actuals by trade, not a blended $/m².", visitor: "I won’t invent a $/m². Real numbers live on a job’s open book, trade by trade. Friday 12:00 is often free at Norwest." },
+      visit: { house: "Friday 12:00 held at 303/4 Columbia Ct, Norwest. Prefer WhatsApp after 6, or 02 7235 0833.", visitor: "Friday 12:00 is free at 303/4 Columbia Ct, Norwest. I can hold it. Prefer WhatsApp? Use the QR. Prefer a voice? 02 7235 0833." },
+      costplus: { house: "Open book. Extra spend waits for you. Island stone $4,200 is paused until you allow it.", visitor: "Open book. Extra spend waits for you. Walk the sample house to see a pause in the open." },
+      water: { house: "Waterproofing is booked Thursday 10:00 with Allied. Tiling waits for cure. Photos land on This week after the flood test.", visitor: "On a live job the booking is a real time — Thursday 10:00, not ‘sometime next week’." },
+      drawing: { house: "Sheet A-12 — island overhang. Waiting on the engineer. Nothing spends until that is answered.", visitor: "On a live job, questions on the drawings sit on the house — not in a thread you have to chase." },
+      stone: { house: "Island stone repair is quoted at $4,200. It is not signed. Cost-plus will not spend it until you allow it.", visitor: "On a live job, unsigned spend waits in the open. Walk the sample — the $4,200 line is paused." },
+      photo: { house: "I can write a request for an extra photo of the island after Thursday’s flood test. I will not invent that the photo already exists.", visitor: "On a live job you would send that as a request on the house. Here I can hold Friday at Norwest." },
+      default: { house: "I only know Henson Way. Ask about spend, site, drawings, or the next booking. I will pause rather than invent a date.", visitor: "I can walk the 28 steps, hold Friday at Norwest, or open a sample house. I will not invent a rate." }
+    };
+    function classify(q) {
+      const t = (q || "").toLowerCase();
+      if (/m2|m²|metre|meter|rate/.test(t)) return "rate";
+      if (/tap|brass|var/.test(t)) return "taps";
+      if (/visit|friday|norwest|meet|hold/.test(t)) return "visit";
+      if (/stone|4,200|4200|repair|allow/.test(t)) return "stone";
+      if (/drawing|sheet|overhang|a-12|rfi/.test(t)) return "drawing";
+      if (/cost|open book|plus|invoice|spend|dollar/.test(t)) return "costplus";
+      if (/photo|picture/.test(t)) return "photo";
+      if (/waterproof|tiling|thursday/.test(t)) return "water";
+      return "default";
+    }
+    function replyFor(kind) {
+      const row = REPLIES[kind] || REPLIES.default;
+      return signedIn ? row.house : row.visitor;
+    }
+    function addMsg(box, who, text, me) {
+      if (!box) return;
+      const d = document.createElement("div");
+      d.className = "msg" + (me ? " me" : "");
+      d.innerHTML = `<span class="who">${who}</span>${text.replace(/</g,"")}`;
+      box.appendChild(d); box.scrollTop = box.scrollHeight;
+    }
+    function ask(kind, box) {
+      const qmap = { taps:"Why did the brass taps come in over the quote?", rate:"Rough $/m² for a finish like this?", visit:"Can we meet Friday?", costplus:"Is cost-plus actually open book?", water:"When is waterproofing?", drawing:"What’s happening with the island overhang?", stone:"What’s the $4,200 pause?", photo:"Can we have an extra photo of the island?" };
+      addMsg(box, "You", qmap[kind] || "Can you help?", true);
+      addMsg(box, "Truft", replyFor(kind), false);
+      if (kind === "visit") { const cal = document.getElementById("calStrip"); if (cal) cal.hidden = false; }
+    }
+    function logUsage(when, title, detail) {
+      const cal = document.getElementById("usageCal");
+      if (!cal) return;
+      cal.insertAdjacentHTML("afterbegin", `<div class="when">${when}</div><div class="what"><strong>${title}</strong>${detail}</div>`);
+    }
+    function setStone(state) {
+      const banner = document.getElementById("pauseBanner");
+      const cell = document.getElementById("stoneState");
+      if (state === "approved") {
+        banner.hidden = true; cell.textContent = "Signed variation · approved by owner";
+        toast("Stone repair approved. Spend may move.");
+      } else {
+        banner.hidden = false; cell.textContent = "Owner held — 11 Sep";
+        toast("Held. It will not spend.");
+      }
+    }
+    function fireHil(verb) {
+      const note = document.getElementById("hilNote");
+      const map = {
+        allow: "Allowed · $4,200 may move on the ledger · recorded.",
+        reject: "Rejected · nothing spent · recorded.",
+        steer: (document.getElementById("hilSteer").value.trim() || "Ask owner on WhatsApp after 6pm") + " · this run only.",
+        "always-allow": "Always allow · standing instruction. Dangerous — spend will not ask next time.",
+        "always-reject": "Always reject · unsigned spend stays paused until a named owner allows it."
+      };
+      note.textContent = map[verb] || "";
+      if (verb === "allow") setStone("approved");
+      if (verb === "reject" || verb === "always-reject") setStone("hold");
+      logUsage("Just now", "Pause · $4,200", verb.replace("-", " "));
+    }
+    function openWa() { document.getElementById("waSheet").hidden = false; }
+
+    document.addEventListener("click", (e) => {
+      if (e.target.closest("[data-close-dock]")) {
+        document.getElementById(e.target.closest("[data-close-dock]").dataset.closeDock).hidden = true; return;
+      }
+      const go = e.target.closest("[data-go]");
+      if (go) {
+        e.preventDefault();
+        showScene(go.dataset.go, { focus: go.dataset.focus, publicOnly: go.dataset.public === "1" });
+        if (go.dataset.signin === "1") {
+          document.getElementById("ownerGate").hidden = false;
+          setTimeout(() => document.getElementById("ownerGate").scrollIntoView({ block:"center" }), 40);
+        }
+        return;
+      }
+      const open = e.target.closest("[data-open]");
+      if (open && !e.target.closest(".i")) {
+        e.preventDefault();
+        openGallery(open.dataset.open, Number(open.dataset.i || 0));
+        return;
+      }
+      const line = e.target.closest("tr[data-line]");
+      if (line && !e.target.closest(".i")) { openTip(line.dataset.line); return; }
+      const tip = e.target.closest("[data-tip]");
+      if (tip) { e.preventDefault(); e.stopPropagation(); openTip(tip.dataset.tip); return; }
+      const pr = e.target.closest("[data-principle]");
+      if (pr) { document.querySelectorAll("[data-principle]").forEach(p => p.classList.toggle("is-open", p === pr)); return; }
+      const st = e.target.closest("#stageRail [data-stage]");
+      if (st) {
+        stageFilter = stageFilter === st.dataset.stage ? "ALL" : st.dataset.stage;
+        const first = STEPS.find(s => s.stage === stageFilter);
+        if (first) selectedN = first.n;
+        renderRail(); renderSteps(); renderDrill(); return;
+      }
+      const cell = e.target.closest(".step-cell[data-n]");
+      if (cell) { selectStep(Number(cell.dataset.n), false); return; }
+      const htab = e.target.closest("[data-htab]");
+      if (htab) { setHouseTab(htab.dataset.htab); return; }
+      const shop = e.target.closest("[data-shop]");
+      if (shop) {
+        document.querySelectorAll(".shop-tabs button").forEach(b => b.setAttribute("aria-selected", b === shop ? "true" : "false"));
+        document.querySelectorAll(".shop-pane").forEach(p => p.classList.toggle("is-on", p.id === "shop-" + shop.dataset.shop));
+        return;
+      }
+      const askBtn = e.target.closest("[data-ask]");
+      if (askBtn) { ask(askBtn.dataset.ask, document.getElementById("houseChat")); return; }
+      const sso = e.target.closest("[data-sso]");
+      if (sso && !e.target.closest(".i")) { setOwnerSignedIn(true); return; }
+      const job = e.target.closest("[data-job]");
+      if (job) {
+        const h = job.dataset.job === "henson";
+        document.getElementById("jobH").setAttribute("aria-pressed", h ? "true" : "false");
+        document.getElementById("jobM").setAttribute("aria-pressed", h ? "false" : "true");
+        document.getElementById("jobNote").textContent = h
+          ? "Henson Way · this house only. Pause rules and voice samples stay. Owners never see another job."
+          : "Mustang Ave · same pause rules, same voice. Different house file. The rumour marked false on Henson Way does not resurrect here.";
+      }
+    });
+
+    document.getElementById("drawerClose").addEventListener("click", closeTip);
+    document.getElementById("menuBtn").addEventListener("click", () => document.body.classList.toggle("nav-open"));
+    document.getElementById("askFab").addEventListener("click", () => {
+      const p = document.getElementById("askPanel"); p.hidden = !p.hidden;
+    });
+    document.getElementById("contactAsk").addEventListener("click", () => { document.getElementById("askPanel").hidden = false; });
+    document.getElementById("topWa").addEventListener("click", openWa);
+    document.getElementById("waSheetClose").addEventListener("click", () => document.getElementById("waSheet").hidden = true);
+    document.getElementById("waSheet").addEventListener("click", (e) => { if (e.target.id === "waSheet") e.target.hidden = true; });
+    document.getElementById("lbClose").addEventListener("click", () => document.getElementById("lb").hidden = true);
+    document.getElementById("lbPrev").addEventListener("click", () => shiftLb(-1));
+    document.getElementById("lbNext").addEventListener("click", () => shiftLb(1));
+    document.getElementById("seeOnHouse").addEventListener("click", () => {
+      showScene("house");
+      setHouseTab(selectedN === 19 || selectedN === 27 || selectedN === 28 ? "spend" : "week");
+    });
+    document.getElementById("gotoSignin").addEventListener("click", () => { document.getElementById("ownerGate").hidden = false; document.getElementById("ownerGate").scrollIntoView({ block:"center" }); });
+    document.getElementById("previewLock").addEventListener("click", () => { document.getElementById("ownerGate").hidden = false; document.getElementById("ownerGate").scrollIntoView({ block:"center" }); });
+    document.getElementById("cancelSignin").addEventListener("click", () => { document.getElementById("ownerGate").hidden = true; });
+    document.getElementById("ownerSignin").addEventListener("click", () => setOwnerSignedIn(true));
+    document.getElementById("ownerSignout").addEventListener("click", () => setOwnerSignedIn(false));
+    document.getElementById("ownerPass").addEventListener("keydown", (e) => { if (e.key === "Enter") setOwnerSignedIn(true); });
+    document.getElementById("approveStone").addEventListener("click", () => setStone("approved"));
+    document.getElementById("holdStone").addEventListener("click", () => setStone("hold"));
+    document.getElementById("waAllow").addEventListener("click", () => { setStone("approved"); toast("Allowed on WhatsApp. You’ll see it on Spend."); });
+    document.getElementById("houseSend").addEventListener("click", () => {
+      const q = document.getElementById("houseQ").value.trim(); if (!q) return;
+      document.getElementById("houseQ").value = "";
+      addMsg(document.getElementById("houseChat"), "You", q, true);
+      addMsg(document.getElementById("houseChat"), "Truft", replyFor(classify(q)), false);
+    });
+    document.getElementById("dockAskSend").addEventListener("click", () => {
+      const q = document.getElementById("dockAskQ").value.trim(); if (!q) return;
+      document.getElementById("dockAskQ").value = "";
+      addMsg(document.getElementById("dockAskChat"), "You", q, true);
+      addMsg(document.getElementById("dockAskChat"), "Truft", replyFor(classify(q)), false);
+    });
+    ["houseQ","dockAskQ"].forEach(id => {
+      document.getElementById(id).addEventListener("keydown", (e) => { if (e.key === "Enter") e.target.parentElement.querySelector("button").click(); });
+    });
+    document.getElementById("reqSend").addEventListener("click", () => {
+      const kind = document.getElementById("reqKind");
+      const note = (document.getElementById("reqNote").value.trim() || kind.options[kind.selectedIndex].text);
+      const li = document.createElement("li");
+      li.innerHTML = `${note.replace(/</g,"")}<small>Just now · on Sharang’s day</small>`;
+      document.getElementById("ownerReqs").insertBefore(li, document.getElementById("ownerReqs").firstChild);
+      document.getElementById("reqAck").textContent = "Written to Henson Way.";
+      document.getElementById("reqNote").value = "";
+      logUsage("Just now", "Request · this house", "Owner request · waiting on Sharang");
+      toast("Request sent.");
+    });
+    document.getElementById("postUpdate").addEventListener("click", () => {
+      const text = document.getElementById("adminPost").value.trim(); if (!text) return;
+      document.getElementById("ownerNotes").insertAdjacentHTML("afterbegin", `<div class="msg"><span class="who">Sharang · just now</span>${text.replace(/</g,"")}</div>`);
+      document.getElementById("postNote").textContent = "Posted to Henson Way.";
+      toast("Posted to the house.");
+    });
+    document.getElementById("adminDay").addEventListener("click", (e) => {
+      const b = e.target.closest("[data-hil]"); if (!b) return;
+      const verb = b.dataset.hil;
+      if (b.dataset.hold === "1") {
+        if (b.classList.contains("arm")) return;
+        b.classList.add("arm");
+        const t = setTimeout(() => { b.classList.remove("arm"); fireHil(verb); }, 3000);
+        const cancel = () => { clearTimeout(t); b.classList.remove("arm"); b.removeEventListener("pointerleave", cancel); };
+        b.addEventListener("pointerleave", cancel); return;
+      }
+      fireHil(verb);
+    });
+    document.getElementById("holdFri").addEventListener("click", () => {
+      document.getElementById("calStrip").hidden = false;
+      logUsage("Just now", "Hold Friday 12:00", "Norwest · written to the job");
+      toast("Friday 12:00 written.");
+    });
+    document.getElementById("triage").addEventListener("click", () => {
+      document.getElementById("triageNote").textContent = "Assigned to Allied Waterproofing from the site file. No completion date invented.";
+    });
+    document.getElementById("explainVar").addEventListener("click", () => {
+      document.getElementById("letterDraft").textContent = "Kitchen progress is on track. Variation 12 — brass tapware — signed 4 September. Quoted $2,180. Actual $2,640 because the finish changed on site after the quote locked.";
+      const sc = document.getElementById("letterScore");
+      sc.className = "score send";
+      sc.innerHTML = `<div class="stat">0.92 · May send</div><p style="margin:6px 0 0;font-size:13px">No invented dates. Send bar is 0.90.</p>`;
+      logUsage("Just now", "Explain variation 12", "letter now 0.92 · may send");
+    });
+    document.getElementById("invitePortal").addEventListener("click", () => {
+      document.getElementById("inviteNote").textContent = "Invite written. Mustang Ave will not see Henson Way.";
+      toast("Portal invite · Mustang Ave only.");
+    });
+    document.getElementById("igSend").addEventListener("click", () => {
+      document.getElementById("igNote").hidden = false;
+      document.getElementById("igSend").disabled = true;
+      logUsage("Just now", "Instagram reply", "score 0.92 · Friday 12:00 offered privately");
+      toast("Public reply sent.");
+    });
+    document.getElementById("fbReply").addEventListener("click", () => {
+      document.getElementById("fbNote").textContent = "Draft: Open book. Brass tapware on Henson Way is the clean example — quoted $2,180, actual $2,640, signed as variation 12. Score 0.91 · may send.";
+    });
+    document.getElementById("cmsFile").addEventListener("change", (e) => {
+      const f = e.target.files && e.target.files[0]; if (!f) return;
+      const url = URL.createObjectURL(f);
+      document.getElementById("cmsGrid").insertAdjacentHTML("afterbegin", `<figure><img src="${url}" alt="" /><figcaption>Just added · homepage</figcaption></figure>`);
+      toast("Photograph queued for the homepage. This mock is not wired.");
+    });
+    document.getElementById("testiAdd").addEventListener("click", () => {
+      const t = document.getElementById("testiIn").value.trim(); if (!t) return;
+      document.getElementById("testiList").insertAdjacentHTML("afterbegin", `<li>“${t.replace(/</g,"")}”<small>Just added · would appear on Home</small></li>`);
+      document.getElementById("testiIn").value = "";
+      toast("Line added.");
+    });
+    document.getElementById("leadForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("leadName").value.trim() || "there";
+      const email = document.getElementById("leadEmail").value.trim();
+      const mobile = document.getElementById("leadMobile").value.trim();
+      if (!email && !mobile) { toast("Leave an email or a mobile — or just WhatsApp."); return; }
+      const intent = document.getElementById("leadIntent");
+      const reach = Array.from(document.querySelectorAll("#leadForm input[name=reach]:checked")).map(i => i.value);
+      const door = reach.includes("whatsapp") ? "WhatsApp" : (reach.includes("call") ? "Call" : (email ? "Email" : "Site form"));
+      const tb = document.querySelector("#leadTable tbody");
+      const tr = document.createElement("tr"); tr.className = "is-new";
+      tr.innerHTML = `<td>Just now</td><td>${door}</td><td>${name.replace(/</g,"")}${mobile ? " · " + mobile.replace(/</g,"") : ""}</td><td>${intent.options[intent.selectedIndex].text}</td><td>Follow-up offered · Friday 12:00</td>`;
+      tb.insertBefore(tr, tb.firstChild);
+      logUsage("Just now", "Lead · follow-up", door + " · Friday 12:00 offered");
+      toast("Thanks " + name.split(" ")[0] + ". We’ll follow up as Truft.");
+      openWa();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        document.getElementById("lb").hidden = true;
+        document.getElementById("waSheet").hidden = true;
+        closeTip();
+      }
+      if (!document.getElementById("lb").hidden && (e.key === "ArrowRight" || e.key === "ArrowLeft")) {
+        shiftLb(e.key === "ArrowRight" ? 1 : -1);
+      }
+    });
+
+    renderRail(); renderSteps(); renderDrill(); renderWorkStrip();
+    fillTileFilms();
+    cycleCine(document.getElementById("homeCineStage"), CINE_HOME, (s) => {
+      const el = document.getElementById("homeCineCredit");
+      if (el) el.textContent = s.credit || "";
+    }, 9000);
+    cycleCine(document.getElementById("workCineStage"), CINE_WORK, (s) => {
+      const t = document.getElementById("workCineTitle");
+      const d = document.getElementById("workCineLede");
+      if (t) t.textContent = s.title || "Our work";
+      if (d) d.textContent = s.lede || "";
+    }, 7500);
+    cycleCine(document.getElementById("servicesCineStage"), CINE_SERVICES, null, 8000);
+    const hash = location.hash.replace("#","");
+    if (SCENES.includes(hash)) showScene(hash);
+  </script>
+</body>
+</html>
