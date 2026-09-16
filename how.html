@@ -5,300 +5,584 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Truft — how this would run</title>
+  <meta name="description" content="How Truft would run on Workweaver, the product of Bit Foundry: two named bots, a house file that does not mix jobs, a bar before anything leaves, and a six-month path in the house." />
   <link rel="icon" href="assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy: #192231;
-      --paper: #fafcf9;
-      --ink: #192231;
-      --ink-soft: #3a4a56;
-      --muted: #6b7780;
-      --line: #c8ced4;
-      --line-strong: #394b57;
-      --good: #2f5d46;
+      --navy: #192231; --panel: #172935; --stage-rail: #394b57;
+      --paper: #fafcf9; --footer-grey: #e3e4e8; --white: #ffffff;
+      --ink: #192231; --ink-soft: #3a4a56; --muted: #6b7780;
+      --line: #c8ced4; --line-strong: #394b57;
+      --on-dark: #fafcf9; --on-dark-dim: #b8c0c8;
+      --good: #2f5d46; --good-wash: #e6efea;
+      --warn: #7a4a28; --warn-wash: #f0e8e0;
       --font-brand: "Oswald", "Arial Narrow", sans-serif;
       --font-ui: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+      --hairline: 1px; --rule: 2px; --max: 1120px;
     }
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: #d8dce0; }
-    body {
-      font-family: var(--font-ui);
-      color: var(--ink);
-      line-height: 1.34;
-      font-size: 11.2px;
+    html, body { margin: 0; padding: 0; }
+    body { font-family: var(--font-ui); color: var(--ink); background: var(--paper); line-height: 1.55; font-size: 17px; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button { font: inherit; cursor: pointer; }
+    .skip { position: absolute; left: -999px; }
+    .skip:focus { left: 12px; top: 12px; background: #fff; padding: 8px 12px; z-index: 80; }
+
+    .preview-ribbon {
+      margin: 0; padding: 7px 16px; text-align: center;
+      background: #111820; color: var(--on-dark-dim);
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      border-bottom: var(--hairline) solid var(--line-strong);
     }
-    a { color: var(--ink); }
-    .sheet {
-      width: 210mm;
-      height: 297mm;
-      margin: 12px auto;
-      background: var(--paper);
-      padding: 9mm 12mm 8mm;
-      overflow: hidden;
-      page-break-after: always;
-      position: relative;
+    .preview-ribbon a { color: var(--on-dark); }
+
+    .top {
+      position: sticky; top: 0; z-index: 40;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center;
+      padding: 0 22px; height: 56px; background: var(--navy); color: var(--on-dark);
+      border-bottom: var(--rule) solid var(--line-strong);
     }
-    .kicker {
-      font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--muted); font-weight: 600; margin: 0 0 4px;
+    .brand { text-decoration: none; color: inherit; min-width: 96px; }
+    .wordmark { font-family: var(--font-brand); font-weight: 700; letter-spacing: 0.16em; font-size: 22px; line-height: 1; }
+    .brand small { display: block; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-dark-dim); margin-top: 3px; }
+    .top-nav { display: flex; justify-content: center; gap: 4px; flex-wrap: wrap; }
+    .top-nav a {
+      color: var(--on-dark-dim); text-decoration: none; padding: 18px 11px 14px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      border-bottom: 2px solid transparent;
     }
-    h1 {
-      font-family: var(--font-brand);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      font-size: 22px;
-      line-height: 1.05;
-      text-transform: uppercase;
-      margin: 0 0 6px;
+    .top-nav a[aria-current="page"] { color: var(--on-dark); border-bottom-color: var(--on-dark); }
+    .top-end { display: flex; align-items: center; gap: 14px; justify-self: end; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .top-end a { color: var(--on-dark); text-decoration: none; border-bottom: 1px solid rgba(250,252,249,0.35); padding-bottom: 2px; }
+
+    .hero {
+      min-height: min(72vh, 640px); position: relative; overflow: hidden; color: var(--on-dark);
+      display: flex; align-items: flex-end;
     }
-    h2 {
-      font-family: var(--font-brand);
-      font-size: 10.5px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin: 6px 0 4px;
-      padding-top: 5px;
-      border-top: 1px solid var(--line);
+    .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(25,34,49,0.82) 0%, rgba(25,34,49,0.35) 52%, rgba(25,34,49,0.12) 100%),
+                  linear-gradient(0deg, rgba(25,34,49,0.62) 0%, transparent 46%);
     }
-    p { margin: 0 0 4px; color: var(--ink-soft); }
+    .hero-copy { position: relative; z-index: 1; width: min(var(--max), calc(100% - 40px)); margin: 0 auto; padding: 0 0 48px; }
+    .kicker { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 0 0 8px; }
+    .hero .kicker { color: var(--on-dark-dim); }
+    h1, h2, h3 { margin: 0 0 12px; }
+    h1 { font-family: var(--font-brand); font-weight: 600; letter-spacing: 0.02em; font-size: clamp(32px, 5vw, 56px); line-height: 1.05; text-transform: uppercase; }
+    h2 { font-family: var(--font-brand); font-size: clamp(22px, 3vw, 32px); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    h3 { font-size: 18px; font-weight: 600; }
+    .lede { font-size: 19px; color: var(--on-dark); max-width: 42ch; margin: 0; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
+    .wrap.narrow { width: min(760px, calc(100% - 40px)); }
+    p { margin: 0 0 14px; color: var(--ink-soft); }
+    .wrap.narrow p, .prose p { max-width: 68ch; }
     strong { color: var(--ink); font-weight: 600; }
-    ul, ol { margin: 0 0 4px; padding-left: 1.15em; color: var(--ink-soft); }
-    li { margin: 0 0 1px; }
-    .lede { font-size: 12.5px; max-width: 78ch; color: var(--ink); }
-    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }
-    .cols.three { grid-template-columns: 1fr 1fr 1fr; }
-    .cols.four { grid-template-columns: 1fr 1fr; }
-    table { width: 100%; border-collapse: collapse; font-size: 10.4px; margin: 0 0 6px; }
-    th, td { text-align: left; vertical-align: top; padding: 3px 6px; border-bottom: 1px solid var(--line); }
+    ul, ol { margin: 0 0 16px; padding-left: 1.2em; color: var(--ink-soft); }
+    li { margin: 0 0 8px; }
+    .band { padding: 56px 0; }
+    .band.navy { background: var(--navy); color: var(--on-dark); }
+    .band.navy .kicker, .band.navy p, .band.navy li { color: var(--on-dark-dim); }
+    .band.navy h2, .band.navy h3, .band.navy strong { color: var(--on-dark); }
+    .band.grey { background: var(--footer-grey); }
+    .band.photo {
+      min-height: 280px; background: #111 center/cover no-repeat; color: var(--on-dark);
+      display: flex; align-items: flex-end;
+    }
+    .band.photo .wrap { padding-top: 80px; }
+    .band.photo p, .band.photo .kicker { color: var(--on-dark-dim); }
+    .band.photo h2 { color: var(--on-dark); }
+
+    .toc {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 28px;
+    }
+    .toc a {
+      display: block; background: var(--white); border: var(--hairline) solid var(--line);
+      padding: 16px 14px; text-decoration: none; color: var(--ink);
+    }
+    .toc b { display: block; font-family: var(--font-brand); letter-spacing: 0.1em; text-transform: uppercase; font-size: 13px; margin-bottom: 6px; }
+    .toc span { display: block; font-size: 13px; color: var(--ink-soft); }
+
+    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+    .card { background: var(--white); border: var(--hairline) solid var(--line); padding: 22px 20px; }
+    .band.navy .card { background: rgba(250,252,249,0.04); border-color: rgba(250,252,249,0.18); }
+    .card .n { font-family: var(--font-brand); letter-spacing: 0.14em; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .band.navy .card .n { color: var(--on-dark-dim); }
+
+    .five { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+    .five article {
+      min-height: 220px; color: #fff; padding: 18px 16px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      position: relative; overflow: hidden; background: #111 center/cover no-repeat;
+    }
+    .five article::before { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent, rgba(25,34,49,.84)); }
+    .five article > * { position: relative; }
+    .five h3 { font-family: var(--font-brand); letter-spacing: 0.08em; text-transform: uppercase; font-size: 15px; color: #fff; }
+    .five p { margin: 0; font-size: 14px; color: var(--on-dark-dim); }
+
+    .timeline {
+      display: flex; gap: 0; overflow-x: auto; scroll-snap-type: x mandatory;
+      border: var(--hairline) solid var(--line); background: var(--white); -webkit-overflow-scrolling: touch;
+    }
+    .timeline article {
+      min-width: min(220px, 78vw); padding: 18px 16px; border-right: var(--hairline) solid var(--line);
+      scroll-snap-align: start;
+    }
+    .timeline article:last-child { border-right: 0; }
+    .timeline .when { font-family: var(--font-brand); letter-spacing: 0.12em; text-transform: uppercase; font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+    .timeline h3 { font-size: 15px; }
+    .timeline p { margin: 0; font-size: 14px; }
+    .timeline .now { background: var(--navy); color: var(--on-dark); }
+    .timeline .now .when, .timeline .now p { color: var(--on-dark-dim); }
+    .timeline .now h3 { color: var(--on-dark); }
+
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+    .compare .wrong { border-left: 3px solid var(--warn); background: var(--warn-wash); }
+    .compare .right { border-left: 3px solid var(--good); background: var(--good-wash); }
+
+    details {
+      border: var(--hairline) solid var(--line); background: var(--white); padding: 0; margin: 0 0 8px;
+    }
+    details summary {
+      padding: 14px 16px; font-weight: 600; cursor: pointer; list-style: none;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after { content: " +"; color: var(--muted); font-weight: 400; }
+    details[open] summary::after { content: " −"; }
+    details .why { padding: 0 16px 16px; color: var(--ink-soft); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 0 0 18px; background: var(--white); }
+    th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: var(--hairline) solid var(--line); }
     th {
-      font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--muted); font-weight: 600; background: #e3e4e8;
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600; background: var(--footer-grey);
     }
     td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
-    .note { font-size: 10px; color: var(--muted); }
-    .rule { height: 2px; background: var(--navy); margin: 0 0 7px; }
+
+    .money {
+      display: grid; grid-template-columns: 1.3fr 0.9fr 1.4fr; gap: 0;
+      border: var(--rule) solid var(--navy); background: var(--navy); color: var(--paper);
+    }
+    .money div { padding: 22px 20px; border-right: var(--hairline) solid rgba(250,252,249,0.18); }
+    .money div:last-child { border-right: 0; }
+    .money span { display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; margin-bottom: 6px; }
+    .money b { display: block; font-family: var(--font-brand); font-size: 26px; letter-spacing: 0.04em; margin-bottom: 8px; }
+    .money p { margin: 0; font-size: 14px; color: var(--on-dark-dim); }
+
+    .iso { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: stretch; }
+    .iso .vs { display: grid; place-items: center; font-family: var(--font-brand); letter-spacing: 0.14em; color: var(--muted); }
+
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      padding: 12px 0 12px 28px; border-bottom: var(--hairline) solid var(--line);
+      position: relative;
+    }
+    .checklist li::before {
+      content: ""; position: absolute; left: 0; top: 16px; width: 12px; height: 12px;
+      border: 1px solid var(--navy);
+    }
+
     .foot {
-      position: absolute; left: 12mm; right: 12mm; bottom: 7mm;
-      display: flex; justify-content: space-between;
-      font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--muted); padding-top: 6px;
-      border-top: 1px solid var(--line);
+      display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      padding: 18px 22px; background: var(--footer-grey); font-size: 11px;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft);
     }
-    .box {
-      border: 1px solid var(--line);
-      padding: 6px 8px;
-      background: #fff;
+    .foot a { color: var(--ink); }
+
+    .btn {
+      display: inline-block; text-decoration: none; border: var(--hairline) solid var(--navy);
+      background: var(--navy); color: var(--on-dark); padding: 11px 16px;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px;
     }
-    .box strong { display: block; font-size: 11px; margin-bottom: 3px; }
-    .flow {
-      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0;
-      border: 1px solid var(--line); background: #fff; margin: 0 0 6px;
+    .btn.ghost { background: transparent; color: var(--navy); }
+    .btn.light { background: var(--on-dark); color: var(--navy); border-color: var(--on-dark); }
+    .row-btns { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 18px; }
+
+    @media (max-width: 900px) {
+      .toc, .pair, .compare, .five, .money, .iso { grid-template-columns: 1fr; }
+      .iso .vs { display: none; }
+      .money div { border-right: 0; border-bottom: var(--hairline) solid rgba(250,252,249,0.18); }
+      .top { grid-template-columns: 1fr auto; height: auto; padding: 10px 14px; }
+      .top-nav { display: none; }
+      body.nav-open .top-nav {
+        display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--navy); padding: 8px 12px 16px;
+      }
+      .menu-btn { display: grid; width: 34px; height: 34px; place-items: center; border: var(--hairline) solid rgba(250,252,249,0.28); background: transparent; color: var(--on-dark); }
+      .top-end { display: none; }
     }
-    .flow div { padding: 6px 8px 7px; border-right: 1px solid var(--line); }
-    .flow div:nth-child(3n) { border-right: 0; }
-    .flow div:nth-child(n+4) { border-top: 1px solid var(--line); }
-    .flow b {
-      display: block; font-family: var(--font-brand);
-      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px;
-    }
-    .flow span { font-size: 11px; color: var(--ink-soft); }
-    .chain {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
-      border: 1px solid var(--line); background: #fff; margin: 0 0 6px;
-    }
-    .chain div { padding: 6px 8px; border-right: 1px solid var(--line); }
-    .chain div:last-child { border-right: 0; }
-    .chain b {
-      display: block; font-family: var(--font-brand);
-      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px;
-    }
-    .priv {
-      display: grid; grid-template-columns: 1fr 12px 1fr 12px 1fr 12px 1fr;
-      align-items: stretch; margin: 0 0 6px;
-    }
-    .priv .box { min-height: 56px; }
-    .priv .arrow {
-      display: flex; align-items: center; justify-content: center;
-      color: var(--muted); font-size: 14px; font-weight: 700;
-    }
-    .allin {
-      display: grid; grid-template-columns: 1.4fr 0.7fr 1.6fr;
-      border: 1px solid var(--navy); background: var(--navy); color: var(--paper);
-      margin: 0 0 6px;
-    }
-    .allin div { padding: 7px 10px; border-right: 1px solid rgba(250,252,249,0.18); }
-    .allin div:last-child { border-right: 0; }
-    .allin b {
-      display: block; font-family: var(--font-brand);
-      font-size: 15px; letter-spacing: 0.04em; margin-top: 1px;
-    }
-    .allin span { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8; }
-    .allin em { font-style: normal; font-size: 10.5px; opacity: 0.9; }
-    .screen-bar {
-      max-width: 210mm; margin: 16px auto 8px; padding: 0 8px;
-      font-size: 13px; color: var(--ink-soft);
-    }
-    .screen-bar a { font-weight: 600; }
-    @page { size: A4; margin: 0; }
-    @media print {
-      html, body { background: #fff; }
-      .sheet { margin: 0; box-shadow: none; page-break-after: always; }
-      .screen-bar { display: none; }
-      a { text-decoration: none; }
-    }
-    @media (max-width: 860px) {
-      .sheet { width: auto; height: auto; min-height: 0; margin: 0; padding: 20px 16px 48px; overflow: visible; position: relative; }
-      .foot { position: static; margin-top: 14px; }
-      .cols, .cols.three, .cols.four, .flow, .chain, .priv, .allin { grid-template-columns: 1fr; }
-      .flow div, .chain div, .allin div { border-right: 0; border-bottom: 1px solid var(--line); }
-      .priv .arrow { display: none; }
-    }
+    @media (min-width: 901px) { .menu-btn { display: none; } }
   </style>
 </head>
 <body>
-  <p class="screen-bar">A two-page note for Sharang. Print to A4. Walkthrough: <a href="https://truft.bitfoundry.ai/">truft.bitfoundry.ai</a>. Numbers are list-price bands, not a quote. GST not included.</p>
+  <p class="preview-ribbon">A working note behind the walkthrough · not a quote · photography from truft.com.au · <a href="index.html">open the house</a></p>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top">
+    <a class="brand" href="index.html">
+      <span class="wordmark">TRUFT</span>
+      <small>How this would run</small>
+    </a>
+    <nav class="top-nav" aria-label="On this page">
+      <a href="#who">Who</a>
+      <a href="#bots">Two bots</a>
+      <a href="#bar">The bar</a>
+      <a href="#memory">This house</a>
+      <a href="#company">The company</a>
+      <a href="#keys">Keys</a>
+      <a href="#costs">What it takes</a>
+    </nav>
+    <div class="top-end">
+      <a href="https://workweaver.ai" rel="noopener">workweaver.ai</a>
+      <a href="https://www.bitfoundry.ai" rel="noopener">bitfoundry.ai</a>
+    </div>
+    <button class="menu-btn" type="button" id="menuBtn" aria-label="Menu">☰</button>
+  </header>
 
-  <article class="sheet" id="p1">
-    <div class="kicker">SS Developers Pty Ltd t/as Truft · Norwest · working note · 1 of 2</div>
-    <h1>How the house would run</h1>
-    <div class="rule"></div>
-    <p class="lede">Built on transparency. Engineered for value. You keep the site file and the ledger. The website, two conversations, and a follow-up that can open in about a minute sit on a small always-on machine in your Amazon account in Sydney.</p>
+  <main id="main">
+    <section class="hero">
+      <img src="assets/gallery/henson-04.jpg" alt="Henson Way kitchen — illustrative of a Truft house" />
+      <div class="hero-copy">
+        <p class="kicker">SS Developers Pty Ltd t/as Truft · Norwest</p>
+        <h1>Built on Transparency.<br>Engineered for Value.</h1>
+        <p class="lede">This is how the house would actually run. Not a brochure. Not a software tour. What a homeowner would feel, what you would set up, what it costs, and why the product behind it is Workweaver.</p>
+      </div>
+    </section>
 
-    <h2>What a homeowner feels</h2>
-    <div class="flow">
-      <div><b>01 Enquire</b><span>Form, email, phone, WhatsApp, Instagram, or Ask Truft. One note is enough.</span></div>
-      <div><b>02 Visit</b><span>Leave a mobile, and Truft can open WhatsApp, SMS, or a call within about 60 seconds and hold Friday at Norwest.</span></div>
-      <div><b>03 Sign</b><span>After they sign with you, that house gets a login. One job. Their pause.</span></div>
-      <div><b>04 Build</b><span>Photos the day they are taken. Every dollar against the quote. Extra spend waits.</span></div>
-      <div><b>05 Ask</b><span>They ask here, or on WhatsApp after six. Same house file.</span></div>
-      <div><b>06 Handover</b><span>The file stays theirs. They did not have to assemble it.</span></div>
+    <section class="wrap narrow prose" id="who">
+      <p class="kicker">Start here</p>
+      <h2>Workweaver is the product. Bit Foundry is the company.</h2>
+      <p>The walkthrough at <a href="index.html">truft.bitfoundry.ai</a> is the house as a homeowner would meet it. This page is the note underneath: how that house would be trained, judged, remembered, and paid for.</p>
+      <p><a href="https://www.bitfoundry.ai"><strong>Bit Foundry</strong></a> is the company. Their line is simple: redesign knowledge work for a world where machines can already write. <a href="https://workweaver.ai"><strong>Workweaver</strong></a> is the product they built to do that. You would not be buying a chatbot bolted onto WordPress. You would be a customer of Workweaver — Truft running on software that already knows how to take a goal, learn the rules of a business, and keep those rules as the business grows.</p>
+      <p>Workweaver would live in an Amazon account in Sydney that Truft controls. Bit Foundry operates the software. Truft remains the builder. Homeowners still talk to Truft — people, or Truft technology speaking as Truft. Never another company’s name on the thread.</p>
+      <div class="row-btns">
+        <a class="btn" href="index.html">Walk the house</a>
+        <a class="btn ghost" href="https://workweaver.ai" rel="noopener">workweaver.ai</a>
+        <a class="btn ghost" href="https://www.bitfoundry.ai" rel="noopener">bitfoundry.ai</a>
+      </div>
+    </section>
+
+    <nav class="wrap" aria-label="Contents" style="padding-top:0">
+      <div class="toc">
+        <a href="#bots"><b>01 · Two bots</b><span>One on the website. One inside a signed-in house.</span></a>
+        <a href="#bar"><b>02 · The bar</b><span>Judge the work. Do not pay for extra chatter.</span></a>
+        <a href="#memory"><b>03 · This house</b><span>Henson Way cannot mix with Mustang Ave.</span></a>
+        <a href="#company"><b>04 · The company</b><span>Feed it how Truft works. It can run more of the day.</span></a>
+        <a href="#keys"><b>05 · The keys</b><span>Your Amazon. A ticket if anyone else needs a look.</span></a>
+        <a href="#costs"><b>06 · What it takes</b><span>Six months in the house. Pipes at the supplier’s price.</span></a>
+        <a href="#setup"><b>07 · What you set up</b><span>WhatsApp in the company name. Site file and ledger stay yours.</span></a>
+        <a href="#walk"><b>08 · If this is it</b><span>A Friday hour. The first two jobs that must sound like you.</span></a>
+      </div>
+    </nav>
+
+    <section class="band navy" id="bots">
+      <div class="wrap">
+        <p class="kicker">Name them</p>
+        <h2>Two Truft bots. Not two companies.</h2>
+        <p>People will meet Truft in more than one place. That is normal. What must not happen is three different memories of the same house.</p>
+        <div class="pair" style="margin-top:22px">
+          <article class="card">
+            <div class="n">Bot one · on the website</div>
+            <h3>Ask Truft — for anyone</h3>
+            <p>This is the chatbot on the public site. It knows the projects, the 28 steps, how cost-plus works, and how to hold Friday at Norwest. It can take a name, an email, or a mobile. It cannot open a live job. It will not invent a price per square metre. Follow-up is Truft — a person, or this bot speaking as Truft.</p>
+          </article>
+          <article class="card">
+            <div class="n">Bot two · after they sign in</div>
+            <h3>Ask Truft — this house only</h3>
+            <p>After someone is building with you, they sign in and get a second bot. Same voice. Different memory. It knows that house: spend, site photos, the pause on the island stone, the waterproofing booking. It cannot see another job. Priya at Henson Way never receives a note that belongs on Mustang Ave.</p>
+          </article>
+        </div>
+        <p style="margin-top:18px">WhatsApp is not a third bot. It is a door. On a phone it opens the real WhatsApp. On a computer it opens WhatsApp Desktop or WhatsApp Web. Once they are building, that thread is the same house file as the signed-in bot — same pause rules, same facts, same voice. This walkthrough is not wired to a live WhatsApp Business account yet, so the mock will not open someone else’s number. When it is live, the button will open Truft’s WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap" style="padding-bottom:16px">
+        <p class="kicker">What a homeowner feels</p>
+        <h2>From a name on a Friday to keys</h2>
+      </div>
+      <div class="five">
+        <article style="background-image:url('assets/gallery/mustang-01.jpg')">
+          <h3>Tonight</h3>
+          <p>Form, phone, WhatsApp, or Ask Truft. One name is enough. A follow-up can open within a minute.</p>
+        </article>
+        <article style="background-image:url('assets/gallery/henson-01.jpg')">
+          <h3>Norwest</h3>
+          <p>Friday at 303/4 Columbia Ct. Real numbers on the table. 02 7235 0833 stays on the card.</p>
+        </article>
+        <article style="background-image:url('assets/gallery/henson-06.jpg')">
+          <h3>A sample house</h3>
+          <p>Photos, spend, a pause sitting in the open — before anyone signs.</p>
+        </article>
+        <article style="background-image:url('assets/gallery/henson-04.jpg')">
+          <h3>You watch</h3>
+          <p>Photos the day they are taken. Extra spend waits. The weekly letter only leaves if it sounds like Truft.</p>
+        </article>
+        <article style="background-image:url('assets/gallery/mustang-07.jpg')">
+          <h3>The file stays</h3>
+          <p>Decisions, photos, the book. Theirs. They did not have to assemble it.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="train">
+      <p class="kicker">How you train them</p>
+      <h2>A skill is how you would train a person. Then it runs.</h2>
+      <p>You would not hire a junior and say “be helpful.” You would walk them through a variation: quoted this, actual that, because the finish changed on site, and never invent a date that is not in the programme. You would tell them what not to say on Instagram. You would tell them that unsigned spend waits.</p>
+      <p>That packet — the dos, the don’ts, the voice, the examples — is a <strong>skill</strong>. Workweaver turns it into something that can actually do the job: explain variation 12, reply to a public comment, hold Friday at Norwest, draft the weekly letter. You are not learning a new religion called “agents.” You are writing down how Truft already works, once, so the bots can do that work the same way on Tuesday night.</p>
+      <p>The first two skills that must sound like you are usually these: explain a variation, and reply on Instagram. Everything else waits until those two would make you proud.</p>
+      <details>
+        <summary>Why write it down instead of just chatting with a model?</summary>
+        <div class="why">
+          <p>A chat is a conversation. It forgets. A skill is a job with a name, a pass mark, and a record. When the junior is good, you keep the training. When a letter fails, that failure teaches the next one. When a cheaper, faster writer appears next year, you can move the same skill onto it — if it still passes the bar. Chat does not give you that. Training does.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="band grey" id="bar">
+      <div class="wrap">
+        <p class="kicker">Quality, not chatter</p>
+        <h2>Raise the bar. Do not buy more words.</h2>
+        <p>Most AI is sold by the pile of words. More drafts, more tokens, a larger invoice. That game is called chasing volume. It is the wrong game for a builder whose name is on a seven-figure house.</p>
+        <div class="compare" style="margin:22px 0">
+          <article class="card wrong">
+            <h3>Paying for more talk</h3>
+            <p>The machine writes a long weekly letter, a long Instagram reply, a long WhatsApp. You pay for the words. A fluent wrong sentence still goes out. Next month you buy a bigger model so it can talk more. The house does not get clearer. The bill does.</p>
+          </article>
+          <article class="card right">
+            <h3>Paying for a pass mark</h3>
+            <p>Before a letter, a comment, or a WhatsApp leaves, it is scored against Truft’s own bar: sounds like you, sticks to facts, does not invent a date, does not spend. Below the mark, it waits on you. A letter at 0.78 is held. At 0.92 it may send. You are not billed for idle software sitting there looking busy.</p>
+          </article>
+        </div>
+        <p>People who build this call the score an <strong>eval</strong> — a judgement of the work, not a count of the words. The move is to raise that judgement over time. A held letter teaches the next one. A rumour you mark false stays gone. Overnight the system can pull a handover date that was never in the programme; the bar catches it, so a fluent wrong sentence does not leave the building.</p>
+        <p>That is also how the writing bill comes down without getting sloppy. New models are almost always smarter, cheaper, and faster than last year’s. Workweaver can move a skill onto a newer writer <em>because the score is the gate</em>. A cheaper writer that fails the bar does not go live. You are not locked to one vendor’s meter. You are locked to Truft’s standard.</p>
+        <p>Idle software is not billed as work. When a step runs — a letter scored, a WhatsApp answered, a follow-up drafted — those minutes are written on a calendar you can see. That is the timesheet.</p>
+      </div>
+    </section>
+
+    <section class="wrap" id="memory">
+      <p class="kicker">This house only</p>
+      <h2>Henson Way is not Mustang Ave.</h2>
+      <p>Search is a pile of documents. Ask a search box about the island stone and it will happily mix last year’s brochure with this week’s pause. A house cannot run on that.</p>
+      <p>The memory of a Truft house behaves. It remembers that variation 12 was signed on 4 September — brass tapware, quoted $2,180, actual $2,640 because the finish changed on site. It forgets “island stone is included” the moment you mark that false. Tonight’s question ranks above an old brochure. And it will not invent a rate to sound helpful.</p>
+      <div class="iso" style="margin:22px 0">
+        <article class="card">
+          <h3>Henson Way · week 38</h3>
+          <p>Priya and Amit. Waterproofing Thursday 10:00. Island stone $4,200 waiting on a yes. WhatsApp in the evening is their preference. The signed-in bot knows this file and no other.</p>
+        </article>
+        <div class="vs">NOT</div>
+        <article class="card">
+          <h3>Mustang Ave · week 12</h3>
+          <p>Different owners. Structure. Phone first. Invited, not yet signed in. Nothing from Henson Way — not the pause, not the photos, not the evening preference — may appear here.</p>
+        </article>
+      </div>
+      <p>That wall is not a courtesy. Each customer of Truft is their own world: their login, their photos, their spend, their WhatsApp. Skills that talk to a house are given only that house. A person in the office can see the day. A homeowner cannot see another job. Workweaver is built for that kind of wall. Without it, the product is not fit for a builder.</p>
+      <details>
+        <summary>What “enough context” actually means</summary>
+        <div class="why">
+          <p>Feed Workweaver how Truft already works — cost-plus, the 28 steps, what you will never say, which spend waits, which door is WhatsApp, which door is the office phone — and it can name those rules back to you in a map of the business. “Unsigned spend does not move.” “Never invent a $/m².” “A public Instagram reply may offer Friday; it may not open a live job.” Those lines become the rails every bot runs on. The richer the map, the less you have to repeat yourself, and the cheaper repeated work becomes.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="band photo" id="progress" style="background-image:linear-gradient(rgba(25,34,49,.55), rgba(25,34,49,.55)), url('assets/gallery/henson-06.jpg')">
+      <div class="wrap">
+        <p class="kicker">From nothing to now</p>
+        <h2>A house has a timeline. The bot can walk it.</h2>
+        <p>Not a status emoji. A scroll from first note to this week, sitting on the house and inside the signed-in chatbot.</p>
+      </div>
+    </section>
+    <div class="wrap" style="padding-top:0">
+      <div class="timeline" tabindex="0" aria-label="Sample house from first note to week 38">
+        <article>
+          <div class="when">First note</div>
+          <h3>A name</h3>
+          <p>Form, phone, or Ask Truft. One row. They can say stop.</p>
+        </article>
+        <article>
+          <div class="when">Friday</div>
+          <h3>Norwest</h3>
+          <p>303/4 Columbia Ct. The open book on the table.</p>
+        </article>
+        <article>
+          <div class="when">Plan &amp; approve</div>
+          <h3>The file opens</h3>
+          <p>Permits, pour, the first photos. Structure is not a finish you value-engineer later.</p>
+        </article>
+        <article>
+          <div class="when">Structure</div>
+          <h3>It stands</h3>
+          <p>Frame, masonry, roof, windows. A change that moves money waits.</p>
+        </article>
+        <article>
+          <div class="when">Enclose</div>
+          <h3>It closes in</h3>
+          <p>Services, waterproofing, tiling. Bookings are real times, not “sometime next week.”</p>
+        </article>
+        <article>
+          <div class="when">Fitout</div>
+          <h3>Variation 12</h3>
+          <p>Brass tapware signed. Quoted $2,180. Actual $2,640. Explained, not buried.</p>
+        </article>
+        <article class="now">
+          <div class="when">Week 38 · now</div>
+          <h3>A pause in the open</h3>
+          <p>Island stone $4,200 unsigned. Waterproofing Thursday 10:00. Tiling waits for cure.</p>
+        </article>
+        <article>
+          <div class="when">Complete</div>
+          <h3>Keys</h3>
+          <p>The file stays. BuildPass and the ledger remain the record.</p>
+        </article>
+      </div>
     </div>
 
-    <h2>Two conversations. A pass mark before it leaves.</h2>
-    <div class="cols">
-      <div class="box">
-        <strong>On the public site — for everyone</strong>
-        Knows projects, the 28 steps, cost-plus, and how to hold a visit. Can take a name, email, or mobile. Cannot open a live job. Cannot invent a $/m².
+    <section class="band navy" id="company">
+      <div class="wrap">
+        <p class="kicker">Where this is going</p>
+        <h2>A company that still sounds like Truft when you are on site.</h2>
+        <p>The six months are not “install a chatbot.” They are time in the building: the plan, the first skills, the proof on a real job, the bar set to your voice. That is the immediate need — hours back on site, one enquiry that does not go cold, one unapproved variation that cannot spend.</p>
+        <p>The longer need is a company that can run more of the day without you in every thread. Not a black box. A junior who gets better.</p>
+        <div class="pair" style="margin-top:22px">
+          <article class="card">
+            <h3>It finds the rails</h3>
+            <p>Given enough of how Truft actually works, Workweaver can surface the constraints of the business: cost-plus is the open book; extra spend waits; one house per login; Instagram is public comments, not scraping private messages; the office number stays 02 7235 0833. You edit every line. The bots cannot cross them.</p>
+          </article>
+          <article class="card">
+            <h3>Then more of the day runs</h3>
+            <p>Weekly letter. Instagram reply. Follow-up within a minute. WhatsApp that knows this house. You stay on the exceptions: unsigned spend, a letter that failed the bar, a homeowner who asked for a person. That is how a ten-job builder becomes a company that still sounds like Truft at 9:41pm.</p>
+          </article>
+        </div>
+        <p style="margin-top:18px">Repeated work gets cheaper because it becomes a skill you own, not a rented conversation you pay full price for twice. The tenth weekly letter should not cost the first. The bar stays. The writer can move. The company compounds.</p>
+        <p>You do not hand over the wheel on day one. Plenty of teams start by planning with Workweaver and running the work themselves. You hand over a job when the record earns it — a letter that keeps clearing the bar, a pause that keeps holding. The brake stays yours.</p>
       </div>
-      <div class="box">
-        <strong>Inside the house login — this job only</strong>
-        Knows that house: spend, site, requests. Can allow or hold. Cannot see Mustang Ave from Henson Way. WhatsApp after six is the same file, not a third brain.
+    </section>
+
+    <section class="wrap" id="keys">
+      <p class="kicker">Who can see a house</p>
+      <h2>Your Amazon. Your key. A ticket if anyone else needs a look.</h2>
+      <p>Names, photos, invoices, and WhatsApp live in <strong>Truft’s Amazon account in Sydney</strong>. Not on a laptop. Not in Bit Foundry’s company account. Workweaver runs there as software. Truft is the customer — the tenant — of that software.</p>
+      <p>Bit Foundry can see whether a step failed. They cannot quietly open the kitchen photo. There is no back-channel. Every look is logged.</p>
+      <p>If something is badly broken and a human at Bit Foundry genuinely needs to see tenant information, it is not a Slack message. You already use <strong>Zoho Desk</strong>. A ticket is opened. A named person, a written reason, a short window. You can sit on the call. You can refuse; that bug may wait until you do. Amazon keeps a trail of what was opened. That is the unlock. It is not standing access.</p>
+      <details>
+        <summary>If the website sits on Bit Foundry’s Amazon versus Truft’s Amazon</summary>
+        <div class="why">
+          <p>Either way, requests are logged. If the public site is on Bit Foundry’s account during the six months, Truft can revoke that access — take the domain back, shut the door. If the public site sits in Truft’s own Amazon, Bit Foundry does not have a standing key. A supervised unlock is the same as above: a Zoho Desk ticket, a named window, a record. The house file (photos, invoices, WhatsApp) is meant to live in Truft’s account from the start, with a key Truft holds.</p>
+        </div>
+      </details>
+      <details>
+        <summary>What a question to the bot does — and does not do</summary>
+        <div class="why">
+          <p>A question in, an answer out. That pass is not kept to train a public model, and it is not a library of your clients’ houses for someone else to browse. Homeowners never receive a login to the ledger. They see their house. The ledger stays the ledger.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="band grey" id="costs">
+      <div class="wrap">
+        <p class="kicker">Spoken plainly</p>
+        <h2>What it costs. What it takes.</h2>
+        <p>This is not a WordPress theme. <a href="https://truft.com.au">truft.com.au</a> is a site you likely tuned yourself. Respect it. It cannot be a homeowner login, a pause before money, a memory of the house, or WhatsApp that knows Henson Way.</p>
+        <p>A custom shop asked to approximate the portals — still without the operating layer — sits on the order of two people, about <strong>AUD 5,000 to 10,000 a month</strong>. People who can actually build the operating layer well are usually around <strong>USD 100 an hour</strong>. You are not hiring a standing engineer. You are buying six months of the person in the house, and a way to add the next letter without hiring a shop.</p>
+        <div class="money" style="margin:22px 0">
+          <div>
+            <span>Person in the house · 6 months</span>
+            <b>AUD 500 / month</b>
+            <p>Plan, proof on a real job, first wiring, inference and machines at cost for that window. The working price for this design-partner path.</p>
+          </div>
+          <div>
+            <span>When a step runs</span>
+            <b>A small share + minutes</b>
+            <p>A small share of the writing bill, plus only the minutes a job actually ran. A letter scored, a WhatsApp answered, a follow-up drafted. Not software sitting idle.</p>
+          </div>
+          <div>
+            <span>The pipes</span>
+            <b>Supplier’s price</b>
+            <p>Amazon in Sydney, WhatsApp, and the writing bill. You see the supplier page. Nothing is quietly marked up on the way through.</p>
+          </div>
+        </div>
+        <p>During the six months, and after, you still fund the pipes because they scale with your volume:</p>
+        <ul>
+          <li><strong>Amazon Sydney</strong> — the machine, storage, and nightly copies. A small always-on box, not thousands of dollars. A quiet month is on the order of a hundred or two. A working month still hundreds, not thousands.</li>
+          <li><strong>WhatsApp</strong> — chats a homeowner starts, inside a day, are usually free from Meta. Templates Truft sends first are cents.</li>
+          <li><strong>The office phone</strong> — 02 7235 0833 can stay exactly as it is. A programmable follow-up is optional, and only if you want it.</li>
+          <li><strong>The writing bill</strong> — at the supplier’s price. A careful writer while the voice is taught. A faster writer later, if the pass mark still clears.</li>
+          <li><strong>The ledger’s machine login</strong> — if you want the books to feed the house, Xero’s add-on for that door is about <strong>AUD 10 a month</strong>.</li>
+        </ul>
+        <p>If you stop at month six — or any time after — <strong>BuildPass remains the record</strong> for defects, photos, and site communication. <strong>Xero remains the record</strong> for money. Homeowners are not stranded in a vendor they did not choose. You keep the plan, the cost picture, and whatever proof ran in the house. You are not buying a trap.</p>
       </div>
-    </div>
-    <p style="margin-top:5px">Skills are named jobs you write — explain a variation, reply on Instagram, hold Friday. Before a letter, a comment, or a WhatsApp leaves, it is scored against Truft’s bar. Below the mark, it waits on you. Every skill run, every WhatsApp, and every call puts a time on a calendar — so you see the minutes that actually ran, not software sitting idle.</p>
+    </section>
 
-    <h2>A lead does not sit in an inbox</h2>
-    <div class="chain">
-      <div><b>Note</b><span>Any door writes one row. They can say stop.</span></div>
-      <div><b>Follow-up</b><span>Offered as Truft. Friday 12:00 is often free.</span></div>
-      <div><b>Visit</b><span>Held at 303/4 Columbia Ct, or 02 7235 0833.</span></div>
-      <div><b>After they sign</b><span>Invited to that house’s login. Not a public sample.</span></div>
-    </div>
+    <section class="wrap" id="setup">
+      <p class="kicker">What you would set up — and why</p>
+      <h2>A few doors. Yours, not ours.</h2>
+      <p>None of this replaces the site file or the ledger. It reads them. You keep paying for the tools you already trust.</p>
+      <details open>
+        <summary>WhatsApp, in the company name</summary>
+        <div class="why">
+          <p>Why: homeowners already write there. A fake chat window on a website is not WhatsApp. You start a WhatsApp Business account as Truft — the name people see is Truft. It can take a few days, and it has to be done in the company’s own Meta Business. It cannot be finished from Coimbatore on your behalf. Keep 02 7235 0833 on the card. The number already living in the ordinary phone app is a different product; moving it is Meta’s process, not a toggle.</p>
+        </div>
+      </details>
+      <details>
+        <summary>The site file stays in BuildPass</summary>
+        <div class="why">
+          <p>Why: photos, defects, the programme, and the handset on site already live there. Copying them into a second system is how facts drift. On a Pro plan you switch on a machine door (Oceania). Published today: projects, photos, defects, meetings, timesheets. If a drawing field is not on that list yet, we use what is published and ask them — we do not invent it.</p>
+        </div>
+      </details>
+      <details>
+        <summary>The ledger stays in Xero</summary>
+        <div class="why">
+          <p>Why: invoices, margin, and contingency already live there. Spend on the house is a view of those lines, not a second set of books. You click Allow on the SS Developers organisation. Unsigned spend cannot move until someone allows it. Homeowners never receive a Xero login. The Xero login lives in your account, in an envelope the operator cannot unwrap.</p>
+        </div>
+      </details>
+      <details>
+        <summary>The website, on a small machine in Sydney</summary>
+        <div class="why">
+          <p>Why: the same system that runs the house can build and host the public site — a small machine in Amazon’s Sydney region, nightly copies, the domain you already own. Not a second agency. Search still needs a clear title and a matching Google Business Profile. We ship a real form today. We do not promise that a stranger’s assistant can book a visit unattended.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Google and Microsoft as the front door to a house</summary>
+        <div class="why">
+          <p>Why: most owners already have one of those. After they are building, that is how they sign in to their job. Apple and Facebook can wait; homeowners must not need Facebook to see their house.</p>
+        </div>
+      </details>
+    </section>
 
-    <h2>The website — people first, machines can read it</h2>
-    <p>The same system that will run the house also builds and hosts truft.com.au — a small machine in Amazon’s Sydney region, nightly copies, TLS, the domain you already own. Not a second agency. Not a freelancer on WordPress.</p>
-    <p>Search still needs a clear title, a matching Google Business Profile, and pages that load. We label the site as a custom builder in North West Sydney. A short contents file helps an assistant find how to book; it does not rank you. We ship a real form today. If browsers later let an assistant use that form by name, we can switch it on. We do not promise unattended booking.</p>
-
-    <h2>WhatsApp, phone, Instagram — what you procure</h2>
-    <table>
-      <thead><tr><th>Step</th><th>What it is</th></tr></thead>
-      <tbody>
-        <tr><td>Meta Business, in the company name</td><td>You start this. It can take days. It cannot be finished from Coimbatore on your behalf.</td></tr>
-        <tr><td>A WhatsApp Business Account</td><td>The Business Platform (Cloud API) — not the small-business phone app. Different products.</td></tr>
-        <tr><td>Verification and a display name</td><td>The name people see is Truft.</td></tr>
-        <tr><td>A phone number for that account</td><td>Dedicated. The number already on the phone app cannot sit on the API without Meta’s move.</td></tr>
-        <tr><td>02 7235 0833</td><td>Stays on the card. Twilio only if you want a programmable follow-up (a local AU number is a few dollars a month; calls are cents).</td></tr>
-      </tbody>
-    </table>
-    <p>Chats they start, inside 24 hours, are usually free. Templates you send first are cents. Instagram comments can be answered in Truft’s voice, with a private note to book Norwest. Honour stop.</p>
-
-    <h2>What you grant, so the house can read the truth</h2>
-    <div class="cols">
-      <div class="box">
-        <strong>The site file (BuildPass)</strong>
-        Stays yours. On a Pro plan: Settings → API access, Oceania. You copy a secret once; we request access. Published today: projects, photos, defects, meetings, timesheets. If a drawing or programme field is not on that list yet, we use what is published and ask them — we do not invent it. If they also offer a machine door, we can use it or wrap the ordinary API.
+    <section class="band navy" id="walk">
+      <div class="wrap">
+        <p class="kicker">If this is the house you want</p>
+        <h2>A Friday hour. Two jobs that must sound like you.</h2>
+        <ol class="checklist">
+          <li>Walk the house at <a href="index.html">truft.bitfoundry.ai</a> — the sample, the pause, Ask Truft, then this note.</li>
+          <li>Confirm the BuildPass plan so the machine door is real.</li>
+          <li>Click Allow on Xero for the organisation. Say whether jobs are costed there as projects.</li>
+          <li>Start the WhatsApp Business account in the company name. Keep 02 7235 0833 on the card.</li>
+          <li>Name the first two skills that must sound like you — likely: explain a variation, reply on Instagram.</li>
+          <li>Put Friday’s office hour in the calendar — 303/4 Columbia Ct, Norwest, or 02 7235 0833.</li>
+        </ol>
+        <p>You walk away knowing what it costs, what it takes, and that the product is built for the job you have now and the company you want next: a builder whose house still sounds like Truft when the person who carries the name is on site.</p>
+        <div class="row-btns">
+          <a class="btn light" href="index.html">Open the walkthrough</a>
+          <a class="btn ghost on-dark" href="https://workweaver.ai" rel="noopener" style="color:var(--on-dark);border-color:var(--on-dark)">Workweaver</a>
+        </div>
       </div>
-      <div class="box">
-        <strong>The ledger (Xero)</strong>
-        Stays yours. You click Allow on the SS Developers organisation. Say whether jobs are costed in Xero Projects. A machine login (one organisation) is a Xero add-on at <strong>AUD 10 / month</strong> including GST. Official libraries exist. You re-consent if access changes. The Xero login lives in your account, in an envelope Santhanakrishnan cannot unwrap.
-      </div>
-    </div>
-    <div class="foot"><span>People · Process · Quality · Your home</span><span>1 / 2 · truft.bitfoundry.ai</span></div>
-  </article>
+    </section>
+  </main>
 
-  <article class="sheet" id="p2">
-    <div class="kicker">Working note · 2 of 2</div>
-    <h1>Who can see a house. What it costs.</h1>
-    <div class="rule"></div>
-
-    <h2>Your files, your key, a named visit if something is badly broken</h2>
-    <div class="priv">
-      <div class="box"><strong>The house</strong>Photos, invoices, WhatsApp. Names of the people who live there.</div>
-      <div class="arrow">→</div>
-      <div class="box"><strong>Your Amazon, Sydney</strong>Your account. Your key. Not a laptop. Not Workweaver’s company account.</div>
-      <div class="arrow">→</div>
-      <div class="box"><strong>The software</strong>May read a file while the key is on — the way a bookkeeper’s app does. Turn the key off, and even the software cannot read them.</div>
-      <div class="arrow">→</div>
-      <div class="box"><strong>Santhanakrishnan</strong>Sees “invoice step failed on job 441.” Not the kitchen photo. Not the chat. No standing access.</div>
-    </div>
-    <p>If something is badly broken, <strong>you</strong> approve a short, named visit — a couple of hours, a written reason, a record of what was opened. You can sit on the call. You can refuse; that bug may wait until you do. Amazon keeps a trail. A question in, an answer out — not kept to train a model, and not a library of your clients’ houses.</p>
-
-    <h2>What you pay each month — bands, not a quote</h2>
-    <p class="note">Australian dollars, about 1.50 to the US dollar, GST not included. For a builder with tens of jobs, not a call centre. Pipes are pass-through: you see the supplier bill.</p>
-    <table>
-      <thead><tr><th>Line</th><th>Quiet month</th><th>A working month</th><th>What it is</th></tr></thead>
-      <tbody>
-        <tr><td>Amazon Sydney — the machine</td><td class="num">50–80</td><td class="num">50–120</td><td>A small always-on box, disk, address, DNS, TLS. Not thousands.</td></tr>
-        <tr><td>Nightly copies</td><td class="num">10–25</td><td class="num">10–50</td><td>Snapshots in Sydney. Survives “please restore Tuesday.” Not a second city.</td></tr>
-        <tr><td>Melbourne copy, if you want it</td><td class="num">+15–40</td><td class="num">+80–150</td><td>Cold copies vs a second machine. Restore must be practised or it is theatre.</td></tr>
-        <tr><td>WhatsApp (Meta)</td><td class="num">5–20</td><td class="num">30–120</td><td>Chats they start, inside 24 hours, are usually free. Templates you send first are cents.</td></tr>
-        <tr><td>Twilio (optional)</td><td class="num">0</td><td class="num">10–80</td><td>Only if you want a programmable number. 02 7235 0833 can stay as it is.</td></tr>
-        <tr><td>The writing bill</td><td class="num">20–80</td><td class="num">100–220</td><td>A careful writer while the voice is taught. A faster writer later, if the pass mark still clears.</td></tr>
-        <tr><td>Xero machine login</td><td class="num">10</td><td class="num">10</td><td>If you want it. Official Xero add-on, including GST.</td></tr>
-        <tr><td><strong>Pipes, spoken plainly</strong></td><td class="num"><strong>~100–250</strong></td><td class="num"><strong>~200–600</strong></td><td>Before the person in the house, and before Melbourne. A few hundred, not a few thousand.</td></tr>
-      </tbody>
-    </table>
-
-    <h2>This relationship — three lines</h2>
-    <div class="allin">
-      <div><span>Person in the house · 6 months</span><b>AUD 500 / month</b><em>Plan, proof on a real job, first wiring. Through Sakthi — not a coupon.</em></div>
-      <div><span>Running the steps</span><b>8% + minutes</b><em>If the writing bill is AUD 150, eight percent is AUD 12. Plus only the minutes a job actually ran.</em></div>
-      <div><span>Pipes</span><b>Pass-through</b><em>Amazon, Meta, Twilio, the writing bill. You see the supplier page. No silent markup.</em></div>
-    </div>
-    <p>You are not buying a website. You are buying six months of the person in the house, a working proof on a real job, and a way to add the next letter without hiring a shop. This kind of engineering is usually about <strong>USD 100 an hour</strong>. A custom shop for the website plus owner logins — still without follow-up, scoring, or memory — is two people, about <strong>AUD 5,000–10,000 a month</strong>. If you stop, BuildPass and Xero remain the record. Homeowners are not stranded.</p>
-
-    <h2>Why the house stays sharp — and what happens if it does not</h2>
-    <div class="cols four">
-      <div class="box">
-        <strong>It remembers, on purpose</strong>
-        Week 38 should not forget week 12. A rumour you marked false stays gone. Without that, last year’s island-stone mistake is paid for again.
-      </div>
-      <div class="box">
-        <strong>It uses your names</strong>
-        Project, lot, homeowner, trade, invoice, variation, defect, step. Without that, next year’s enquiry needs a rebuild of the house file.
-      </div>
-      <div class="box">
-        <strong>It is scored before it leaves</strong>
-        A letter at 0.78 waits. 0.92 may send. Overnight it can pull a handover date that was not in the programme. Without a pass mark, a fluent wrong sentence still goes out.
-      </div>
-      <div class="box">
-        <strong>The miss is kept. The writer can change.</strong>
-        A held letter raises the bar for the next one. You can swap a careful writer for a faster one later; the pass mark does not move. Without that, December’s chatbot is still March’s — and you keep paying the expensive writer to hide it.
-      </div>
-    </div>
-    <h2>If this is the house you want</h2>
-    <ol>
-      <li>Confirm the BuildPass plan so the API client is real (Pro, Oceania, Settings → API access).</li>
-      <li>Click Allow on Xero for the organisation. Name whether jobs are costed in Xero Projects.</li>
-      <li>Start the WhatsApp Business Account in the company name. Keep 02 7235 0833 on the card.</li>
-      <li>Name the first two skills that must sound like you (likely: explain a variation, reply on Instagram).</li>
-      <li>Put Friday’s office hour in the calendar — 303/4 Columbia Ct, Norwest, or 02 7235 0833.</li>
-    </ol>
-    <div class="foot"><span>Workweaver · Coimbatore · this path came through Sakthi</span><span>2 / 2 · truft.bitfoundry.ai</span></div>
-  </article>
+  <footer class="foot">
+    <span>People · Process · Quality · Your home</span>
+    <span>Workweaver is a product of Bit Foundry</span>
+    <span><a href="https://workweaver.ai">workweaver.ai</a> · <a href="https://www.bitfoundry.ai">bitfoundry.ai</a></span>
+  </footer>
+  <script>
+    document.getElementById("menuBtn").addEventListener("click", () => document.body.classList.toggle("nav-open"));
+    document.querySelectorAll(".top-nav a").forEach(a => {
+      a.addEventListener("click", () => document.body.classList.remove("nav-open"));
+    });
+  </script>
 </body>
 </html>
