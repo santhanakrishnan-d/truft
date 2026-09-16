@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Truft — how this would run</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #192231;
+      --paper: #fafcf9;
+      --ink: #192231;
+      --ink-soft: #3a4a56;
+      --muted: #6b7780;
+      --line: #c8ced4;
+      --line-strong: #394b57;
+      --good: #2f5d46;
+      --font-brand: "Oswald", "Arial Narrow", sans-serif;
+      --font-ui: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #d8dce0; }
+    body {
+      font-family: var(--font-ui);
+      color: var(--ink);
+      line-height: 1.34;
+      font-size: 11.2px;
+    }
+    a { color: var(--ink); }
+    .sheet {
+      width: 210mm;
+      height: 297mm;
+      margin: 12px auto;
+      background: var(--paper);
+      padding: 9mm 12mm 8mm;
+      overflow: hidden;
+      page-break-after: always;
+      position: relative;
+    }
+    .kicker {
+      font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600; margin: 0 0 4px;
+    }
+    h1 {
+      font-family: var(--font-brand);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      font-size: 22px;
+      line-height: 1.05;
+      text-transform: uppercase;
+      margin: 0 0 6px;
+    }
+    h2 {
+      font-family: var(--font-brand);
+      font-size: 10.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: 6px 0 4px;
+      padding-top: 5px;
+      border-top: 1px solid var(--line);
+    }
+    p { margin: 0 0 4px; color: var(--ink-soft); }
+    strong { color: var(--ink); font-weight: 600; }
+    ul, ol { margin: 0 0 4px; padding-left: 1.15em; color: var(--ink-soft); }
+    li { margin: 0 0 1px; }
+    .lede { font-size: 12.5px; max-width: 78ch; color: var(--ink); }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }
+    .cols.three { grid-template-columns: 1fr 1fr 1fr; }
+    .cols.four { grid-template-columns: 1fr 1fr; }
+    table { width: 100%; border-collapse: collapse; font-size: 10.4px; margin: 0 0 6px; }
+    th, td { text-align: left; vertical-align: top; padding: 3px 6px; border-bottom: 1px solid var(--line); }
+    th {
+      font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600; background: #e3e4e8;
+    }
+    td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .note { font-size: 10px; color: var(--muted); }
+    .rule { height: 2px; background: var(--navy); margin: 0 0 7px; }
+    .foot {
+      position: absolute; left: 12mm; right: 12mm; bottom: 7mm;
+      display: flex; justify-content: space-between;
+      font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); padding-top: 6px;
+      border-top: 1px solid var(--line);
+    }
+    .box {
+      border: 1px solid var(--line);
+      padding: 6px 8px;
+      background: #fff;
+    }
+    .box strong { display: block; font-size: 11px; margin-bottom: 3px; }
+    .flow {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0;
+      border: 1px solid var(--line); background: #fff; margin: 0 0 6px;
+    }
+    .flow div { padding: 6px 8px 7px; border-right: 1px solid var(--line); }
+    .flow div:nth-child(3n) { border-right: 0; }
+    .flow div:nth-child(n+4) { border-top: 1px solid var(--line); }
+    .flow b {
+      display: block; font-family: var(--font-brand);
+      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px;
+    }
+    .flow span { font-size: 11px; color: var(--ink-soft); }
+    .chain {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      border: 1px solid var(--line); background: #fff; margin: 0 0 6px;
+    }
+    .chain div { padding: 6px 8px; border-right: 1px solid var(--line); }
+    .chain div:last-child { border-right: 0; }
+    .chain b {
+      display: block; font-family: var(--font-brand);
+      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px;
+    }
+    .priv {
+      display: grid; grid-template-columns: 1fr 12px 1fr 12px 1fr 12px 1fr;
+      align-items: stretch; margin: 0 0 6px;
+    }
+    .priv .box { min-height: 56px; }
+    .priv .arrow {
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 14px; font-weight: 700;
+    }
+    .allin {
+      display: grid; grid-template-columns: 1.4fr 0.7fr 1.6fr;
+      border: 1px solid var(--navy); background: var(--navy); color: var(--paper);
+      margin: 0 0 6px;
+    }
+    .allin div { padding: 7px 10px; border-right: 1px solid rgba(250,252,249,0.18); }
+    .allin div:last-child { border-right: 0; }
+    .allin b {
+      display: block; font-family: var(--font-brand);
+      font-size: 15px; letter-spacing: 0.04em; margin-top: 1px;
+    }
+    .allin span { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8; }
+    .allin em { font-style: normal; font-size: 10.5px; opacity: 0.9; }
+    .screen-bar {
+      max-width: 210mm; margin: 16px auto 8px; padding: 0 8px;
+      font-size: 13px; color: var(--ink-soft);
+    }
+    .screen-bar a { font-weight: 600; }
+    @page { size: A4; margin: 0; }
+    @media print {
+      html, body { background: #fff; }
+      .sheet { margin: 0; box-shadow: none; page-break-after: always; }
+      .screen-bar { display: none; }
+      a { text-decoration: none; }
+    }
+    @media (max-width: 860px) {
+      .sheet { width: auto; height: auto; min-height: 0; margin: 0; padding: 20px 16px 48px; overflow: visible; position: relative; }
+      .foot { position: static; margin-top: 14px; }
+      .cols, .cols.three, .cols.four, .flow, .chain, .priv, .allin { grid-template-columns: 1fr; }
+      .flow div, .chain div, .allin div { border-right: 0; border-bottom: 1px solid var(--line); }
+      .priv .arrow { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <p class="screen-bar">A two-page note for Sharang. Print to A4. Walkthrough: <a href="https://truft.bitfoundry.ai/">truft.bitfoundry.ai</a>. Numbers are list-price bands, not a quote. GST not included.</p>
+
+  <article class="sheet" id="p1">
+    <div class="kicker">SS Developers Pty Ltd t/as Truft · Norwest · working note · 1 of 2</div>
+    <h1>How the house would run</h1>
+    <div class="rule"></div>
+    <p class="lede">Built on transparency. Engineered for value. You keep the site file and the ledger. The website, two conversations, and a follow-up that can open in about a minute sit on a small always-on machine in your Amazon account in Sydney.</p>
+
+    <h2>What a homeowner feels</h2>
+    <div class="flow">
+      <div><b>01 Enquire</b><span>Form, email, phone, WhatsApp, Instagram, or Ask Truft. One note is enough.</span></div>
+      <div><b>02 Visit</b><span>Leave a mobile, and Truft can open WhatsApp, SMS, or a call within about 60 seconds and hold Friday at Norwest.</span></div>
+      <div><b>03 Sign</b><span>After they sign with you, that house gets a login. One job. Their pause.</span></div>
+      <div><b>04 Build</b><span>Photos the day they are taken. Every dollar against the quote. Extra spend waits.</span></div>
+      <div><b>05 Ask</b><span>They request without chasing — here, or on WhatsApp after six.</span></div>
+      <div><b>06 Handover</b><span>The file stays theirs. They did not have to assemble it.</span></div>
+    </div>
+
+    <h2>Two conversations. Two playbooks.</h2>
+    <div class="cols">
+      <div class="box">
+        <strong>On the public site — for everyone</strong>
+        Knows projects, the 28 steps, cost-plus, and how to hold a visit. Can take a name, email, or mobile. Cannot open a live job. Cannot invent a $/m².
+      </div>
+      <div class="box">
+        <strong>Inside the house login — this job only</strong>
+        Knows that house: spend, site, requests. Can allow or hold. Cannot see Mustang Ave from Henson Way. WhatsApp after six is the same file, not a third brain.
+      </div>
+    </div>
+    <p style="margin-top:5px">Skills are named jobs you write — explain a variation, reply on Instagram, hold Friday. Before a letter, a comment, or a WhatsApp leaves, it is scored against Truft’s bar. Below the mark, it waits on you. Every skill run, every WhatsApp, and every call puts a time on a calendar — so you see the minutes that actually ran, not software sitting idle.</p>
+
+    <h2>A lead does not sit in an inbox</h2>
+    <div class="chain">
+      <div><b>Note</b><span>Any door writes one row. They can say stop.</span></div>
+      <div><b>Follow-up</b><span>Offered as Truft. Friday 12:00 is often free.</span></div>
+      <div><b>Visit</b><span>Held at 303/4 Columbia Ct, or 02 7235 0833.</span></div>
+      <div><b>After they sign</b><span>Invited to that house’s login. Not a public sample.</span></div>
+    </div>
+
+    <h2>The website — people first, machines can read it</h2>
+    <p>The same system that will run the house also builds and hosts truft.com.au — a small machine in Amazon’s Sydney region, nightly copies, TLS, the domain you already own. Not a second agency. Not a freelancer on WordPress.</p>
+    <p>Search still needs a clear title, a matching Google Business Profile, and pages that load. We label the site as a custom builder in North West Sydney. A short contents file helps an assistant find how to book; it does not rank you. We ship a real form today. If browsers later let an assistant use that form by name, we can switch it on. We do not promise unattended booking.</p>
+
+    <h2>WhatsApp, phone, Instagram — what you procure</h2>
+    <table>
+      <thead><tr><th>Step</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td>Meta Business, in the company name</td><td>You start this. It can take days. It cannot be finished from Coimbatore on your behalf.</td></tr>
+        <tr><td>A WhatsApp Business Account</td><td>The Business Platform (Cloud API) — not the small-business phone app. Different products.</td></tr>
+        <tr><td>Verification and a display name</td><td>The name people see is Truft.</td></tr>
+        <tr><td>A phone number for that account</td><td>Dedicated. The number already on the phone app cannot sit on the API without Meta’s move.</td></tr>
+        <tr><td>02 7235 0833</td><td>Stays on the card. Twilio only if you want a programmable follow-up (a local AU number is a few dollars a month; calls are cents).</td></tr>
+      </tbody>
+    </table>
+    <p>Chats they start, inside 24 hours, are usually free. Templates you send first are cents. Instagram comments can be answered in Truft’s voice, with a private note to book Norwest. Honour stop.</p>
+
+    <h2>What you grant, so the house can read the truth</h2>
+    <div class="cols">
+      <div class="box">
+        <strong>The site file (BuildPass)</strong>
+        Stays yours. On a Pro plan: Settings → API access, Oceania. You copy a secret once; we request access. Published today: projects, photos, defects, meetings, timesheets. If a drawing or programme field is not on that list yet, we use what is published and ask them — we do not invent it. If they also offer a machine door, we can use it or wrap the ordinary API.
+      </div>
+      <div class="box">
+        <strong>The ledger (Xero)</strong>
+        Stays yours. You click Allow on the SS Developers organisation. Say whether jobs are costed in Xero Projects. A machine login (one organisation) is a Xero add-on at <strong>AUD 10 / month</strong> including GST. Official libraries exist. You re-consent if access changes. The Xero login lives in your account, in an envelope Santhanakrishnan cannot unwrap.
+      </div>
+    </div>
+    <div class="foot"><span>People · Process · Quality · Your home</span><span>1 / 2 · truft.com.au</span></div>
+  </article>
+
+  <article class="sheet" id="p2">
+    <div class="kicker">Working note · 2 of 2</div>
+    <h1>Who can see a house. What it costs.</h1>
+    <div class="rule"></div>
+
+    <h2>Your files, your key, a named visit if something is badly broken</h2>
+    <div class="priv">
+      <div class="box"><strong>The house</strong>Photos, invoices, WhatsApp. Names of the people who live there.</div>
+      <div class="arrow">→</div>
+      <div class="box"><strong>Your Amazon, Sydney</strong>Your account. Your key. Not a laptop. Not Workweaver’s company account.</div>
+      <div class="arrow">→</div>
+      <div class="box"><strong>The software</strong>May read a file while the key is on — the way a bookkeeper’s app does. Turn the key off, and even the software cannot read them.</div>
+      <div class="arrow">→</div>
+      <div class="box"><strong>Santhanakrishnan</strong>Sees “invoice step failed on job 441.” Not the kitchen photo. Not the chat. No standing access.</div>
+    </div>
+    <p>If something is badly broken, <strong>you</strong> approve a short, named visit — a couple of hours, a written reason, a record of what was opened. You can sit on the call. You can refuse; that bug may wait until you do. Amazon keeps a trail. A question in, an answer out — not kept to train a model, and not a library of your clients’ houses.</p>
+
+    <h2>What you pay each month — bands, not a quote</h2>
+    <p class="note">Australian dollars, about 1.50 to the US dollar, GST not included. For a builder with tens of jobs, not a call centre. Pipes are pass-through: you see the supplier bill.</p>
+    <table>
+      <thead><tr><th>Line</th><th>Quiet month</th><th>A working month</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td>Amazon Sydney — the machine</td><td class="num">50–80</td><td class="num">50–120</td><td>A small always-on box, disk, address, DNS, TLS. Not thousands.</td></tr>
+        <tr><td>Nightly copies</td><td class="num">10–25</td><td class="num">10–50</td><td>Snapshots in Sydney. Survives “please restore Tuesday.” Not a second city.</td></tr>
+        <tr><td>Melbourne copy, if you want it</td><td class="num">+15–40</td><td class="num">+80–150</td><td>Cold copies vs a second machine. Restore must be practised or it is theatre.</td></tr>
+        <tr><td>WhatsApp (Meta)</td><td class="num">5–20</td><td class="num">30–120</td><td>Chats they start, inside 24 hours, are usually free. Templates you send first are cents.</td></tr>
+        <tr><td>Twilio (optional)</td><td class="num">0</td><td class="num">10–80</td><td>Only if you want a programmable number. 02 7235 0833 can stay as it is.</td></tr>
+        <tr><td>The writing bill</td><td class="num">20–80</td><td class="num">100–220</td><td>A careful writer while the voice is taught. A faster writer later, if the pass mark still clears.</td></tr>
+        <tr><td>Xero machine login</td><td class="num">10</td><td class="num">10</td><td>If you want it. Official Xero add-on, including GST.</td></tr>
+        <tr><td><strong>Pipes, spoken plainly</strong></td><td class="num"><strong>~100–250</strong></td><td class="num"><strong>~200–600</strong></td><td>Before the person in the house, and before Melbourne. A few hundred, not a few thousand.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>This relationship — three lines</h2>
+    <div class="allin">
+      <div><span>Person in the house · 6 months</span><b>AUD 500 / month</b><em>Plan, proof on a real job, first wiring. Through Sakthi — not a coupon.</em></div>
+      <div><span>Running the steps</span><b>8% + minutes</b><em>If the writing bill is AUD 150, eight percent is AUD 12. Plus only the minutes a job actually ran.</em></div>
+      <div><span>Pipes</span><b>Pass-through</b><em>Amazon, Meta, Twilio, the writing bill. You see the supplier page. No silent markup.</em></div>
+    </div>
+    <p>You are not buying a website. You are buying six months of the person in the house, a working proof on a real job, and a way to add the next letter without hiring a shop. This kind of engineering is usually about <strong>USD 100 an hour</strong>. A custom shop for the website plus owner logins — still without follow-up, scoring, or memory — is two people, about <strong>AUD 5,000–10,000 a month</strong>. If you stop, BuildPass and Xero remain the record. Homeowners are not stranded.</p>
+
+    <h2>Why the house stays sharp — and what happens if it does not</h2>
+    <div class="cols four">
+      <div class="box">
+        <strong>It remembers, on purpose</strong>
+        Week 38 should not forget week 12. A rumour you marked false stays gone. Without that, last year’s island-stone mistake is paid for again.
+      </div>
+      <div class="box">
+        <strong>It uses your names</strong>
+        Project, lot, homeowner, trade, invoice, variation, defect, step. Without that, next year’s enquiry needs a rebuild of the house file.
+      </div>
+      <div class="box">
+        <strong>It is scored before it leaves</strong>
+        A letter at 0.78 waits. 0.92 may send. Overnight it can pull a handover date that was not in the programme. Without a pass mark, a fluent wrong sentence still goes out.
+      </div>
+      <div class="box">
+        <strong>The miss is kept. The writer can change.</strong>
+        A held letter raises the bar for the next one. You can swap a careful writer for a faster one later; the pass mark does not move. Without that, December’s chatbot is still March’s — and you keep paying the expensive writer to hide it.
+      </div>
+    </div>
+    <h2>If this is the house you want</h2>
+    <ol>
+      <li>Confirm the BuildPass plan so the API client is real (Pro, Oceania, Settings → API access).</li>
+      <li>Click Allow on Xero for the organisation. Name whether jobs are costed in Xero Projects.</li>
+      <li>Start the WhatsApp Business Account in the company name. Keep 02 7235 0833 on the card.</li>
+      <li>Name the first two playbooks that must sound like you (likely: explain a variation, reply on Instagram).</li>
+      <li>Put Friday’s office hour in the calendar — 303/4 Columbia Ct, Norwest, or 02 7235 0833.</li>
+    </ol>
+    <div class="foot"><span>Workweaver · Coimbatore · this path came through Sakthi</span><span>2 / 2 · truft.bitfoundry.ai</span></div>
+  </article>
+</body>
+</html>
