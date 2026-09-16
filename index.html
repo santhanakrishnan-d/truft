@@ -467,7 +467,7 @@
       width: 36px; height: 36px; border-radius: 50%; background: var(--on-dark); color: var(--navy);
       display: grid; place-items: center; flex: 0 0 36px;
     }
-    .ask-widget.is-open .ask-launch .lbl { display: none; }
+    .ask-widget.is-open .ask-launch { display: none; }
     .wa-overlay {
       position: fixed; inset: 0; z-index: 60; background: rgba(25,34,49,.55);
       display: grid; place-items: center; padding: 20px;
@@ -1709,8 +1709,7 @@
         e.preventDefault();
         showScene(go.dataset.go, { focus: go.dataset.focus, publicOnly: go.dataset.public === "1" });
         if (go.dataset.signin === "1") {
-          document.getElementById("ownerGate").hidden = false;
-          setTimeout(() => document.getElementById("ownerGate").scrollIntoView({ block:"center" }), 40);
+          showSignin();
         }
         return;
       }
@@ -1777,9 +1776,19 @@
       showScene("house");
       setHouseTab(selectedN === 19 || selectedN === 27 || selectedN === 28 ? "spend" : "week");
     });
-    document.getElementById("gotoSignin").addEventListener("click", () => { document.getElementById("ownerGate").hidden = false; document.getElementById("ownerGate").scrollIntoView({ block:"center" }); });
-    document.getElementById("previewLock").addEventListener("click", () => { document.getElementById("ownerGate").hidden = false; document.getElementById("ownerGate").scrollIntoView({ block:"center" }); });
-    document.getElementById("cancelSignin").addEventListener("click", () => { document.getElementById("ownerGate").hidden = true; });
+    function showSignin() {
+      document.getElementById("ownerGate").hidden = false;
+      document.getElementById("housePreview").hidden = true;
+      const pitch = document.getElementById("housePitch"); if (pitch) pitch.hidden = true;
+      setTimeout(() => document.getElementById("ownerGate").scrollIntoView({ block:"start" }), 40);
+    }
+    document.getElementById("gotoSignin").addEventListener("click", showSignin);
+    document.getElementById("previewLock").addEventListener("click", showSignin);
+    document.getElementById("cancelSignin").addEventListener("click", () => {
+      document.getElementById("ownerGate").hidden = true;
+      document.getElementById("housePreview").hidden = false;
+      const pitch = document.getElementById("housePitch"); if (pitch) pitch.hidden = false;
+    });
     document.getElementById("ownerSignin").addEventListener("click", () => setOwnerSignedIn(true));
     document.getElementById("ownerSignout").addEventListener("click", () => setOwnerSignedIn(false));
     document.getElementById("ownerPass").addEventListener("keydown", (e) => { if (e.key === "Enter") setOwnerSignedIn(true); });
