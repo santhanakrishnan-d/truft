@@ -199,7 +199,7 @@
     .hero-copy { position: relative; z-index: 2; width: min(var(--max), calc(100% - 40px)); margin: 0 auto; padding: 0 0 56px; }
     .hero .kicker { color: var(--on-dark-dim); }
     .hero h1 { max-width: 11em; }
-    .hero .lede { color: var(--on-dark); max-width: 44ch; }
+    .hero .lede { color: var(--on-dark); max-width: 58ch; }
     .hero .meta { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-dark-dim); margin-top: 14px; }
     .hero.cine { background: #111; }
 
@@ -253,6 +253,19 @@
     .step0-band .n { font-family: var(--font-brand); letter-spacing: 0.14em; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
     .step0-band h3 { font-size: 18px; margin-bottom: 8px; }
     .step0-band p { margin: 0 0 12px; font-size: 14px; color: var(--ink-soft); max-width: 42ch; }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 18px; }
+    .story-grid article { border: var(--hairline) solid var(--line); background: var(--white); padding: 22px 20px; }
+    .story-grid h3 { font-size: 16px; margin-bottom: 8px; }
+    .story-grid p { margin: 0; font-size: 14px; color: var(--ink-soft); max-width: 46ch; }
+    .visit-stack { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; margin-top: 18px; }
+    .visit-stack article { border: var(--hairline) solid var(--line); background: var(--white); padding: 22px 20px; }
+    .visit-stack .n { font-family: var(--font-brand); letter-spacing: 0.14em; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .visit-stack h3 { font-size: 16px; margin-bottom: 8px; }
+    .visit-stack p { margin: 0; font-size: 14px; color: var(--ink-soft); max-width: 38ch; }
+    .faq-list { display: grid; gap: 4px; margin-top: 18px; }
+    .faq-list details { border: var(--hairline) solid var(--line); background: var(--white); padding: 16px 20px; }
+    .faq-list summary { cursor: pointer; font-weight: 600; font-size: 15px; }
+    .faq-list details p { margin: 10px 0 0; font-size: 14px; color: var(--ink-soft); max-width: 62ch; }
 
     .five {
       display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px;
@@ -525,7 +538,7 @@
     }
     .lb button { border: 0; background: transparent; color: #fff; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; }
     .toast {
-      position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%) translateY(20px);
+      position: fixed; left: 50%; bottom: 88px; transform: translateX(-50%) translateY(20px);
       background: var(--navy); color: var(--on-dark); padding: 10px 14px; font-size: 13px;
       opacity: 0; pointer-events: none; z-index: 80; transition: .2s ease;
     }
@@ -550,7 +563,7 @@
     @media (max-width: 960px) {
       .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 28vh 28vh; }
       .five, .flow, .strip { grid-template-columns: 1fr 1fr; }
-      .split, .contact-grid, .login-stage, .drill, .gallery, .stats, .grid-2, .money-strip, .q-card, .why-grid, .step0-band { grid-template-columns: 1fr; }
+      .split, .contact-grid, .login-stage, .drill, .gallery, .stats, .grid-2, .money-strip, .q-card, .why-grid, .step0-band, .story-grid, .visit-stack { grid-template-columns: 1fr; }
       .step-grid { grid-template-columns: repeat(4, 1fr); }
       .drill .ph { min-height: 160px; }
     }
@@ -561,8 +574,10 @@
         background: var(--navy); padding: 8px 12px 16px;
       }
       .menu-btn { display: grid; }
-      .hero-copy { padding-bottom: 108px; }
-      .five, .flow, .strip, .principles, .lead, .stage-hot, .office-cta, .feed-grid { grid-template-columns: 1fr; }
+      .hero-copy { padding-bottom: 140px; }
+      .band { padding-bottom: 96px; }
+      .toast { bottom: 88px; }
+      .five, .flow, .strip, .principles, .lead, .stage-hot, .office-cta, .feed-grid, .story-grid, .visit-stack { grid-template-columns: 1fr; }
       .step-grid { grid-template-columns: 1fr 1fr; }
       .top { grid-template-columns: auto auto 1fr; }
       .wa-card { grid-template-columns: 1fr; }
@@ -614,9 +629,9 @@
         <div class="hero-copy">
           <div class="kicker">North West Sydney · Custom homes</div>
           <h1>Built on Transparency.<br>Engineered for Value.</h1>
-          <p class="lede">Knock down the old place, or start on land. A light home on your block, every cost visible before it spends. Start with Step 0: a clear look at your street.</p>
+          <p class="lede">Building a home in The Hills should not feel like a guessing game. We are a cost-plus builder in Norwest: you see what every trade actually costs, and our margin sits on its own line. Before anyone mentions a contract, we do Step 0: a clear look at your block. It is free, and what we find is yours even if you never build with us.</p>
           <div class="row-btns">
-            <button class="btn light" type="button" data-go="home" data-focus="lead">Get Step 0 for your block</button>
+            <button class="btn light" type="button" data-go="home" data-focus="lead">Start with Step 0</button>
             <button class="btn ghost on-dark" type="button" data-go="house">See a sample job</button>
           </div>
           <p class="meta">Norwest · 02 7235 0833 · WhatsApp Truft</p>
@@ -646,7 +661,7 @@
         <div class="wrap" style="padding-top:28px;padding-bottom:8px">
           <div class="kicker">The address of true value</div>
           <h2>Where transparency builds trust</h2>
-          <p class="lede">Craftsmanship with an open book. You see every invoice and every decision — before it is spent, not after.</p>
+          <p class="lede">Craftsmanship with an open book. You see every invoice and every decision before it is spent, not after. Same people on the site, on WhatsApp, and on the phone.</p>
         </div>
         <div class="five">
           <article style="background-image:url('assets/gallery/henson-06.jpg')">
@@ -679,41 +694,69 @@
           <article>
             <div class="n">01 · Step 0</div>
             <h3>Your block</h3>
-            <p>Leave a name, WhatsApp, or Ask Truft. We send a clear look at your street before Preliminaries. Same facts if you never visit this page.</p>
+            <p>Leave a name, WhatsApp, or Ask Truft. We take a proper look at your street before Preliminaries. Same facts if you never opened this page.</p>
           </article>
           <article>
             <div class="n">02 · Visit</div>
             <h3>Norwest</h3>
-            <p>A time at 303/4 Columbia Ct. Real numbers on the table.</p>
+            <p>A 45 minute walk of the block, or an hour at Norwest. Then a one-page note of what we saw.</p>
           </article>
           <article>
             <div class="n">03 · See</div>
             <h3>A sample</h3>
-            <p>Photos, spend, a pause in the open, before you sign anything.</p>
+            <p>Photos, spend, and a pause sitting in the open, before you sign anything.</p>
           </article>
           <article>
             <div class="n">04 · Build</div>
             <h3>You watch</h3>
-            <p>You get a login. Photos the day they are taken. Extra spend waits for you. WhatsApp and email write here too.</p>
+            <p>You get a login. Photos land the day they are taken. Extra spend waits for you. WhatsApp and email write here too.</p>
           </article>
           <article>
             <div class="n">05 · Live</div>
             <h3>The file stays</h3>
-            <p>Decisions, photos, the book. Recorded in the portal, not lost in a thread.</p>
+            <p>Decisions, photos, the book. They stay in the portal, not lost in a thread.</p>
           </article>
         </div>
       </div>
 
+
+      <div class="band" id="tiredOf">
+        <div class="wrap" style="padding-top:8px;padding-bottom:8px">
+          <div class="kicker">What families are tired of</div>
+          <h2>You should not need luck to build a home.</h2>
+          <p class="lede">Talk to any family who has been through a knockdown and you hear the same stories. We would rather say the ugly parts out loud, then show you how we work instead.</p>
+          <div class="story-grid">
+            <article>
+              <h3>A number that was not real</h3>
+              <p>A quote arrives as one clean figure and it feels like relief. Families often discover that number was built on guesses, and nobody can show them where any of it came from. The person who sold it has moved on.</p>
+            </article>
+            <article>
+              <h3>Allowances that were too small</h3>
+              <p>Families often discover that “fixed price” hid tiny allowances. Stormwater, rock, or a driveway that quietly became a cheaper material because the money ran out.</p>
+            </article>
+            <article>
+              <h3>Extras nobody signed</h3>
+              <p>Families often discover extras on an invoice that nobody signed. In NSW those extras often cannot even be enforced, but nobody wants a fight with a half-built house.</p>
+            </article>
+            <article>
+              <h3>The silence</h3>
+              <p>Families often discover the hardest part is not the build. Photos stop. Calls do not come back. They pay rent and interest while they chase.</p>
+            </article>
+          </div>
+          <p class="lede" style="margin-top:22px">Here is how we work instead. You see the real invoice. On the sample job, taps were quoted at $2,180 and came in at $2,640 when the finish changed, and both numbers sit in the open. Island stone at $4,200 is unsigned, so it has not spent. Extra dollars wait for a written yes.</p>
+        </div>
+      </div>
       <div class="band navy" id="leadBand">
         <div class="wrap contact-grid" style="padding-top:8px;padding-bottom:8px">
           <div>
             <div class="kicker" style="color:var(--on-dark-dim)">Step 0 · before Preliminaries</div>
             <h2>Leave a name.</h2>
-            <p class="lede">A clear look at your block. Valuable even if you never build with Truft. This mock is not wired. <button type="button" class="i" data-tip="sixty" aria-label="How follow-up would work" style="border-color:#b8c0c8;color:#fafcf9">i</button></p>
+            <p class="lede">Step 0 is a clear look at your block, and it is free whether or not you ever build with us. You get a one-page written note of what we saw, in plain words, so you can read it again later or show it to someone you trust. This mock is not wired. <button type="button" class="i" data-tip="sixty" aria-label="How follow-up would work" style="border-color:#b8c0c8;color:#fafcf9">i</button></p>
             <ul class="magnet-points">
-              <li>What The Hills or Blacktown usually asks of a knockdown-rebuild on a street like yours. Slope, setbacks, stormwater. Questions and likely paths, not a fake approval.</li>
+              <li>A look at what The Hills or Blacktown usually asks of a knockdown-rebuild on a street like yours. Slope, setbacks, stormwater. Questions and likely paths, not a fake approval.</li>
               <li>What demolition and site prep usually mean before Step 1, so Preliminaries is not a blind spend.</li>
               <li>How the open book works, using numbers already on this site. Taps quoted $2,180, actual $2,640 when the finish changed. Island stone $4,200, unsigned, so it has not spent.</li>
+              <li>If you would like to meet, a 45 minute walk of the block, or an hour at Norwest. After that visit we send a $25 Amazon.com.au thank-you. Always, even if you say no.</li>
             </ul>
             <form class="lead" id="leadForm">
               <div class="field"><label for="leadName">Name</label><input id="leadName" name="name" autocomplete="name" required placeholder="Your name" /></div>
@@ -749,7 +792,7 @@
                 <label><input type="checkbox" name="reach" value="call" /> Call</label>
                 <label><input type="checkbox" name="reach" value="email" /> Email</label>
               </div>
-              <p class="full quiet" style="color:var(--on-dark-dim);margin:0">No sales calls. We send Step 0 by WhatsApp or email. A Norwest hour is optional. Bring a title plan if you have one. Come without it if you don't.</p>
+              <p class="full quiet" style="color:var(--on-dark-dim);margin:0">A first name and a number is enough. No drawings yet. No sales calls. We send Step 0 by WhatsApp or email. A visit is optional. If we walk the block, a $25 Amazon.com.au thank-you comes after, even if you say no. Bring a title plan if you have one. Come without it if you do not.</p>
               <label class="full" style="color:var(--on-dark-dim);font-size:12px;letter-spacing:0;text-transform:none;font-weight:400"><input type="checkbox" id="leadConsent" required checked /> Truft may contact me about this enquiry. Nothing is shared with another job.</label>
               <div class="full"><button class="btn light" type="submit">Send me Step 0</button></div>
             </form>
@@ -769,11 +812,37 @@
           </div>
         </div>
       </div>
+
+      <div class="band" id="visitStack">
+        <div class="wrap" style="padding-top:8px;padding-bottom:8px">
+          <div class="kicker">If we meet</div>
+          <h2>What the visit gives you</h2>
+          <p class="lede">Leave a name first. If a walk of the block, or an hour at Norwest, would help, here is what that hour is for. Nothing here is a contract.</p>
+          <div class="visit-stack">
+            <article>
+              <div class="n">The look</div>
+              <h3>We walk the block with you</h3>
+              <p>We look at the things that quietly set your budget. The fall of the land, access for trucks, the trees, the neighbours, the services. You hear what we notice while we notice it.</p>
+            </article>
+            <article>
+              <div class="n">The written note</div>
+              <h3>One page, in plain words</h3>
+              <p>Afterwards you get one page covering what we saw and what it is likely to mean for cost and time. It is yours to keep, to sit on, or to hand to another builder.</p>
+            </article>
+            <article>
+              <div class="n">The thank-you</div>
+              <h3>$25 after the visit. Always.</h3>
+              <p>We send a $25 Amazon.com.au gift as thanks for your time. It comes whether you build with us or walk away, because your hour was real either way.</p>
+            </article>
+          </div>
+        </div>
+      </div>
       <div class="band" id="whyNow">
         <div class="wrap" style="padding-top:8px;padding-bottom:8px">
           <div class="kicker">How we hold the money</div>
           <h2>Extra spend waits for your yes.</h2>
-          <p class="lede">Credibility without a clock is how people wait a year in a house they plan to knock down. Here is the hold, and here is the calendar.</p>
+          <p class="lede">We are not holding a secret place for you, and we would rather not pretend otherwise. Nothing on this page is counting down, and nothing about your week needs to change today. When our calendar is busy we will tell you honestly, and when it is quiet we will tell you that too.</p>
+          <p class="lede">What we can promise is that nothing gets committed without you. No trade is booked, no stone is ordered, and no extra dollar moves until you have said yes in writing. If your build is a year away, or still just a conversation over dinner, that is completely normal. Step 0 is still worth doing now.</p>
           <div class="why-grid">
             <article>
               <div class="n">The hold</div>
@@ -783,8 +852,34 @@
             <article>
               <div class="n">The calendar</div>
               <h3>Council takes months. Trades book ahead.</h3>
-              <p>Looking at the block now is how you do not lose a year. Truft takes a few homes at a time. The conversation is the clock. No fake countdown. No invented spots.</p>
+              <p>Looking at the block now is how you do not lose a year in a house you plan to knock down. Truft takes a few homes at a time. The conversation is the clock. No fake countdown. No invented spots.</p>
             </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="band" id="homeFaq">
+        <div class="wrap" style="padding-top:8px;padding-bottom:8px">
+          <div class="kicker">Plain answers</div>
+          <h2>The questions people actually ask</h2>
+          <p class="lede">If you have heard ugly stories, you are not being difficult. These are fair questions.</p>
+          <div class="faq-list">
+            <details>
+              <summary>Does cost-plus mean the price can keep climbing?</summary>
+              <p>This is the fear we hear most, and it is a fair one. Cost-plus does not mean an open wallet. It means an open book. You start with numbers built from real quotes rather than round guesses. You see every invoice as it lands. Our margin sits on its own line instead of being hidden inside the taps. If a number moves, you see why it moved, while it is happening. And nothing extra spends until you have said yes in writing.</p>
+            </details>
+            <details>
+              <summary>If I leave a name, will I be chased?</summary>
+              <p>No. One of us reads what you send and one of us replies. After that the next move is yours. You will not get a stream of reminders, and nobody will ring you twice in a week to ask if you have thought about it. If you go quiet for six months and come back, we will simply pick up where we left off.</p>
+            </details>
+            <details>
+              <summary>What happens when something extra comes up?</summary>
+              <p>Something extra always comes up, because houses are built outdoors by people. When it does, it comes to you in writing with the real cost attached, before anything is ordered or booked, and it waits there until you say yes. On the sample job, island stone at $4,200 is sitting unsigned, so it has not spent. If you say no, we find another way and we tell you what that way costs too.</p>
+            </details>
+            <details>
+              <summary>Why talk now if we are not ready to build?</summary>
+              <p>Because the block decides a great deal before a single line is drawn, and finding that out early is much cheaper than finding it out later. The fall of the land, the access, the trees and the services all shape what you can build and what it will cost. Some blocks can use the faster private-certifier path. Others need a full council application. Step 0 puts that in front of you in plain words while you still have every option open, including choosing a different builder. It costs you nothing.</p>
+            </details>
           </div>
         </div>
       </div>
@@ -917,13 +1012,13 @@
       <div class="wrap" style="padding-bottom:12px">
         <div class="kicker">From vision to home. Together.</div>
         <h1>Twenty-eight steps. You can see every one.</h1>
-        <p class="lede">Building starts at Step 1, Preliminaries. Step 0 comes first: a clear look at your block, before surveys and permits become a spend. Then the poster runs in the open. Extra spend waits for you.</p>
+        <p class="lede">Every Truft home moves through the same twenty-eight steps, and they all begin with Step 0. Step 0 is the free look at your block, and it is the one step that asks nothing of you at all. From Step 1 through to Step 28 the book stays open. You see the real cost of every trade and every material. Our margin sits on its own line. Any extra dollar waits for a written yes from you before it is spent.</p>
         <div class="step0-band">
           <article>
             <div class="n">00 · Step 0</div>
             <h3>A clear look at your block</h3>
-            <p>What council usually asks. What demolition usually means. How the open book works, using numbers already on this site. Yours even if you never hire Truft.</p>
-            <button class="btn" type="button" data-go="home" data-focus="lead">Get Step 0</button>
+            <p>What council usually asks. What demolition usually means. How the open book works, using numbers already on this site. If we walk the block, a written note and a $25 thank-you after. Yours even if you never hire Truft.</p>
+            <button class="btn" type="button" data-go="home" data-focus="lead">Start with Step 0</button>
           </article>
           <article>
             <div class="n">Then 1 to 28</div>
@@ -951,7 +1046,7 @@
         <div class="wrap" style="padding:36px 28px">
           <div class="kicker">Contact</div>
           <h1>Let us look at your block.</h1>
-          <p class="lede">You do not need drawings. Leave a name, WhatsApp, or call. If you found us on Instagram, Facebook, or a sign and skipped the rest of this site, that is fine. We still write one row and send Step 0.</p>
+          <p class="lede">You might have found us on Instagram, or on Facebook, or from a sign outside a build, and you may not have read a word of the rest of this site. That is completely fine. You do not need drawings. Leave a name, WhatsApp, or call 02 7235 0833. We still write one row and send Step 0.</p>
           <p><strong>303/4 Columbia Ct, Norwest NSW 2153</strong><br>
             <a href="tel:+61272350833">02 7235 0833</a></p>
           <div class="wa-card" style="margin-top:16px">
@@ -1289,6 +1384,7 @@
               <tr><td>8:02pm</td><td>Facebook ad · skipped site</td><td>New mobile · Kellyville</td><td>Knockdown-rebuild</td><td>Step 0 offered</td></tr>
               <tr><td>6:14pm</td><td>WhatsApp</td><td>New mobile</td><td>Cost-plus?</td><td>Answered · variation 12 as the example</td></tr>
               <tr><td>Yesterday</td><td>Phone</td><td>0412 ··· ···</td><td>Land estate</td><td>Call logged · 4m · Norwest hour offered</td></tr>
+              <tr><td>Tue</td><td>Website · Step 0</td><td>Kellyville · walked the block</td><td>Knockdown-rebuild</td><td>Note sent · $25 card sent · said they will sit on it</td></tr>
             </tbody>
           </table>
         </div>
@@ -1433,7 +1529,7 @@
         <button type="button" id="askClose" aria-label="Close chat">×</button>
       </header>
       <div class="ask-body">
-        <div class="chat" id="dockAskChat"><div class="msg"><span class="who">Truft</span>Hello. I am Ask Truft. I can send Step 0 for your block, book a time at Norwest, or take your name. You do not need drawings yet.</div></div>
+        <div class="chat" id="dockAskChat"><div class="msg"><span class="who">Truft</span>Hello. I am Ask Truft. I can send Step 0 for your block, book a time at Norwest, or take your name. Ask about the open book, the pause, or how a visit works. If I do not know, I will say so rather than guess. You do not need drawings yet.</div></div>
         <div class="chat-in"><input id="dockAskQ" placeholder="Ask Truft" /><button class="btn" type="button" id="dockAskSend">Send</button></div>
       </div>
     </div>
@@ -1774,7 +1870,7 @@
       if (dock && dock.querySelector(".msg") && !dock.querySelector(".msg.me")) {
         dock.querySelector(".msg").innerHTML = on
           ? "<span class=\"who\">Truft</span>You are signed in to Henson Way. I can talk about this job: spend, site, the pause, the next booking. WhatsApp and email land in the same portal."
-          : "<span class=\"who\">Truft</span>Hello. I am Ask Truft. I can send Step 0 for your block, book a time at Norwest, or take your name. You do not need drawings yet.";
+          : "<span class=\"who\">Truft</span>Hello. I am Ask Truft. I can send Step 0 for your block, book a time at Norwest, or take your name. Ask about the open book, the pause, or how a visit works. If I do not know, I will say so rather than guess. You do not need drawings yet.";
       }
       document.getElementById("pauseBanner").innerHTML = on
         ? "<strong>Paused before money moves.</strong> Island stone repair quoted at $4,200. Cost-plus will not spend this until you approve."
@@ -1793,12 +1889,14 @@
       drawing: { house: "Sheet A-12, island overhang. Waiting on the engineer. Nothing spends until that is answered.", visitor: "On a live job, questions on the drawings sit on the portal, not in a thread you have to chase." },
       stone: { house: "Island stone repair is quoted at $4,200. It is not signed. Cost-plus will not spend it until you allow it.", visitor: "On a live job, unsigned spend waits in the open. Open the Henson Way job. The $4,200 line is paused." },
       photo: { house: "I can write a request for an extra photo of the island after Thursday’s flood test. I will not invent that the photo already exists.", visitor: "On a live job you would send that as a request on the portal. Here I can book a time at Norwest, or take your contact." },
-      step0: { house: "Step 0 is for people who are not building yet. On Henson Way you already have the open book. Ask about spend, site, or the next booking.", visitor: "Step 0 is a clear look at your block. Leave a name and street, or WhatsApp. We send what council usually asks, what demolition usually means, and how the open book works, using numbers already on this site. You do not need drawings yet." },
+      step0: { house: "Step 0 is for people who are not building yet. On Henson Way you already have the open book. Ask about spend, site, or the next booking.", visitor: "Step 0 is a clear look at your block, free even if you never build with us. Leave a name and street, or WhatsApp. We send a written note of what we saw. If we walk the block, a $25 Amazon.com.au thank-you comes after the visit, always, even if you say no. You do not need drawings yet." },
+      chase: { house: "On a live job we write here, on WhatsApp, and on email. You should not be chasing us.", visitor: "If you leave a name, one of us reads it and one of us replies. After that the next move is yours. No stream of reminders. A visit is optional. The $25 thank-you is only after a visit, and it is sent even if you say no." },
       default: { house: "I only know Henson Way. Ask about spend, site, drawings, or the next booking. I will pause rather than invent a date.", visitor: "I can send Step 0 for your block, book a time at Norwest, arrange a call back, or take your name. You do not need drawings yet. What would help?" }
     };
     function classify(q) {
       const t = (q || "").toLowerCase();
-      if (/step 0|step0|my block|my street|clear look|site prep|demolish|preliminar/.test(t)) return "step0";
+      if (/step 0|step0|my block|my street|clear look|site prep|demolish|preliminar|amazon|gift|thank-you|thank you/.test(t)) return "step0";
+      if (/chase|sales call|hounded|spam|leave me/.test(t)) return "chase";
       if (/m2|m²|metre|meter|rate/.test(t)) return "rate";
       if (/tap|brass|var/.test(t)) return "taps";
       if (/visit|friday|norwest|meet|hold/.test(t)) return "visit";
@@ -2076,7 +2174,7 @@
       tr.innerHTML = `<td>Just now</td><td>${door}${found ? " · " + found.replace(/</g,"") : ""}</td><td>${who}</td><td>${intent.options[intent.selectedIndex].text}</td><td>Step 0 offered</td>`;
       tb.insertBefore(tr, tb.firstChild);
       logUsage("Just now", "Lead · Step 0", door + (found ? " · " + found : "") + (suburb ? " · " + suburb : ""));
-      toast("Thanks " + name.split(" ")[0] + ". Step 0 will come by WhatsApp or email.");
+      toast("Thanks " + name.split(" ")[0] + ". Step 0 will come by WhatsApp or email. A visit is optional.");
       openWa();
     });
 
