@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Truft | Open-Book Cost-Plus Home Builders | Northwest Sydney</title>
-  <meta name="description" content="Built on transparency, engineered for value. Truft is a cost-plus custom builder for North West Sydney’s knockdown-rebuild and premium land estates — every dollar visible, every decision proactive." />
+  <meta name="description" content="Built on transparency, engineered for value. Truft is a cost-plus custom builder for North West Sydney knockdown-rebuilds and premium land estates. Start with Step 0: a clear look at your block." />
   <link rel="icon" href="assets/favicon.png" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Truft","legalName":"SS Developers Pty Ltd","url":"https://truft.com.au","telephone":"+61272350833","email":"sharang@truft.com.au","address":{"@type":"PostalAddress","streetAddress":"303/4 Columbia Ct","addressLocality":"Norwest","addressRegion":"NSW","postalCode":"2153","addressCountry":"AU"},"areaServed":"North West Sydney","slogan":"Built on Transparency. Engineered for Value."}
+  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Truft","legalName":"SS Developers Pty Ltd","url":"https://truft.com.au","telephone":"+61272350833","address":{"@type":"PostalAddress","streetAddress":"303/4 Columbia Ct","addressLocality":"Norwest","addressRegion":"NSW","postalCode":"2153","addressCountry":"AU"},"areaServed":"North West Sydney","slogan":"Built on Transparency. Engineered for Value."}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -199,7 +199,7 @@
     .hero-copy { position: relative; z-index: 2; width: min(var(--max), calc(100% - 40px)); margin: 0 auto; padding: 0 0 56px; }
     .hero .kicker { color: var(--on-dark-dim); }
     .hero h1 { max-width: 11em; }
-    .hero .lede { color: var(--on-dark); max-width: 36ch; }
+    .hero .lede { color: var(--on-dark); max-width: 44ch; }
     .hero .meta { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-dark-dim); margin-top: 14px; }
     .hero.cine { background: #111; }
 
@@ -240,6 +240,18 @@
     .band.navy { background: var(--navy); color: var(--on-dark); }
     .band.navy .kicker, .band.navy .lede { color: var(--on-dark-dim); }
     .band.navy h2 { color: var(--on-dark); }
+    .magnet-points { margin: 0 0 18px; padding: 0 0 0 1.15em; color: var(--on-dark); font-size: 14px; max-width: 46ch; }
+    .magnet-points li { margin: 0 0 8px; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 18px; }
+    .why-grid article { border: var(--hairline) solid var(--line); background: var(--white); padding: 22px 20px; }
+    .why-grid .n { font-family: var(--font-brand); letter-spacing: 0.14em; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .why-grid h3 { font-size: 15px; margin-bottom: 8px; }
+    .why-grid p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+    .step0-band { display: grid; grid-template-columns: 1.15fr 1fr; gap: 4px; margin: 8px 0 22px; }
+    .step0-band article { border: var(--hairline) solid var(--line); background: var(--white); padding: 22px 20px; }
+    .step0-band .n { font-family: var(--font-brand); letter-spacing: 0.14em; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .step0-band h3 { font-size: 18px; margin-bottom: 8px; }
+    .step0-band p { margin: 0 0 12px; font-size: 14px; color: var(--ink-soft); max-width: 42ch; }
 
     .five {
       display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px;
@@ -537,7 +549,7 @@
     @media (max-width: 960px) {
       .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 28vh 28vh; }
       .five, .flow, .strip { grid-template-columns: 1fr 1fr; }
-      .split, .contact-grid, .login-stage, .drill, .gallery, .stats, .grid-2, .money-strip, .q-card { grid-template-columns: 1fr; }
+      .split, .contact-grid, .login-stage, .drill, .gallery, .stats, .grid-2, .money-strip, .q-card, .why-grid, .step0-band { grid-template-columns: 1fr; }
       .step-grid { grid-template-columns: repeat(4, 1fr); }
       .drill .ph { min-height: 160px; }
     }
@@ -601,10 +613,9 @@
         <div class="hero-copy">
           <div class="kicker">North West Sydney · Custom homes</div>
           <h1>Built on Transparency.<br>Engineered for Value.</h1>
-          <p class="lede">A cost-plus custom builder for knockdown-rebuilds and premium land estates. Every dollar visible. Every decision before it spends.</p>
+          <p class="lede">Knock down the old place, or start on land. A light home on your block, every cost visible before it spends. Start with Step 0: a clear look at your street.</p>
           <div class="row-btns">
-            <button class="btn light" type="button" data-go="work">See the houses</button>
-            <button class="btn ghost on-dark" type="button" data-go="contact">Talk to Truft</button>
+            <button class="btn light" type="button" data-go="home" data-focus="lead">Get Step 0 for your block</button>
             <button class="btn ghost on-dark" type="button" data-go="house">See a sample job</button>
           </div>
           <p class="meta">Norwest · 02 7235 0833 · WhatsApp Truft</p>
@@ -665,9 +676,9 @@
         <h2>From first enquiry to handover</h2>
         <div class="flow">
           <article>
-            <div class="n">01 · Enquire</div>
-            <h3>Tonight</h3>
-            <p>Form, phone, WhatsApp, or Ask Truft. A follow-up can open within a minute. The same facts land in the portal.</p>
+            <div class="n">01 · Step 0</div>
+            <h3>Your block</h3>
+            <p>Leave a name, WhatsApp, or Ask Truft. We send a clear look at your street before Preliminaries. Same facts if you never visit this page.</p>
           </article>
           <article>
             <div class="n">02 · Visit</div>
@@ -695,9 +706,14 @@
       <div class="band navy" id="leadBand">
         <div class="wrap contact-grid" style="padding-top:8px;padding-bottom:8px">
           <div>
-            <div class="kicker" style="color:var(--on-dark-dim)">Start here</div>
+            <div class="kicker" style="color:var(--on-dark-dim)">Step 0 · before Preliminaries</div>
             <h2>Leave a name.</h2>
-            <p class="lede">Email, mobile, or WhatsApp. If you leave a number, Truft can open a thread within a minute. This mock is not wired. <button type="button" class="i" data-tip="sixty" aria-label="How follow-up would work" style="border-color:#b8c0c8;color:#fafcf9">i</button></p>
+            <p class="lede">A clear look at your block. Valuable even if you never build with Truft. This mock is not wired. <button type="button" class="i" data-tip="sixty" aria-label="How follow-up would work" style="border-color:#b8c0c8;color:#fafcf9">i</button></p>
+            <ul class="magnet-points">
+              <li>What The Hills or Blacktown usually asks of a knockdown-rebuild on a street like yours. Slope, setbacks, stormwater. Questions and likely paths, not a fake approval.</li>
+              <li>What demolition and site prep usually mean before Step 1, so Preliminaries is not a blind spend.</li>
+              <li>How the open book works, using numbers already on this site. Taps quoted $2,180, actual $2,640 when the finish changed. Island stone $4,200, unsigned, so it has not spent.</li>
+            </ul>
             <form class="lead" id="leadForm">
               <div class="field"><label for="leadName">Name</label><input id="leadName" name="name" autocomplete="name" required placeholder="Your name" /></div>
               <div class="field"><label for="leadEmail">Email</label><input id="leadEmail" name="email" type="email" autocomplete="email" placeholder="you@email" /></div>
@@ -711,14 +727,30 @@
                   <option value="unsure">Not sure yet</option>
                 </select>
               </div>
+              <div class="field"><label for="leadSuburb">Suburb or street</label><input id="leadSuburb" name="suburb" autocomplete="address-level2" placeholder="Castle Hill, Kellyville…" /></div>
+              <div class="field">
+                <label for="leadSource">How you found us</label>
+                <select id="leadSource" required>
+                  <option value="" selected disabled>Please choose</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="sign">A sign or billboard</option>
+                  <option value="google">Google</option>
+                  <option value="ai">ChatGPT or Claude</option>
+                  <option value="friend">A friend</option>
+                  <option value="whatsapp">WhatsApp</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
               <div class="reach full" style="color:var(--on-dark)">
                 <span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600">Reach me on</span>
                 <label><input type="checkbox" name="reach" value="whatsapp" checked /> WhatsApp</label>
                 <label><input type="checkbox" name="reach" value="call" /> Call</label>
                 <label><input type="checkbox" name="reach" value="email" /> Email</label>
               </div>
+              <p class="full quiet" style="color:var(--on-dark-dim);margin:0">No sales calls. We send Step 0 by WhatsApp or email. A Norwest hour is optional. Bring a title plan if you have one. Come without it if you don't.</p>
               <label class="full" style="color:var(--on-dark-dim);font-size:12px;letter-spacing:0;text-transform:none;font-weight:400"><input type="checkbox" id="leadConsent" required checked /> Truft may contact me about this enquiry. Nothing is shared with another job.</label>
-              <div class="full"><button class="btn light" type="submit">Send</button></div>
+              <div class="full"><button class="btn light" type="submit">Send me Step 0</button></div>
             </form>
           </div>
           <div class="wa-card">
@@ -733,6 +765,25 @@
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="band" id="whyNow">
+        <div class="wrap" style="padding-top:8px;padding-bottom:8px">
+          <div class="kicker">How we hold the money</div>
+          <h2>Extra spend waits for your yes.</h2>
+          <p class="lede">Credibility without a clock is how people wait a year in a house they plan to knock down. Here is the hold, and here is the calendar.</p>
+          <div class="why-grid">
+            <article>
+              <div class="n">The hold</div>
+              <h3>No extra dollar without your written yes</h3>
+              <p>You see the quote first. If you do not say yes, the work does not go ahead. You see each trade invoice at what it cost. Truft's margin is its own line. It is not hidden in the taps.</p>
+            </article>
+            <article>
+              <div class="n">The calendar</div>
+              <h3>Council takes months. Trades book ahead.</h3>
+              <p>Looking at the block now is how you do not lose a year. Truft takes a few homes at a time. The conversation is the clock. No fake countdown. No invented spots.</p>
+            </article>
           </div>
         </div>
       </div>
@@ -865,7 +916,20 @@
       <div class="wrap" style="padding-bottom:12px">
         <div class="kicker">From vision to home. Together.</div>
         <h1>Twenty-eight steps. You can see every one.</h1>
-        <p class="lede">The wall poster, standing up. Tap a stage, then a step. Extra spend waits for you.</p>
+        <p class="lede">Building starts at Step 1, Preliminaries. Step 0 comes first: a clear look at your block, before surveys and permits become a spend. Then the poster runs in the open. Extra spend waits for you.</p>
+        <div class="step0-band">
+          <article>
+            <div class="n">00 · Step 0</div>
+            <h3>A clear look at your block</h3>
+            <p>What council usually asks. What demolition usually means. How the open book works, using numbers already on this site. Yours even if you never hire Truft.</p>
+            <button class="btn" type="button" data-go="home" data-focus="lead">Get Step 0</button>
+          </article>
+          <article>
+            <div class="n">Then 1 to 28</div>
+            <h3>Truft runs the rest with you</h3>
+            <p>Open book the whole way. Any extra dollar waits for your yes in writing. You see the quote first. Margin sits on its own line. Same Truft on the site, WhatsApp, phone, and SMS.</p>
+          </article>
+        </div>
       </div>
       <div class="poster-wrap"><img src="assets/truft-28-step.jpg" alt="The Truft 28-step home building process poster" /></div>
       <div class="wrap">
@@ -885,10 +949,10 @@
         <div class="split-photo"><img class="kb d4" src="assets/gallery/mustang-01.jpg" alt="Mustang Ave" /></div>
         <div class="wrap" style="padding:36px 28px">
           <div class="kicker">Contact</div>
-          <h1>Ready to build on transparency?</h1>
-          <p class="lede">Knockdown-rebuild or a premium land estate — talk through how the open book works for you.</p>
+          <h1>Let us look at your block.</h1>
+          <p class="lede">You do not need drawings. Leave a name, WhatsApp, or call. If you found us on Instagram, Facebook, or a sign and skipped the rest of this site, that is fine. We still write one row and send Step 0.</p>
           <p><strong>303/4 Columbia Ct, Norwest NSW 2153</strong><br>
-            <a href="tel:+61272350833">02 7235 0833</a> · <a href="mailto:sharang@truft.com.au">sharang@truft.com.au</a></p>
+            <a href="tel:+61272350833">02 7235 0833</a></p>
           <div class="wa-card" style="margin-top:16px">
             <img src="assets/qr/whatsapp.png" alt="WhatsApp QR" />
             <div>
@@ -1216,13 +1280,14 @@
         </div>
 
         <div class="shop-pane" id="shop-leads">
-          <p class="quiet">Every enquiry lands here: website, phone, WhatsApp, email, Instagram. Follow-up is offered, not invented. <button class="i" data-tip="leads" type="button">i</button></p>
+          <p class="quiet">Every enquiry lands here as one row: website, phone, WhatsApp, email, Instagram, a sign QR. People who never visit the site still write here. Follow-up is offered, not invented. <button class="i" data-tip="leads" type="button">i</button></p>
           <table class="office" id="leadTable">
             <thead><tr><th>When</th><th>Channel</th><th>Who</th><th>Thinking of</th><th>Next</th></tr></thead>
             <tbody>
-              <tr><td>9:41pm</td><td>Instagram</td><td>@homeinbaulkhamhills</td><td>Knockdown-rebuild</td><td>Public reply sent · Friday 12:00 offered privately</td></tr>
+              <tr><td>9:41pm</td><td>Instagram · skipped site</td><td>@homeinbaulkhamhills</td><td>Knockdown-rebuild</td><td>Step 0 offered in the thread</td></tr>
+              <tr><td>8:02pm</td><td>Facebook ad · skipped site</td><td>New mobile · Kellyville</td><td>Knockdown-rebuild</td><td>Step 0 offered</td></tr>
               <tr><td>6:14pm</td><td>WhatsApp</td><td>New mobile</td><td>Cost-plus?</td><td>Answered · variation 12 as the example</td></tr>
-              <tr><td>Yesterday</td><td>Phone</td><td>0412 ··· ···</td><td>Land estate</td><td>Call logged · 4m · prefers a Norwest Friday</td></tr>
+              <tr><td>Yesterday</td><td>Phone</td><td>0412 ··· ···</td><td>Land estate</td><td>Call logged · 4m · Norwest hour offered</td></tr>
             </tbody>
           </table>
         </div>
@@ -1363,11 +1428,11 @@
   <div class="ask-widget" id="askWidget">
     <div class="ask-panel" id="askPanel" role="dialog" aria-label="Ask Truft">
       <header>
-        <div><strong>ASK TRUFT</strong><small id="askCtxLabel">Visitors · how Truft builds, visits, call back</small></div>
+        <div><strong>ASK TRUFT</strong><small id="askCtxLabel">Visitors · Step 0, visits, call back</small></div>
         <button type="button" id="askClose" aria-label="Close chat">×</button>
       </header>
       <div class="ask-body">
-        <div class="chat" id="dockAskChat"><div class="msg"><span class="who">Truft</span>Hello. I am Ask Truft. I can tell you how Truft builds, book a time at Norwest, arrange a call back, or take your name and number.</div></div>
+        <div class="chat" id="dockAskChat"><div class="msg"><span class="who">Truft</span>Hello. I am Ask Truft. I can send Step 0 for your block, book a time at Norwest, or take your name. You do not need drawings yet.</div></div>
         <div class="chat-in"><input id="dockAskQ" placeholder="Ask Truft" /><button class="btn" type="button" id="dockAskSend">Send</button></div>
       </div>
     </div>
@@ -1530,8 +1595,8 @@
       house: { title: "This job only", body: "Homeowners see their project. Not the builder’s other jobs. Ask Truft, WhatsApp, and email write to the same portal." },
       models: { title: "Pick a model for each process", body: "You give each written process one model: workhorse, frontier, or fast. When a new model comes out, it does not replace the one you picked. If you change the model, run that process through its checks (evals) again. Fix it until it hits your pass mark. It goes live only after that." },
       evals: { title: "Two kinds of checks (evals)", body: "Fact checks pass or fail. Did the reply say waterproofing is Thursday at 10:00? Pass or fail. Rubric checks are different. One judge model reads the writing and gives it a score from 0.0 to 1.0. You set the pass mark. Anything below the mark waits for a person to look at it." },
-      chatbot: { title: "The same Truft chat on the website, WhatsApp, email and SMS", body: "Ask Truft on the website is for anyone: how Truft builds, a visit, a call back, a name. After sign-in it knows that job only. WhatsApp and email are the same assistant, writing to the same portal." },
-      leads: { title: "A lead is a person", body: "Form, email, phone, WhatsApp, Instagram, Ask Truft: each writes one row. Follow-up is a visit, a call, or a WhatsApp. They can say stop." },
+      chatbot: { title: "The same Truft chat on the website, WhatsApp, email and SMS", body: "Ask Truft on the website is for anyone: Step 0 for their block, a visit, a call back, a name. After sign-in it knows that job only. WhatsApp and email are the same assistant, writing to the same portal." },
+      leads: { title: "A lead is a person", body: "Form, email, phone, WhatsApp, Instagram, a sign, Ask Truft: each writes one row, even if they never visited the website. How they found us is stored so Truft can see which channel works. Follow-up is Step 0, a visit, a call, or a WhatsApp. They can say stop." },
       usage: { title: "Times are the work", body: "When a step runs, or someone talks on WhatsApp or the phone, a time is written on the job. Those minutes, plus token cost with a 10% orchestration fee included, are what is billed. Idle software is not billed. A written process that has been used more takes fewer minutes for the same kind of work." },
       whatsapp: { title: "WhatsApp, not a fake window", body: "This will open our WhatsApp account on a phone, or WhatsApp Desktop / Web on a computer. Same portal, same pause rules, same checks. This mock is not wired to a live account, so it will not jump to a personal number." },
       instagram: { title: "Posted to Instagram", body: "Official Instagram comments only. A public reply in Truft’s voice, and a private way to book a time at Norwest. Held if it fails a check. No private-message reading. Instagram handle is unconfirmed." },
@@ -1539,7 +1604,7 @@
       ww: { title: "What is running here", body: "Workweaver, a product of Bit Foundry, runs the steps, the checks (evals) before anything is sent, the pause before money moves, and the same assistant on the website, WhatsApp, email, and SMS. BuildPass and Xero stay the records. Truft stays the builder." },
       memory: { title: "How Truft works, not the books", body: "WorkMemory holds how Truft works: voice, checks (evals), and standing rules. Job cost, photos, and progress are looked up in BuildPass and Xero for that job only. Henson Way cannot see Mustang Ave." },
       cms: { title: "The homepage is yours", body: "Upload a photograph, add a homeowner line. It appears on Home and Our Work. Progress photos that belong on a live job still come from the site file — they do not have to be re-typed." },
-      sixty: { title: "Warm within a minute", body: "If someone leaves a mobile or asks for a callback, Truft can open WhatsApp, SMS or a call within about 60 seconds and offer a time at Norwest. A human still answers within a day if needed. This mock is not wired." },
+      sixty: { title: "Warm within a minute", body: "If someone leaves a mobile or asks for Step 0, Truft can open WhatsApp, SMS or a call within about 60 seconds. Step 0 is a clear look at their block, not a sales call. A human still answers within a day if needed. This mock is not wired." },
       "sso-google": { title: "Google first", body: "Most owners already have Google. This is the default sign-in to their project after they are building with you." },
       "sso-optional": { title: "Optional logins", body: "Apple Developer and Meta review can be more than a 10-job builder wants. Facebook and Apple can be dropped. Homeowners must not need Facebook to see their project." },
       "sso-tools": { title: "BuildPass and Xero logins", body: "Homeowners never unwrap Xero. BuildPass already holds photos and site notes — this portal is the face. Opening a BuildPass client share is only if needed and possible, not a second homework assignment." },
@@ -1623,7 +1688,7 @@
       history.replaceState(null, "", "#" + id);
       document.getElementById("askCtxLabel").textContent = signedIn
         ? "Henson Way · this job only"
-        : "Visitors · how Truft builds, visits, call back";
+        : "Visitors · Step 0, visits, call back";
       if (opts && opts.focus === "lead") {
         const band = document.getElementById("leadBand");
         if (band) band.scrollIntoView({ block: "center" });
@@ -1702,13 +1767,13 @@
       document.getElementById("houseState").textContent = on ? "Signed in" : "You can look. Sign in to act.";
       document.getElementById("askChip").textContent = on
         ? "Henson Way only. WhatsApp and email write here too."
-        : "Anyone can ask. I will take a name, a visit, or a call back.";
-      document.getElementById("askCtxLabel").textContent = on ? "Henson Way · this job only" : "Visitors · how Truft builds, visits, call back";
+        : "Anyone can ask. Step 0 for a block, a visit, or a call back.";
+      document.getElementById("askCtxLabel").textContent = on ? "Henson Way · this job only" : "Visitors · Step 0, visits, call back";
       const dock = document.getElementById("dockAskChat");
       if (dock && dock.querySelector(".msg") && !dock.querySelector(".msg.me")) {
         dock.querySelector(".msg").innerHTML = on
           ? "<span class=\"who\">Truft</span>You are signed in to Henson Way. I can talk about this job: spend, site, the pause, the next booking. WhatsApp and email land in the same portal."
-          : "<span class=\"who\">Truft</span>Hello. I am Ask Truft. I can tell you how Truft builds, book a time at Norwest, arrange a call back, or take your name and number.";
+          : "<span class=\"who\">Truft</span>Hello. I am Ask Truft. I can send Step 0 for your block, book a time at Norwest, or take your name. You do not need drawings yet.";
       }
       document.getElementById("pauseBanner").innerHTML = on
         ? "<strong>Paused before money moves.</strong> Island stone repair quoted at $4,200. Cost-plus will not spend this until you approve."
@@ -1727,10 +1792,12 @@
       drawing: { house: "Sheet A-12, island overhang. Waiting on the engineer. Nothing spends until that is answered.", visitor: "On a live job, questions on the drawings sit on the portal, not in a thread you have to chase." },
       stone: { house: "Island stone repair is quoted at $4,200. It is not signed. Cost-plus will not spend it until you allow it.", visitor: "On a live job, unsigned spend waits in the open. Open the Henson Way job. The $4,200 line is paused." },
       photo: { house: "I can write a request for an extra photo of the island after Thursday’s flood test. I will not invent that the photo already exists.", visitor: "On a live job you would send that as a request on the portal. Here I can book a time at Norwest, or take your contact." },
-      default: { house: "I only know Henson Way. Ask about spend, site, drawings, or the next booking. I will pause rather than invent a date.", visitor: "I can tell you how Truft builds, book a time at Norwest, arrange a call back, or take your name and number. What would help?" }
+      step0: { house: "Step 0 is for people who are not building yet. On Henson Way you already have the open book. Ask about spend, site, or the next booking.", visitor: "Step 0 is a clear look at your block. Leave a name and street, or WhatsApp. We send what council usually asks, what demolition usually means, and how the open book works, using numbers already on this site. You do not need drawings yet." },
+      default: { house: "I only know Henson Way. Ask about spend, site, drawings, or the next booking. I will pause rather than invent a date.", visitor: "I can send Step 0 for your block, book a time at Norwest, arrange a call back, or take your name. You do not need drawings yet. What would help?" }
     };
     function classify(q) {
       const t = (q || "").toLowerCase();
+      if (/step 0|step0|my block|my street|clear look|site prep|demolish|preliminar/.test(t)) return "step0";
       if (/m2|m²|metre|meter|rate/.test(t)) return "rate";
       if (/tap|brass|var/.test(t)) return "taps";
       if (/visit|friday|norwest|meet|hold/.test(t)) return "visit";
@@ -1982,21 +2049,33 @@
       document.getElementById("testiIn").value = "";
       toast("Line added.");
     });
+    (function prefillSource() {
+      const sel = document.getElementById("leadSource");
+      if (!sel) return;
+      const p = new URLSearchParams(location.search);
+      const u = (p.get("utm_source") || p.get("src") || "").toLowerCase();
+      const map = { facebook:"facebook", fb:"facebook", meta:"facebook", instagram:"instagram", ig:"instagram", google:"google", chatgpt:"ai", claude:"ai", billboard:"sign", qr:"sign", sign:"sign", whatsapp:"whatsapp" };
+      if (map[u]) sel.value = map[u];
+    })();
     document.getElementById("leadForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const name = document.getElementById("leadName").value.trim() || "there";
       const email = document.getElementById("leadEmail").value.trim();
       const mobile = document.getElementById("leadMobile").value.trim();
-      if (!email && !mobile) { toast("Leave an email or a mobile — or just WhatsApp."); return; }
+      if (!email && !mobile) { toast("Leave an email or a mobile, or just WhatsApp."); return; }
       const intent = document.getElementById("leadIntent");
+      const source = document.getElementById("leadSource");
+      const suburb = (document.getElementById("leadSuburb").value || "").trim();
       const reach = Array.from(document.querySelectorAll("#leadForm input[name=reach]:checked")).map(i => i.value);
       const door = reach.includes("whatsapp") ? "WhatsApp" : (reach.includes("call") ? "Call" : (email ? "Email" : "Site form"));
+      const found = source.options[source.selectedIndex] ? source.options[source.selectedIndex].text : "";
+      const who = name.replace(/</g,"") + (mobile ? " · " + mobile.replace(/</g,"") : "") + (suburb ? " · " + suburb.replace(/</g,"") : "");
       const tb = document.querySelector("#leadTable tbody");
       const tr = document.createElement("tr"); tr.className = "is-new";
-      tr.innerHTML = `<td>Just now</td><td>${door}</td><td>${name.replace(/</g,"")}${mobile ? " · " + mobile.replace(/</g,"") : ""}</td><td>${intent.options[intent.selectedIndex].text}</td><td>Follow-up offered · Friday 12:00</td>`;
+      tr.innerHTML = `<td>Just now</td><td>${door}${found ? " · " + found.replace(/</g,"") : ""}</td><td>${who}</td><td>${intent.options[intent.selectedIndex].text}</td><td>Step 0 offered</td>`;
       tb.insertBefore(tr, tb.firstChild);
-      logUsage("Just now", "Lead · follow-up", door + " · Friday 12:00 offered");
-      toast("Thanks " + name.split(" ")[0] + ". Truft will follow up.");
+      logUsage("Just now", "Lead · Step 0", door + (found ? " · " + found : "") + (suburb ? " · " + suburb : ""));
+      toast("Thanks " + name.split(" ")[0] + ". Step 0 will come by WhatsApp or email.");
       openWa();
     });
 
