@@ -293,23 +293,55 @@
     .sources { margin-top: 22px; font-size: 12px; line-height: 1.45; color: var(--muted); max-width: 78ch; }
 
 
+    #homeCine.hero { min-height: clamp(400px, 46vh, 520px); }
+    #life > h2 { font-size: clamp(28px, 3.2vw, 42px); line-height: 0.98; max-width: 14em; letter-spacing: 0.03em; }
+    .offer-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 8px 0 22px; }
+    .offer-4 article { background: var(--white); border: var(--hairline) solid var(--line); border-top: 3px solid var(--good); padding: 14px 14px 16px; }
+    .offer-4 article.limit { border-top-color: var(--warn); }
+    .offer-4 h3 { font-family: var(--font-brand); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 6px; }
+    .offer-4 p { margin: 0; font-size: 14.5px; line-height: 1.35; color: var(--ink-soft); }
+    .life-board { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+    .life-board > li {
+      display: grid; grid-template-columns: 132px 1fr 1.15fr; gap: 8px; align-items: stretch;
+      scroll-margin-top: 68px;
+    }
+    .life-name { display: flex; flex-direction: column; justify-content: center; padding: 8px 4px; }
+    .life-name span { font-family: var(--font-brand); letter-spacing: 0.14em; font-size: 12px; color: var(--muted); }
+    .life-name strong { font-family: var(--font-brand); font-weight: 600; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.05; }
+    .else, .truft { margin: 0; display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; font-size: 15px; line-height: 1.35; }
+    .else { background: #e6e8e4; color: #5c6560; }
+    .truft { background: var(--good-wash); color: var(--ink); box-shadow: inset 3px 0 0 var(--good); }
+    .else b, .truft b {
+      display: block; font-family: var(--font-brand); font-weight: 600; font-size: 11px;
+      letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 3px;
+    }
+    .else b { color: #7a827c; }
+    .truft b { color: var(--good); }
+    .mark { width: 18px; height: 18px; border-radius: 50%; flex: none; margin-top: 1px; display: grid; place-items: center; }
+    .mark.no { background: #cfd3ce; }
+    .mark.no::before { content: ""; width: 8px; height: 1.5px; background: #6d756f; display: block; }
+    .mark.yes { background: var(--good); color: var(--on-dark); }
+    .mark.yes svg { display: block; }
+    .week { grid-column: 1 / -1; }
+    .week summary { cursor: pointer; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 2px 0 6px; }
+    .week p { margin: 0 0 8px; font-size: 14.5px; line-height: 1.45; color: var(--ink-soft); max-width: 72ch; }
+    .race article.here { background: #f4faf6; border-color: var(--line); box-shadow: inset 3px 0 0 var(--good); }
+    .race article.here .tag, .race article.here h3, .race article.here p { color: var(--ink); }
+    .race article.here .tag { color: var(--good); }
+
+
+
     .five {
-      display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px;
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+      width: min(var(--max), calc(100% - 40px)); margin: 18px auto 0;
     }
     .five article {
-      min-height: 220px; background: #111 center/cover no-repeat; color: #fff;
-      padding: 18px 16px; display: flex; flex-direction: column; justify-content: flex-end;
-      position: relative; overflow: hidden;
-      animation: kb-bg 28s ease-in-out infinite alternate;
+      background: var(--white); color: var(--ink);
+      border: var(--hairline) solid var(--line); border-top: 3px solid var(--good);
+      padding: 14px 14px 16px; display: flex; flex-direction: column; justify-content: flex-start;
     }
-    .five article:nth-child(2) { animation-duration: 32s; animation-direction: alternate-reverse; }
-    .five article:nth-child(3) { animation-duration: 24s; }
-    .five article:nth-child(4) { animation-duration: 30s; animation-direction: alternate-reverse; }
-    .five article:nth-child(5) { animation-duration: 26s; }
-    .five article::before { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent, rgba(25,34,49,.82)); }
-    .five article > * { position: relative; }
-    .five h3 { font-family: var(--font-brand); letter-spacing: 0.08em; text-transform: uppercase; font-size: 15px; }
-    .five p { margin: 0; font-size: 13px; color: var(--on-dark-dim); max-width: 28ch; }
+    .five h3 { font-family: var(--font-brand); letter-spacing: 0.08em; text-transform: uppercase; font-size: 15px; margin: 0 0 6px; }
+    .five p { margin: 0; font-size: 14px; line-height: 1.35; color: var(--ink-soft); }
 
     .flow {
       display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
@@ -536,14 +568,18 @@
     .ask-body { padding: 12px; overflow: auto; display: flex; flex-direction: column; min-height: 220px; }
     .ask-body .chat { flex: 1; max-height: none; }
     .ask-launch {
-      align-self: flex-end; display: flex; align-items: center; gap: 10px;
+      align-self: flex-end; display: flex; align-items: center; gap: 0;
       border: var(--hairline) solid var(--navy); background: var(--navy); color: var(--on-dark);
-      padding: 8px 10px 8px 8px; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0; letter-spacing: 0.1em; text-transform: uppercase;
       font-size: 11px; font-weight: 600;
     }
+    .ask-launch .lbl {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
     .ask-launch .bubble {
-      width: 36px; height: 36px; border-radius: 50%; background: var(--on-dark); color: var(--navy);
-      display: grid; place-items: center; flex: 0 0 36px;
+      width: 44px; height: 44px; background: var(--navy); color: var(--on-dark);
+      display: grid; place-items: center; flex: 0 0 44px;
     }
     .ask-widget.is-open .ask-launch { display: none; }
     .wa-overlay {
@@ -586,10 +622,13 @@
       z-index: 8; white-space: normal; line-height: 1.35;
     }
 
+    @media (max-width: 1410px) {
+      .offer-4, .life-board, .five, .flow { padding-right: 56px; }
+    }
     @media (max-width: 960px) {
       .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 28vh 28vh; }
       .five, .flow, .strip { grid-template-columns: 1fr 1fr; }
-      .split, .contact-grid, .login-stage, .drill, .gallery, .stats, .grid-2, .money-strip, .q-card, .why-grid, .step0-band, .story-grid, .visit-stack, .race { grid-template-columns: 1fr; }
+      .split, .contact-grid, .login-stage, .drill, .gallery, .stats, .grid-2, .money-strip, .q-card, .why-grid, .step0-band, .story-grid, .visit-stack, .race, .offer-4, .life-board > li { grid-template-columns: 1fr; }
       .step-grid { grid-template-columns: repeat(4, 1fr); }
       .drill .ph { min-height: 160px; }
     }
@@ -601,6 +640,10 @@
       }
       .menu-btn { display: grid; }
       .hero-copy { padding-bottom: 140px; }
+      #homeCine.hero { min-height: 0; }
+      #homeCine .hero-copy { padding: 16vh 0 84px; }
+      .offer-4, .life-board > li { grid-template-columns: 1fr; }
+      .life-name { flex-direction: row; gap: 10px; align-items: baseline; padding: 10px 0 0; }
       .band { padding-bottom: 96px; }
       .toast { bottom: 88px; }
       .five, .flow, .strip, .principles, .lead, .stage-hot, .office-cta, .feed-grid, .story-grid, .visit-stack { grid-template-columns: 1fr; }
@@ -610,11 +653,6 @@
       .work-cine { min-height: 62vh; }
       .top-end .already { padding: 6px 8px; }
       .ask-widget { right: 10px; bottom: 10px; }
-      .ask-launch { position: relative; padding: 0; gap: 0; }
-      .ask-launch .lbl {
-        position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-        overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
-      }
       .house-tl article { min-width: 72vw; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -659,7 +697,7 @@
         <div class="hero-copy">
           <div class="kicker">North West Sydney · Custom homes</div>
           <h1>See the whole build.</h1>
-          <p class="lede">A custom home is a long chain of short jobs. The worry is rarely the concrete. It is not knowing what is happening, what it will cost, or who is waiting on whom. This page walks that chain, from the block to the keys, the way it usually goes, and the way it goes with Truft.</p>
+          <p class="lede">Grey is how a build usually goes. The green tick is how it goes with Truft.</p>
           <div class="row-btns">
             <a class="btn light" href="#life">Walk the build</a>
             <button class="btn ghost on-dark" type="button" data-go="house">Open a sample home</button>
@@ -668,247 +706,101 @@
         </div>
       </div>
 
-      <div class="mosaic" id="homeMosaic">
-        <a class="tile" href="#work" data-open="mustang" data-i="0" data-film="mustang">
-          <span class="cine-stage"><img class="kb d1 is-on" src="assets/gallery/mustang-01.jpg" alt="Mustang Ave street elevation" /></span>
-          <span class="tile-cap">Mustang Ave<small>Knockdown-rebuild</small></span>
-        </a>
-        <a class="tile" href="#work" data-open="henson" data-i="3" data-film="henson">
-          <span class="cine-stage"><img class="kb d2 is-on" src="assets/gallery/henson-04.jpg" alt="Henson Way kitchen" /></span>
-          <span class="tile-cap">Henson Way<small>Finished home</small></span>
-        </a>
-        <a class="tile" href="#work" data-open="newmarket" data-i="5" data-film="newmarket">
-          <span class="cine-stage"><img class="kb d3 is-on" src="assets/gallery/newmarket-06.jpg" alt="Newmarket Pky living" /></span>
-          <span class="tile-cap">Newmarket Pky<small>Premium land estate</small></span>
-        </a>
-        <a class="tile" href="#work" data-open="shetland" data-i="6" data-film="shetland">
-          <span class="cine-stage"><img class="kb d4 is-on" src="assets/gallery/shetland-07.jpg" alt="Shetland Street living" /></span>
-          <span class="tile-cap">Shetland Street<small>Custom interiors</small></span>
-        </a>
-      </div>
-
       <div class="wrap" id="life">
         <div class="kicker">The life of the house</div>
-        <h2>Where the weeks actually go</h2>
-        <p class="lede wide">The photographs above are finished Truft work. Henson Way is the name of the sample you can click further down, one job shown at lock-up so you can see a week, a cost, and a pause. It is not your house.</p>
-        <p class="lede wide">Between those photographs, a build passes through you, a designer, a certifier, sometimes council, the builder's office, a site supervisor, each trade, the suppliers, your bank, and the bank's valuer. Each of them does a short piece of real work. The days disappear in the gaps: a note in a pocket, an email under a pile, a Saturday comment that never becomes paper. You are the one paying rent, or interest, while that happens.</p>
-        <p class="lede wide">Truft can't make weather, a quarry or a supplier who is actually out of stock, council, the certifier, or the bank's valuer any faster. What changes is everything that was waiting only because nobody carried it to the next person with the facts attached.</p>
-        <nav class="life-jump" aria-label="Stages of the build">
-          <a href="#s-choose">Choosing</a>
-          <a href="#s-land">The land</a>
-          <a href="#s-price">The price</a>
-          <a href="#s-contract">The contract</a>
-          <a href="#s-finish">Finishes</a>
-          <a href="#s-approve">Approvals</a>
-          <a href="#s-site">On site</a>
-          <a href="#s-change">A change</a>
-          <a href="#s-money">The money</a>
-          <a href="#s-quality">Quality</a>
-          <a href="#s-keys">The keys</a>
-        </nav>
-
-        <article class="stage-block" id="s-choose">
-          <div class="kicker">01 · Choosing</div>
-          <h2>A display home is not your block</h2>
-          <p class="moment">You walk a display that faces the right way for photographs. The price on the sheet is one number. Your block slopes to the street and has a tree you may not be allowed to touch. None of that is in the number. The person who poured you water is often not the person who will have the file in month eight.</p>
-          <div class="race">
-            <article>
-              <div class="tag">Elsewhere</div>
-              <h3>You choose a feeling, or a lower number</h3>
-              <p>The allowances are a line you do not yet know how to read. The kitchen in the photograph is not the kitchen in the allowance. By the time the real kitchen exists, the number has grown.</p>
-            </article>
-            <article class="here">
-              <div class="tag">With Truft</div>
-              <h3>You can read a job before you are in one</h3>
-              <p>Open the sample home on this site. We build cost-plus, so the price can move, and every move shows up as its own line with the reason beside it. We will not price your block from a display home. Before you trust any builder's page, this one included, check the builder's licence on the NSW Government register.</p>
-            </article>
-          </div>
-        </article>
-
-        <article class="stage-block" id="s-land">
-          <div class="kicker">02 · The land</div>
-          <h2>The footpath is a poor survey</h2>
-          <p class="moment">The block looks manageable from the street. The fall, the easement, the stormwater, the sewer line under the back lawn, the bushfire rating some Hills streets carry, the tree, and the truck that has to deliver a frame will decide more of the budget than the tapware.</p>
-          <div class="race">
-            <article>
-              <div class="tag">Elsewhere</div>
-              <h3>The first plan treats the land as a rectangle</h3>
-              <p>You pay for drawings, then pay again to redraw them. Or you find out when the excavator prices rock, or the driveway no longer fits the crossover. The expensive discovery arrives after you are attached to a plan.</p>
-            </article>
-            <article class="here">
-              <div class="tag">With Truft</div>
-              <h3>A walk, then one page, before drawings get expensive</h3>
-              <p>We walk the block with you. Afterwards you get one page: what we could see, what a survey and a soil test still have to confirm, and what council usually asks of a knockdown on a street like this. It is not an approval and it is not a price. If you build with someone else, the page is still yours.</p>
-            </article>
-          </div>
-        </article>
-
-        <article class="stage-block" id="s-price">
-          <div class="kicker">03 · The price</div>
-          <h2>One number is not a price</h2>
-          <p class="moment">A figure on the cover feels like relief. The kitchen, the tiles, the appliances and the driveway are often allowances, and the allowances are for a plainer house than the one in the pictures.</p>
-          <div class="race">
-            <article>
-              <div class="tag">Elsewhere</div>
-              <h3>The small allowance wins the signature</h3>
-              <p>Prime cost items are fittings you choose later, such as taps, tiles and appliances. Provisional sums are work that cannot be priced properly yet, such as rock, stormwater, or asbestos in the old house. Both sit in a schedule near the back of the contract. The real stone and the real rock arrive later, as extras, when changing your mind is expensive.</p>
-            </article>
-            <article class="here">
-              <div class="tag">With Truft</div>
-              <h3>A list you can argue with</h3>
-              <p>Each trade sits at a quoted cost. Anything still a guess is labelled as a guess, with what that guess is expected to buy. Our margin is a line of its own. On the sample home, brass taps were quoted at $2,180 and came in at $2,640 after the owners signed a change of finish. Both numbers are kept. Island stone at $4,200 is not signed, so it has not been spent. Those figures belong to that sample. They are not a quote for your house.</p>
-            </article>
-          </div>
-        </article>
-
-        <article class="stage-block" id="s-contract">
-          <div class="kicker">04 · The contract</div>
-          <h2>The evening you sign</h2>
-          <p class="moment">The contract is thick because the law is trying to stop the fights people actually have. On the night, most people sign the feeling, not the progress schedule.</p>
-          <div class="race">
-            <article>
-              <div class="tag">Elsewhere</div>
-              <h3>You meet the important clauses afterwards</h3>
-              <p>You find out later what "frame" means to the person who will invoice it, that you were free to choose your own certifier, and that a contract for a new home gives you five clear business days to cool off after you are given a copy. The deposit has often already moved.</p>
-            </article>
-            <article class="here">
-              <div class="tag">With Truft</div>
-              <h3>The same contract, with the traps in ordinary words</h3>
-              <p>It is still a proper NSW home building contract. We'd rather your own lawyer read it before you sign, and anything written in by hand is the first thing to show them. Beside the contract, your page shows the progress schedule in plain language, the allowances, the cooling-off dates, the home building compensation certificate, and a reminder that the certifier is yours to choose. Published NSW guidance caps the deposit at 10 percent. Where that cover is required, the law says you pay nothing, deposit included, until you hold the certificate, and we won't ask you to. A special condition is marked, not buried.</p>
-            </article>
-          </div>
-        </article>
-
-        <article class="stage-block" id="s-finish">
-          <div class="kicker">05 · Finishes</div>
-          <h2>The hour in the showroom</h2>
-          <p class="moment">You have a gap between school pickup and something else. The stone you put your hand on is beautiful. It is not the stone in the allowance.</p>
-          <div class="race">
-            <article>
-              <div class="tag">Elsewhere</div>
-              <h3>The price arrives after you have half forgotten the other options</h3>
-              <p>Someone mentions the cabinet maker's date in the same breath as the number. You approve tired, or you take the default and live with it. If you wait, the date moves anyway, and you hear about the move from site, not before you decide.</p>
-            </article>
-            <article class="here">
-              <div class="tag">With Truft</div>
-              <h3>Photo, dollars, and days, in one note</h3>
-              <p>Each choice shows the finish, the amount above or below the allowance, and what the dates do if you order this week or next month. Windows often need longer than stone. If your choice pushes a trade who is already booked, you see the new date before you confirm. Nothing is ordered because you liked it out loud. It's ordered once you've signed for it, and a choice that changes the price or the plans becomes a written variation we both sign first.</p>
-            </article>
-          </div>
-        </article>
-
-        <article class="stage-block" id="s-approve">
-          <div class="kicker">06 · Approvals</div>
-          <h2>The quiet months</h2>
-          <p class="moment">From the street it looks as if nothing is happening. Sometimes that is council. Sometimes the file has not been lodged, and those two silences feel identical from your kitchen table.</p>
-          <div class="race">
-            <article>
-              <div class="tag">Elsewhere</div>
-              <h3>"It's with council" covers three different facts</h3>
-              <p>A question asked three weeks ago and not answered. A design that still does not fit the rules for the lot. A form that is sitting on someone's desk. The excavator was pencilled, then quietly dropped. You hear "these things take time", which is true of council and untrue of an unsent email.</p>
-            </article>
-            <article class="here">
-              <div class="tag">With Truft</div>
-              <h3>You can see who has the file</h3>
-              <p>Some knockdowns in The Hills can use a complying development path. Others need a development application, which council usually shows the neighbours, and once it is approved a construction certificate is still needed before anyone digs. We will not tell you which until the design has been checked against that block. After that, your page shows what was lodged, who has it, what they asked, and the date we are working to. We do not move council's clock. We do not let their clock be the excuse for a question that is actually with us.</p>
-            </article>
-          </div>
-        </article>
-
-        <article class="stage-block" id="s-site">
-          <div class="kicker">07 · On site</div>
-          <h2>The Sunday drive-by</h2>
-          <p class="moment">You drive past. The frame is up, or it is not. You text. The reply comes Tuesday, and it does not match what the supervisor said on the footpath.</p>
-          <div class="race">
-            <article>
-              <div class="tag">Elsewhere</div>
-              <h3>Three phones, three versions</h3>
-              <p>Photos arrive when you ask, from whoever still has them. The office has last week's story. You are paying for the place you are living in, and interest on the build, while you try to assemble the truth. Rain is a reason. Silence is not.</p>
-            </article>
-            <article class="here">
-              <div class="tag">With Truft</div>
-              <h3>The day is on the photo</h3>
-              <p>The supervisor's photos land on your page with the day they were taken. The week says the stage, who is booked, and what is next. A booking has a morning. On the sample, waterproofing is Thursday at 10:00, not "sometime". If rain stops a pour, you hear it the day it is known: what slips, and what does not. If a week passes without a photo, you can see the gap. A visible gap is more useful than a cheerful guess.</p>
-            </article>
-          </div>
-        </article>
-
-        <article class="stage-block" id="s-change">
-          <div class="kicker">08 · A change</div>
-          <h2>Said on site, lost by Monday</h2>
-          <p class="moment">On a Saturday walk you tell the supervisor you want a stone benchtop instead of the laminate in the allowance, and two more power points. He says he will pass it on. That sentence feels like a decision. In NSW it is not one.</p>
-          <div class="race">
-            <article>
-              <div class="tag">Elsewhere</div>
-              <h3>An hour of work, a couple of weeks of messages</h3>
-              <p>It comes up at the next catch-up. The supplier is emailed. The price comes back. Someone types a variation. It sits under other mail. You ask which colour the price is for, and that answer takes another loop. You sign in the second or third week. The stone needs a couple of weeks of its own. The cabinet maker and the electrician were booked for the old plan, so both move, and the date you told your family slips. The slip started as a memory. A change to the contract or the plans has to be agreed in writing and signed by you and the builder. Until that paper exists, with the price on it, nobody should start the work. If someone starts early, you can be arguing about the bill with the wall already open.</p>
-            </article>
-            <article class="here">
-              <div class="tag">With Truft</div>
-              <h3>The same Saturday becomes paper before it becomes an order</h3>
-              <p>The supervisor puts the request on your page before leaving site, and the office turns it into a question for you: which of these stones, with photos, and a clear line that the price is not in yet. When the supplier answers, you get one page. What changes. How the dollars were worked out. The days if you order now. The days if you wait. We check it and sign it, you sign it, and only then does the order go. Trades who are already booked get the new drawing if their date still holds. If it does not, that fact is on the page before you sign. We will not promise the stone arrives this week. We will not let the delay begin as something someone meant to write down.</p>
-            </article>
-          </div>
-        </article>
-
-        <article class="stage-block" id="s-money">
-          <div class="kicker">09 · The money</div>
-          <h2>The invoice is not the payment</h2>
-          <p class="moment">The frame looks finished. You expect a pause, then a bill. What often arrives is a bill, and then your bank tells you something the bill did not.</p>
-          <div class="race">
-            <article>
-              <div class="tag">Elsewhere</div>
-              <h3>Certifier, then you, then the bank, then a valuer</h3>
-              <p>The office books the certifier when someone remembers. The certificate follows the inspection. You forward an invoice. Many lenders want your own contribution paid before they release theirs, and then they send a valuer to look. A complete claim can still take from several days to a couple of weeks, and longer if a certificate is missing or a variation has not been shown to the bank. Nobody put the amount you needed to have ready on a page the week before. You become the person retyping attachments. The builder has already paid the carpenters.</p>
-            </article>
-            <article class="here">
-              <div class="tag">With Truft</div>
-              <h3>You hear the bank's rule before the stage, not during it</h3>
-              <p>Before the stage is due, your page shows the contract amount, what "done" means in your contract, and what your lender has already said they need. We do not guess a bank's rule. We ask you or your broker for it, and we write the answer down, including when your own money has to move first. The certifier is booked against the expected finish, not discovered after. The claim arrives with the photos, and the inspection certificate where the stage has one, in a note a person can forward without translating it. If you want, the same pack goes to your broker. The valuer still comes when the bank sends them. You should not be hearing that name for the first time on the day the money is late.</p>
-            </article>
-          </div>
-        </article>
-
-        <article class="stage-block" id="s-quality">
-          <div class="kicker">10 · Quality</div>
-          <h2>The mark you did not want to nag about</h2>
-          <p class="moment">A tile that lips, a door that rubs, a mark on stone. You mention it on a walk. Someone says it will all be sorted at the end.</p>
-          <div class="race">
-            <article>
-              <div class="tag">Elsewhere</div>
-              <h3>Handover day is when you try to remember</h3>
-              <p>The removalist is in the drive. Two of the items are now closed in behind joinery. The rest become a tired list, and nobody else was keeping it: the certifier checks the work against the building rules at set stages, not whether the finish is what you paid for. The warranties are real: six years for a major defect and two years for other defects, from completion. They are a slow way to recover something that could have been written down while the trade was still in the room.</p>
-            </article>
-            <article class="here">
-              <div class="tag">With Truft</div>
-              <h3>Now, or at the end, and the page says which</h3>
-              <p>You can add a line yourself, with a photo, or the supervisor does. Paint that can wait is marked as waiting. Anything that will be covered up is marked as now. Each line has a person and a state: open, or done, with a photo of the done. The handover walk is the short list of what is left, not everything you have been storing since lock-up. The warranties still apply. The page does not replace them, and it does not ask you to be the notebook.</p>
-            </article>
-          </div>
-        </article>
-
-        <article class="stage-block" id="s-keys">
-          <div class="kicker">11 · The keys</div>
-          <h2>A folder and a phone number</h2>
-          <p class="moment">Someone hands you keys, a folder, and a number. The occupation certificate, the variations, the manuals and the waterproofing photos start in different places. Some of them are in an inbox you do not control.</p>
-          <div class="race">
-            <article>
-              <div class="tag">Elsewhere</div>
-              <h3>Three months later you start from the beginning</h3>
-              <p>A tap weeps. You cannot find which model was signed, or whether the leak was already on a list. The supervisor is on the next house. Whoever answers asks you to start from the beginning.</p>
-            </article>
-            <article class="here">
-              <div class="tag">With Truft</div>
-              <h3>The file stays when the supervisor moves on</h3>
-              <p>The contract, the signed changes, the certificates, the manuals you were given, and the lines still open stay on the same page, and at handover you get a full copy to keep, so your records don't depend on us. You write on that thread. The person who replies can see the file. If someone here is on leave, the file does not go on leave with them. After handover we owe you the open lines and the warranties, not a new sales conversation.</p>
-            </article>
-          </div>
-        </article>
+        <h2>The build, decision by decision.</h2>
+        <p class="lede wide">The photograph above is finished Truft work. The sample you can open is Henson Way at lock-up. It is not your house.</p>
+        <div class="offer-4">
+          <article>
+            <h3>Flexibility</h3>
+            <p>A finish or a change shows the dollars and the days before you confirm. Liking it is not an order.</p>
+          </article>
+          <article>
+            <h3>Transparency</h3>
+            <p>The price can move. You see every invoice, the reason, and our margin on its own line.</p>
+          </article>
+          <article>
+            <h3>The experience</h3>
+            <p>The week, the spend, and what is waiting on you live on one page. You keep a copy at the end.</p>
+          </article>
+          <article class="limit">
+            <h3>The limit</h3>
+            <p>Weather, a supplier who is out of stock, council, the certifier, and a valuer still take their own time.</p>
+          </article>
+        </div>
+        <ol class="life-board">
+        <li id="s-choose">
+          <div class="life-name"><span>01</span><strong>Choosing</strong></div>
+          <p class="else"><span class="mark no" aria-hidden="true"></span><span><b>Elsewhere</b>The kitchen in the photograph is not the kitchen in the allowance.</span></p>
+          <p class="truft"><span class="mark yes" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.2 8.2l3 3.1 6.6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span><span><b>With Truft</b>You can read a job's book before you are in one. Check the licence on the NSW register before you sign.</span></p>
+          <details class="week"><summary>The week itself</summary><p>A display faces the right way for photographs. The price on the sheet is one number. Your block slopes, and it may have a tree you cannot touch. None of that is in the number. The person who poured the water is often not the person who has the file in month eight.</p><p>We build cost-plus, so the price can move, and every move shows up as its own line with the reason beside it. We will not price your block from a display home.</p></details>
+        </li>
+        <li id="s-land">
+          <div class="life-name"><span>02</span><strong>The land</strong></div>
+          <p class="else"><span class="mark no" aria-hidden="true"></span><span><b>Elsewhere</b>The first plan treats the block as a rectangle.</span></p>
+          <p class="truft"><span class="mark yes" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.2 8.2l3 3.1 6.6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span><span><b>With Truft</b>A walk, then one page, before the drawings get expensive.</span></p>
+          <details class="week"><summary>The week itself</summary><p>The fall, the easement, the stormwater, the sewer under the back lawn, the bushfire rating some Hills streets carry, the tree, and the truck that has to deliver a frame will decide more of the budget than the tapware.</p><p>Afterwards you get one page: what we could see, what a survey and a soil test still have to confirm, and what council usually asks of a knockdown on a street like this. It is not an approval and it is not a price. If you build with someone else, the page is still yours.</p></details>
+        </li>
+        <li id="s-price">
+          <div class="life-name"><span>03</span><strong>The price</strong></div>
+          <p class="else"><span class="mark no" aria-hidden="true"></span><span><b>Elsewhere</b>The small allowance wins the signature. The real stone arrives later.</span></p>
+          <p class="truft"><span class="mark yes" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.2 8.2l3 3.1 6.6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span><span><b>With Truft</b>Guesses are labelled. Margin is its own line. On the sample, taps moved from $2,180 to $2,640 after a signed change. $4,200 is unsigned, so it has not been spent.</span></p>
+          <details class="week"><summary>The week itself</summary><p>Prime cost items are fittings you choose later, such as taps, tiles and appliances. Provisional sums are work that cannot be priced yet, such as rock, stormwater, or asbestos in the old house. Both sit near the back of the contract.</p><p>Those two sample figures are not a quote for your house. A change you ask for is not spent until you and we have both signed. When the ground or a supplier moves a cost, you see the new figure and the reason.</p></details>
+        </li>
+        <li id="s-contract">
+          <div class="life-name"><span>04</span><strong>The contract</strong></div>
+          <p class="else"><span class="mark no" aria-hidden="true"></span><span><b>Elsewhere</b>You meet the important clauses after you have signed.</span></p>
+          <p class="truft"><span class="mark yes" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.2 8.2l3 3.1 6.6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span><span><b>With Truft</b>Plain schedule, your own certifier, and no payment until you hold the compensation certificate where the law requires it.</span></p>
+          <details class="week"><summary>The week itself</summary><p>It is still a proper NSW home building contract. We would rather your own lawyer read it before you sign, and anything written in by hand is the first thing to show them. A contract for a new home gives you five clear business days to cool off after you are given a copy. Published guidance caps the deposit at 10 percent.</p><p>Where home building compensation cover is required, you pay nothing, deposit included, until you hold the certificate. A special condition is marked, not buried.</p></details>
+        </li>
+        <li id="s-finish">
+          <div class="life-name"><span>05</span><strong>Finishes</strong></div>
+          <p class="else"><span class="mark no" aria-hidden="true"></span><span><b>Elsewhere</b>The price arrives after you have half forgotten the other options.</span></p>
+          <p class="truft"><span class="mark yes" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.2 8.2l3 3.1 6.6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span><span><b>With Truft</b>Photo, dollars, and the days, before you confirm. Liking it out loud is not an order.</span></p>
+          <details class="week"><summary>The week itself</summary><p>Windows often need longer than stone. If your choice pushes a trade who is already booked, you see the new date before you confirm. A choice that changes the price or the plans becomes a written variation we both sign first.</p></details>
+        </li>
+        <li id="s-approve">
+          <div class="life-name"><span>06</span><strong>Approvals</strong></div>
+          <p class="else"><span class="mark no" aria-hidden="true"></span><span><b>Elsewhere</b>"It's with council" can mean the email was never sent.</span></p>
+          <p class="truft"><span class="mark yes" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.2 8.2l3 3.1 6.6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span><span><b>With Truft</b>You see who has the file. We do not move council's clock.</span></p>
+          <details class="week"><summary>The week itself</summary><p>Some Hills knockdowns can use a complying development path. Others need a development application, which council usually notifies the neighbours, and a construction certificate before anyone digs. We say which only after the design is checked against that block.</p><p>From the street, council's silence and an unsent form feel the same. You see which one it is.</p></details>
+        </li>
+        <li id="s-site">
+          <div class="life-name"><span>07</span><strong>On site</strong></div>
+          <p class="else"><span class="mark no" aria-hidden="true"></span><span><b>Elsewhere</b>Three phones, three versions of the same week.</span></p>
+          <p class="truft"><span class="mark yes" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.2 8.2l3 3.1 6.6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span><span><b>With Truft</b>The day is on the photo. A week with none is a gap you can see.</span></p>
+          <details class="week"><summary>The week itself</summary><p>You drive past on Sunday. The frame is up, or it is not. Elsewhere the reply comes Tuesday and does not match the footpath. Rain is a reason. Silence is not.</p><p>On the sample, waterproofing is Thursday at 10:00, not sometime. If rain stops a pour, you hear what slips and what does not, the day it is known.</p></details>
+        </li>
+        <li id="s-change">
+          <div class="life-name"><span>08</span><strong>A change</strong></div>
+          <p class="else"><span class="mark no" aria-hidden="true"></span><span><b>Elsewhere</b>Said on Saturday. Signed in the third week. The date has already slipped.</span></p>
+          <p class="truft"><span class="mark yes" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.2 8.2l3 3.1 6.6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span><span><b>With Truft</b>Priced, and signed by both, before anything is ordered. A comment on site is not that signature.</span></p>
+          <details class="week"><summary>The week itself</summary><p>You want stone instead of the laminate in the allowance, and two more power points. In NSW that is not a decision until it is in writing, with the price, signed by you and the builder. Until then the work on site does not change, and nothing is spent on that change.</p><p>The supervisor puts the request on your page before leaving. You see the dollars and the days before you sign. We will not promise the stone arrives this week.</p></details>
+        </li>
+        <li id="s-money">
+          <div class="life-name"><span>09</span><strong>The money</strong></div>
+          <p class="else"><span class="mark no" aria-hidden="true"></span><span><b>Elsewhere</b>You hear what the bank needs on the day the money is late.</span></p>
+          <p class="truft"><span class="mark yes" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.2 8.2l3 3.1 6.6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span><span><b>With Truft</b>The stage amount, and your lender's rule, before the stage finishes.</span></p>
+          <details class="week"><summary>The week itself</summary><p>Many lenders want your own contribution paid before they release theirs, then they send a valuer. We do not guess the rule. We ask you or your broker, and we write it down. The claim carries the photos, and the inspection certificate where the stage has one. The valuer still comes when the bank sends them.</p></details>
+        </li>
+        <li id="s-quality">
+          <div class="life-name"><span>10</span><strong>Quality</strong></div>
+          <p class="else"><span class="mark no" aria-hidden="true"></span><span><b>Elsewhere</b>Handover day is when you try to remember. The certifier was not checking the finish.</span></p>
+          <p class="truft"><span class="mark yes" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.2 8.2l3 3.1 6.6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span><span><b>With Truft</b>Work that will be covered up is marked now. Paint can wait. You are not the notebook.</span></p>
+          <details class="week"><summary>The week itself</summary><p>A tile that lips, a door that rubs, a mark on stone. The statutory warranties are real: six years for a major defect and two years for the rest, from completion. They are a slow way to recover something that could have been written down while the trade was still in the room.</p></details>
+        </li>
+        <li id="s-keys">
+          <div class="life-name"><span>11</span><strong>The keys</strong></div>
+          <p class="else"><span class="mark no" aria-hidden="true"></span><span><b>Elsewhere</b>Three months later you are asked to start from the beginning.</span></p>
+          <p class="truft"><span class="mark yes" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.2 8.2l3 3.1 6.6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span><span><b>With Truft</b>The file stays, and you keep a copy. Warranties still run.</span></p>
+          <details class="week"><summary>The week itself</summary><p>The contract, the signed changes, the certificates, the manuals, and the lines still open stay on the same page. If someone here is on leave, the file does not go with them. After handover we owe you the open lines and the warranties, not a new sales conversation.</p></details>
+        </li>
+        </ol>
 
         <div class="note-limit" id="limits">
           <div class="kicker">What does not change</div>
           <h2>Honest limits</h2>
-          <p>Weather still stops a slab. A supplier who is actually out of stock still takes their weeks. Council, the certifier, and a bank's valuer still keep their own diaries. A message from you is a request. It becomes a variation only when it is written, priced, and signed by you and by Truft. Until that signature, the work on site does not change and nothing is spent on that change, but rock in the ground or a supplier's price rise can still move the cost, and that arrives as its own line with the invoice and the reason, before it is spent when it can be seen coming. We would rather tell you the limit on the day we know it than sound faster than the job can be.</p>
+          <p>Weather still stops a slab. A supplier who is actually out of stock still takes their weeks. Council, the certifier, and a bank's valuer still keep their own diaries. A message from you is a request. It becomes a variation only when it is written, priced, and signed by you and by Truft. Until that signature, the work on site does not change and nothing is spent on that change. Rock in the ground or a supplier's price rise can still move the cost, and that arrives as its own line with the invoice and the reason. When we can see it coming, you see it before it is spent. We would rather tell you the limit on the day we know it than sound faster than the job can be.</p>
         </div>
 
         <div class="stage-block" id="sampleCue">
@@ -1002,11 +894,11 @@
         </div>
       </div>
       <div class="five">
-        <article style="background-image:url('assets/gallery/henson-04.jpg')"><h3>Open-book cost-plus</h3><p>Every invoice, with the reason beside it. Margin is its own line.</p></article>
-        <article style="background-image:url('assets/gallery/mustang-08.jpg')"><h3>Choices with the date attached</h3><p>A finish shows the dollars and the days before you confirm.</p></article>
-        <article style="background-image:url('assets/gallery/henson-05.jpg')"><h3>The supplier on the invoice</h3><p>Stone, tiles, joinery and fixtures can be bought direct. The supplier is named.</p></article>
-        <article style="background-image:url('assets/gallery/shetland-02.jpg')"><h3>The week, written down</h3><p>Who is booked, and what rain changed. A missing week is a gap you can see.</p></article>
-        <article style="background-image:url('assets/gallery/newmarket-03.jpg')"><h3>The bank, before the stage</h3><p>The stage amount, and what your lender has already said they need.</p></article>
+        <article><h3>Open-book cost-plus</h3><p>Every invoice, with the reason beside it. Margin is its own line.</p></article>
+        <article><h3>Choices with the date attached</h3><p>A finish shows the dollars and the days before you confirm.</p></article>
+        <article><h3>The supplier on the invoice</h3><p>Stone, tiles, joinery and fixtures can be bought direct. The supplier is named.</p></article>
+        <article><h3>The week, written down</h3><p>Who is booked, and what rain changed. A missing week is a gap you can see.</p></article>
+        <article><h3>The bank, before the stage</h3><p>The stage amount, and what your lender has already said they need.</p></article>
       </div>
       <div class="wrap">
         <div class="kicker">Open book, as a picture</div>
@@ -1587,7 +1479,7 @@
         <div class="chat-in"><input id="dockAskQ" placeholder="Ask Truft" /><button class="btn" type="button" id="dockAskSend">Send</button></div>
       </div>
     </div>
-    <button class="ask-launch" type="button" id="askFab" aria-expanded="false" aria-controls="askPanel">
+    <button class="ask-launch" type="button" id="askFab" aria-expanded="false" aria-controls="askPanel" aria-label="Ask Truft">
       <span class="bubble" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M4 4h16v12H7l-3 3V4zm3 4v2h10V8H7zm0 4v2h7v-2H7z"/></svg>
       </span>
@@ -2271,6 +2163,7 @@
     cycleCine(document.getElementById("servicesCineStage"), CINE_SERVICES, null, 8000);
     const hash = location.hash.replace("#","");
     if (SCENES.includes(hash)) showScene(hash);
+    else if (hash) history.replaceState(null, "", "#home");
   </script>
 </body>
 </html>
