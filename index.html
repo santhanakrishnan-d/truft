@@ -2477,7 +2477,7 @@
     cycleCine(document.getElementById("servicesCineStage"), CINE_SERVICES, null, 8000);
     const hash = location.hash.replace("#","");
     const LEGACY = { work:"ourwork", about:"aboutTruft", services:"aboutTruft" };
-    if (LEGACY[hash]) showScene("home", { focus: LEGACY[hash] });
+    if (LEGACY[hash]) { showScene("home"); setTimeout(() => document.getElementById(LEGACY[hash]).scrollIntoView({ block: "start" }), 300); }
     else if (SCENES.includes(hash)) showScene(hash);
     else if (hash) history.replaceState(null, "", "#home");
   </script>
