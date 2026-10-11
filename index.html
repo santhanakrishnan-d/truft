@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Truft | Open-book, cost-plus custom home builders in North West Sydney</title>
-  <meta name="description" content="See how building a custom home in North West Sydney often feels, stage by stage, and how it feels with Truft: from your block and your price to making a change, paying for each stage, checking quality and getting your keys." />
+  <meta name="description" content="See how building a custom home in North West Sydney often feels, stage by stage, and how it feels with Truft: from your block to making a change, paying for each stage, checking quality and getting your keys." />
   <link rel="icon" href="assets/favicon.png" />
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Truft","legalName":"SS Developers Pty Ltd","url":"https://truft.com.au","telephone":"+61272350833","address":{"@type":"PostalAddress","streetAddress":"303/4 Columbia Ct","addressLocality":"Norwest","addressRegion":"NSW","postalCode":"2153","addressCountry":"AU"},"areaServed":"North West Sydney","slogan":"Built on Transparency. Engineered for Value."}
@@ -360,11 +360,14 @@
     .split > img { width: 100%; height: 100%; object-fit: cover; min-height: 420px; }
     .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 18px; }
     .principle {
-      text-align: left; border: var(--hairline) solid var(--line); background: var(--white); padding: 14px 14px 12px;
+      text-align: left; border: var(--hairline) solid var(--line); background: var(--white); padding: 16px 16px 14px; align-self: start;
     }
     .principle strong { display: block; font-family: var(--font-brand); letter-spacing: 0.08em; text-transform: uppercase; font-size: 13px; margin-bottom: 4px; }
     .principle span { display: none; font-size: 13px; color: var(--ink-soft); }
-    .principle.is-open span, .principle:hover span { display: block; }
+    .principle.is-open span { display: block; margin-top: 6px; line-height: 1.5; }
+    .principle strong { padding-right: 22px; position: relative; }
+    .principle strong::after { content: "+"; position: absolute; right: 0; top: -1px; font-size: 18px; font-weight: 400; color: var(--muted); }
+    .principle.is-open strong::after { content: "−"; }
 
     .contact-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: start; }
     .lead { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -736,6 +739,39 @@
     .week summary, .stat span, .house-bar small, .q-meta { text-transform: none; letter-spacing: 0.01em; }
     .btn, .public-nav button { letter-spacing: 0.06em; }
     #care .result strong, #care .moments li b { font-family: var(--font-ui) !important; text-transform: none !important; letter-spacing: -0.01em !important; font-weight: 600 !important; }
+    .proc-intro { padding-bottom: 8px; }
+    .proc-intro h1 { margin-bottom: 8px; }
+    .proc-intro .lede { max-width: 36em; }
+    .proc-stage { margin-top: 26px; }
+    .proc-stage > header { display: flex; align-items: baseline; gap: 12px; padding: 10px 0; border-bottom: 2px solid var(--navy); }
+    .proc-stage > header b { font-size: 18px; }
+    .proc-stage > header span { color: var(--muted); font-size: 14px; }
+    .proc-head, .proc-row > button { display: grid; grid-template-columns: 44px 1.1fr 1.4fr 1fr 1fr 24px; gap: 14px; align-items: center; }
+    .proc-head { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 10px 12px 6px; }
+    .proc-row { border-bottom: var(--hairline) solid var(--line); }
+    .proc-row > button { width: 100%; text-align: left; background: transparent; border: 0; padding: 13px 12px; font-size: 15px; color: var(--ink); }
+    .proc-row > button:hover { background: var(--white); }
+    .proc-row .n { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .proc-row .nm { font-weight: 600; }
+    .proc-row .wh, .proc-row .cm, .proc-row .ch { color: var(--ink-soft); font-size: 14px; }
+    .proc-row .cm.strong { color: var(--good); font-weight: 600; }
+    .proc-row .tg { color: var(--muted); font-size: 18px; text-align: right; }
+    .proc-row.is-open { background: var(--white); }
+    .proc-row.is-open .tg::before { content: "−"; }
+    .proc-row:not(.is-open) .tg::before { content: "+"; }
+    .proc-detail { display: none; grid-template-columns: repeat(3, 1fr); gap: 18px; padding: 4px 12px 18px 70px; }
+    .proc-row.is-open .proc-detail { display: grid; }
+    .proc-detail h4 { margin: 0 0 4px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .proc-detail p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-soft); }
+    @media (max-width: 820px) {
+      .proc-head { display: none; }
+      .proc-row > button { grid-template-columns: 34px 1fr 20px; row-gap: 2px; }
+      .proc-row .wh { grid-column: 2; grid-row: 2; }
+      .proc-row .cm, .proc-row .ch { display: none; }
+      .proc-row .tg { grid-column: 3; grid-row: 1; }
+      .proc-detail { grid-template-columns: 1fr; padding-left: 58px; }
+    }
+    #house .p-big, #house .p-grid3 h3, #house .p-list b, #house .p-sub, #house .p-title, #house .p-tl h3 { font-family: var(--font-ui) !important; text-transform: none !important; letter-spacing: -0.01em !important; font-weight: 600 !important; }
   </style>
 </head>
 <body>
@@ -771,7 +807,7 @@
         <div class="hero-copy">
           <div class="kicker">North West Sydney · Custom homes</div>
           <h1>Your home, looked after.</h1>
-          <p class="lede">From the first time we walk your block together to the day you get the keys, you'll always know where your home is up to, what it costs, and what comes next.</p>
+          <p class="lede">From the first time we walk your block together to the day you get the keys, you'll always know where your home is up to, every decision along the way, and what comes next.</p>
           <div class="row-btns">
             <button class="btn light" type="button" data-go="care">See how we look after you</button>
             <button class="btn ghost on-dark" type="button" data-go="house">Step inside a sample home</button>
@@ -793,7 +829,7 @@
         </a>
         <a class="tile" href="#home" data-open="henson" data-i="0" data-film="henson">
           <span class="cine-stage"><img class="kb d3 is-on" src="assets/gallery/henson-01.jpg" alt="Henson Way" /></span>
-          <span class="tile-cap">Henson Way<small>Finished home</small></span>
+          <span class="tile-cap">Henson Way<small>10 photos</small></span>
         </a>
         <a class="tile" href="#home" data-open="newmarket" data-i="0" data-film="newmarket">
           <span class="cine-stage"><img class="kb d4 is-on" src="assets/gallery/newmarket-01.jpg" alt="Newmarket Pky" /></span>
@@ -812,10 +848,10 @@
         <h2>Building with nothing hidden</h2>
         <p class="lede wide">We build custom homes, knockdown-rebuilds and premium land estates across North West Sydney, on a cost-plus basis, which means you pay the real cost of the build plus our agreed margin. We work alongside your architect and interior designer, and you get to see every invoice, every quote and our margin, each on its own line.</p>
         <div class="principles">
-            <button type="button" class="principle" data-principle><strong>A structure you can rely on</strong><span>Quality, safety and a home that lasts come first. The structure is the one part you can't easily upgrade later, so we get it right from the start.</span></button>
-            <button type="button" class="principle" data-principle><strong>Complete transparency</strong><span>You see every invoice and every trade quote, with the reason written beside it. Any change you ask for only goes ahead, and only costs you money, once you and we have both signed it.</span></button>
-            <button type="button" class="principle" data-principle><strong>Your vision, our expertise</strong><span>You choose the special touches that make it yours, and Truft takes care of how it all gets built.</span></button>
-            <button type="button" class="principle" data-principle><strong>Built to last</strong><span>We build for your family's future, and we keep your home's records so they last as long as the home itself.</span></button>
+            <button type="button" class="principle" data-principle aria-expanded="false"><strong>A structure you can rely on</strong><span>Quality, safety and a home that lasts come first. The structure is the one part you can't easily upgrade later, so we get it right from the start.</span></button>
+            <button type="button" class="principle" data-principle aria-expanded="false"><strong>Complete transparency</strong><span>You see every invoice and every trade quote, with the reason written beside it. Any change you ask for only goes ahead, and only costs you money, once you and we have both signed it.</span></button>
+            <button type="button" class="principle" data-principle aria-expanded="false"><strong>Your vision, our expertise</strong><span>You choose the special touches that make it yours, and Truft takes care of how it all gets built.</span></button>
+            <button type="button" class="principle" data-principle aria-expanded="false"><strong>Built to last</strong><span>We build for your family's future, and we keep your home's records so they last as long as the home itself.</span></button>
           </div>
 
       </div>
@@ -842,7 +878,7 @@
       <div class="wrap" id="life">
         <div class="kicker">Side by side</div>
         <h2>How a build often goes, and how it goes with Truft</h2>
-        <p class="lede wide">There are eleven stages, from choosing your builder to getting the keys. Open any one to see more detail.</p>
+        <p class="lede wide">Here's how each part of the journey often goes, from choosing your builder to getting the keys, and how it goes with Truft.</p>
         <ol class="life-board">
         <li id="s-choose">
           <div class="life-name"><span>01</span><strong>Choosing a builder</strong></div>
@@ -859,8 +895,8 @@
         <li id="s-price">
           <div class="life-name"><span>03</span><strong>The price</strong></div>
           <p class="else"><span class="mark no" aria-hidden="true"></span><span><b>Often</b>A low allowance makes the first price look appealing, and the true cost of the stone you really want only shows up later.</span></p>
-          <p class="truft"><span class="mark yes" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.2 8.2l3 3.1 6.6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span><span><b>With Truft</b>Any estimate is clearly labelled as an estimate, and our margin sits on its own line. In the sample home, the taps went from $2,180 to $2,640 after a signed change. Another $4,200 hasn't been signed yet, so none of it has been spent.</span></p>
-          <details class="week"><summary>A closer look</summary><p>Prime cost items are fittings you choose later, such as taps, tiles and appliances. Provisional sums are allowances for work that can't be priced yet, such as rock in the ground, stormwater, or asbestos in the old house. Both usually sit near the back of the contract.</p><p>Those two sample figures aren't a quote for your home. Any change you ask for only costs you money once you and we have both signed it. If the ground or a supplier changes a cost, you'll see the new figure along with the reason.</p></details>
+          <p class="truft"><span class="mark yes" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.2 8.2l3 3.1 6.6-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span><span><b>With Truft</b>Any estimate is clearly labelled as an estimate, and our margin sits on its own line. In the sample home, the taps came in a little above their quote because you chose a different finish, and you saw the new price and the reason before you signed. The stone upgrade hasn't been signed yet, so none of it has been spent.</span></p>
+          <details class="week"><summary>A closer look</summary><p>Prime cost items are fittings you choose later, such as taps, tiles and appliances. Provisional sums are allowances for work that can't be priced yet, such as rock in the ground, stormwater, or asbestos in the old house. Both usually sit near the back of the contract.</p><p>These are examples, not a quote for your home. Any change you ask for only costs you money once you and we have both signed it. If the ground or a supplier changes a cost, you'll see the new figure along with the reason.</p></details>
         </li>
         <li id="s-contract">
           <div class="life-name"><span>04</span><strong>The contract</strong></div>
@@ -939,7 +975,7 @@
               <p>Any open items stay on your page, and the statutory warranties keep running: six years for a major defect and two years for other defects, from completion. Just send a message in that same thread. You won't need to explain the whole build again from the slab up, or hunt through your inbox for a certificate.</p>
             </details>
           </div>
-          <p class="sources">Sources: NSW Government guidance on contracts for residential building work, which covers a published deposit limit of 10 percent; variations being in writing and signed by both parties; five clear business days to change your mind on a contract over $20,000; and receiving a home building compensation certificate before any payment where that cover is required. Statutory warranties run for six years for a major defect and two years for other defects, from completion. Many construction loans use your own contribution before the loan starts paying, and then send a valuer. How long that takes depends on your lender and on whether all the paperwork is complete. The timeframes shown on this page reflect a common pattern for a Hills knockdown-rebuild. They aren't a measured average, and they aren't a promised date for your home.</p>
+          <p class="sources">Sources: NSW Government guidance on contracts for residential building work, which covers variations being in writing and signed by both parties; a cooling-off period of five clear business days to change your mind; and receiving a home building compensation certificate before any payment where that cover is required. Statutory warranties run for six years for a major defect and two years for other defects, from completion. Many construction loans use your own contribution before the loan starts paying, and then send a valuer. How long that takes depends on your lender and on whether all the paperwork is complete. The timeframes shown on this page reflect a common pattern for a Hills knockdown-rebuild. They aren't a measured average, and they aren't a promised date for your home.</p>
         </div>
       </div>
 
@@ -1019,7 +1055,7 @@
     <div>
       <div class="kicker">Building with Truft</div>
       <h1>Your home, looked after</h1>
-      <p class="lede">Once you sign, we take care of the hard parts for you. You&rsquo;ll hear from us before you need to ask, decisions take a few days rather than weeks, and you&rsquo;ll always know what&rsquo;s coming with money, so there are no surprises.</p>
+      <p class="lede">Once you sign, we take care of the hard parts for you. You&rsquo;ll hear from us before you need to ask, decisions take a few days rather than weeks, and you&rsquo;ll always know what&rsquo;s coming next, so there are no surprises.</p>
     </div>
     <img src="assets/living.jpg" alt="A finished Truft living room in soft afternoon light" loading="lazy">
   </div>
@@ -1036,9 +1072,9 @@
         <li class="us"><time>Saturday, 10:34am &middot; WhatsApp</time><p>We send you photos of three stone options side by side, so you can picture each one in your kitchen.</p></li>
         <li class="us"><time>Monday, 9:00am</time><p>You receive your priced change (builders call this a variation): the cost, any extra days, and a note that there&rsquo;s no delay if it&rsquo;s ordered today.</p></li>
         <li class="you"><time>Monday, 12:15pm &middot; your Truft page</time><p>You sign it on your phone, in between meetings.</p></li>
-        <li class="us"><time>Monday, 2:00pm</time><p>We order your stone and confirm the stonemason and plumber for the same week.</p></li>
+        <li class="us"><time>Monday, 2:00pm</time><p>We order your stone and book the stonemason and plumber for the first date it can arrive.</p></li>
       </ol>
-      <div class="result"><strong>2 days</strong><span>from your first thought to a signed change, and your handover date stays exactly the same.</span></div>
+      <div class="result"><strong>2 days</strong><span>from your first thought to a signed change, with no change to your handover date.</span></div>
     </div>
   </article>
 
@@ -1050,7 +1086,7 @@
       <p class="usually"><b>Usually</b>The bank asks for something nobody mentioned, so a stage payment (the part of the price due as each stage is finished) can take three weeks or more.</p>
       <p class="with">With Truft</p>
       <ol class="steps">
-        <li class="us"><time>10 days before frame</time><p>We give you a friendly heads-up about your share of the next payment and exactly what your bank will ask for.</p></li>
+        <li class="us"><time>A week before frame</time><p>We give you a friendly heads-up about your share of the next payment and exactly what your bank will ask for.</p></li>
         <li class="us"><time>Frame day, 3:40pm</time><p>Your frame passes its inspection, and we send you the photos and the certificate that same afternoon.</p></li>
         <li class="you"><time>Frame day, 6:10pm</time><p>You reply to say yes, please send it to the bank.</p></li>
         <li class="us"><time>Next morning</time><p>With your permission, we send the paperwork to your bank, so there&rsquo;s nothing for you to follow up or scan.</p></li>
@@ -1069,7 +1105,7 @@
       <ol class="steps">
         <li class="us"><time>Every Friday, 4:00pm</time><p>We send your week in photos: what was done, what comes next, and anything we need from you.</p></li>
         <li class="you"><time>Tuesday, 9:05pm</time><p>You message us one evening to ask when the windows go in.</p></li>
-        <li class="us"><time>Tuesday, 9:07pm</time><p>We answer straight from your own job details: Thursday week, weather allowing.</p></li>
+        <li class="us"><time>Wednesday, 8:15am</time><p>We answer straight from your own job details: Thursday week, weather allowing.</p></li>
         <li class="us"><time>Slab &middot; frame &middot; lock-up &middot; keys</time><p>We mark and celebrate each milestone with you, from your slab to lock-up (when the doors and windows are on) and getting your keys.</p></li>
         <li class="us"><time>Handover</time><p>You receive your memory book, with the photo timeline, every decision, and your warranties and documents all in one place.</p></li>
       </ol>
@@ -1086,10 +1122,10 @@
       <p class="with">With Truft</p>
       <ol class="steps">
         <li class="you"><time>Sunday, 8:40pm</time><p>You send us a message to say you have a block and a rough budget, and ask if we can help.</p></li>
-        <li class="us"><time>Sunday, 8:46pm</time><p>We send you a warm reply with a few helpful questions and a time to meet.</p></li>
+        <li class="us"><time>Monday, 8:30am</time><p>We send you a warm reply with a few helpful questions and a time to meet.</p></li>
         <li class="us"><time>Tuesday, 4:00pm &middot; at your block</time><p>Sharang meets you at your block, already knowing about it, your budget and what matters most to you.</p></li>
       </ol>
-      <div class="result"><strong>Minutes</strong><span>until you have a real answer, even on a Sunday night.</span></div>
+      <div class="result"><strong>Next morning</strong><span>a warm reply first thing, even if you wrote on a Sunday night.</span></div>
     </div>
   </article>
 </div>
@@ -1127,33 +1163,16 @@
 
     <!-- PROCESS -->
     <section class="scene" id="process">
-      <div class="wrap" style="padding-bottom:12px">
-        <div class="kicker">Our building checklist</div>
-        <h1>Twenty-eight steps, and you can see every one</h1>
-        <p class="lede">These are the steps we work through on our side, from the early paperwork and site preparation right through to handing you the keys. If you'd like to see what each part feels like for you and your family, and how it compares with the usual way, that's on the home page. We keep the books open the whole way, so you can see every cost, and our margin is shown as its own separate line. If you ask for a change, we write it up as a variation (a priced change to the contract), and it only goes ahead once you and we have both signed it. And if a cost comes in higher than its quote or our estimate, you'll see it as its own line, along with the invoice and the reason why.</p>
-        <div class="step0-band">
-          <article>
-            <div class="n">For you</div>
-            <h3>You'll find the side-by-side on the home page</h3>
-            <p>There are eleven parts, from choosing your builder to getting your keys. Each one shows how it usually goes and how it goes with us. A quick message is never treated as a yes, so any change is written up and priced before you sign. Some things are still outside anyone's control, so the weather, the council and the bank's valuer (who checks the home's value for your loan) will always take their own time.</p>
-            <button class="btn" type="button" data-go="home" data-focus="life">Walk through the build</button>
-          </article>
-          <article>
-            <div class="n">Then 1 to 28</div>
-            <h3>The building work, step by step</h3>
-            <p>The books stay open from start to finish, and you always see the quote first. When a step needs your decision, we wait until you've signed before we go ahead. You can also see photos, bookings and how pausing works on the sample home.</p>
-            <button class="btn ghost" type="button" data-go="house">Open the sample home</button>
-          </article>
-        </div>
+      <div class="wrap proc-intro">
+        <div class="kicker">How we build</div>
+        <h1>Your home in 28 steps</h1>
+        <p class="lede">Every Truft home follows the same 28 steps, in five stages, from the first survey to the keys. Tap any step to see what you choose and what we look after.</p>
       </div>
-      <div class="poster-wrap"><img src="assets/truft-28-step.jpg" alt="Poster showing the 28 steps Truft follows to build your home" /></div>
-      <div class="wrap">
-        <div class="stage-hot" id="stageRail"></div>
-        <div class="step-grid" id="stepGrid"></div>
-        <div class="drill" id="drill"></div>
-        <div class="row-btns" style="margin-top:16px">
-          <button class="btn" type="button" id="seeOnHouse">See this on the sample home</button>
-          <span class="quiet" id="runNote"></span>
+      <div class="wrap" style="padding-top:0">
+        <div class="proc" id="procTable" role="list"></div>
+        <div class="row-btns" style="margin-top:20px">
+          <button class="btn" type="button" data-go="house">Open the sample home</button>
+          <button class="btn ghost" type="button" data-go="contact">Talk to us</button>
         </div>
       </div>
     </section>
@@ -1172,7 +1191,7 @@
             <img src="assets/qr/whatsapp.png" alt="QR code to message Truft on WhatsApp" />
             <div>
               <h3>WhatsApp</h3>
-              <p class="quiet">Message us any time, day or night. You'll hear back within minutes, and we'll pop your visit straight into Sharang's calendar. <button class="i" data-tip="whatsapp" type="button">i</button></p>
+              <p class="quiet">Message us any time. We reply during business hours, usually the same day, and we'll find a time that suits you to walk your block. <button class="i" data-tip="whatsapp" type="button">i</button></p>
               <button class="wa-btn hover-tip" type="button" data-open-wa="1" data-hint="This will open our WhatsApp account.">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#25D366" d="M12.04 2C6.58 2 2.15 6.43 2.15 11.89c0 1.95.51 3.86 1.48 5.54L2 22l4.71-1.55a9.86 9.86 0 0 0 5.33 1.44h.01c5.46 0 9.89-4.43 9.89-9.89C21.94 6.43 17.5 2 12.04 2zm5.72 14.01c-.24.67-1.4 1.24-1.94 1.32-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.82-4.2-4.97-4.39-.14-.2-1.18-1.57-1.18-3 0-1.42.74-2.12 1-2.41.24-.27.64-.39 1.02-.39.12 0 .23 0 .33.01.29.01.44.03.63.49.24.56.81 1.98.88 2.13.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.41.51-.14.14-.28.3-.12.58.16.29.7 1.15 1.5 1.86 1.03.91 1.9 1.19 2.18 1.33.28.13.44.11.6-.07.17-.18.7-.81.89-1.09.19-.27.37-.23.63-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.67-.17 1.34z"/></svg>
                 WhatsApp
@@ -1187,12 +1206,12 @@
       </div>
     </section>
 
-    <!-- HOUSE / PORTAL -->
+    <!-- HOUSE / TRUFT PAGE -->
     <section class="scene" id="house">
       <div class="wrap" id="housePitch">
         <div class="kicker">A sample home · no account needed</div>
-        <h1>Here's what your home's page looks like while we build it.</h1>
-        <p class="lede">Every Truft family gets their own private page like this one. It shows you the week on site, the photos, the choices to make, the payments and every document, all together in one calm place. This sample is Henson Way at week 38 of the build.</p>
+        <h1>Here's what your Truft page looks like while we build it.</h1>
+        <p class="lede">Every Truft family gets their own private page like this one. It shows you the week on site, the photos, the choices to make, the payments and every document, all together in one calm place. This sample is Henson Way at week 38 of the build. The photos are of our finished Henson Way home; the week-38 story is an example.</p>
       </div>
       <div class="wrap" style="padding-top:0">
         <div id="housePreview">
@@ -1219,7 +1238,7 @@
               <button type="button" data-sso="apple">Continue with Apple</button>
               <button type="button" data-sso="facebook">Continue with Facebook</button>
             </div>
-            <p class="hint">When we're building your real home, only you and the people you invite can open its page. <button class="i" data-tip="sso-optional" type="button">i</button> <button class="i" data-tip="sso-google" type="button">i</button></p>
+            <p class="hint">When we're building your real home, only you and the people you invite can open its page. <button class="i" data-tip="sso-optional" type="button">i</button></p>
             <div class="or">or use your email</div>
             <div class="field"><label for="ownerEmail">Email</label><input id="ownerEmail" type="email" value="you@hensonway.example" autocomplete="username" /></div>
             <div class="field" style="margin-top:8px"><label for="ownerPass">Password</label><input id="ownerPass" type="password" value="••••••••" autocomplete="current-password" /></div>
@@ -1227,7 +1246,7 @@
               <button class="btn" type="button" id="ownerSignin">Sign in to Henson Way</button>
               <button class="btn ghost" type="button" id="cancelSignin">Keep looking around the sample</button>
             </div>
-            <p class="hint">This is just for show, so nothing you type here is sent to our office or to a real build. <button class="i" data-tip="sso-tools" type="button">i</button></p>
+            <p class="hint">This is just for show, so nothing you type here is sent to our office or to a real build.</p>
           </div>
         </div>
 
@@ -1243,8 +1262,8 @@
             </div>
           </div>
           <div class="stats">
-            <div class="stat"><b>38</b><span>Weeks on site <button class="i after-in" data-tip="buildpass" type="button">i</button></span></div>
-            <div class="stat"><b>1</b><span>Choice waiting on you · $4,200 <button class="i after-in" data-tip="xero" type="button">i</button></span></div>
+            <div class="stat"><b>38</b><span>Weeks on site</span></div>
+            <div class="stat"><b>1</b><span>Choice waiting on you</span></div>
             <div class="stat"><b>2</b><span>Small fixes underway</span></div>
             <div class="stat"><b>Thu 10:00</b><span>Waterproofing</span></div>
           </div>
@@ -1268,18 +1287,18 @@
     <div class="p-hero-copy">
       <div class="kicker">Sample · Henson Way</div>
       <h2 class="p-title">Welcome home.</h2>
-      <p class="lede" style="margin:0">This page is your home while we build it. Whatever we know, you'll see here too, and nothing is spent until you've signed for it.</p>
+      <p class="lede" style="margin:0">This page is your home while we build it. Whatever we know, you'll see here too. Any change you ask for only goes ahead once you've signed it, and if the ground or a supplier changes a cost, you'll see it here first, with the reason.</p>
     </div>
   </div>
 
   <div class="p-sub">Your team</div>
   <div class="p-grid3">
-    <div><div class="p-role">Your builder</div><h3>Sharang</h3><p>Every big decision goes past Sharang. If anything ever feels off, give him a ring any time.</p><p class="p-meta">Mobile · WhatsApp</p></div>
+    <div><div class="p-role">Your builder</div><h3>Sharang</h3><p>Every big decision goes past Sharang. If anything ever feels off, give him a ring.</p><p class="p-meta">Mobile · WhatsApp</p></div>
     <div><div class="p-role">On site every day</div><h3>Site supervisor</h3><p>Looks after the trades and the week's plan, and walks you through your home whenever you visit.</p><p class="p-meta">Messages you on WhatsApp in the evening, just as you asked</p></div>
     <div><div class="p-role">Our office · Norwest</div><h3>Accounts &amp; selections</h3><p>Helps with payments, paperwork and samples. You'll find us at 303/4 Columbia Ct on weekdays.</p><p class="p-meta">Email · phone</p></div>
   </div>
 
-  <div class="p-sub">Coming up this month</div>
+  <div class="p-sub">Coming up</div>
   <ul class="p-list">
     <li><b>Thu 10:00</b><span>Allied will waterproof the bathrooms, laundry and other wet areas.</span></li>
     <li><b>Friday</b><span>Photos of the flood test, where we check the waterproofing holds water, go up on this page.</span></li>
@@ -1303,7 +1322,7 @@
     <div>
       <h3>Island stone upgrade</h3>
       <p>A thicker edge and waterfall ends, where the stone runs down both sides, in the stone you picked at the yard.</p>
-      <div class="p-meta">+$4,200 · no delay if you sign by Friday · after that, it adds about 5 days</div>
+      <div class="p-meta">Priced and ready to sign · no delay if you sign by Friday · after that, it adds about 5 days</div>
     </div>
     <div class="p-right">
       <span class="p-state p-wait">Waiting on you</span><br />
@@ -1315,8 +1334,8 @@
     <img src="assets/gallery/henson-05.jpg" alt="Brass tapware in the kitchen" />
     <div>
       <h3>Variation 12 · brass tapware</h3>
-      <p>A variation is a change to the original plan. These were quoted at $2,180 and came to $2,640, because the finish you chose cost more, and we showed you why before you signed.</p>
-      <div class="p-meta">$2,640 · no change to the dates · signed 4 Sep</div>
+      <p>A variation is a change to the original plan. It came in a little above its quote because you chose a different finish, and you saw the new price and the reason before you signed.</p>
+      <div class="p-meta">Signed 4 Sep · no change to the dates</div>
     </div>
     <div class="p-right"><span class="p-state p-good">Signed</span></div>
   </div>
@@ -1326,7 +1345,7 @@
     <div>
       <h3>Pendant lights · island and dining</h3>
       <p>There are three options within your allowance, the amount already set aside for this in your contract, and two that cost a little more. You can see the samples at our office.</p>
-      <div class="p-meta">Within your allowance, or up to +$1,100 · choose by 24 Oct to keep the date</div>
+      <div class="p-meta">Within your allowance, or a little more for two of them · choose by 24 Oct to keep the date</div>
     </div>
     <div class="p-right"><span class="p-state p-soon">Coming up</span></div>
   </div>
@@ -1343,24 +1362,24 @@
 </div>
 
 <div class="pane" id="h-money">
-  <div class="kicker">Sample figures · $900,000 contract</div>
+  <div class="kicker">Payment stages · sample home</div>
   <table class="p-claims">
-    <thead><tr><th>Stage</th><th>Share</th><th class="num">Amount</th><th>Date</th><th>Status</th></tr></thead>
+    <thead><tr><th>Stage</th><th>Date</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Deposit</td><td>5%</td><td class="num">$45,000</td><td>When you sign</td><td>Paid</td></tr>
-      <tr><td>Slab</td><td>15%</td><td class="num">$135,000</td><td>March</td><td>Paid</td></tr>
-      <tr><td>Frame</td><td>20%</td><td class="num">$180,000</td><td>May</td><td>Paid</td></tr>
-      <tr class="p-next"><td>Lock-up</td><td>25%</td><td class="num">$225,000</td><td>Claimed 15 Sep</td><td>Due 29 Sep</td></tr>
-      <tr><td>Fixing</td><td>20%</td><td class="num">$180,000</td><td>Around November</td><td>Next</td></tr>
-      <tr><td>Completion</td><td>15%</td><td class="num">$135,000</td><td>Keys</td><td>Later</td></tr>
+      <tr><td>Deposit</td><td>When you sign</td><td>Paid</td></tr>
+      <tr><td>Slab</td><td>March</td><td>Paid</td></tr>
+      <tr><td>Frame</td><td>May</td><td>Paid</td></tr>
+      <tr class="p-next"><td>Lock-up</td><td>Claimed 1 Sep</td><td>Due 15 Sep</td></tr>
+      <tr><td>Fixing</td><td>Around November</td><td>Next</td></tr>
+      <tr><td>Completion</td><td>Keys</td><td>Later</td></tr>
     </tbody>
   </table>
 
   <div class="p-next-box">
     <div>
-      <div class="p-role">Lock-up progress claim · due 29 Sep</div>
-      <div class="p-big">$225,000</div>
-      <p style="margin:0;font-size:14px">A progress claim is the payment due at each stage. Any changes you've signed are added openly to the next claim, so Variation 12 will appear on your fixing claim.</p>
+      <div class="p-role">Next payment · due 15 Sep</div>
+      <div class="p-big">Lock-up claim</div>
+      <p style="margin:0;font-size:14px">A progress claim is the payment due at each stage. Any changes you've signed are added openly to the next claim, so Variation 12, signed on 4 Sep, will appear on your fixing claim.</p>
     </div>
     <div>
       <div class="p-role">What your bank will need</div>
@@ -1372,7 +1391,7 @@
       </ul>
     </div>
   </div>
-  <p class="p-note"><strong>Your own share comes first.</strong> If your loan doesn't cover the whole build, the bank will ask for your part before it pays its share. We'll let you know the exact figure a week before each claim, so you always have time to get ready.</p>
+  <p class="p-note"><strong>Your own share comes first.</strong> If your loan doesn't cover the whole build, the bank will ask for your part before it pays its share. We'll let you know what's coming a week before each claim, so you always have time to get ready.</p>
 </div>
 
 <div class="pane" id="h-story">
@@ -1406,19 +1425,19 @@
 </div>
           <div class="pane" id="h-week">
             <div class="gallery">
-              <img src="assets/gallery/henson-04.jpg" alt="Your kitchen" data-open="henson" data-i="3" />
-              <img src="assets/gallery/henson-06.jpg" alt="Your living room" data-open="henson" data-i="5" />
-              <img src="assets/gallery/henson-05.jpg" alt="A close-up of your kitchen" data-open="henson" data-i="4" />
+              <img src="assets/gallery/henson-04.jpg" alt="How your kitchen will look" data-open="henson" data-i="3" />
+              <img src="assets/gallery/henson-06.jpg" alt="How your living room will look" data-open="henson" data-i="5" />
+              <img src="assets/gallery/henson-05.jpg" alt="A close-up of the finished kitchen" data-open="henson" data-i="4" />
             </div>
             <p class="quiet" style="margin:12px 0 0">Waterproofing is booked for <strong>Thursday 10:00</strong>. Tiling starts once it has dried, and we'll post photos here after the flood test.</p>
             <div class="house-tl" tabindex="0" aria-label="Your home at Henson Way, from your first enquiry to week 38">
               <article><div class="when">Your block</div><h3>A one-page look</h3><p>An honest first view of what we could see, before any approvals or pricing.</p></article>
-              <article><div class="when">Friday</div><h3>Meeting at Norwest</h3><p>We sat down together at 303/4 Columbia Ct, with every cost open on the table.</p></article>
-              <article><div class="when">Planning</div><h3>Getting started</h3><p>Permits came through, your slab was poured and the first photos went up.</p></article>
+              <article><div class="when">First meeting</div><h3>Meeting at Norwest</h3><p>We sat down together at 303/4 Columbia Ct, with every cost open on the table.</p></article>
+              <article><div class="when">Getting started</div><h3>Permits and your slab</h3><p>Permits came through, your slab was poured and the first photos went up.</p></article>
               <article><div class="when">Structure</div><h3>Your home takes shape</h3><p>Up went the frame, then the roof and the windows.</p></article>
               <article><div class="when">Closing in</div><h3>Closed in and sealed</h3><p>Plumbing and electrics went in, and every booking now has a real time.</p></article>
-              <article><div class="when">Fit-out</div><h3>Variation 12</h3><p>You signed for brass tapware, quoted at $2,180 and coming to $2,640.</p></article>
-              <article class="now"><div class="when">Week 38 · now</div><h3>A choice waiting on you</h3><p>The $4,200 island stone upgrade is ready for you to sign, and waterproofing is on Thursday at 10:00.</p></article>
+              <article><div class="when">Selections</div><h3>Variation 12</h3><p>You signed for brass tapware. It came in a little above its quote because you chose a different finish, and you saw the new price and the reason before you signed.</p></article>
+              <article class="now"><div class="when">Week 38 · now</div><h3>A choice waiting on you</h3><p>The island stone upgrade is priced and ready for you to sign, and waterproofing is on Thursday at 10:00.</p></article>
               <article><div class="when">Complete</div><h3>Keys</h3><p>And your home's whole story stays with you.</p></article>
             </div>
             <div class="prog">
@@ -1429,35 +1448,35 @@
             </div>
             <div class="diary">
               <article><time>Mon 8 Sep · 14:22</time><p>The waterproofing materials arrived on site, and we confirmed the layout for the wet areas.</p></article>
-              <article><time>Wed 10 Sep · 09:40</time><p>We priced the island stone upgrade at $4,200, and it's waiting for your signature.</p></article>
+              <article><time>Wed 10 Sep · 09:40</time><p>We priced the island stone upgrade, and it's waiting for your signature.</p></article>
               <article><time>Thu 11 Sep · booked</time><p>Waterproofing is at 10:00, and the flood-test photos will follow on Friday.</p></article>
             </div>
           </div>
           <div class="pane" id="h-spend">
-            <div class="pause-banner" id="pauseBanner"><strong>Waiting for you.</strong> The island stone upgrade is quoted at $4,200. You haven't signed it yet, so none of that money has been spent.</div>
+            <div class="pause-banner" id="pauseBanner"><strong>Waiting for you.</strong> The island stone upgrade is priced and ready. You haven't signed it yet, so none of that money has been spent.</div>
             <div class="money-strip">
               <div><span>Quoted and actual costs</span><b>Always open to you</b></div>
-              <div><span>Builder's margin</span><b>The % we agreed</b></div>
+              <div><span>Builder's margin</span><b>The margin we agreed, on its own line</b></div>
               <div><span>Contingency</span><b>Set out in your contract</b></div>
             </div>
             <table class="book">
               <thead><tr><th>Date</th><th>Supplier</th><th>Item</th><th>Quoted</th><th>Actual</th><th>Status</th></tr></thead>
               <tbody>
                 <tr data-line="benchtop"><td>2 Sep</td><td>Stone supplier</td><td>Rest of the island benchtop</td><td class="num">Allowance</td><td class="num">Allowance</td><td>Same as the quote</td></tr>
-                <tr data-line="brodware"><td>4 Sep</td><td>Tap supplier</td><td>Tapware upgrade · variation 12</td><td class="num">2,180</td><td class="num">2,640</td><td>You signed for a different finish</td></tr>
-                <tr data-line="stone" id="stoneRow"><td>11 Sep</td><td>Stone supplier</td><td>Island stone upgrade</td><td class="num">4,200</td><td class="num">Not yet</td><td id="stoneState">Waiting for your signature</td></tr>
+                <tr data-line="brodware"><td>4 Sep</td><td>Tap supplier</td><td>Tapware upgrade · variation 12</td><td class="num">Quoted</td><td class="num">A little higher</td><td>You signed for a different finish</td></tr>
+                <tr data-line="stone" id="stoneRow"><td>10 Sep</td><td>Stone supplier</td><td>Island stone upgrade</td><td class="num">Priced</td><td class="num">Not yet</td><td id="stoneState">Waiting for your signature</td></tr>
               </tbody>
             </table>
             <div class="row-btns" style="margin-top:12px">
               <button class="btn" type="button" id="previewLock">Sign in to approve or pause this change</button>
-              <button class="btn good after-in" type="button" id="approveStone">Sign the $4,200 change</button>
+              <button class="btn good after-in" type="button" id="approveStone">Sign the stone change</button>
               <button class="btn ghost after-in" type="button" id="holdStone">Not yet</button>
             </div>
           </div>
           <div class="pane" id="h-site">
             <ul class="site-list">
               <li>A small ding in the hallway plasterboard · photo attached<small>Noted, and the painter will fix it. There's no extra cost to you.</small></li>
-              <li>Door hardware needs lining up · joinery<small>On our list of final touch-ups, at no extra cost to you.</small></li>
+              <li>A window latch needs adjusting · windows<small>On our list of final touch-ups, at no extra cost to you.</small></li>
             </ul>
           </div>
           <div class="pane" id="h-questions">
@@ -1475,7 +1494,7 @@
                 <div class="q-mark">Q-04<small>You</small></div>
                 <div class="q-body">
                   <h3>The island from the living room</h3>
-                  <p>Could we see a photo after Thursday’s flood test?</p>
+                  <p>Could we see a photo after Friday’s flood test?</p>
                   <p class="q-meta">You asked on Wed 10 Sep · the site team will send it</p>
                 </div>
               </article>
@@ -1491,14 +1510,13 @@
           </div>
           <div class="pane" id="h-ask">
             <p class="bot-chip" id="askChip">Ask how we handle a change, a payment or something that needs fixing.</p>
-            <div class="chat" id="houseChat"><div class="msg"><span class="who">Truft</span>Hi! I'm a set of ready-made answers rather than a person in our office, and this is the sample home at week 38, not a real build. You can ask me about progress, spending or what's booked next. I'll only share prices and dates that are really on your page.</div></div>
+            <div class="chat" id="houseChat"><div class="msg"><span class="who">Truft</span>Hi! I'm Ask Truft, a quick-answer helper, not a person in our office. This is the sample home at week 38. Ask about progress, choices or what's booked next. For anything personal, the team is a call away on 02 7235 0833.</div></div>
             <div class="chat-in"><input id="houseQ" placeholder="Ask about your home" /><button class="btn" type="button" id="houseSend">Send</button></div>
             <div class="row-btns" style="margin-top:8px">
               <button class="btn ghost" type="button" data-ask="taps">Why the brass taps?</button>
               <button class="btn ghost" type="button" data-ask="water">When is waterproofing?</button>
               <button class="btn ghost" type="button" data-ask="timeline">What's happened so far?</button>
-              <button class="btn ghost" type="button" data-ask="rate">Rough cost per m²?</button>
-              <button class="i after-in" data-tip="chatbot" type="button">i</button>
+              <button class="btn ghost" type="button" data-ask="stone">Why is the stone upgrade waiting?</button>
             </div>
           </div>
           <div class="pane" id="h-wa">
@@ -1506,13 +1524,13 @@
               <img src="assets/qr/whatsapp.png" alt="QR code for Truft on WhatsApp" />
               <div>
                 <h3>Your home, on WhatsApp too</h3>
-                <p class="quiet">When we're building your real home, a message here comes straight to our office as a question. The $4,200 is only spent once you've signed the priced change on your home's page. <button class="i" data-tip="whatsapp" type="button">i</button></p>
+                <p class="quiet">When we're building your real home, a message here comes straight to our office as a question. Nothing is spent until you've signed the priced change on your Truft page. <button class="i" data-tip="whatsapp" type="button">i</button></p>
                 <div class="row-btns" style="margin-top:10px">
                   <button class="wa-btn hover-tip" type="button" data-open-wa="1" data-hint="This opens a chat with us on WhatsApp.">
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#25D366" d="M12.04 2C6.58 2 2.15 6.43 2.15 11.89c0 1.95.51 3.86 1.48 5.54L2 22l4.71-1.55a9.86 9.86 0 0 0 5.33 1.44h.01c5.46 0 9.89-4.43 9.89-9.89C21.94 6.43 17.5 2 12.04 2zm5.72 14.01c-.24.67-1.4 1.24-1.94 1.32-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.82-4.2-4.97-4.39-.14-.2-1.18-1.57-1.18-3 0-1.42.74-2.12 1-2.41.24-.27.64-.39 1.02-.39.12 0 .23 0 .33.01.29.01.44.03.63.49.24.56.81 1.98.88 2.13.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.41.51-.14.14-.28.3-.12.58.16.29.7 1.15 1.5 1.86 1.03.91 1.9 1.19 2.18 1.33.28.13.44.11.6-.07.17-.18.7-.81.89-1.09.19-.27.37-.23.63-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.67-.17 1.34z"/></svg>
                     WhatsApp
                   </button>
-                  <button class="btn good after-in" type="button" id="waAllow">Ask about the $4,200 in this chat</button>
+                  <button class="btn good after-in" type="button" id="waAllow">Ask about the stone upgrade in this chat</button>
                 </div>
               </div>
             </div>
@@ -1520,7 +1538,7 @@
           <div class="pane" id="h-askus">
             <p class="bot-chip">Send us a request about your home · it comes straight to the Truft office</p>
             <ul class="req-list" id="ownerReqs">
-              <li>A photo of your upgrade stone at the stone yard<small>You asked on Wed 10 Sep · the photo is in your Open book</small></li>
+              <li>A photo of your upgrade stone at the stone yard<small>You asked on Wed 10 Sep · the site team will send it to you on WhatsApp this evening</small></li>
               <li>Send inspection results in the evening<small>We'll always do this for you · you like to message on WhatsApp in the evening</small></li>
             </ul>
             <div class="field"><label for="reqKind">What can we help with?</label>
@@ -1531,7 +1549,7 @@
                 <option value="other">Something else about your home</option>
               </select>
             </div>
-            <div class="field" style="margin-top:8px"><label for="reqNote">Note</label><textarea id="reqNote" rows="3" placeholder="e.g. Could we see the island from the living room after Thursday’s flood test?"></textarea></div>
+            <div class="field" style="margin-top:8px"><label for="reqNote">Note</label><textarea id="reqNote" rows="3" placeholder="e.g. Could we have a photo of the laundry once it's tiled?"></textarea></div>
             <div class="row-btns" style="margin-top:10px"><button class="btn" type="button" id="reqSend">Send to Truft</button><span class="quiet" id="reqAck"></span></div>
           </div>
           <div class="pane" id="h-notes">
@@ -1545,254 +1563,6 @@
       </footer>
     </section>
 
-    <!-- OFFICE -->
-    <section class="scene" id="office">
-      <div class="wrap">
-        <div class="office-top">
-          <div>
-            <div class="kicker">Truft office</div>
-            <h1>Your day at a glance</h1>
-            <p class="lede">This is where the team looks after leads, customers, the website, the site file and the books, all in one place. Families never see this screen. BuildPass and Xero are still where the records live, and this screen simply reads from them, so you don't have to spend your day inside those tools. <button class="i" data-tip="ww" type="button">i</button></p>
-          </div>
-          <button class="btn ghost" type="button" data-go="home" data-public="1">Back to the website</button>
-        </div>
-        <div class="tabs shop-tabs" role="tablist">
-          <button type="button" data-shop="day" aria-selected="true">Today</button>
-          <button type="button" data-shop="usage">Family care</button>
-          <button type="button" data-shop="leads">New enquiries</button>
-          <button type="button" data-shop="cust">Customers</button>
-          <button type="button" data-shop="site">Site file</button>
-          <button type="button" data-shop="books">Books</button>
-          <button type="button" data-shop="home">Homepage</button>
-          <button type="button" data-shop="social">Social</button>
-        </div>
-
-        <div class="shop-pane is-on" id="shop-day">
-          <div class="admin-day" id="adminDay">
-            <div class="row">
-              <div class="tm">09:00</div>
-              <div>
-                <div class="wait">Ready when you are</div>
-                <strong>Update for the Henson Way family</strong>
-                <p class="quiet" style="margin:4px 0 0">The draft is ready, but it reads a little short for this family, so it's waiting for you to have a look before it goes. It's part of the same job as the 11:00 decision below. <button class="i" data-tip="evals" type="button">i</button></p>
-              </div>
-            </div>
-            <div class="row" id="gateStone">
-              <div class="tm">11:00</div>
-              <div>
-                <div class="wait">Needs your decision</div>
-                <strong>Should the $4,200 island stone upgrade go ahead?</strong>
-                <p class="quiet" style="margin:4px 0 0">The family hasn't signed this yet, and once the money is spent it can't be taken back, so it waits for your say. <button class="i" data-tip="xero" type="button">i</button></p>
-                <div class="scope-lab">Just for this one</div>
-                <div class="acts">
-                  <button class="btn good hold" type="button" data-hil="allow" data-hold="1">Press and hold to approve</button>
-                  <button class="btn ghost" type="button" data-hil="reject">Decline</button>
-                </div>
-                <div class="steer-row">
-                  <input id="hilSteer" placeholder="Want it done differently? Tell us here, just for this time" />
-                  <button class="btn ghost" type="button" data-hil="steer">Send</button>
-                </div>
-                <div class="scope-lab">Every time from now on</div>
-                <div class="acts">
-                  <button class="btn ghost hold" type="button" data-hil="always-allow" data-hold="1">Always approve these</button>
-                  <button class="btn ghost" type="button" data-hil="always-reject">Always decline these</button>
-                </div>
-                <p class="quiet" id="hilNote"></p>
-              </div>
-            </div>
-            <div class="row"><div class="tm">13:20</div><div><strong>Island overhang on drawing A-12</strong><p class="quiet" style="margin:4px 0 0">We're waiting on a note from the engineer. The family can see this question too, under Questions. <button class="i" data-tip="buildpass" type="button">i</button></p></div></div>
-            <div class="row"><div class="tm">16:00</div><div><strong>Reply to an Instagram comment on the Henson Way reel</strong><p class="quiet" style="margin:4px 0 0">The reply reads nicely and is ready to send whenever you are. <button class="i" data-tip="instagram" type="button">i</button></p></div></div>
-          </div>
-          <div class="grid-2" style="margin-top:16px">
-            <div class="card">
-              <h3>Post an update for the family</h3>
-              <textarea id="adminPost">Good news: waterproofing is booked for Thursday at 10:00. Once it has had time to cure properly, the tilers will start.</textarea>
-              <div class="row-btns" style="margin-top:10px"><button class="btn" type="button" id="postUpdate">Post to the Henson Way family</button><span class="quiet" id="postNote"></span></div>
-            </div>
-            <div class="card">
-              <h3>Draft note to the family</h3>
-              <pre class="letter" id="letterDraft">The kitchen is coming along nicely and is right on track. You signed variation 12 (a change to the plans, in this case the brass tapware) on 4 September. It was quoted at $2,180, and the final cost was $2,640 because the finish was changed on site.</pre>
-              <div class="score held" id="letterScore"><div class="stat">Waiting for you to check</div><p style="margin:6px 0 0;font-size:13px">All the facts match the job. It's a little shorter than the way you usually write to this family, so nothing will be sent until you've had a look.</p></div>
-              <button class="btn" type="button" id="explainVar" style="margin-top:10px">Explain variation 12</button>
-            </div>
-            <div class="card">
-              <h3>On site today</h3>
-              <ul class="list-wait"><li>Wet-area seal, with a photo attached</li><li>Lining up the door hardware</li><li>Island overhang on drawing A-12</li></ul>
-              <button class="btn ghost" type="button" id="triage">Send the wet-area job to Allied</button>
-              <p class="quiet" id="triageNote"></p>
-            </div>
-            <div class="card">
-              <h3>Next inspection</h3>
-              <p>Henson Way is in week 38, and next up is the internal fit-out review. The family prefers to hear from us on WhatsApp in the evening.</p>
-              <button class="btn" type="button" id="holdFri">Book Friday at 12:00 in Norwest</button>
-              <div class="cal" id="calStrip" hidden>Booked for Friday at 12:00 at 303/4 Columbia Ct</div>
-            </div>
-          </div>
-          <div class="card" style="margin-top:12px">
-            <h3>How Truft does things <button class="i" data-tip="memory" type="button">i</button></h3>
-            <p class="quiet">This is where our way of writing, our checks and our standing rules are kept. Job costs and photos are looked up fresh from BuildPass and Xero for each job. If you mark something as wrong, for example “island stone is included”, it stays corrected and won't come back.</p>
-            <div class="voices">
-              <button class="btn ghost" type="button" data-job="henson" id="jobH" aria-pressed="true">Henson Way</button>
-              <button class="btn ghost" type="button" data-job="mustang" id="jobM" aria-pressed="false">Mustang Ave</button>
-            </div>
-            <p class="quiet" id="jobNote" style="margin-top:8px">You're looking at Henson Way only. Our rules about pausing spend apply to every job, and each family only ever sees their own home.</p>
-          </div>
-        </div>
-
-        <div class="shop-pane" id="shop-leads">
-          <p class="quiet">Every new enquiry shows up here as a single row, whether it came through the website, a phone call, WhatsApp, email, Instagram or the QR code on a site sign. Even people who never visit the website end up here. We offer a follow-up when it makes sense, and we never make one up. <button class="i" data-tip="leads" type="button">i</button></p>
-          <table class="office" id="leadTable">
-            <thead><tr><th>When</th><th>How they reached us</th><th>Who</th><th>What they're thinking about</th><th>What happens next</th></tr></thead>
-            <tbody>
-              <tr><td>9:41pm</td><td>Instagram, without visiting the website</td><td>@homeinbaulkhamhills</td><td>A knockdown-rebuild</td><td>We offered Step 0 in the conversation</td></tr>
-              <tr><td>8:02pm</td><td>Facebook ad, without visiting the website</td><td>A new mobile number in Kellyville</td><td>A knockdown-rebuild</td><td>We offered Step 0</td></tr>
-              <tr><td>6:14pm</td><td>WhatsApp</td><td>A new mobile number</td><td>How cost-plus works (paying the real cost plus an agreed margin)</td><td>Answered, using variation 12 as the example</td></tr>
-              <tr><td>Yesterday</td><td>Phone</td><td>0412 ··· ···</td><td>A block on a land estate</td><td>We logged the 4-minute call and offered an hour at Norwest</td></tr>
-              <tr><td>Tue</td><td>Website, through Step 0</td><td>Someone in Kellyville who has walked their block</td><td>A knockdown-rebuild</td><td>We sent a note and the $25 card, and they'd like some time to think it over</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="shop-pane" id="shop-site">
-          <p class="quiet">This comes straight from BuildPass: the photos, the defects and the building programme. You only need to open BuildPass if something there needs changing. <button class="i" data-tip="buildpass" type="button">i</button></p>
-          <div class="feed-grid" style="margin-top:12px">
-            <div class="card">
-              <div class="src-pill">From BuildPass: Henson Way</div>
-              <h3>Today's photos</h3>
-              <div class="feed-photo">
-                <img src="assets/gallery/henson-04.jpg" alt="The kitchen at Henson Way" />
-                <img src="assets/gallery/henson-06.jpg" alt="The living area at Henson Way" />
-              </div>
-              <p class="quiet" style="margin:10px 0 0">Each photo carries the date it was taken. The family sees them under This week.</p>
-            </div>
-            <div class="card">
-              <div class="src-pill">From BuildPass: open items</div>
-              <h3>Defects and programme</h3>
-              <ul class="list-wait">
-                <li>A ding in the hallway plasterboard, with a photo attached</li>
-                <li>Lining up the door hardware, on the punch list (the list of small fixes before handover)</li>
-                <li>Island overhang on drawing A-12, waiting on the engineer</li>
-                <li>Waterproofing with Allied on Thursday at 10:00</li>
-              </ul>
-              <p class="quiet" style="margin:10px 0 0">You can sort the day's list right here, so there's no need to open the BuildPass app for it.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="shop-pane" id="shop-books">
-          <p class="quiet">This comes straight from Xero: invoices, margin and any spending the family hasn't signed for yet. You only need to open Xero to add a bill or change the books. Families never need a Xero login. <button class="i" data-tip="xero" type="button">i</button></p>
-          <div class="feed-grid" style="margin-top:12px">
-            <div class="card">
-              <div class="src-pill">From Xero: Henson Way</div>
-              <h3>Spending this month</h3>
-              <table class="office">
-                <thead><tr><th>Supplier</th><th>Item</th><th>Quoted</th><th>Final cost</th></tr></thead>
-                <tbody>
-                  <tr><td>Stone supplier</td><td>Rest of the island</td><td class="num">Allowance (a set budget)</td><td class="num">Allowance (a set budget)</td></tr>
-                  <tr><td>Tap supplier</td><td>Variation 12</td><td class="num">2,180</td><td class="num">2,640</td></tr>
-                  <tr><td>Stone supplier</td><td>Island stone upgrade</td><td class="num">4,200</td><td class="num">Not signed yet</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="card">
-              <div class="src-pill">From Xero: safeguards</div>
-              <h3>What stays put until the family says yes</h3>
-              <p>The $4,200 island stone upgrade hasn't been signed yet. Nothing is spent on it until the family signs the variation (the written change with its price) on their home page. A WhatsApp message on its own doesn't count as that signature.</p>
-              <p class="quiet">The builder's margin is the percentage agreed in the contract, and the contingency is the allowance set aside in the contract for the unexpected. The family sees exactly the same lines under Spend.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="shop-pane" id="shop-cust">
-          <p class="quiet">These are the families building with us right now. Each login opens one home only. <button class="i" data-tip="house" type="button">i</button></p>
-          <table class="office">
-            <thead><tr><th>Home</th><th>Family</th><th>Week</th><th>Best way to reach them</th><th>Portal</th></tr></thead>
-            <tbody>
-              <tr><td>Henson Way</td><td>The Henson Way family</td><td>Week 38, lock-up done (doors and windows in, so the house can be locked)</td><td>WhatsApp in the evening</td><td>Signed in today</td></tr>
-              <tr><td>Mustang Ave</td><td>The Mustang Ave family, details on file</td><td>Week 12, structure going up</td><td>A phone call first</td><td>Invited, but hasn't signed in yet</td></tr>
-            </tbody>
-          </table>
-          <div class="card" style="margin-top:14px">
-            <h3>Invite a family to the portal</h3>
-            <p class="quiet">Families can sign in with Google or Microsoft first, and Facebook or Apple if they prefer. Nobody needs a Facebook account to see their home.</p>
-            <div class="row-btns" style="margin-top:10px">
-              <button class="btn ghost" type="button" id="invitePortal">Invite the Mustang Ave family</button>
-              <span class="quiet" id="inviteNote"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="shop-pane" id="shop-home">
-          <p class="quiet">This is what everyone sees on the website. You can swap a photo or add a kind word from a family, and it will appear on Home and Our work. <button class="i" data-tip="cms" type="button">i</button></p>
-          <div class="cms-grid" id="cmsGrid">
-            <figure><img src="assets/gallery/mustang-01.jpg" alt="" /><figcaption>Mustang Ave, the main photo</figcaption></figure>
-            <figure><img src="assets/gallery/henson-04.jpg" alt="" /><figcaption>Henson Way</figcaption></figure>
-            <figure><img src="assets/gallery/newmarket-06.jpg" alt="" /><figcaption>Newmarket Pky</figcaption></figure>
-            <figure><img src="assets/gallery/shetland-07.jpg" alt="" /><figcaption>Shetland Street</figcaption></figure>
-          </div>
-          <div class="row-btns" style="margin-top:12px">
-            <label class="btn ghost">Add a photo<input type="file" accept="image/*" id="cmsFile" hidden /></label>
-          </div>
-          <h3 style="margin-top:22px">Kind words on the homepage</h3>
-          <ul class="req-list" id="testiList">
-            <li>“We saw every invoice before the money was spent, not after.”<small>This is an example only. Please swap in a real quote when a family is happy to share one.</small></li>
-          </ul>
-          <div class="steer-row">
-            <input id="testiIn" placeholder="A few kind words from a family" />
-            <button class="btn" type="button" id="testiAdd">Add</button>
-          </div>
-        </div>
-
-        <div class="shop-pane" id="shop-social">
-          <p class="quiet">When someone comments on one of our project posts, we can draft a reply in Truft's voice. This only covers comments on our official Instagram, and we never read private messages. Our Instagram handle still needs to be confirmed. <button class="i" data-tip="instagram" type="button">i</button></p>
-          <div class="social">
-            <article>
-              <div class="ch">Instagram, on the Henson Way reel, 9:41pm</div>
-              <p>How long was it from knockdown to handover?</p>
-              <div class="steer-row">
-                <input value="Great question! A typical knockdown-rebuild in North West Sydney takes around 14 to 22 months from start to finish. We'd be happy to show you a sample job, or you're welcome to book a time with us at Norwest." />
-                <button class="btn" type="button" id="igSend">Post the reply</button>
-              </div>
-              <p class="quiet" id="igNote" hidden>Your reply is posted. We've offered them Friday at 12:00 in a private message and made a note under Family care.</p>
-            </article>
-            <article>
-              <div class="ch">Facebook, on the Mustang Ave post</div>
-              <p>Is cost-plus actually open book?</p>
-              <button class="btn ghost" type="button" id="fbReply">Draft a reply using this job</button>
-              <p class="quiet" id="fbNote"></p>
-            </article>
-            <article>
-              <div class="ch">LinkedIn, on our company page</div>
-              <p>Do you build on premium land estates?</p>
-              <p class="quiet">Yes, we do, and we also do knockdown-rebuilds on established blocks in the Hills. Every home follows the same 28 steps.</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="shop-pane" id="shop-usage">
-          <p class="quiet">Twelve families are building with Truft right now. This shows how we're looking after each of them this week. Families never see this screen.</p>
-          <table class="office care-table">
-            <thead><tr><th>Home</th><th>Stage</th><th>Last update</th><th>What they're waiting on from us</th><th>Next big moment</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Henson Way</strong></td><td>Week 38, lock-up</td><td>Today, with photos</td><td>An answer on the island stone</td><td>Flood-test photos on Friday</td></tr>
-              <tr><td><strong>Mustang Ave</strong></td><td>Week 12, frame</td><td class="care-late">9 days ago</td><td>The frame-stage paperwork for their bank</td><td>A note to celebrate the frame going up</td></tr>
-              <tr><td><strong>Newmarket Pky</strong></td><td>Week 24, services going in</td><td>Yesterday</td><td>Nothing at the moment</td><td>Choosing pendant lights by 24 October</td></tr>
-              <tr><td><strong>Shetland Street</strong></td><td>Week 51, handover</td><td>2 days ago</td><td>Their warranty folder</td><td>Handing over the keys and their memory book</td></tr>
-              <tr><td><strong>8 more homes</strong></td><td>Somewhere between slab and fit-out</td><td>All within the last 7 days</td><td>2 small questions</td><td>Christmas break notes on 12 December</td></tr>
-            </tbody>
-          </table>
-          <p class="quiet" style="margin-top:14px">Every Friday, each family gets photos and a short note from us. If a family hasn't heard from us in 7 days, they move to the top of this list so nobody is left waiting.</p>
-          <h3 style="margin-top:18px">Who we're in touch with today</h3>
-          <div class="usage-cal" id="usageCal">
-            <div class="when">Thu 10:00</div><div class="what"><strong>Waterproofing with Allied</strong>We've let the Henson Way family know, and photos will follow on Friday</div>
-            <div class="when">Thu 11:02</div><div class="what"><strong>Island stone variation</strong>Waiting for your OK before it goes to the family</div>
-            <div class="when">Thu 18:14</div><div class="what"><strong>WhatsApp question about the brass taps</strong>The family's evening question was answered from the Henson Way file</div>
-            <div class="when">Fri 12:00</div><div class="what"><strong>Norwest visit, booked</strong>303/4 Columbia Ct</div>
-          </div>
-        </div>
-
-      </div>
-    </section>
   </main>
 
   <div class="ask-widget" id="askWidget">
@@ -1802,7 +1572,7 @@
         <button type="button" id="askClose" aria-label="Close the chat">×</button>
       </header>
       <div class="ask-body">
-        <div class="chat" id="dockAskChat"><div class="msg"><span class="who">Truft</span>Hi there, I'm Ask Truft. You can ask me how a build usually goes, and how it works with us: your land, the price, a finish you love, a change you'd like, a stage payment, or anything that doesn't feel right. I'm not a person in the office, so I'll never guess at a price or a date for you. If you'd like to see how a cost is paused until you say yes, the sample home shows one.</div></div>
+        <div class="chat" id="dockAskChat"><div class="msg"><span class="who">Truft</span>Hi! I'm Ask Truft, a quick-answer helper, not a person in our office. Ask how a build goes with us: your land, a finish, a change, a stage payment, or something that isn't right. For anything personal, the team is a call away on 02 7235 0833.</div></div>
         <div class="chat-in"><input id="dockAskQ" placeholder="Ask us anything about your build" /><button class="btn" type="button" id="dockAskSend">Send</button></div>
       </div>
     </div>
@@ -1820,12 +1590,9 @@
       <div class="wa-card" style="border:0;padding:0">
         <img src="assets/qr/whatsapp.png" alt="QR code to chat with Truft on WhatsApp" />
         <div>
-          <p class="quiet">This opens our WhatsApp account on your phone, or WhatsApp Desktop or Web on this computer. It's the same help you get from Ask Truft. Because this is a sample, it won't take you to anyone's personal number.</p>
+          <p class="quiet">This opens a chat with the Truft office on WhatsApp. Scan the code with your phone, or call us on 02 7235 0833.</p>
           <div class="row-btns" style="margin-top:10px">
-            <button class="wa-btn hover-tip" type="button" data-hint="This opens our WhatsApp account so you can chat with us." id="waPreviewBtn">
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#25D366" d="M12.04 2C6.58 2 2.15 6.43 2.15 11.89c0 1.95.51 3.86 1.48 5.54L2 22l4.71-1.55a9.86 9.86 0 0 0 5.33 1.44h.01c5.46 0 9.89-4.43 9.89-9.89C21.94 6.43 17.5 2 12.04 2zm5.72 14.01c-.24.67-1.4 1.24-1.94 1.32-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.82-4.2-4.97-4.39-.14-.2-1.18-1.57-1.18-3 0-1.42.74-2.12 1-2.41.24-.27.64-.39 1.02-.39.12 0 .23 0 .33.01.29.01.44.03.63.49.24.56.81 1.98.88 2.13.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.41.51-.14.14-.28.3-.12.58.16.29.7 1.15 1.5 1.86 1.03.91 1.9 1.19 2.18 1.33.28.13.44.11.6-.07.17-.18.7-.81.89-1.09.19-.27.37-.23.63-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.67-.17 1.34z"/></svg>
-              WhatsApp
-            </button>
+            <a class="btn" href="tel:+61272350833">Call 02 7235 0833</a>
             <button class="btn ghost" type="button" id="waSheetClose">Close</button>
           </div>
         </div>
@@ -1865,24 +1632,6 @@
       { src:"assets/gallery/mustang-03.jpg", credit:"Mustang Ave · inside" },
       { src:"assets/gallery/henson-06.jpg", credit:"Henson Way · living" },
       { src:"assets/gallery/shetland-02.jpg", credit:"Shetland Street · joinery" }
-    ];
-    const CINE_WORK = [
-      { src:"assets/gallery/mustang-01.jpg", title:"Mustang Ave", lede:"A knockdown-rebuild, seen from the street." },
-      { src:"assets/gallery/mustang-03.jpg", title:"Mustang Ave", lede:"A look inside the knockdown-rebuild." },
-      { src:"assets/gallery/mustang-08.jpg", title:"Mustang Ave", lede:"Evening light along the street." },
-      { src:"assets/gallery/henson-01.jpg", title:"Henson Way", lede:"Our open-book sample home, with every cost on show." },
-      { src:"assets/gallery/henson-04.jpg", title:"Henson Way", lede:"The kitchen, photographed on the day, just as it was." },
-      { src:"assets/gallery/henson-06.jpg", title:"Henson Way", lede:"The living room, with a few finishing touches still to come." },
-      { src:"assets/gallery/newmarket-01.jpg", title:"Newmarket Pky", lede:"A home on a premium land estate." },
-      { src:"assets/gallery/newmarket-06.jpg", title:"Newmarket Pky", lede:"The living room, just as we built it." },
-      { src:"assets/gallery/shetland-01.jpg", title:"Shetland Street", lede:"Custom interiors, made to measure." },
-      { src:"assets/gallery/shetland-07.jpg", title:"Shetland Street", lede:"The joinery, catching the light beautifully." }
-    ];
-    const CINE_SERVICES = [
-      { src:"assets/gallery/henson-06.jpg" },
-      { src:"assets/gallery/henson-04.jpg" },
-      { src:"assets/gallery/mustang-08.jpg" },
-      { src:"assets/gallery/shetland-02.jpg" }
     ];
     const TILE_FILM = {
       mustang: ["assets/gallery/mustang-01.jpg","assets/gallery/mustang-03.jpg","assets/gallery/mustang-08.jpg"],
@@ -1952,62 +1701,39 @@
         }, 7200 + tIndex * 850);
       });
     }
-    const STAGE_PHOTO = {
-      "PLAN & APPROVE": "assets/gallery/henson-01.jpg",
-      "STRUCTURE": "assets/gallery/mustang-01.jpg",
-      "ENCLOSE & INTERNALS": "assets/gallery/henson-06.jpg",
-      "FITOUT & STYLE": "assets/gallery/henson-04.jpg",
-      "COMPLETE": "assets/gallery/mustang-07.jpg"
-    };
     const TIPS = {
-      buildpass: { title: "From the site file", body: "Photos, defects, the programme, drawings and the site handset all live in BuildPass. This page simply reads what the job already has, so there's no second site system to keep up to date." },
-      xero: { title: "From the books", body: "Invoices, the builder's margin and the contingency all stay in Xero. The spending you see here is a view of those same lines, not a second set of books. Unsigned spending stays paused until someone allows it, and families never need a Xero login." },
-      house: { title: "Just your home", body: "You only ever see your own project, never the builder's other jobs. Messages from Ask Truft, WhatsApp and email all come to the same portal, so everything stays in one place." },
-      models: { title: "Your standard", body: "Every note to a family is checked against how Truft writes, and against the facts of the job, before it goes out." },
-      evals: { title: "Two checks before anything reaches a family", body: "First the facts: does the note say waterproofing is Thursday at 10:00, just as it's booked? Then the tone: does it sound like Truft? Anything that falls short waits for you to look at." },
-      chatbot: { title: "One conversation", body: "Ask Truft on the website explains how the build works: a change, a payment, a finish or a defect. It won't guess a price. Once a family signs in, it only talks about their job, and WhatsApp and email messages land on the same page." },
-      leads: { title: "Every lead is a person", body: "Whether someone uses the form, email, phone, WhatsApp, Instagram, a site sign or Ask Truft, they become one row here, even if they never visited the website. We note how they found us, so Truft can see which channels work. Follow-up is Step 0, a visit, a call or a WhatsApp message, and they can ask us to stop at any time." },
-      usage: { title: "Care", body: "Every family, how recently they heard from us, and what they're waiting on. That way, nobody goes more than a week without news about their own home." },
-      whatsapp: { title: "Our real WhatsApp", body: "This opens our WhatsApp account on a phone, or WhatsApp Desktop or Web on a computer. It uses the same portal, the same pause rules and the same checks. This sample won't open anyone's personal number." },
-      instagram: { title: "Posted to Instagram", body: "This replies to official Instagram comments only. It posts a public reply in Truft's voice and offers a private way to book a time at Norwest. If a reply doesn't pass a check, it waits. It doesn't read private messages, and the Instagram handle is still to be confirmed." },
-      post: { title: "Posting an update takes one box", body: "Truft types the update in the office and the family sees it on their portal. If they ask about it on WhatsApp or email tonight, they get the same answer." },
-      ww: { title: "How the office runs", body: "One place runs the steps, the checks before anything is sent, the pause before any money moves, and the same assistant on the website, WhatsApp, email and SMS. BuildPass and Xero stay the official records, and Truft stays the builder." },
-      memory: { title: "How Truft works, not the books", body: "The office remembers how Truft works: its voice, its checks (evals) and its standing rules. Job costs, photos and progress are looked up in BuildPass and Xero for each job on its own, so Henson Way can't see Mustang Ave." },
-      cms: { title: "The homepage is yours", body: "Upload a photo or add a line from a homeowner, and it appears on Home and Our Work. Progress photos for a live job still come straight from the site file, so nobody has to type them in again." },
-      sixty: { title: "A warm hello within a minute", body: "If someone leaves a mobile number or asks for Step 0, Truft can reach out by WhatsApp, SMS or a call within about 60 seconds. Step 0 is a clear look at their block, not a sales call, and a person still replies within a day if needed. This sample isn't connected yet." },
-      "sso-google": { title: "Google first", body: "Most families already have a Google account, so that's the default way to sign in to their project once they're building with you." },
+      whatsapp: { title: "WhatsApp", body: "This opens a chat with the Truft office on WhatsApp. A message is always treated as a question; nothing is spent until you sign the priced change on your page." },
       "sso-optional": { title: "Optional logins", body: "Google and Microsoft come first. Nobody needs Facebook to see their own home." },
-      "sso-tools": { title: "BuildPass and Xero logins", body: "Families never need to open Xero. BuildPass already holds the photos and site notes, and this portal is the friendly front door to them. A BuildPass client share is only opened if it's needed and possible, so there's no extra homework for anyone." },
       benchtop: { title: "As quoted", body: "This is the rest of the island benchtop, and it matches the allowance (the amount set aside for it in your contract). Nothing extra, and no new number." },
-      brodware: { title: "Variation 12, explained", body: "This is the brass tapware change you signed on 4 September. It was quoted at $2,180 and came to $2,640, because the finish changed on site after the quote was set." },
-      stone: { title: "Waiting for your signature", body: "This is the island stone upgrade you asked about, quoted at $4,200. You haven't signed it yet, so nothing has been spent. A quick message is never treated as a yes; it only goes ahead once you've signed." }
+      brodware: { title: "Variation 12, explained", body: "This is the brass tapware change you signed on 4 September. It came in a little above its quote because you chose a different finish, and you saw the new price and the reason before you signed." },
+      stone: { title: "Waiting for your signature", body: "This is the island stone upgrade you asked about, priced and ready. You haven't signed it yet, so nothing has been spent. A quick message is never treated as a yes; it only goes ahead once you've signed." }
     };
 
     const STEPS = [
-      { n:1, stage:"PLAN & APPROVE", name:"Preliminaries", happens:"Site setup, surveys, permits, temporary services", you:"You'll see where your approvals are up to, and your open book of costs starts from the day your house file opens.", truft:"We look after the DA or CDC approval (through council or a private certifier), the insurer and the consultants.", file:"Your house file opens with the contract set up.", pause:false },
+      { n:1, stage:"PLAN & APPROVE", name:"Preliminaries", happens:"Site setup, surveys, permits, temporary services", you:"You'll see where your approvals are up to, and your open book of costs starts from the day your Truft page opens.", truft:"We look after the DA or CDC approval (through council or a private certifier), the insurer and the consultants.", file:"Your Truft page opens with the contract set up.", pause:false },
       { n:2, stage:"PLAN & APPROVE", name:"Site preparation & earthworks", happens:"Clearing, excavation, levelling", you:"You'll get dated photos of your cleared site. If digging costs more than the estimate, the new figure and the reason are right there on the page.", truft:"We book the machines, take away the soil and set out the survey marks.", file:"Photos are dated the day they're taken, so if a week has none, you can see that too.", pause:false },
       { n:3, stage:"PLAN & APPROVE", name:"Foundations & concrete", happens:"Footings, slabs, concrete structures", you:"You'll know the pour window and see photos afterwards. If the ground needs bigger footings, the engineer's reason and the new cost appear as their own line, before the pour whenever it can be seen coming.", truft:"We organise the pour-day crew, the concrete pump and the engineer's inspection points.", file:"Pour photos, with the concrete invoice shown against the quote.", pause:true },
-      { n:4, stage:"PLAN & APPROVE", name:"Reinforcement & formwork", happens:"Steel reinforcement and formwork", you:"You'll see photos of the steel and formwork before the pour.", truft:"We arrange the steel inspection, hire the formwork and check the concrete cover.", file:"Inspection photos are saved to your house file.", pause:false },
+      { n:4, stage:"PLAN & APPROVE", name:"Reinforcement & formwork", happens:"Steel reinforcement and formwork", you:"You'll see photos of the steel and formwork before the pour.", truft:"We arrange the steel inspection, hire the formwork and check the concrete cover.", file:"Inspection photos are saved to your Truft page.", pause:false },
       { n:5, stage:"STRUCTURE", name:"Structural works", happens:"Frames and load-bearing elements", you:"You'll see photos of your frame going up, which is always an exciting day. If the design shifts, the change is written up for you as a structural variation (a signed change to your contract).", truft:"We run the framers' programme and book the engineer's inspections.", file:"Frame photos are added, and any design change that costs extra waits for your OK.", pause:true },
       { n:6, stage:"STRUCTURE", name:"Masonry", happens:"Brickwork and blockwork walls", you:"You'll confirm your brick or block sample.", truft:"We plan the bricklayers' days, the scaffolding and the mortar notes.", file:"Your chosen sample and progress photos.", pause:false },
       { n:7, stage:"STRUCTURE", name:"Metalwork", happens:"Structural and architectural metalwork", you:"You'll choose the balustrade or steel finish wherever it can be seen.", truft:"We manage the fabricator's lead times and the order things are installed in.", file:"Your finish choice, and any upgrade shown against the quote.", pause:false },
-      { n:8, stage:"STRUCTURE", name:"Roofing & roof plumbing", happens:"Roof structure, roofing, gutters, downpipes", you:"You'll know the dry-in date (when the roof is on and the inside stays dry), and choose the roof profile and colour.", truft:"We coordinate the roofing crew and the plumbing that goes through the roof.", file:"Dry-in is on the programme, and your colour is on the house file.", pause:false },
+      { n:8, stage:"STRUCTURE", name:"Roofing & roof plumbing", happens:"Roof structure, roofing, gutters, downpipes", you:"You'll know the dry-in date (when the roof is on and the inside stays dry), and choose the roof profile and colour.", truft:"We coordinate the roofing crew and the plumbing that goes through the roof.", file:"Dry-in is on the programme, and your colour is on your Truft page.", pause:false },
       { n:9, stage:"STRUCTURE", name:"External windows & doors", happens:"Aluminium windows and doors", you:"You'll see the full window and door schedule, and sign off the finish before the order is placed.", truft:"We place the supplier order, arrange delivery and install everything once the house is dry inside.", file:"Your signed selection is saved before ordering. If a lead time stretches out, you'll hear the same day we do, along with what it changes.", pause:true },
       { n:10, stage:"ENCLOSE & INTERNALS", name:"Doors & door hardware", happens:"Internal and external doors, hardware", you:"You'll choose your door style and handles.", truft:"We plan the door hanging, the locksmith and any small fixes.", file:"Your selections, plus photos of any small fixes.", pause:false },
       { n:11, stage:"ENCLOSE & INTERNALS", name:"Carpentry", happens:"Frames, trusses, internal framing", you:"You'll confirm where the joinery meets the walls, and any niches and bulkheads.", truft:"We run the carpenters' programme and the set-out.", file:"The programme and set-out photos.", pause:false },
       { n:12, stage:"ENCLOSE & INTERNALS", name:"Plasterboard", happens:"Internal walls and ceilings", you:"You'll confirm the level of finish and your ceiling heights.", truft:"We schedule hanging and finishing the plaster, and choose the right board for wet areas.", file:"Progress photos of your home.", pause:false },
       { n:13, stage:"ENCLOSE & INTERNALS", name:"Hydraulic services", happens:"Water, drainage, gas", you:"You'll confirm where your taps, toilets and other fixtures go. Any cost to move them waits for you.", truft:"We arrange the plumber's rough-in (pipes in place before the walls are closed) and the pressure tests.", file:"Rough-in photos. Moving a fixture is only paid for once you've signed it as an extra.", pause:true },
-      { n:14, stage:"ENCLOSE & INTERNALS", name:"Electrical services", happens:"Wiring, lighting, power, data", you:"You'll go through the power point plan, switch finishes and any smart-home upgrades.", truft:"We handle the first and second fix of the wiring, and connect the power.", file:"Your point plan is on the house file, and upgrades wait for your sign-off.", pause:true },
+      { n:14, stage:"ENCLOSE & INTERNALS", name:"Electrical services", happens:"Wiring, lighting, power, data", you:"You'll go through the power point plan, switch finishes and any smart-home upgrades.", truft:"We handle the first and second fix of the wiring, and connect the power.", file:"Your point plan is on your Truft page, and upgrades wait for your sign-off.", pause:true },
       { n:15, stage:"ENCLOSE & INTERNALS", name:"Mechanical services", happens:"Heating, cooling, ventilation", you:"You'll choose your air-conditioning zones, where the vents go and where the outdoor unit sits.", truft:"We install the system and test that it's all working properly.", file:"Your system choice and installation photos.", pause:false },
       { n:16, stage:"ENCLOSE & INTERNALS", name:"Waterproofing", happens:"Wet-area waterproofing", you:"You'll see the scope and the product class. On the sample, it's booked for Thursday at 10:00, not just sometime next week.", truft:"We book the waterproofer, reschedule if the weather turns, and take photos of the flood test.", file:"Thursday at 10:00 is on your timeline.", pause:false },
       { n:17, stage:"ENCLOSE & INTERNALS", name:"Tiling", happens:"Wall and floor tiles", you:"You'll choose your tiles, the layout and the grout colour.", truft:"We arrange the tile delivery, make sure floors slope gently to the drains, and let the waterproofing cure first.", file:"Your selection, with tiling scheduled once the waterproofing has cured.", pause:false },
       { n:18, stage:"ENCLOSE & INTERNALS", name:"Floor finishes", happens:"Timber, vinyl, carpet", you:"You'll choose your timber, stone or carpet.", truft:"We let the materials settle into the house, plan the installation and protect the floors.", file:"Your selection and installation photos.", pause:false },
-      { n:19, stage:"FITOUT & STYLE", name:"Sanitary fixtures & tapware", happens:"Toilets, basins, sinks, taps", you:"Variation 12 (a signed change to your contract) is the brass tapware, signed on 4 September. It was quoted at $2,180 and came to $2,640 because the finish changed. The island stone upgrade at $4,200 isn't signed, so it stays paused.", truft:"We link the tapware cost to variation 12, and keep any unsigned spending paused.", file:"The signed variation is in the books. The unsigned stone upgrade hasn't been spent.", pause:true },
+      { n:19, stage:"FITOUT & STYLE", name:"Sanitary fixtures & tapware", happens:"Toilets, basins, sinks, taps", you:"Variation 12 (a signed change to your contract) is the brass tapware, signed on 4 September. It came in a little above its quote because you chose a different finish, and you saw the new price and the reason before you signed. The island stone upgrade isn't signed, so it stays paused.", truft:"We link the tapware cost to variation 12, and keep any unsigned spending paused.", file:"The signed variation is in the books. The unsigned stone upgrade hasn't been spent.", pause:true },
       { n:20, stage:"FITOUT & STYLE", name:"Bathroom accessories", happens:"Towel rails, shower screens", you:"Your accessories will match the tapware finish we've already noted for you.", truft:"We install them once the tiles have cured.", file:"Your finish is remembered from step 19, so everything matches.", pause:false },
-      { n:21, stage:"FITOUT & STYLE", name:"Electrical appliances", happens:"Oven, cooktop, rangehood, dishwasher", you:"You'll see your appliance schedule, and any upgrades wait for you.", truft:"We plan the delivery times and the joinery cut-outs.", file:"Your schedule is on the house file, and upgrades pause until you sign.", pause:true },
+      { n:21, stage:"FITOUT & STYLE", name:"Electrical appliances", happens:"Oven, cooktop, rangehood, dishwasher", you:"You'll see your appliance schedule, and any upgrades wait for you.", truft:"We plan the delivery times and the joinery cut-outs.", file:"Your schedule is on your Truft page, and upgrades pause until you sign.", pause:true },
       { n:22, stage:"FITOUT & STYLE", name:"Joinery", happens:"Kitchen, bathroom, laundry, storage", you:"You'll choose cabinet finishes, handles and the island stone, and approve them before the factory starts making them.", truft:"We prepare the shop drawings, book the factory slot and install everything.", file:"Your choices are confirmed before the factory begins.", pause:true },
-      { n:23, stage:"FITOUT & STYLE", name:"Internal painting", happens:"Walls, ceilings, doors", you:"You'll confirm your colour schedule.", truft:"We prepare, paint and touch up before handover.", file:"Your colour schedule is on the house file.", pause:false },
-      { n:24, stage:"FITOUT & STYLE", name:"Cladding & external rendering", happens:"External cladding and render", you:"You'll approve the external finish sample and how the front of your home will look from the street.", truft:"We look after the scaffolding, the render curing and the flashings.", file:"Your sample and the street view are on the house file.", pause:false },
+      { n:23, stage:"FITOUT & STYLE", name:"Internal painting", happens:"Walls, ceilings, doors", you:"You'll confirm your colour schedule.", truft:"We prepare, paint and touch up before handover.", file:"Your colour schedule is on your Truft page.", pause:false },
+      { n:24, stage:"FITOUT & STYLE", name:"Cladding & external rendering", happens:"External cladding and render", you:"You'll approve the external finish sample and how the front of your home will look from the street.", truft:"We look after the scaffolding, the render curing and the flashings.", file:"Your sample and the street view are on your Truft page.", pause:false },
       { n:25, stage:"COMPLETE", name:"Landscaping", happens:"Gardens, lawns, planting", you:"You'll choose your garden and outdoor paving package.", truft:"We start the landscaping once the outside works are finished.", file:"Your package, with photos as the planting goes in.", pause:false },
       { n:26, stage:"COMPLETE", name:"External works", happens:"Driveways, pathways, fencing, retaining", you:"You'll settle the driveway, fencing and drainage. Any extras wait for your signature.", truft:"We finish the civil works and meet council's conditions.", file:"Your design is confirmed, and extras pause until they're signed.", pause:false },
       { n:27, stage:"COMPLETE", name:"Builder's margin", happens:"Project management, overheads, profit", you:"You'll see our agreed margin as its own line in your costs, rather than tucked into a trade's price.", truft:"We record the margin exactly as the contract sets out.", file:"The margin line is the agreed percentage, and you can always see it.", pause:false },
@@ -2022,8 +1748,6 @@
     ];
     const PUBLIC = new Set(["home","care","process","contact","house"]);
     const SCENES = [...PUBLIC];
-    let stageFilter = "ALL";
-    let selectedN = 19;
     let signedIn = false;
     let lb = { key:"henson", i:0 };
 
@@ -2049,7 +1773,6 @@
       closeAsk();
       document.getElementById("waSheet").hidden = true;
       document.body.classList.remove("nav-open");
-      if (opts && opts.publicOnly && id === "office") id = "home";
       document.querySelectorAll(".scene").forEach(s => s.classList.toggle("is-on", s.id === id));
       document.querySelectorAll(".public-nav button").forEach(b => {
         b.setAttribute("aria-current", b.dataset.go === id ? "page" : null);
@@ -2057,38 +1780,12 @@
       window.scrollTo(0, 0);
       history.replaceState(null, "", "#" + id);
       document.getElementById("askCtxLabel").textContent = signedIn
-        ? "Henson Way · just your job"
+        ? "Henson Way · your home"
         : "Questions about your build";
       if (opts && opts.focus) {
         const band = document.getElementById(opts.focus);
         if (band) band.scrollIntoView({ block: "start" });
       }
-    }
-    function renderRail() {
-      document.getElementById("stageRail").innerHTML = STAGES.map(s =>
-        `<button type="button" data-stage="${s.id}" aria-pressed="${stageFilter===s.id}"><b>${s.label}</b><span>${s.blurb}</span></button>`
-      ).join("");
-    }
-    function renderSteps() {
-      const rows = STEPS.filter(s => stageFilter === "ALL" || s.stage === stageFilter);
-      document.getElementById("stepGrid").innerHTML = rows.map(s =>
-        `<button type="button" class="step-cell ${s.n===selectedN?"is-on":""} ${s.pause?"wait":""}" data-n="${s.n}"><span class="num">${String(s.n).padStart(2,"0")}</span><span class="nm">${s.name}</span></button>`
-      ).join("");
-    }
-    function renderDrill() {
-      const s = STEPS.find(x => x.n === selectedN) || STEPS[18];
-      const photo = STAGE_PHOTO[s.stage];
-      document.getElementById("drill").innerHTML = `
-        <div class="ph" style="background-image:url('${photo}')"></div>
-        <article><h3>What you'll see</h3><p>${s.you}</p></article>
-        <article><h3>What Truft does</h3><p>${s.truft}</p></article>
-        <article><h3>On your project file</h3><p>${s.file}</p></article>`;
-    }
-    function selectStep(n, filter) {
-      selectedN = n;
-      const s = STEPS.find(x => x.n === n);
-      if (filter && s) stageFilter = s.stage;
-      renderRail(); renderSteps(); renderDrill();
     }
     function showLbFrame() {
       const list = GALLERIES[lb.key]; if (!list) return;
@@ -2132,49 +1829,46 @@
       document.getElementById("housePitch").hidden = on;
       const foot = document.getElementById("houseFoot"); if (foot) foot.hidden = on;
       document.getElementById("houseWho").textContent = on
-        ? "Week 38 · lock-up done · your home · just your job"
-        : "Week 38 · lock-up done · a sample home";
-      document.getElementById("houseState").textContent = on ? "Signed in" : "You're welcome to look around. Sign in to make changes.";
+        ? "Week 38 · lock-up done, so the house is closed in · your home"
+        : "Week 38 · lock-up done, so the house is closed in · a sample home";
+      document.getElementById("houseState").textContent = on ? "Signed in" : "Have a look around, and sign in when you'd like to try things.";
       document.getElementById("askChip").textContent = on
-        ? "Just Henson Way. Your WhatsApp messages and emails come here too."
-        : "Ask how a change, a payment or a defect is handled.";
-      document.getElementById("askCtxLabel").textContent = on ? "Henson Way · just your job" : "Questions about your build";
+        ? "This is just for your home. Messages you send us on WhatsApp or email show up here too."
+        : "Ask how we handle a change, a payment or something that needs fixing.";
+      document.getElementById("askCtxLabel").textContent = on ? "Henson Way · your home" : "Questions about your build";
       const dock = document.getElementById("dockAskChat");
       if (dock && dock.querySelector(".msg") && !dock.querySelector(".msg.me")) {
         dock.querySelector(".msg").innerHTML = on
-          ? "<span class=\"who\">Truft</span>You're signed in to Henson Way, so I can talk about your job: spending, the site, anything that's paused, and the next booking. Your WhatsApp messages and emails land in the same portal too."
-          : "<span class=\"who\">Truft</span>Hello, I'm Ask Truft. Ask me how a build usually goes, and how it goes with us: the land, the price, a finish, a change, a stage payment, or something that isn't right. I'm not a person in the office, so I won't guess a price or a date. If you'd like to see a paused cost, the sample home has one.";
+          ? "<span class=\"who\">Truft</span>You're signed in to Henson Way, so I can help with your home: your choices, the site, anything waiting on you, and the next booking. This is just for your home. Messages you send us on WhatsApp or email show up here too."
+          : "<span class=\"who\">Truft</span>Hi! I'm Ask Truft, a quick-answer helper, not a person in our office. Ask how a build goes with us: your land, a finish, a change, a stage payment, or something that isn't right. For anything personal, the team is a call away on 02 7235 0833.";
       }
       document.getElementById("pauseBanner").innerHTML = on
-        ? "<strong>Paused before any money moves.</strong> The island stone upgrade is quoted at $4,200. You haven't signed it yet, so nothing has been spent."
-        : "<strong>This one is waiting for a signature.</strong> The island stone upgrade is quoted at $4,200. It hasn't been signed yet, so nothing has been spent.";
+        ? "<strong>Waiting for you.</strong> The island stone upgrade is priced and ready. You haven't signed it yet, so none of that money has been spent."
+        : "<strong>Waiting for you.</strong> The island stone upgrade is priced and ready. You haven't signed it yet, so none of that money has been spent.";
       window.scrollTo(0,0);
       if (on) { setHouseTab("spend"); toast("Welcome home. You're signed in to Henson Way."); }
     }
 
     const REPLIES = {
-      taps: { house: "That's variation 12 (a signed change to your contract) for the brass tapware, signed on 4 September. It was quoted at $2,180 and came to $2,640 because the finish changed on site.", visitor: "On the sample home, the brass taps were quoted at $2,180 and came to $2,640 after a change of finish was signed. We keep both numbers so you can see the difference. It isn't a price for your own home, of course." },
-      rate: { house: "I'd rather not guess a rate for you. The open book (where you can see every real cost) shows the actual costs by trade, rather than one blended price per square metre.", visitor: "I'd rather not guess a price per square metre, because a number given without knowing your block is usually how the wrong price starts." },
+      taps: { house: "That's variation 12 (a signed change to your contract) for the brass tapware, signed on 4 September. It came in a little above its quote because you chose a different finish, and you saw the new price and the reason before you signed.", visitor: "On the sample home, the brass taps came in a little above their quote because you chose a different finish, and you saw the new price and the reason before you signed. You see the quote and the final cost side by side, with the reason, before anything is spent." },
       visit: { house: "We'd love to see you. We can book a time for you at 303/4 Columbia Ct, Norwest, or you can call us on 02 7235 0833.", visitor: "Our office is at 303/4 Columbia Ct, Norwest, and you can call us on 02 7235 0833. I can't price a home from this chat, so the team is the best people to talk it through with." },
-      timeline: { house: "Your sample home is in week 38, and lock-up (when the doors and windows are on and it can be locked) is done. Waterproofing is booked for Thursday at 10:00, and the island stone upgrade at $4,200 is waiting for your signature. I'll only ever talk about your job here.", visitor: "The home page walks you through the build, from the land all the way to handing over your keys. The sample home is one real job at lock-up, so you can see what a normal week looks like, and what a paused cost looks like." },
-      costplus: { house: "Yes, everything is open book. Any extra spending waits for your signature, so the island stone upgrade at $4,200 stays paused until you sign it. Our margin is shown as its own line.", visitor: "Cost-plus means you pay the real cost of the work plus our agreed margin, so the price can move, and when it does, you see it. Our margin is always its own line. Anything you ask to change isn't spent until you and we have both signed a priced variation (a written change to the contract). If a cost comes in above its quote or estimate, it shows up as its own line, with the invoice and the reason. You can open the sample to see a paused line." },
+      timeline: { house: "Your sample home is in week 38, and lock-up (when the doors and windows are on and it can be locked) is done. Waterproofing is booked for Thursday at 10:00, and the island stone upgrade is waiting for your signature. I'll only ever talk about your home here.", visitor: "The home page walks you through the build, from the land all the way to handing over your keys. The sample home is one real job at lock-up, so you can see what a normal week looks like, and what a paused cost looks like." },
+      costplus: { house: "Yes, everything is open book. Any extra spending waits for your signature, so the island stone upgrade stays paused until you sign it. Our margin is shown as its own line.", visitor: "Cost-plus means you pay the real cost of the work plus our agreed margin, so the price can move, and when it does, you see it. Our margin is always its own line. Anything you ask to change isn't spent until you and we have both signed a priced variation (a written change to the contract). If a cost comes in above its quote or estimate, it shows up as its own line, with the invoice and the reason. You can open the sample to see a paused line." },
       water: { house: "Waterproofing is booked for Thursday at 10:00. Tiling starts once it has cured, and the photos go up after the flood test, dated the day they're taken.", visitor: "On a live job, every booking has a real day and time. On the sample, waterproofing is booked for Thursday at 10:00, rather than just ‘sometime next week’." },
       drawing: { house: "Sheet A-12, the island overhang, is waiting on the engineer. Nothing is spent on it until we have their answer.", visitor: "If you have a question about a drawing, it's kept on your job, along with what it's waiting on. I won't guess what the engineer will say, so you'll always get their real answer." },
-      stone: { house: "The island stone upgrade is quoted at $4,200. You haven't signed it yet, so nothing has been spent.", visitor: "On the sample, the island stone upgrade at $4,200 hasn't been signed, so nothing has been spent. A quick message is never treated as a yes; the change only goes ahead once it's signed." },
-      photo: { house: "I can send a request for an extra photo for you. I won't pretend it already exists, and every photo carries the date it was actually taken.", visitor: "Photos are dated the day they're taken, so if a day has no photo, you can see that too. I'll never make one up." },
+      stone: { house: "The island stone upgrade is priced and ready. You haven't signed it yet, so nothing has been spent.", visitor: "On the sample, the island stone upgrade hasn't been signed, so nothing has been spent. A quick message is never treated as a yes; the change only goes ahead once it's signed." },
+      photo: { house: "I can send a request for an extra photo for you. Every photo carries the date it was actually taken.", visitor: "Photos are dated the day they're taken, so if a day has no photo, you can see that too." },
       change: { house: "Any change is written up, priced and signed before the work changes. The stone upgrade you haven't signed is still paused.", visitor: "In NSW, a change has to be written up, priced and signed by both you and the builder before that work goes ahead, so a chat on site is never taken as a yes. You'll also see how many days it adds before you sign, not after." },
       money: { house: "On a live job, each stage claim (a payment due at a stage of the build) comes with the photos and the certificate. This sample isn't asking you for any money.", visitor: "Before a stage payment is due, you should see the amount, what ‘done’ means for that stage, and what your lender has said they need. We won't guess on your bank's behalf, and the valuer (the person your lender sends to check the work) keeps their own diary." },
       quality: { house: "If something isn't right, it's noted with a photo while it can still be reached and fixed. That way, handover is just for whatever's left.", visitor: "Paint touch-ups that can wait are marked as waiting, and anything that's about to be covered up is marked to be fixed now. Your warranties still apply: six years for a major defect and two years for everything else, from completion." },
       approval: { house: "I won't guess a council date. On a live job, you'll see what was lodged, who has it, and what they've asked for.", visitor: "Some knockdown-rebuilds in The Hills can go through complying development, an approval path for homes that meet set rules, issued by a certifier (an accredited building inspector). Others need council approval. We'll tell you which once your design has been checked against your block. Council works to its own timeline, which we can't shorten." },
       finish: { house: "Each finish shows a photo, the cost against the allowance (the amount set aside for it in your contract), and any effect on the timeline. Nothing is ordered until you've said yes in writing.", visitor: "Each finish comes with a photo, how much it sits above or below the allowance (the amount set aside for it in your contract), and what happens to the timeline if you wait. Windows often need more time than stone. Telling us you love something doesn't lock you in; nothing is ordered until you've seen the price and said yes." },
       land: { house: "This sample is already a home being built. The land notes are for a block that hasn't become a job yet.", visitor: "We walk your block and leave you a one-page summary: what we could see, what a surveyor still needs to confirm, and what council usually asks for. It isn't an approval or a price, just a clear starting point." },
-      step0: { house: "You're already looking at the sample job, so feel free to ask about spending, a change or the next booking.", visitor: "There's no form to fill in here. The land section explains what you get from a walk of your block, and if you'd like us to do that on your street, just call 02 7235 0833. I won't guess a price." },
-      chase: { house: "You should never have to ask for the same thing twice. Everything stays on your job.", visitor: "When you call, a real person helps you with your build, with no sales pressure. This chat won't keep asking for your name either." },
-      default: { house: "I only know about this sample job, so ask me about spending, the site, a change or the next booking. If I'm not sure of a date, I'll say so rather than guess.", visitor: "Ask me how a change, a stage payment, a finish or a defect is handled. I'm a set of prepared answers rather than a person in the office, so I won't guess a price or a date. For your own block, please call 02 7235 0833." }
+      chase: { house: "You should never have to ask for the same thing twice. Everything stays on your job.", visitor: "When you call, a real person helps you with your build, with no sales pressure." },
+      default: { house: "I only know about this sample job, so ask me about spending, the site, a change or the next booking. If I'm not sure of a date, I'll say so rather than guess.", visitor: "Ask me how a change, a stage payment, a finish or a defect is handled. I'm a quick-answer helper, not a person in our office, so I won't guess a price or a date. For your own block, please call 02 7235 0833." }
     };
     function classify(q) {
       const t = (q || "").toLowerCase();
-      if (/step 0|step0|amazon|gift/.test(t)) return "step0";
       if (/chase|sales call|hounded|spam|leave me/.test(t)) return "chase";
       if (/warranty|defect|handover|not right|quality|nag/.test(t)) return "quality";
       if (/bank|valuer|progress|claim|my money|contribution/.test(t)) return "money";
@@ -2182,9 +1876,8 @@
       if (/council|certifier|approval|complying|cdc|lodged/.test(t)) return "approval";
       if (/tile|selection|showroom|finish|colour|color|allowance|window/.test(t)) return "finish";
       if (/slope|easement|the block|the land|survey|tree/.test(t)) return "land";
-      if (/m2|m²|metre|meter|rate|per square/.test(t)) return "rate";
-      if (/tap|brass|2,180|2180|2,640|2640/.test(t)) return "taps";
-      if (/stone|4,200|4200|repair|paused|pause/.test(t)) return "stone";
+      if (/tap|brass/.test(t)) return "taps";
+      if (/stone|repair|paused|pause/.test(t)) return "stone";
       if (/drawing|sheet|overhang|a-12|engineer/.test(t)) return "drawing";
       if (/cost|open book|margin|invoice|spend|dollar/.test(t)) return "costplus";
       if (/photo|picture|sunday|drive/.test(t)) return "photo";
@@ -2205,40 +1898,20 @@
       box.appendChild(d); box.scrollTop = box.scrollHeight;
     }
     function ask(kind, box) {
-      const qmap = { taps:"Why did the brass taps come in over the quote?", rate:"Rough $/m² for a finish like this?", visit:"Can we meet Friday?", costplus:"Is cost-plus actually open book?", water:"When is waterproofing?", drawing:"What’s happening with the island overhang?", stone:"What’s the $4,200 pause?", photo:"Can we have an extra photo of the island?", timeline:"Can you show this job from the start?" };
+      const qmap = { taps:"Why did the brass taps come in over the quote?", visit:"Can we meet Friday?", costplus:"Is cost-plus actually open book?", water:"When is waterproofing?", drawing:"What’s happening with the island overhang?", stone:"Why is the stone upgrade waiting?", photo:"Can we have an extra photo of the island?", timeline:"Can you show this job from the start?" };
       addMsg(box, "You", qmap[kind] || "Can you help?", true);
       addMsg(box, "Truft", replyFor(kind), false);
-      if (kind === "visit") { const cal = document.getElementById("calStrip"); if (cal) cal.hidden = false; }
-    }
-    function logUsage(when, title, detail) {
-      const cal = document.getElementById("usageCal");
-      if (!cal) return;
-      cal.insertAdjacentHTML("afterbegin", `<div class="when">${when}</div><div class="what"><strong>${title}</strong>${detail}</div>`);
     }
     function setStone(state) {
       const banner = document.getElementById("pauseBanner");
       const cell = document.getElementById("stoneState");
       if (state === "approved") {
         banner.hidden = true; cell.textContent = "Signed variation · approved by you";
-        toast("Signed, so the $4,200 can now be spent.");
+        toast("Signed, so the stone upgrade can now go ahead.");
       } else {
         banner.hidden = false; cell.textContent = "Waiting · not signed yet";
         toast("Paused, so nothing will be spent.");
       }
-    }
-    function fireHil(verb) {
-      const note = document.getElementById("hilNote");
-      const map = {
-        allow: "Allowed · the $4,200 can now go through in the books · recorded.",
-        reject: "Declined · nothing spent · recorded.",
-        steer: (document.getElementById("hilSteer").value.trim() || "Ask the family on WhatsApp in the evening") + " · for this one only.",
-        "always-allow": "Always allow · a standing instruction. Please take care: spending like this won't ask next time.",
-        "always-reject": "Always decline · unsigned spending stays paused until a named person allows it."
-      };
-      note.textContent = map[verb] || "";
-      if (verb === "allow") setStone("approved");
-      if (verb === "reject" || verb === "always-reject") setStone("hold");
-      logUsage("Just now", "Pause · $4,200", verb.replace("-", " "));
     }
     function openWa() { document.getElementById("waSheet").hidden = false; }
     function closeAsk() {
@@ -2261,7 +1934,7 @@
       const go = e.target.closest("[data-go]");
       if (go) {
         e.preventDefault();
-        showScene(go.dataset.go, { focus: go.dataset.focus, publicOnly: go.dataset.public === "1" });
+        showScene(go.dataset.go, { focus: go.dataset.focus });
         if (go.dataset.signin === "1") {
           showSignin();
         }
@@ -2278,37 +1951,13 @@
       const tip = e.target.closest("[data-tip]");
       if (tip) { e.preventDefault(); e.stopPropagation(); openTip(tip.dataset.tip); return; }
       const pr = e.target.closest("[data-principle]");
-      if (pr) { document.querySelectorAll("[data-principle]").forEach(p => p.classList.toggle("is-open", p === pr)); return; }
-      const st = e.target.closest("#stageRail [data-stage]");
-      if (st) {
-        stageFilter = stageFilter === st.dataset.stage ? "ALL" : st.dataset.stage;
-        const first = STEPS.find(s => s.stage === stageFilter);
-        if (first) selectedN = first.n;
-        renderRail(); renderSteps(); renderDrill(); return;
-      }
-      const cell = e.target.closest(".step-cell[data-n]");
-      if (cell) { selectStep(Number(cell.dataset.n), false); return; }
+      if (pr) { const open = !pr.classList.contains("is-open"); pr.classList.toggle("is-open", open); pr.setAttribute("aria-expanded", open); return; }
       const htab = e.target.closest("[data-htab]");
       if (htab) { setHouseTab(htab.dataset.htab); return; }
-      const shop = e.target.closest("[data-shop]");
-      if (shop) {
-        document.querySelectorAll(".shop-tabs button").forEach(b => b.setAttribute("aria-selected", b === shop ? "true" : "false"));
-        document.querySelectorAll(".shop-pane").forEach(p => p.classList.toggle("is-on", p.id === "shop-" + shop.dataset.shop));
-        return;
-      }
       const askBtn = e.target.closest("[data-ask]");
       if (askBtn) { ask(askBtn.dataset.ask, document.getElementById("houseChat")); return; }
       const sso = e.target.closest("[data-sso]");
       if (sso && !e.target.closest(".i")) { setOwnerSignedIn(true); return; }
-      const job = e.target.closest("[data-job]");
-      if (job) {
-        const h = job.dataset.job === "henson";
-        document.getElementById("jobH").setAttribute("aria-pressed", h ? "true" : "false");
-        document.getElementById("jobM").setAttribute("aria-pressed", h ? "false" : "true");
-        document.getElementById("jobNote").textContent = h
-          ? "Henson Way · this job only. The pause rules and voice samples carry across, and each family only ever sees their own job."
-          : "Mustang Ave · the same pause rules and the same voice, for a different job. A rumour marked false on Henson Way won't resurface here.";
-      }
     });
 
     document.getElementById("drawerClose").addEventListener("click", closeTip);
@@ -2319,17 +1968,12 @@
     });
     document.getElementById("askClose").addEventListener("click", closeAsk);
     document.getElementById("contactAsk").addEventListener("click", openAsk);
-    document.getElementById("waPreviewBtn").addEventListener("click", () => toast("This will open a chat with us on WhatsApp."));
     document.getElementById("topWa").addEventListener("click", openWa);
     document.getElementById("waSheetClose").addEventListener("click", () => document.getElementById("waSheet").hidden = true);
     document.getElementById("waSheet").addEventListener("click", (e) => { if (e.target.id === "waSheet") e.target.hidden = true; });
     document.getElementById("lbClose").addEventListener("click", () => document.getElementById("lb").hidden = true);
     document.getElementById("lbPrev").addEventListener("click", () => shiftLb(-1));
     document.getElementById("lbNext").addEventListener("click", () => shiftLb(1));
-    document.getElementById("seeOnHouse").addEventListener("click", () => {
-      showScene("house");
-      setHouseTab(selectedN === 19 || selectedN === 27 || selectedN === 28 ? "spend" : "week");
-    });
     function showSignin() {
       document.getElementById("ownerGate").hidden = false;
       document.getElementById("housePreview").hidden = true;
@@ -2348,7 +1992,7 @@
     document.getElementById("ownerPass").addEventListener("keydown", (e) => { if (e.key === "Enter") setOwnerSignedIn(true); });
     document.getElementById("approveStone").addEventListener("click", () => setStone("approved"));
     document.getElementById("holdStone").addEventListener("click", () => setStone("hold"));
-    document.getElementById("waAllow").addEventListener("click", () => { toast("Thanks for your message. We'll treat it as a question, and the $4,200 is only spent once the variation is signed on your house page."); });
+    document.getElementById("waAllow").addEventListener("click", () => { toast("Thanks for your message. We'll treat it as a question, and nothing is spent until the variation is signed on your Truft page."); });
     document.getElementById("houseSend").addEventListener("click", () => {
       const q = document.getElementById("houseQ").value.trim(); if (!q) return;
       document.getElementById("houseQ").value = "";
@@ -2370,98 +2014,9 @@
       const li = document.createElement("li");
       li.innerHTML = `${note.replace(/</g,"")}<small>Just now · on Truft’s list for today</small>`;
       document.getElementById("ownerReqs").insertBefore(li, document.getElementById("ownerReqs").firstChild);
-      document.getElementById("reqAck").textContent = "Sent to Henson Way.";
+      document.getElementById("reqAck").textContent = "Sent to the Truft office.";
       document.getElementById("reqNote").value = "";
-      logUsage("Just now", "Request · this job", "Request from the family · waiting on Truft");
       toast("Thanks, your request has been sent.");
-    });
-    document.getElementById("postUpdate").addEventListener("click", () => {
-      const text = document.getElementById("adminPost").value.trim(); if (!text) return;
-      document.getElementById("ownerNotes").insertAdjacentHTML("afterbegin", `<div class="msg"><span class="who">Truft · just now</span>${text.replace(/</g,"")}</div>`);
-      document.getElementById("postNote").textContent = "Posted to Henson Way.";
-      toast("Update posted to the family's portal.");
-    });
-    document.getElementById("adminDay").addEventListener("click", (e) => {
-      const b = e.target.closest("[data-hil]"); if (!b) return;
-      const verb = b.dataset.hil;
-      if (b.dataset.hold === "1") {
-        if (b.classList.contains("arm")) return;
-        b.classList.add("arm");
-        const t = setTimeout(() => { b.classList.remove("arm"); fireHil(verb); }, 3000);
-        const cancel = () => { clearTimeout(t); b.classList.remove("arm"); b.removeEventListener("pointerleave", cancel); };
-        b.addEventListener("pointerleave", cancel); return;
-      }
-      fireHil(verb);
-    });
-    document.getElementById("holdFri").addEventListener("click", () => {
-      document.getElementById("calStrip").hidden = false;
-      logUsage("Just now", "Friday 12:00 booked", "Norwest · saved to the job");
-      toast("Friday at 12:00 is booked in.");
-    });
-    document.getElementById("triage").addEventListener("click", () => {
-      document.getElementById("triageNote").textContent = "Assigned to Allied Waterproofing from the site file. We haven't guessed a completion date.";
-    });
-    document.getElementById("explainVar").addEventListener("click", () => {
-      document.getElementById("letterDraft").textContent = "Your kitchen is coming along and on track. Variation 12, the brass tapware, was signed on 4 September. It was quoted at $2,180 and came to $2,640, because the finish changed on site after the quote was set.";
-      const sc = document.getElementById("letterScore");
-      sc.className = "score send";
-      sc.innerHTML = `<div class="stat">Ready to send</div><p style="margin:6px 0 0;font-size:13px">Warm, clear, and every date matches the job.</p>`;
-      logUsage("Just now", "Explain variation 12", "note to the family · ready to send");
-    });
-    document.getElementById("invitePortal").addEventListener("click", () => {
-      document.getElementById("inviteNote").textContent = "Invite written. The Mustang Ave family won't see anything from Henson Way.";
-      toast("Portal invite · Mustang Ave only.");
-    });
-    document.getElementById("igSend").addEventListener("click", () => {
-      document.getElementById("igNote").hidden = false;
-      document.getElementById("igSend").disabled = true;
-      logUsage("Just now", "Instagram reply", "Friday 12:00 offered privately");
-      toast("Public reply sent.");
-    });
-    document.getElementById("fbReply").addEventListener("click", () => {
-      document.getElementById("fbNote").textContent = "Draft: Yes, we're fully open book. The brass tapware on Henson Way is a clear example: it was quoted at $2,180, came to $2,640, and was signed as variation 12. Ready to send.";
-    });
-    document.getElementById("cmsFile").addEventListener("change", (e) => {
-      const f = e.target.files && e.target.files[0]; if (!f) return;
-      const url = URL.createObjectURL(f);
-      document.getElementById("cmsGrid").insertAdjacentHTML("afterbegin", `<figure><img src="${url}" alt="" /><figcaption>Just added · homepage</figcaption></figure>`);
-      toast("Photo queued for the homepage. (This sample isn't connected yet.)");
-    });
-    document.getElementById("testiAdd").addEventListener("click", () => {
-      const t = document.getElementById("testiIn").value.trim(); if (!t) return;
-      document.getElementById("testiList").insertAdjacentHTML("afterbegin", `<li>“${t.replace(/</g,"")}”<small>Just added · would appear on Home</small></li>`);
-      document.getElementById("testiIn").value = "";
-      toast("Homeowner line added.");
-    });
-    (function prefillSource() {
-      const sel = document.getElementById("leadSource");
-      if (!sel) return;
-      const p = new URLSearchParams(location.search);
-      const u = (p.get("utm_source") || p.get("src") || "").toLowerCase();
-      const map = { facebook:"facebook", fb:"facebook", meta:"facebook", instagram:"instagram", ig:"instagram", google:"google", chatgpt:"ai", claude:"ai", billboard:"sign", qr:"sign", sign:"sign", whatsapp:"whatsapp" };
-      if (map[u]) sel.value = map[u];
-    })();
-    const leadForm = document.getElementById("leadForm");
-    if (leadForm) leadForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = document.getElementById("leadName").value.trim() || "there";
-      const email = document.getElementById("leadEmail").value.trim();
-      const mobile = document.getElementById("leadMobile").value.trim();
-      if (!email && !mobile) { toast("Please leave an email or a mobile number, or just message us on WhatsApp."); return; }
-      const intent = document.getElementById("leadIntent");
-      const source = document.getElementById("leadSource");
-      const suburb = (document.getElementById("leadSuburb").value || "").trim();
-      const reach = Array.from(document.querySelectorAll("#leadForm input[name=reach]:checked")).map(i => i.value);
-      const door = reach.includes("whatsapp") ? "WhatsApp" : (reach.includes("call") ? "Call" : (email ? "Email" : "Site form"));
-      const found = source.options[source.selectedIndex] ? source.options[source.selectedIndex].text : "";
-      const who = name.replace(/</g,"") + (mobile ? " · " + mobile.replace(/</g,"") : "") + (suburb ? " · " + suburb.replace(/</g,"") : "");
-      const tb = document.querySelector("#leadTable tbody");
-      const tr = document.createElement("tr"); tr.className = "is-new";
-      tr.innerHTML = `<td>Just now</td><td>${door}${found ? " · " + found.replace(/</g,"") : ""}</td><td>${who}</td><td>${intent.options[intent.selectedIndex].text}</td><td>Step 0 offered</td>`;
-      tb.insertBefore(tr, tb.firstChild);
-      logUsage("Just now", "Lead · Step 0", door + (found ? " · " + found : "") + (suburb ? " · " + suburb : ""));
-      toast("Thanks " + name.split(" ")[0] + ". We'll send Step 0 by WhatsApp or email, and a visit is completely up to you.");
-      openWa();
     });
 
     document.addEventListener("keydown", (e) => {
@@ -2475,20 +2030,35 @@
       }
     });
 
-    renderRail(); renderSteps(); renderDrill(); renderWorkStrip();
+    renderWorkStrip();
     fillTileFilms();
     cycleCine(document.getElementById("homeCineStage"), CINE_HOME, (s) => {
       const el = document.getElementById("homeCineCredit");
       if (el) el.textContent = s.credit || "";
     }, 9000);
-    cycleCine(document.getElementById("workCineStage"), CINE_WORK, (s) => {
-      const t = document.getElementById("workCineTitle");
-      const d = document.getElementById("workCineLede");
-      if (t) t.textContent = s.title || "Our work";
-      if (d) d.textContent = s.lede || "";
-    }, 7500);
-    cycleCine(document.getElementById("servicesCineStage"), CINE_SERVICES, null, 8000);
     const hash = location.hash.replace("#","");
+    const STEP_COMMIT = {1: "Managed by Truft", 2: "Non-negotiable on quality", 3: "Non-negotiable on quality", 4: "Non-negotiable on quality", 5: "Non-negotiable on quality", 6: "Non-negotiable on quality", 7: "Managed by Truft", 8: "Non-negotiable on quality", 27: "Transparent and explained", 28: "Shown to you as it's used"};
+    const STEP_CHOICE = {1: "We keep you informed", 2: "Done right, every time", 3: "Done right, every time", 4: "Done right, every time", 5: "Done right, every time", 6: "Done right, every time", 7: "We'll guide you", 8: "Done right, every time", 9: "Style, colour and range", 10: "Style and finish", 11: "We'll guide you", 12: "Standard, unless you'd like a feature design", 13: "Fixtures chosen later", 14: "Outlet locations and fittings", 15: "System type and brand", 16: "Built to code", 17: "Full choice: tiles, style, layout", 18: "Full choice", 19: "Full choice: range and finish", 20: "Full choice", 21: "Full choice: brand and model", 22: "Full say on every detail", 23: "Colour selection", 24: "Style and finish", 25: "Design and style", 26: "Design and finishes", 27: "Agreed in your contract, shown on its own line", 28: "An agreed allowance in your contract"};
+    function renderProc() {
+      const el = document.getElementById("procTable"); if (!el) return;
+      el.innerHTML = STAGES.map((st, k) => {
+        const rows = STEPS.filter(x => x.stage === st.id).map(x => {
+          const cm = STEP_COMMIT[x.n] || "Managed by Truft";
+          return `<div class="proc-row" role="listitem"><button type="button" data-proc="${x.n}" aria-expanded="false">
+            <span class="n">${String(x.n).padStart(2,"0")}</span><span class="nm">${x.name}</span><span class="wh">${x.happens}</span>
+            <span class="cm ${cm.startsWith("Non")?"strong":""}">${cm}</span><span class="ch">${STEP_CHOICE[x.n]||""}</span><span class="tg" aria-hidden="true"></span></button>
+            <div class="proc-detail"><div><h4>What you'll see</h4><p>${x.you}</p></div><div><h4>What we look after</h4><p>${x.truft}</p></div><div><h4>On your Truft page</h4><p>${x.file}</p></div></div></div>`;
+        }).join("");
+        return `<section class="proc-stage"><header><b>${k+1}. ${st.label}</b><span>${st.blurb}</span></header>
+          <div class="proc-head" aria-hidden="true"><span>#</span><span>Step</span><span>What happens</span><span>Truft's commitment</span><span>Your choice</span><span></span></div>${rows}</section>`;
+      }).join("");
+    }
+    document.addEventListener("click", e => {
+      const b = e.target.closest("[data-proc]"); if (!b) return;
+      const row = b.parentElement, open = !row.classList.contains("is-open");
+      row.classList.toggle("is-open", open); b.setAttribute("aria-expanded", open);
+    });
+    renderProc();
     const LEGACY = { work:"ourwork", about:"aboutTruft", services:"aboutTruft" };
     if (LEGACY[hash]) { showScene("home"); setTimeout(() => document.getElementById(LEGACY[hash]).scrollIntoView({ block: "start" }), 300); }
     else if (SCENES.includes(hash)) showScene(hash);
