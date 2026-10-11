@@ -742,36 +742,11 @@
     .proc-intro { padding-bottom: 8px; }
     .proc-intro h1 { margin-bottom: 8px; }
     .proc-intro .lede { max-width: 36em; }
-    .proc-stage { margin-top: 26px; }
-    .proc-stage > header { display: flex; align-items: baseline; gap: 12px; padding: 10px 0; border-bottom: 2px solid var(--navy); }
-    .proc-stage > header b { font-size: 18px; }
-    .proc-stage > header span { color: var(--muted); font-size: 14px; }
-    .proc-head, .proc-row > button { display: grid; grid-template-columns: 44px 1.1fr 1.4fr 1fr 1fr 24px; gap: 14px; align-items: center; }
-    .proc-head { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 10px 12px 6px; }
-    .proc-row { border-bottom: var(--hairline) solid var(--line); }
-    .proc-row > button { width: 100%; text-align: left; background: transparent; border: 0; padding: 13px 12px; font-size: 15px; color: var(--ink); }
-    .proc-row > button:hover { background: var(--white); }
-    .proc-row .n { color: var(--muted); font-variant-numeric: tabular-nums; }
-    .proc-row .nm { font-weight: 600; }
-    .proc-row .wh, .proc-row .cm, .proc-row .ch { color: var(--ink-soft); font-size: 14px; }
-    .proc-row .cm.strong { color: var(--good); font-weight: 600; }
-    .proc-row .tg { color: var(--muted); font-size: 18px; text-align: right; }
-    .proc-row.is-open { background: var(--white); }
-    .proc-row.is-open .tg::before { content: "−"; }
-    .proc-row:not(.is-open) .tg::before { content: "+"; }
-    .proc-detail { display: none; grid-template-columns: repeat(3, 1fr); gap: 18px; padding: 4px 12px 18px 70px; }
-    .proc-row.is-open .proc-detail { display: grid; }
-    .proc-detail h4 { margin: 0 0 4px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-    .proc-detail p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-soft); }
-    @media (max-width: 820px) {
-      .proc-head { display: none; }
-      .proc-row > button { grid-template-columns: 34px 1fr 20px; row-gap: 2px; }
-      .proc-row .wh { grid-column: 2; grid-row: 2; }
-      .proc-row .cm, .proc-row .ch { display: none; }
-      .proc-row .tg { grid-column: 3; grid-row: 1; }
-      .proc-detail { grid-template-columns: 1fr; padding-left: 58px; }
-    }
     #house .p-big, #house .p-grid3 h3, #house .p-list b, #house .p-sub, #house .p-title, #house .p-tl h3 { font-family: var(--font-ui) !important; text-transform: none !important; letter-spacing: -0.01em !important; font-weight: 600 !important; }
+    .proc-poster { display: block; width: 100%; max-width: 1180px; height: auto; margin: 8px 0 0; border: var(--hairline) solid var(--line); }
+    /* Use the full width: no half-page text columns */
+    .lede, .lede.wide, .faq-list details p, .note-limit p, .sources, .week p, .moment, .story-grid p, .step0-band p, .visit-stack p, .proc-intro .lede,
+    .stage-block h2, #life > h2, #care .care-hero .lede, #care .usually, .band.navy .lede { max-width: none; }
   </style>
 </head>
 <body>
@@ -1105,7 +1080,7 @@
       <ol class="steps">
         <li class="us"><time>Every Friday, 4:00pm</time><p>We send your week in photos: what was done, what comes next, and anything we need from you.</p></li>
         <li class="you"><time>Tuesday, 9:05pm</time><p>You message us one evening to ask when the windows go in.</p></li>
-        <li class="us"><time>Wednesday, 8:15am</time><p>We answer straight from your own job details: Thursday week, weather allowing.</p></li>
+        <li class="us"><time>Tuesday, 9:07pm</time><p>We answer straight from your own job details: Thursday week, weather allowing.</p></li>
         <li class="us"><time>Slab &middot; frame &middot; lock-up &middot; keys</time><p>We mark and celebrate each milestone with you, from your slab to lock-up (when the doors and windows are on) and getting your keys.</p></li>
         <li class="us"><time>Handover</time><p>You receive your memory book, with the photo timeline, every decision, and your warranties and documents all in one place.</p></li>
       </ol>
@@ -1122,10 +1097,10 @@
       <p class="with">With Truft</p>
       <ol class="steps">
         <li class="you"><time>Sunday, 8:40pm</time><p>You send us a message to say you have a block and a rough budget, and ask if we can help.</p></li>
-        <li class="us"><time>Monday, 8:30am</time><p>We send you a warm reply with a few helpful questions and a time to meet.</p></li>
+        <li class="us"><time>Sunday, 8:46pm</time><p>We send you a warm reply with a few helpful questions and a time to meet.</p></li>
         <li class="us"><time>Tuesday, 4:00pm &middot; at your block</time><p>Sharang meets you at your block, already knowing about it, your budget and what matters most to you.</p></li>
       </ol>
-      <div class="result"><strong>Next morning</strong><span>a warm reply first thing, even if you wrote on a Sunday night.</span></div>
+      <div class="result"><strong>Minutes</strong><span>until you have a real answer, even on a Sunday night.</span></div>
     </div>
   </article>
 </div>
@@ -1166,10 +1141,10 @@
       <div class="wrap proc-intro">
         <div class="kicker">How we build</div>
         <h1>Your home in 28 steps</h1>
-        <p class="lede">Every Truft home follows the same 28 steps, in five stages, from the first survey to the keys. Tap any step to see what you choose and what we look after.</p>
+        <p class="lede">Five stages, from the first survey to the keys. Here is what we look after at every step, and where the choices are yours.</p>
       </div>
       <div class="wrap" style="padding-top:0">
-        <div class="proc" id="procTable" role="list"></div>
+        <img class="proc-poster" src="assets/truft-28-step.jpg" alt="The Truft 28-step home building process, in five stages, showing what happens at each step, Truft's commitment and your choice" />
         <div class="row-btns" style="margin-top:20px">
           <button class="btn" type="button" data-go="house">Open the sample home</button>
           <button class="btn ghost" type="button" data-go="contact">Talk to us</button>
@@ -1191,7 +1166,7 @@
             <img src="assets/qr/whatsapp.png" alt="QR code to message Truft on WhatsApp" />
             <div>
               <h3>WhatsApp</h3>
-              <p class="quiet">Message us any time. We reply during business hours, usually the same day, and we'll find a time that suits you to walk your block. <button class="i" data-tip="whatsapp" type="button">i</button></p>
+              <p class="quiet">Message us any time, day or night. You'll hear back within minutes, and we'll pop your visit straight into Sharang's calendar. <button class="i" data-tip="whatsapp" type="button">i</button></p>
               <button class="wa-btn hover-tip" type="button" data-open-wa="1" data-hint="This will open our WhatsApp account.">
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#25D366" d="M12.04 2C6.58 2 2.15 6.43 2.15 11.89c0 1.95.51 3.86 1.48 5.54L2 22l4.71-1.55a9.86 9.86 0 0 0 5.33 1.44h.01c5.46 0 9.89-4.43 9.89-9.89C21.94 6.43 17.5 2 12.04 2zm5.72 14.01c-.24.67-1.4 1.24-1.94 1.32-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.82-4.2-4.97-4.39-.14-.2-1.18-1.57-1.18-3 0-1.42.74-2.12 1-2.41.24-.27.64-.39 1.02-.39.12 0 .23 0 .33.01.29.01.44.03.63.49.24.56.81 1.98.88 2.13.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.41.51-.14.14-.28.3-.12.58.16.29.7 1.15 1.5 1.86 1.03.91 1.9 1.19 2.18 1.33.28.13.44.11.6-.07.17-.18.7-.81.89-1.09.19-.27.37-.23.63-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.67-.17 1.34z"/></svg>
                 WhatsApp
@@ -2037,28 +2012,6 @@
       if (el) el.textContent = s.credit || "";
     }, 9000);
     const hash = location.hash.replace("#","");
-    const STEP_COMMIT = {1: "Managed by Truft", 2: "Non-negotiable on quality", 3: "Non-negotiable on quality", 4: "Non-negotiable on quality", 5: "Non-negotiable on quality", 6: "Non-negotiable on quality", 7: "Managed by Truft", 8: "Non-negotiable on quality", 27: "Transparent and explained", 28: "Shown to you as it's used"};
-    const STEP_CHOICE = {1: "We keep you informed", 2: "Done right, every time", 3: "Done right, every time", 4: "Done right, every time", 5: "Done right, every time", 6: "Done right, every time", 7: "We'll guide you", 8: "Done right, every time", 9: "Style, colour and range", 10: "Style and finish", 11: "We'll guide you", 12: "Standard, unless you'd like a feature design", 13: "Fixtures chosen later", 14: "Outlet locations and fittings", 15: "System type and brand", 16: "Built to code", 17: "Full choice: tiles, style, layout", 18: "Full choice", 19: "Full choice: range and finish", 20: "Full choice", 21: "Full choice: brand and model", 22: "Full say on every detail", 23: "Colour selection", 24: "Style and finish", 25: "Design and style", 26: "Design and finishes", 27: "Agreed in your contract, shown on its own line", 28: "An agreed allowance in your contract"};
-    function renderProc() {
-      const el = document.getElementById("procTable"); if (!el) return;
-      el.innerHTML = STAGES.map((st, k) => {
-        const rows = STEPS.filter(x => x.stage === st.id).map(x => {
-          const cm = STEP_COMMIT[x.n] || "Managed by Truft";
-          return `<div class="proc-row" role="listitem"><button type="button" data-proc="${x.n}" aria-expanded="false">
-            <span class="n">${String(x.n).padStart(2,"0")}</span><span class="nm">${x.name}</span><span class="wh">${x.happens}</span>
-            <span class="cm ${cm.startsWith("Non")?"strong":""}">${cm}</span><span class="ch">${STEP_CHOICE[x.n]||""}</span><span class="tg" aria-hidden="true"></span></button>
-            <div class="proc-detail"><div><h4>What you'll see</h4><p>${x.you}</p></div><div><h4>What we look after</h4><p>${x.truft}</p></div><div><h4>On your Truft page</h4><p>${x.file}</p></div></div></div>`;
-        }).join("");
-        return `<section class="proc-stage"><header><b>${k+1}. ${st.label}</b><span>${st.blurb}</span></header>
-          <div class="proc-head" aria-hidden="true"><span>#</span><span>Step</span><span>What happens</span><span>Truft's commitment</span><span>Your choice</span><span></span></div>${rows}</section>`;
-      }).join("");
-    }
-    document.addEventListener("click", e => {
-      const b = e.target.closest("[data-proc]"); if (!b) return;
-      const row = b.parentElement, open = !row.classList.contains("is-open");
-      row.classList.toggle("is-open", open); b.setAttribute("aria-expanded", open);
-    });
-    renderProc();
     const LEGACY = { work:"ourwork", about:"aboutTruft", services:"aboutTruft" };
     if (LEGACY[hash]) { showScene("home"); setTimeout(() => document.getElementById(LEGACY[hash]).scrollIntoView({ block: "start" }), 300); }
     else if (SCENES.includes(hash)) showScene(hash);
