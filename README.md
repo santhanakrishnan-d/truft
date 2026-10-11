@@ -1,12 +1,5 @@
-# Truft operations preview
+# Truft
 
-A static walkthrough of how Truft could run — public face, sample house, office — for sharing with Truft.
+A preview of how Truft looks after the families building with it: the client stories, a sample home page (welcome, decisions, payments, story, open book), and the Truft office.
 
-This is **not** [truft.com.au](https://truft.com.au). Photography is from the live site. The mock is not wired (WhatsApp, Ask Truft, BuildPass, Xero).
-
-## Live
-
-- Walkthrough: https://truft.bitfoundry.ai/
-- Working note (print to A4): https://truft.bitfoundry.ai/how.html
-
-DNS: `truft` CNAME `bitfoundry-ai.github.io` (or `santhanakrishnan-d.github.io`). Apex `bitfoundry.ai` stays on Zoho.
+Live preview: https://truft.bitfoundry.ai/ — photography from truft.com.au; families and figures are illustrative.
