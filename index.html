@@ -721,6 +721,8 @@
     #house .p-tl li { grid-template-columns: 1fr; }
   }
 
+    #ourwork, #aboutTruft { padding-bottom: 12px; }
+    #aboutTruft .principles { margin-top: 18px; }
   </style>
 </head>
 <body>
@@ -733,10 +735,7 @@
     <nav class="public-nav" aria-label="Primary">
       <button type="button" data-go="home" aria-current="page">Home</button>
       <button type="button" data-go="care">Building with us</button>
-      <button type="button" data-go="about">About</button>
-      <button type="button" data-go="services">Services</button>
-      <button type="button" data-go="work">Our Work</button>
-      <button type="button" data-go="process">Process</button>
+      <button type="button" data-go="process">Our process</button>
       <button type="button" data-go="contact">Contact</button>
     </nav>
     <div class="top-end">
@@ -768,28 +767,69 @@
         </div>
       </div>
 
-      <div class="wrap" id="life">
-        <div class="kicker">The life of the house</div>
-        <h2>The build, decision by decision.</h2>
-        <p class="lede wide">Every stage of a build, how it usually goes, and how it goes with Truft.</p>
-        <div class="offer-4">
-          <article>
-            <h3>Flexibility</h3>
-            <p>A finish or a change shows the dollars and the days before you confirm. Liking it is not an order.</p>
-          </article>
-          <article>
-            <h3>Transparency</h3>
-            <p>The price can move. You see every invoice, the reason, and our margin on its own line.</p>
-          </article>
-          <article>
-            <h3>The experience</h3>
-            <p>The week, the spend, and what is waiting on you live on one page. You keep a copy at the end.</p>
-          </article>
-          <article class="limit">
-            <h3>The limit</h3>
-            <p>Weather, a supplier who is out of stock, council, the certifier, and a valuer still take their own time.</p>
-          </article>
+
+      <div class="wrap" id="ourwork">
+        <div class="kicker">Our work</div>
+        <h2>Homes we have built across North West Sydney.</h2>
+        <p class="lede wide">Knockdown-rebuilds, custom homes and premium estates. Tap a home to step inside.</p>
+      </div>
+      <div class="mosaic" id="workMosaic">
+        <a class="tile" href="#home" data-open="mustang" data-i="0" data-film="mustang">
+          <span class="cine-stage"><img class="kb d2 is-on" src="assets/gallery/mustang-01.jpg" alt="Mustang Ave" /></span>
+          <span class="tile-cap">Mustang Ave<small>10 photographs</small></span>
+        </a>
+        <a class="tile" href="#home" data-open="henson" data-i="0" data-film="henson">
+          <span class="cine-stage"><img class="kb d3 is-on" src="assets/gallery/henson-01.jpg" alt="Henson Way" /></span>
+          <span class="tile-cap">Henson Way<small>Finished home</small></span>
+        </a>
+        <a class="tile" href="#home" data-open="newmarket" data-i="0" data-film="newmarket">
+          <span class="cine-stage"><img class="kb d4 is-on" src="assets/gallery/newmarket-01.jpg" alt="Newmarket Pky" /></span>
+          <span class="tile-cap">Newmarket Pky<small>10 photographs</small></span>
+        </a>
+        <a class="tile" href="#home" data-open="shetland" data-i="0" data-film="shetland">
+          <span class="cine-stage"><img class="kb d1 is-on" src="assets/gallery/shetland-01.jpg" alt="Shetland Street" /></span>
+          <span class="tile-cap">Shetland Street<small>10 photographs</small></span>
+        </a>
+      </div>
+      
+      <div class="wrap" style="padding-top:16px"><div class="strip" id="workStrip"></div></div>
+
+      <div class="wrap" id="aboutTruft">
+        <div class="kicker">About Truft</div>
+        <h2>The home of open-book building.</h2>
+        <p class="lede wide">Cost-plus custom homes, knockdown-rebuilds and premium land estates across North West Sydney. We work alongside your architect and interior designer, and you see every invoice, every quote and our margin, on its own line.</p>
+        <div class="principles">
+            <button type="button" class="principle" data-principle><strong>No compromise on structure</strong><span>Quality, safety and longevity. Structure is not a finish you can value-engineer later.</span></button>
+            <button type="button" class="principle" data-principle><strong>Complete transparency</strong><span>Every invoice and every trade quote, with the reason beside it. A change you ask for is not spent until you and we have both signed.</span></button>
+            <button type="button" class="principle" data-principle><strong>Your vision, our expertise</strong><span>You choose the bespoke elements. Truft holds the means and methods.</span></button>
+            <button type="button" class="principle" data-principle><strong>Built to last</strong><span>For your family’s future. The file of the house should last as long as the house.</span></button>
+          </div>
+          
+      </div>
+      <div class="five">
+        <article><h3>Open-book cost-plus</h3><p>Every invoice, with the reason beside it. Margin is its own line.</p></article>
+        <article><h3>Choices with the date attached</h3><p>A finish shows the dollars and the days before you confirm.</p></article>
+        <article><h3>The supplier on the invoice</h3><p>Stone, tiles, joinery and fixtures can be bought direct. The supplier is named.</p></article>
+        <article><h3>The week, written down</h3><p>Who is booked, and what rain changed. A missing week is a gap you can see.</p></article>
+        <article><h3>The bank, before the stage</h3><p>The stage amount, and what your lender has already said they need.</p></article>
+      </div>
+      
+      <div class="band navy" id="careCue">
+        <div class="wrap" style="padding-top:8px;padding-bottom:8px">
+          <div class="kicker" style="color:var(--on-dark-dim)">Building with us</div>
+          <h2>Every family has a private page for their house.</h2>
+          <p class="lede">Photos every Friday. Decisions signed on your phone with the price and the days shown first. Stage payments with your bank's paperwork ready. A memory book at the keys.</p>
+          <div class="row-btns" style="margin-top:12px">
+            <button class="btn light" type="button" data-go="care">See how we look after you</button>
+            <button class="btn ghost on-dark" type="button" data-go="house">Open a sample home</button>
+          </div>
         </div>
+      </div>
+
+      <div class="wrap" id="life">
+        <div class="kicker">Side by side</div>
+        <h2>How a build usually goes, and how it goes with Truft.</h2>
+        <p class="lede wide">Eleven stages, from choosing a builder to the keys. Open any one to see the detail.</p>
         <ol class="life-board">
         <li id="s-choose">
           <div class="life-name"><span>01</span><strong>Choosing</strong></div>
@@ -865,16 +905,6 @@
           <p>Weather still stops a slab. A supplier who is actually out of stock still takes their weeks. Council, the certifier, and a bank's valuer still keep their own diaries. A message from you is a request. It becomes a variation only when it is written, priced, and signed by you and by Truft. Until that signature, the work on site does not change and nothing is spent on that change. Rock in the ground or a supplier's price rise can still move the cost, and that arrives as its own line with the invoice and the reason. When we can see it coming, you see it before it is spent. We would rather tell you the limit on the day we know it than sound faster than the job can be.</p>
         </div>
 
-        <div class="stage-block" id="sampleCue">
-          <div class="kicker">See it clicked, not described</div>
-          <h2>One home at lock-up</h2>
-          <p class="lede wide">The sample is there so the week, the spend, and the site are not a metaphor. Sign-in on this walkthrough only unlocks the same sample. It will not take a payment, and it is not your job. The $2,180, the $2,640 and the unsigned $4,200 are on that sample so you can see a pause. They are not a price list.</p>
-          <div class="row-btns">
-            <button class="btn" type="button" data-go="house">Open the sample home</button>
-            <button class="btn ghost" type="button" data-go="process">The builder's steps</button>
-          </div>
-        </div>
-
         <div class="stage-block" id="homeFaq">
           <div class="kicker">Plain answers</div>
           <h2>Questions people are right to ask</h2>
@@ -904,7 +934,7 @@
         <div class="wrap" style="padding-top:8px;padding-bottom:8px">
           <div class="kicker" style="color:var(--on-dark-dim)">If it is your block</div>
           <h2>If this is how you want your build to feel, we'd be glad to hear from you.</h2>
-          <p class="lede">Call or write if you want to talk about a block. You do not need drawings. We will not price a house from a sentence.</p>
+          <p class="lede">Call, message, or come by Norwest. You do not need drawings. We start with a walk on your block.</p>
           <p><strong>303/4 Columbia Ct, Norwest NSW 2153</strong><br><a href="tel:+61272350833">02 7235 0833</a></p>
           <div class="row-btns" style="margin-top:12px">
             <button class="btn light" type="button" data-go="contact">Contact</button>
@@ -1079,102 +1109,8 @@
 </section>
 
     <!-- ABOUT -->
-    <section class="scene" id="about">
-      <div class="split">
-        <div class="split-photo"><img class="kb d2" src="assets/gallery/mustang-03.jpg" alt="Mustang Ave interior" /></div>
-        <div class="wrap" style="padding:36px 28px">
-          <div class="kicker">About Truft</div>
-          <h1>The home of open-book building</h1>
-          <p class="lede">Cost-plus custom homes, knockdown-rebuilds and premium land estates across North West Sydney. The price can move. You see the move, and the reason.</p>
-          <p class="quiet">We work with architects and interior designers. A discovery is cheaper on the drawing than on site. Before each stage claim, you see the amount, what done means in your contract, and what your lender has already said they need. Stone, tiles, joinery and fixtures can be bought direct, with the supplier named on the invoice.</p>
-          <div class="principles">
-            <button type="button" class="principle" data-principle><strong>No compromise on structure</strong><span>Quality, safety and longevity. Structure is not a finish you can value-engineer later.</span></button>
-            <button type="button" class="principle" data-principle><strong>Complete transparency</strong><span>Every invoice and every trade quote, with the reason beside it. A change you ask for is not spent until you and we have both signed.</span></button>
-            <button type="button" class="principle" data-principle><strong>Your vision, our expertise</strong><span>You choose the bespoke elements. Truft holds the means and methods.</span></button>
-            <button type="button" class="principle" data-principle><strong>Built to last</strong><span>For your family’s future. The file of the house should last as long as the house.</span></button>
-          </div>
-          <div class="row-btns" style="margin-top:18px">
-            <button class="btn" type="button" data-go="work">Our work</button>
-            <button class="btn ghost" type="button" data-go="contact">Contact</button>
-          </div>
-        </div>
-      </div>
-      <footer class="foot"><span>SS Developers Pty Ltd t/as Truft</span><a href="tel:+61272350833">02 7235 0833</a></footer>
-    </section>
 
-    <!-- SERVICES -->
-    <section class="scene" id="services">
-      <div class="hero cine" id="servicesCine" style="min-height:46vh">
-        <div class="cine-stage" id="servicesCineStage">
-          <img class="kb d3 is-on" src="assets/gallery/henson-06.jpg" alt="" />
-        </div>
-        <div class="hero-copy">
-          <div class="kicker">Services</div>
-          <h1>Where craftsmanship and trust shape the house</h1>
-        </div>
-      </div>
-      <div class="five">
-        <article><h3>Open-book cost-plus</h3><p>Every invoice, with the reason beside it. Margin is its own line.</p></article>
-        <article><h3>Choices with the date attached</h3><p>A finish shows the dollars and the days before you confirm.</p></article>
-        <article><h3>The supplier on the invoice</h3><p>Stone, tiles, joinery and fixtures can be bought direct. The supplier is named.</p></article>
-        <article><h3>The week, written down</h3><p>Who is booked, and what rain changed. A missing week is a gap you can see.</p></article>
-        <article><h3>The bank, before the stage</h3><p>The stage amount, and what your lender has already said they need.</p></article>
-      </div>
-      <div class="wrap">
-        <div class="kicker">Open book, as a picture</div>
-        <h2>Quoted. Actual. Pause.</h2>
-        <div class="flow">
-          <article><div class="n">Quoted</div><h3>$2,180</h3><p>Brass tapware, as selected.</p></article>
-          <article><div class="n">Actual</div><h3>$2,640</h3><p>The owners changed the finish and signed variation 12 before it was ordered.</p></article>
-          <article><div class="n">Pause</div><h3>$4,200</h3><p>Island stone upgrade the owners asked for. Unsigned, so it has not been spent.</p></article>
-          <article><div class="n">You</div><h3>Sign or hold</h3><p>Signed on the house page. A message in the evening is a question, not a signature.</p></article>
-          <article><div class="n">Walk it</div><h3>Sample house</h3><p>Open the sample home before you sign.</p></article>
-        </div>
-        <div class="row-btns" style="margin-top:18px">
-          <button class="btn" type="button" data-go="house">Open the sample</button>
-          <button class="btn ghost" type="button" data-go="process">The 28 steps</button>
-        </div>
-      </div>
-    </section>
 
-    <!-- OUR WORK -->
-    <section class="scene" id="work">
-      <div class="cine work-cine" id="workCine">
-        <div class="cine-stage" id="workCineStage">
-          <img class="kb d1 is-on" src="assets/gallery/mustang-01.jpg" alt="" />
-        </div>
-        <div class="hero-copy">
-          <div class="kicker">Our projects</div>
-          <h1 id="workCineTitle">Mustang Ave</h1>
-          <p class="lede" id="workCineLede">Knockdown-rebuild. Street elevation. Tap a photograph to step inside.</p>
-        </div>
-      </div>
-      <div class="mosaic" id="workMosaic">
-        <a class="tile" href="#work" data-open="mustang" data-i="0" data-film="mustang">
-          <span class="cine-stage"><img class="kb d2 is-on" src="assets/gallery/mustang-01.jpg" alt="Mustang Ave" /></span>
-          <span class="tile-cap">Mustang Ave<small>10 photographs</small></span>
-        </a>
-        <a class="tile" href="#work" data-open="henson" data-i="0" data-film="henson">
-          <span class="cine-stage"><img class="kb d3 is-on" src="assets/gallery/henson-01.jpg" alt="Henson Way" /></span>
-          <span class="tile-cap">Henson Way<small>Finished home</small></span>
-        </a>
-        <a class="tile" href="#work" data-open="newmarket" data-i="0" data-film="newmarket">
-          <span class="cine-stage"><img class="kb d4 is-on" src="assets/gallery/newmarket-01.jpg" alt="Newmarket Pky" /></span>
-          <span class="tile-cap">Newmarket Pky<small>10 photographs</small></span>
-        </a>
-        <a class="tile" href="#work" data-open="shetland" data-i="0" data-film="shetland">
-          <span class="cine-stage"><img class="kb d1 is-on" src="assets/gallery/shetland-01.jpg" alt="Shetland Street" /></span>
-          <span class="tile-cap">Shetland Street<small>10 photographs</small></span>
-        </a>
-      </div>
-      <div class="wrap" style="padding-top:16px">
-        <div class="strip" id="workStrip"></div>
-        <div class="row-btns" style="margin-top:18px">
-          <button class="btn" type="button" data-go="house">Walk Henson Way</button>
-        </div>
-      </div>
-      <footer class="foot"><span>Photography from truft.com.au</span><span>Finished Truft homes. Henson Way is also the sample job: finished in the photograph, at lock-up in the walkthrough you can open, week 38.</span></footer>
-    </section>
 
     <!-- PROCESS -->
     <section class="scene" id="process">
@@ -2071,7 +2007,7 @@
       { id:"FITOUT & STYLE", label:"Fitout & style", blurb:"Bring the vision." },
       { id:"COMPLETE", label:"Complete", blurb:"The last touches." }
     ];
-    const PUBLIC = new Set(["home","care","about","services","work","process","contact","house"]);
+    const PUBLIC = new Set(["home","care","process","contact","house"]);
     const SCENES = [...PUBLIC];
     let stageFilter = "ALL";
     let selectedN = 19;
@@ -2540,7 +2476,9 @@
     }, 7500);
     cycleCine(document.getElementById("servicesCineStage"), CINE_SERVICES, null, 8000);
     const hash = location.hash.replace("#","");
-    if (SCENES.includes(hash)) showScene(hash);
+    const LEGACY = { work:"ourwork", about:"aboutTruft", services:"aboutTruft" };
+    if (LEGACY[hash]) showScene("home", { focus: LEGACY[hash] });
+    else if (SCENES.includes(hash)) showScene(hash);
     else if (hash) history.replaceState(null, "", "#home");
   </script>
 </body>
